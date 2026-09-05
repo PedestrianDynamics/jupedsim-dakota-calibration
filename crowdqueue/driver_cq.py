@@ -36,16 +36,21 @@ def read_params(path):
 
 
 def one(run_name, seed, out_file, kwargs):
+    """Returns the three observables plus a status:
+    'ok'      every agent passed the gate within the 120 s cap,
+    'clogged' the run did not empty within the cap (flow = passed / run time),
+    'failed'  JuPedSim aborted (an agent was pushed through a wall); observables set to 0."""
     width = obs.runs()[run_name]["width"]
     try:
         scenario_cq.run(run_name, seed, out_file, **kwargs)
-        r = obs.compute(obs.load_simulation(out_file), width)
-        if r["n_total"] < 5:
-            return dict(flow=0.0, density=0.0, speed=0.0)
-        return {k: float(r[k]) for k in OBS}
+        tr = obs.load_simulation(out_file)
+        r = obs.compute(tr, width)
+        n_agents = int(tr.data["id"].nunique())
+        status = "ok" if r["n_total"] >= n_agents else "clogged"
+        return {**{k: float(r[k]) for k in OBS}, "status": status, "passed": r["n_total"], "agents": n_agents}
     except Exception as e:
         print(f"run failed ({run_name}, seed={seed}): {e}", file=sys.stderr)
-        return dict(flow=0.0, density=0.0, speed=0.0)
+        return dict(flow=0.0, density=0.0, speed=0.0, status="failed", passed=0, agents=0)
 
 
 def main():

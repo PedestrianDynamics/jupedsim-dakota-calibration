@@ -25,7 +25,7 @@ if __name__ == "__main__":
         block = [r for (n, _, _, _), r in zip(jobs, res) if n == rn]
         sim = {k: float(np.mean([b[k] for b in block])) for k in ("flow", "density", "speed")}
         sd = {k: float(np.std([b[k] for b in block], ddof=1)) if n_seeds > 1 else 0.0 for k in sim}
-        table[rn] = {"exp": exp[rn], "sim": sim, "sim_std": sd}
+        table[rn] = {"exp": exp[rn], "sim": sim, "sim_std": sd, "seeds": block}
         e = exp[rn]
         print(f"{rn:14s} {e['width']:.1f} {e['motivation']:3s} | {e['flow']:6.2f} {sim['flow']:6.2f} | {e['density']:7.2f} {sim['density']:7.2f} | {e['speed']:6.2f} {sim['speed']:6.2f}")
     json.dump({"params": kw, "runs": table}, open(out / f"{label}.json", "w"), indent=1)
