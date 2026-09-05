@@ -1,0 +1,37 @@
+# Motivation probe: recalibrate ONLY the time gap on the single high-motivation (h+) run,
+# all other parameters fixed at the h0 calibration (filled in from calib_h0).
+# Run: CQ_RESIDUALS=1 JPS_N_SEEDS=2 CQ_RUNS=100_c_12_h-,120_c_12_h-,180_q_12_h-,280_c_34_h-,040_c_56_h-,160_q_56_h-,240_q_23_h-,060_c_45_h-,260_q_45_h- dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'probe_history.dat'
+
+method
+  efficient_global
+    seed = 5
+    max_iterations = 30
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 1
+    descriptors    'time_gap'
+    initial_point   0.9577
+    lower_bounds    0.02
+    upper_bounds    2.00
+  continuous_state = 6
+    descriptors    'desired_speed' 'radius' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
+    initial_state   1.55  0.10063  1.7034  0.33636  1.3929  0.10470
+
+interface
+  fork
+    analysis_drivers = 'python3 driver_cq.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver_cq.py' '../observables_cq.py' '../scenario_cq.py' '../exp_observables_cq.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  calibration_terms = 3
+  no_gradients
+  no_hessians

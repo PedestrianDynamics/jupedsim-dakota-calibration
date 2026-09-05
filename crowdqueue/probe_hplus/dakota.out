@@ -1,0 +1,1420 @@
+Dakota version 6.24 released May 15 2026.
+Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
+Running MPI Dakota executable in serial mode.
+Start time: Sat Sep  5 19:39:44 2026
+
+------------------
+Begin Dakota input
+------------------
+# Motivation probe: recalibrate ONLY the time gap on the single high-motivation (h+) run,
+# all other parameters fixed at the h0 calibration (filled in from calib_h0).
+# Run: CQ_RESIDUALS=1 JPS_N_SEEDS=2 CQ_RUNS=100_c_12_h-,120_c_12_h-,180_q_12_h-,280_c_34_h-,040_c_56_h-,160_q_56_h-,240_q_23_h-,060_c_45_h-,260_q_45_h- dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'probe_history.dat'
+
+method
+  efficient_global
+    seed = 5
+    max_iterations = 30
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 1
+    descriptors    'time_gap'
+    initial_point   0.9577
+    lower_bounds    0.02
+    upper_bounds    2.00
+  continuous_state = 6
+    descriptors    'desired_speed' 'radius' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
+    initial_state   1.55  0.10063  1.7034  0.33636  1.3929  0.10470
+
+interface
+  fork
+    analysis_drivers = 'python3 driver_cq.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver_cq.py' '../observables_cq.py' '../scenario_cq.py' '../exp_observables_cq.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  calibration_terms = 3
+  no_gradients
+  no_hessians
+
+----------------
+End Dakota input
+----------------
+
+Using Dakota parser: standard
+Writing new restart file 'dakota.rst'.
+
+>>>>> Executing environment.
+
+>>>>> Running efficient_global iterator.
+
+>>>>> Building global_kriging approximations.
+
+NonD lhs Samples = 3 Seed (user-specified) = 5
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      7.1641887969e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 1:
+Active set vector = { 1 1 1 }
+                     -6.1943000000e+00 least_sq_term_1
+                      4.6215830000e+01 least_sq_term_2
+                      1.1948930000e+01 least_sq_term_3
+
+
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      1.6651549311e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 2:
+Active set vector = { 1 1 1 }
+                      5.8429100000e+00 least_sq_term_1
+                      4.1852480000e+01 least_sq_term_2
+                      3.4988000000e+01 least_sq_term_3
+
+
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      1.9146833203e+00 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 3:
+Active set vector = { 1 1 1 }
+                     -1.0070650000e+01 least_sq_term_1
+                      4.9934400000e+01 least_sq_term_2
+                      3.3719400000e+00 least_sq_term_3
+
+
+
+>>>>> Appending 3 points to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+Constructing global approximations with no anchor, 3 DACE samples, and 0 reused points.
+
+<<<<< global_kriging approximation builds completed.
+
+>>>>> Initiating global iteration 1 (acquisition batch 1)
+Beginning Approximate Fn Evaluations...
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      5.9230974526e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      4.1887181076e+01
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      5.9230974526e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 4:
+Active set vector = { 1 1 1 }
+                     -8.7411800000e+00 least_sq_term_1
+                      4.3838830000e+01 least_sq_term_2
+                      1.4535130000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 2 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      5.0600635505e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      2.6175437487e+01
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                      5.0600635505e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 5:
+Active set vector = { 1 1 1 }
+                     -3.7543800000e+00 least_sq_term_1
+                      3.0610450000e+01 least_sq_term_2
+                      1.2932930000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 3 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      4.5530598463e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      2.0573119200e+02
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                      4.5530598463e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 6:
+Active set vector = { 1 1 1 }
+                     -6.0529300000e+00 least_sq_term_1
+                      6.5122880000e+01 least_sq_term_2
+                      2.3665400000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 4 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      5.3292315923e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      3.7163480087e+02
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                      5.3292315923e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 7:
+Active set vector = { 1 1 1 }
+                     -4.1333300000e+00 least_sq_term_1
+                      3.0435040000e+01 least_sq_term_2
+                      1.3115090000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 5 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      5.1885424514e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      9.8339606632e+01
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                      5.1885424514e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 8:
+Active set vector = { 1 1 1 }
+                     -3.8599400000e+00 least_sq_term_1
+                      3.0737950000e+01 least_sq_term_2
+                      1.2749250000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 6 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      5.5257893511e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      5.0877396728e+01
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                      5.5257893511e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 9:
+Active set vector = { 1 1 1 }
+                     -4.4270800000e+00 least_sq_term_1
+                      3.0585700000e+01 least_sq_term_2
+                      1.2057950000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 7 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      5.4297909032e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      1.7253713912e+01
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                      5.4297909032e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 10:
+Active set vector = { 1 1 1 }
+                     -4.2980700000e+00 least_sq_term_1
+                      3.0734820000e+01 least_sq_term_2
+                      1.2442350000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 8 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      7.2411128248e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      9.8174228574e+02
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                      7.2411128248e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 11:
+Active set vector = { 1 1 1 }
+                     -6.1943000000e+00 least_sq_term_1
+                      4.5444870000e+01 least_sq_term_2
+                      1.3448110000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 9 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      5.6561820144e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      4.4959193013e+01
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                      5.6561820144e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 12:
+Active set vector = { 1 1 1 }
+                     -4.6153800000e+00 least_sq_term_1
+                      3.0825560000e+01 least_sq_term_2
+                      1.2105500000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 10 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      4.8028717797e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      4.5338961462e+02
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                      4.8028717797e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 13:
+Active set vector = { 1 1 1 }
+                     -3.1994000000e+00 least_sq_term_1
+                      3.0121200000e+01 least_sq_term_2
+                      1.3936280000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 11 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      4.8830507926e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      6.9871231638e+01
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                      4.8830507926e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 14:
+Active set vector = { 1 1 1 }
+                     -3.3898300000e+00 least_sq_term_1
+                      3.0448180000e+01 least_sq_term_2
+                      1.2930700000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 12 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      6.9320953784e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      7.4550423367e+02
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                      6.9320953784e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 15:
+Active set vector = { 1 1 1 }
+                     -9.5258500000e+00 least_sq_term_1
+                      4.5318840000e+01 least_sq_term_2
+                      1.1340980000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 13 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      6.7176524804e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      5.1557612004e+02
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                      6.7176524804e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 16:
+Active set vector = { 1 1 1 }
+                     -6.0314600000e+00 least_sq_term_1
+                      3.0655160000e+01 least_sq_term_2
+                      1.0276830000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 14 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      6.6274068192e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      4.3120295095e+02
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                      6.6274068192e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 17:
+Active set vector = { 1 1 1 }
+                     -5.8120500000e+00 least_sq_term_1
+                      3.0915200000e+01 least_sq_term_2
+                      1.0794680000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 15 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      6.6785446933e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      3.7947379489e+01
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                      6.6785446933e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 18:
+Active set vector = { 1 1 1 }
+                     -5.8620700000e+00 least_sq_term_1
+                      3.0776260000e+01 least_sq_term_2
+                      1.0507300000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 16 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      6.3907922116e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      7.9985547419e+02
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                      6.3907922116e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 19:
+Active set vector = { 1 1 1 }
+                     -5.5812700000e+00 least_sq_term_1
+                      3.1180440000e+01 least_sq_term_2
+                      9.3812900000e+00 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 17 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      6.4654099368e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      1.2456689346e+02
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                      6.4654099368e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 20:
+Active set vector = { 1 1 1 }
+                     -5.6073600000e+00 least_sq_term_1
+                      3.0740340000e+01 least_sq_term_2
+                      1.1318420000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 18 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      6.2003230142e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      2.3668865588e+02
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                      6.2003230142e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 21:
+Active set vector = { 1 1 1 }
+                     -5.3412300000e+00 least_sq_term_1
+                      3.0960550000e+01 least_sq_term_2
+                      1.2626890000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 19 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      6.2768778068e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      4.4309340998e+01
+
+---------------------
+Begin Evaluation   22
+---------------------
+Parameters for evaluation 22:
+                      6.2768778068e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 22:
+Active set vector = { 1 1 1 }
+                     -5.4493500000e+00 least_sq_term_1
+                      3.1371650000e+01 least_sq_term_2
+                      1.1763350000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 20 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      6.7200793087e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      5.1286801656e-02
+
+---------------------
+Begin Evaluation   23
+---------------------
+Parameters for evaluation 23:
+                      6.7200793087e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 23:
+Active set vector = { 1 1 1 }
+                     -9.3814800000e+00 least_sq_term_1
+                      4.4120640000e+01 least_sq_term_2
+                      1.3695240000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 21 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      6.5014003854e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      1.1243368177e+01
+
+---------------------
+Begin Evaluation   24
+---------------------
+Parameters for evaluation 24:
+                      6.5014003854e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 24:
+Active set vector = { 1 1 1 }
+                     -5.6595200000e+00 least_sq_term_1
+                      3.0602730000e+01 least_sq_term_2
+                      1.1187680000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 22 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.6325642991e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      3.3320487874e+02
+
+---------------------
+Begin Evaluation   25
+---------------------
+Parameters for evaluation 25:
+                      1.6325642991e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 25:
+Active set vector = { 1 1 1 }
+                      5.8429100000e+00 least_sq_term_1
+                      4.2777780000e+01 least_sq_term_2
+                      3.3607010000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 23 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.9108247318e+00 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      2.9701466882e+02
+
+---------------------
+Begin Evaluation   26
+---------------------
+Parameters for evaluation 26:
+                      1.9108247318e+00 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 26:
+Active set vector = { 1 1 1 }
+                     -9.8432100000e+00 least_sq_term_1
+                      5.0065610000e+01 least_sq_term_2
+                      3.1789900000e+00 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 24 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.9725587357e+00 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      8.5524290441e+00
+
+---------------------
+Begin Evaluation   27
+---------------------
+Parameters for evaluation 27:
+                      1.9725587357e+00 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 27:
+Active set vector = { 1 1 1 }
+                     -1.0525550000e+01 least_sq_term_1
+                      5.0190770000e+01 least_sq_term_2
+                      2.5387300000e+00 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 25 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      4.9838840896e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      4.4538763338e+01
+
+---------------------
+Begin Evaluation   28
+---------------------
+Parameters for evaluation 28:
+                      4.9838840896e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 28:
+Active set vector = { 1 1 1 }
+                     -3.5379700000e+00 least_sq_term_1
+                      3.1226280000e+01 least_sq_term_2
+                      1.3215730000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 26 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      4.9869373395e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      7.7407307933e-02
+
+---------------------
+Begin Evaluation   29
+---------------------
+Parameters for evaluation 29:
+                      4.9869373395e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 29:
+Active set vector = { 1 1 1 }
+                     -3.6111100000e+00 least_sq_term_1
+                      3.0477500000e+01 least_sq_term_2
+                      1.3424410000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 27 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.8660905413e+00 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      1.5833324090e-03
+
+---------------------
+Begin Evaluation   30
+---------------------
+Parameters for evaluation 30:
+                      1.8660905413e+00 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 30:
+Active set vector = { 1 1 1 }
+                     -9.8432100000e+00 least_sq_term_1
+                      4.9553770000e+01 least_sq_term_2
+                      3.4052500000e+00 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 28 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.8124760297e+00 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      1.3791505083e+02
+
+---------------------
+Begin Evaluation   31
+---------------------
+Parameters for evaluation 31:
+                      1.8124760297e+00 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 31:
+Active set vector = { 1 1 1 }
+                     -9.8432100000e+00 least_sq_term_1
+                      5.0397640000e+01 least_sq_term_2
+                      2.9121600000e+00 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 29 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      7.5611786389e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      2.5010067043e+02
+
+---------------------
+Begin Evaluation   32
+---------------------
+Parameters for evaluation 32:
+                      7.5611786389e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 32:
+Active set vector = { 1 1 1 }
+                     -6.1943000000e+00 least_sq_term_1
+                      4.5647310000e+01 least_sq_term_2
+                      1.4371760000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 30 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      7.7247873932e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+Expected Improvement    =
+                      8.5068863225e+02
+
+---------------------
+Begin Evaluation   33
+---------------------
+Parameters for evaluation 33:
+                      7.7247873932e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 33:
+Active set vector = { 1 1 1 }
+                     -6.1943000000e+00 least_sq_term_1
+                      4.5596730000e+01 least_sq_term_2
+                      1.4734160000e+01 least_sq_term_3
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+Stopping criteria not met: distConvergenceCntr (0) < distConvergenceLimit (1)
+Stopping criteria not met: eifConvergenceCntr (0) < eifConvergenceLimit (2)
+Stopping criteria met:     globalIterCount (30) >= maxIterations (30)
+<<<<< Function evaluation summary: 33 total (33 new, 0 duplicate)
+<<<<< Best parameters          =
+                      6.7176524804e-01 time_gap
+                      1.5500000000e+00 desired_speed
+                      1.0063000000e-01 radius
+                      1.7034000000e+00 strength_neighbor
+                      3.3636000000e-01 range_neighbor
+                      1.3929000000e+00 strength_geometry
+                      1.0470000000e-01 range_geometry
+<<<<< Best residual terms =
+                     -6.0314600000e+00
+                      3.0655160000e+01
+                      1.0276830000e+01
+<<<<< Best residual norm =  3.2889672835e+01; 0.5 * norm^2 =  5.4086528960e+02
+<<<<< Best evaluation ID: 16
+
+
+<<<<< Iterator efficient_global completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =    17.8794 [parent =    17.8794, child =     -3e-06]
+  Total wall clock =    88.6925
