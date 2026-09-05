@@ -1,0 +1,35 @@
+# Morris one-at-a-time screening of the 7 CFSM parameters on the Hermes
+# bottleneck observables (flow, density, speed at b = 2.4, 3.6, 5.0 m).
+# samples must be a multiple of (n_vars + 1) = 8.
+# Run:  HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'morris_samples.dat'
+
+method
+  psuade_moat
+    samples = 80
+    partitions = 3
+    seed = 11
+
+variables
+  continuous_design = 7
+    descriptors  'desired_speed' 'radius' 'time_gap' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
+    lower_bounds  0.8   0.12  0.10   2.0   0.02   1.0   0.01
+    upper_bounds  1.8   0.25  1.20  15.0   0.50  10.0   0.20
+
+interface
+  fork
+    analysis_drivers = 'python3 driver.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py' '../observables.py' '../scenario.py' '../exp_observables.json'
+  asynchronous evaluation_concurrency = 3
+
+responses
+  response_functions = 9
+    descriptors 'flow_2.4' 'density_2.4' 'speed_2.4' 'flow_3.6' 'density_3.6' 'speed_3.6' 'flow_5.0' 'density_5.0' 'speed_5.0'
+  no_gradients
+  no_hessians

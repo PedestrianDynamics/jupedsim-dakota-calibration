@@ -1,0 +1,10 @@
+runs/
+*.sqlite
+dakota.rst
+LHS_*.out
+console.log
+fort.*
+__pycache__/
+data/*.h5
+baseline/
+validation/
