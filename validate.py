@@ -12,7 +12,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import driver, observables as obs
 
 HERE = pathlib.Path(__file__).parent
-WIDTHS, SEEDS, CAL = [2.4, 3.0, 3.6, 4.4, 5.0], [1, 2, 3], {2.4, 3.6, 5.0}
+WIDTHS, SEEDS, CAL = [2.4, 3.0, 3.6, 4.4, 5.0], [1, 2, 3, 4, 5, 6], {2.4, 3.6, 5.0}
 
 if __name__ == "__main__":
     kw = dict(zip(["desired_speed", "radius", "time_gap", "strength_neighbor", "range_neighbor"], map(float, sys.argv[1:6])))

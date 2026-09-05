@@ -1,0 +1,39 @@
+# CrowdQueue: EGO calibration on baseline-motivation (h0) runs at corridor widths
+# 1.2, 3.4, 5.6 m (2.3 and 4.5 m held out). desired_speed fixed at 1.55 m/s.
+# Wall repulsion is free here: the 1.2 m corridor exercises it.
+# Residuals are already normalised by sigma in the driver, so weights = 1.
+# Run: CQ_RESIDUALS=1 JPS_N_SEEDS=2 CQ_RUNS=090_c_12_h0,110_c_12_h0,170_q_12_h0,190_q_34_h0,270_c_34_h0,030_c_56_h0,150_q_56_h0 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'calib_history.dat'
+
+method
+  efficient_global
+    seed = 9
+    max_iterations = 80
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 6
+    descriptors    'radius' 'time_gap' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
+    initial_point   0.13  0.80   2.0   0.25   5.0   0.02
+    lower_bounds    0.10  0.10   1.0   0.02   0.5   0.01
+    upper_bounds    0.18  1.20  10.0   0.40  10.0   0.20
+  continuous_state = 1
+    descriptors    'desired_speed'
+    initial_state   1.55
+
+interface
+  fork
+    analysis_drivers = 'python3 driver_cq.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver_cq.py' '../observables_cq.py' '../scenario_cq.py' '../exp_observables_cq.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  calibration_terms = 21
+  no_gradients
+  no_hessians
