@@ -1,0 +1,42 @@
+# Calibration with desired_speed FIXED at the measured free speed 1.55 m/s
+# (Liao et al. 2014); only the four unmeasurable parameters are calibrated.
+# (b = 3.0 and 4.4 held out for validation). Residuals = sim - experiment for
+# flow, density, speed per width; 2 seeds averaged. Weights = 1/sigma^2 with
+# sigma = 6 % of J, 10 % of rho, 10 % of v (measurement + seed noise).
+# Run:  HERMES_RESIDUALS=1 JPS_N_SEEDS=2 HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'calib_history.dat'
+
+method
+  efficient_global
+    seed = 5
+    max_iterations = 60
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 4
+    descriptors    'radius' 'time_gap' 'strength_neighbor' 'range_neighbor'
+    initial_point   0.20  0.50   8.0   0.10
+    lower_bounds    0.12  0.10   2.0   0.02
+    upper_bounds    0.25  1.00  10.0   0.30
+  continuous_state = 1
+    descriptors    'desired_speed'
+    initial_state   1.55
+
+interface
+  fork
+    analysis_drivers = 'python3 driver.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py' '../observables.py' '../scenario.py' '../exp_observables.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  calibration_terms = 9
+    descriptors 'flow_2.4' 'density_2.4' 'speed_2.4' 'flow_3.6' 'density_3.6' 'speed_3.6' 'flow_5.0' 'density_5.0' 'speed_5.0'
+    weights = 7.6 3.2 977   3.4 4.3 517   1.45 6.0 252
+  no_gradients
+  no_hessians

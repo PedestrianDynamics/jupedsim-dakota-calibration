@@ -1,0 +1,889 @@
+Dakota version 6.24 released May 15 2026.
+Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
+Running MPI Dakota executable in serial mode.
+Start time: Sat Sep  5 12:48:07 2026
+
+------------------
+Begin Dakota input
+------------------
+# Calibration with desired_speed FIXED at the measured free speed 1.55 m/s
+# (Liao et al. 2014); only the four unmeasurable parameters are calibrated.
+# (b = 3.0 and 4.4 held out for validation). Residuals = sim - experiment for
+# flow, density, speed per width; 2 seeds averaged. Weights = 1/sigma^2 with
+# sigma = 6 % of J, 10 % of rho, 10 % of v (measurement + seed noise).
+# Run:  HERMES_RESIDUALS=1 JPS_N_SEEDS=2 HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'calib_history.dat'
+
+method
+  efficient_global
+    seed = 5
+    max_iterations = 60
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 4
+    descriptors    'radius' 'time_gap' 'strength_neighbor' 'range_neighbor'
+    initial_point   0.20  0.50   8.0   0.10
+    lower_bounds    0.12  0.10   2.0   0.02
+    upper_bounds    0.25  1.00  10.0   0.30
+  continuous_state = 1
+    descriptors    'desired_speed'
+    initial_state   1.55
+
+interface
+  fork
+    analysis_drivers = 'python3 driver.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py' '../observables.py' '../scenario.py' '../exp_observables.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  calibration_terms = 9
+    descriptors 'flow_2.4' 'density_2.4' 'speed_2.4' 'flow_3.6' 'density_3.6' 'speed_3.6' 'flow_5.0' 'density_5.0' 'speed_5.0'
+    weights = 7.6 3.2 977   3.4 4.3 517   1.45 6.0 252
+  no_gradients
+  no_hessians
+
+----------------
+End Dakota input
+----------------
+
+Using Dakota parser: standard
+Writing new restart file 'dakota.rst'.
+
+>>>>> Executing environment.
+
+>>>>> Running efficient_global iterator.
+
+>>>>> Building global_kriging approximations.
+
+NonD lhs Samples = 15 Seed (user-specified) = 5
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      1.9877844896e-01 radius
+                      1.7780802975e-01 time_gap
+                      3.6635175250e+00 strength_neighbor
+                      2.6618374012e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 1:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3798000000e+00 flow_2.4
+                     -2.0800300000e+00 density_2.4
+                      4.4745000000e-01 speed_2.4
+                      4.4211300000e+00 flow_3.6
+                     -1.7420900000e+00 density_3.6
+                      7.0532000000e-01 speed_3.6
+                      5.1922600000e+00 flow_5.0
+                     -1.1786400000e+00 density_5.0
+                      7.2601000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      1.6648571976e-01 radius
+                      4.0484447613e-01 time_gap
+                      7.0624725313e+00 strength_neighbor
+                      7.2762346043e-02 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 2:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.1910200000e+00 flow_2.4
+                     -4.5614000000e-01 density_2.4
+                      6.7250000000e-02 speed_2.4
+                      1.5309600000e+00 flow_3.6
+                     -7.1094000000e-01 density_3.6
+                      1.5748000000e-01 speed_3.6
+                     -5.2955000000e-01 flow_5.0
+                     -8.7624000000e-01 density_5.0
+                      1.2376000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      2.3573586304e-01 radius
+                      3.8849690118e-01 time_gap
+                      5.5353535504e+00 strength_neighbor
+                      4.3400313081e-02 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 3:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -1.4727300000e+00 flow_2.4
+                     -2.7914500000e+00 density_2.4
+                      1.5568000000e-01 speed_2.4
+                     -2.8719400000e+00 flow_3.6
+                     -2.7562500000e+00 density_3.6
+                      2.7243000000e-01 speed_3.6
+                     -7.4501400000e+00 flow_5.0
+                     -2.0703800000e+00 density_5.0
+                     -3.3810000000e-02 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      1.2914489438e-01 radius
+                      7.1455242443e-01 time_gap
+                      9.6184991380e+00 strength_neighbor
+                      2.1714495957e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 4:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.8910000000e-02 flow_2.4
+                     -1.9206700000e+00 density_2.4
+                      1.3087000000e-01 speed_2.4
+                     -1.3906000000e-01 flow_3.6
+                     -1.6184100000e+00 density_3.6
+                      1.5620000000e-01 speed_3.6
+                     -2.1011000000e+00 flow_5.0
+                     -1.0977500000e+00 density_5.0
+                      2.9840000000e-02 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                      2.3063786812e-01 radius
+                      9.4665404600e-01 time_gap
+                      5.1348816386e+00 strength_neighbor
+                      8.2114526908e-02 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 5:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -3.3899000000e+00 flow_2.4
+                     -3.0019600000e+00 density_2.4
+                     -2.9460000000e-02 speed_2.4
+                     -4.9298400000e+00 flow_3.6
+                     -2.9184900000e+00 density_3.6
+                      5.2340000000e-02 speed_3.6
+                     -9.2615300000e+00 flow_5.0
+                     -2.3541500000e+00 density_5.0
+                     -1.1515000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                      1.5320484128e-01 radius
+                      8.6586235614e-01 time_gap
+                      2.6422158666e+00 strength_neighbor
+                      1.5375810663e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 6:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -1.5330600000e+00 flow_2.4
+                     -3.1716000000e-01 density_2.4
+                     -8.0290000000e-02 speed_2.4
+                     -2.5203100000e+00 flow_3.6
+                     -6.6410000000e-01 density_3.6
+                     -8.4220000000e-02 speed_3.6
+                     -5.2842300000e+00 flow_5.0
+                     -9.4147000000e-01 density_5.0
+                     -1.5273000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                      2.4582628926e-01 radius
+                      1.2919827990e-01 time_gap
+                      8.5417701982e+00 strength_neighbor
+                      2.4569024230e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 7:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.0344000000e-01 flow_2.4
+                     -3.5026100000e+00 density_2.4
+                      5.8922000000e-01 speed_2.4
+                      4.4130000000e-01 flow_3.6
+                     -2.9401600000e+00 density_3.6
+                      8.0267000000e-01 speed_3.6
+                     -8.7542000000e-01 flow_5.0
+                     -2.2838200000e+00 density_5.0
+                      7.5278000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                      1.5645823267e-01 radius
+                      2.9126327357e-01 time_gap
+                      6.0126268201e+00 strength_neighbor
+                      1.1602440017e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 8:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.9150100000e+00 flow_2.4
+                      3.2710000000e-02 density_2.4
+                      1.7714000000e-01 speed_2.4
+                      6.3589300000e+00 flow_3.6
+                     -2.9157000000e-01 density_3.6
+                      3.6297000000e-01 speed_3.6
+                      6.9019700000e+00 flow_5.0
+                     -1.3914000000e-01 density_5.0
+                      3.1739000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                      2.1196844680e-01 radius
+                      9.3279622203e-01 time_gap
+                      8.2569979192e+00 strength_neighbor
+                      2.4325756547e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 9:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -3.0109400000e+00 flow_2.4
+                     -3.2055200000e+00 density_2.4
+                      4.2240000000e-02 speed_2.4
+                     -4.4526400000e+00 flow_3.6
+                     -2.8200100000e+00 density_3.6
+                      5.4710000000e-02 speed_3.6
+                     -7.8025500000e+00 flow_5.0
+                     -2.2779900000e+00 density_5.0
+                     -5.1970000000e-02 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                      2.1877171726e-01 radius
+                      7.6949859187e-01 time_gap
+                      3.2875920133e+00 strength_neighbor
+                      2.9992512640e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 10:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -2.5424800000e+00 flow_2.4
+                     -3.0007100000e+00 density_2.4
+                      7.4100000000e-02 speed_2.4
+                     -3.5277600000e+00 flow_3.6
+                     -2.7146900000e+00 density_3.6
+                      1.6645000000e-01 speed_3.6
+                     -6.3193500000e+00 flow_5.0
+                     -2.1300400000e+00 density_5.0
+                      7.2390000000e-02 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                      1.8915518998e-01 radius
+                      5.6430641763e-01 time_gap
+                      6.5759134979e+00 strength_neighbor
+                      2.1742776653e-02 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 11:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -2.1343600000e+00 flow_2.4
+                     -2.7421800000e+00 density_2.4
+                      4.7550000000e-02 speed_2.4
+                     -4.8961700000e+00 flow_3.6
+                     -3.0406200000e+00 density_3.6
+                     -3.3900000000e-03 speed_3.6
+                     -9.4520300000e+00 flow_5.0
+                     -2.7968500000e+00 density_5.0
+                     -3.2710000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                      1.9356623031e-01 radius
+                      4.9896753276e-01 time_gap
+                      7.6532955724e+00 strength_neighbor
+                      1.8721625199e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 12:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -7.7043000000e-01 flow_2.4
+                     -2.3167100000e+00 density_2.4
+                      1.3822000000e-01 speed_2.4
+                     -8.9301000000e-01 flow_3.6
+                     -2.0377700000e+00 density_3.6
+                      2.3471000000e-01 speed_3.6
+                     -2.7453600000e+00 flow_5.0
+                     -1.6341900000e+00 density_5.0
+                      1.8019000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                      1.4487967996e-01 radius
+                      6.6647855343e-01 time_gap
+                      2.1461794481e+00 strength_neighbor
+                      1.1022519790e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 13:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      7.5520000000e-02 flow_2.4
+                     -4.9440000000e-02 density_2.4
+                     -8.8600000000e-03 speed_2.4
+                     -1.0515600000e+00 flow_3.6
+                     -1.4129700000e+00 density_3.6
+                      6.3270000000e-02 speed_3.6
+                     -4.3122400000e+00 flow_5.0
+                     -1.5566600000e+00 density_5.0
+                     -9.8500000000e-02 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                      1.7996129450e-01 radius
+                      6.2916836776e-01 time_gap
+                      8.9411097337e+00 strength_neighbor
+                      1.4865833902e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 14:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -1.3886000000e+00 flow_2.4
+                     -1.7628800000e+00 density_2.4
+                      1.8680000000e-02 speed_2.4
+                     -1.9030600000e+00 flow_3.6
+                     -1.6940700000e+00 density_3.6
+                      5.5080000000e-02 speed_3.6
+                     -4.4486700000e+00 flow_5.0
+                     -1.2968100000e+00 density_5.0
+                     -5.6070000000e-02 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                      1.2192394082e-01 radius
+                      2.7944925593e-01 time_gap
+                      4.2912426310e+00 strength_neighbor
+                      2.0599336988e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 15:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      8.5134400000e+00 flow_2.4
+                      2.6239000000e-01 density_2.4
+                      3.6305000000e-01 speed_2.4
+                      1.3780210000e+01 flow_3.6
+                      1.0051000000e-01 density_3.6
+                      6.1584000000e-01 speed_3.6
+                      1.7963500000e+01 flow_5.0
+                      5.1402000000e-01 density_5.0
+                      5.7276000000e-01 speed_5.0
+
+
+
+>>>>> Appending 15 points to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+Constructing global approximations with no anchor, 15 DACE samples, and 0 reused points.
+
+<<<<< global_kriging approximation builds completed.
+
+>>>>> Initiating global iteration 1 (acquisition batch 1)
+Beginning Approximate Fn Evaluations...
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.5902377686e-01 radius
+                      5.6111111111e-01 time_gap
+                      8.0887059899e+00 strength_neighbor
+                      1.4361225423e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      2.9227215456e+01
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                      1.5902377686e-01 radius
+                      5.6111111111e-01 time_gap
+                      8.0887059899e+00 strength_neighbor
+                      1.4361225423e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 16:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -1.8670000000e-02 flow_2.4
+                     -9.8417000000e-01 density_2.4
+                      4.3560000000e-02 speed_2.4
+                      1.2493000000e-01 flow_3.6
+                     -1.0040400000e+00 density_3.6
+                      8.5530000000e-02 speed_3.6
+                     -1.8262600000e+00 flow_5.0
+                     -8.4679000000e-01 density_5.0
+                      3.9370000000e-02 speed_5.0
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 2 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.3399862826e-01 radius
+                      8.1364883402e-01 time_gap
+                      3.0187471422e+00 strength_neighbor
+                      2.0314586191e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      1.3700233425e+01
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                      1.3399862826e-01 radius
+                      8.1364883402e-01 time_gap
+                      3.0187471422e+00 strength_neighbor
+                      2.0314586191e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 17:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -3.0741000000e-01 flow_2.4
+                      2.9603000000e-01 density_2.4
+                     -4.4550000000e-02 speed_2.4
+                     -6.1892000000e-01 flow_3.6
+                     -6.4760000000e-02 density_3.6
+                     -6.0100000000e-02 speed_3.6
+                     -2.7042800000e+00 flow_5.0
+                     -1.5402000000e-01 density_5.0
+                     -1.3590000000e-01 speed_5.0
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 3 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3444774679e-01 radius
+                      6.9997713763e-01 time_gap
+                      4.6668698877e+00 strength_neighbor
+                      1.9974597368e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      1.4769347882e+01
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                      1.3444774679e-01 radius
+                      6.9997713763e-01 time_gap
+                      4.6668698877e+00 strength_neighbor
+                      1.9974597368e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 18:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.5169000000e-01 flow_2.4
+                     -3.6035000000e-01 density_2.4
+                      3.0330000000e-02 speed_2.4
+                      4.7443000000e-01 flow_3.6
+                     -4.9828000000e-01 density_3.6
+                      3.2490000000e-02 speed_3.6
+                     -1.3473300000e+00 flow_5.0
+                     -1.8530000000e-01 density_5.0
+                     -8.7620000000e-02 speed_5.0
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 4 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.4300741757e-01 radius
+                      5.5553269319e-01 time_gap
+                      9.7648732409e+00 strength_neighbor
+                      8.2215109485e-02 range_neighbor
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      2.7646899995e-04
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                      1.4300741757e-01 radius
+                      5.5553269319e-01 time_gap
+                      9.7648732409e+00 strength_neighbor
+                      8.2215109485e-02 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 19:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      6.4715000000e-01 flow_2.4
+                      5.6337000000e-01 density_2.4
+                     -2.4880000000e-02 speed_2.4
+                      4.9057000000e-01 flow_3.6
+                      9.5700000000e-03 density_3.6
+                      7.5500000000e-03 speed_3.6
+                     -1.1535500000e+00 flow_5.0
+                     -2.9550000000e-01 density_5.0
+                     -4.4490000000e-02 speed_5.0
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 5 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3444774679e-01 radius
+                      7.5493827160e-01 time_gap
+                      2.8008941726e+00 strength_neighbor
+                      2.3778489051e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      2.3099294351e+00
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                      1.3444774679e-01 radius
+                      7.5493827160e-01 time_gap
+                      2.8008941726e+00 strength_neighbor
+                      2.3778489051e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 20:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.8175000000e-01 flow_2.4
+                     -1.5685000000e-01 density_2.4
+                      6.6000000000e-03 speed_2.4
+                      3.7428000000e-01 flow_3.6
+                     -4.7630000000e-01 density_3.6
+                      4.3770000000e-02 speed_3.6
+                     -1.3969900000e+00 flow_5.0
+                     -3.2133000000e-01 density_5.0
+                     -5.9340000000e-02 speed_5.0
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 6 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.2748640959e-01 radius
+                      8.1117969822e-01 time_gap
+                      2.0871818320e+00 strength_neighbor
+                      2.4815526089e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      1.6437226047e+00
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                      1.2748640959e-01 radius
+                      8.1117969822e-01 time_gap
+                      2.0871818320e+00 strength_neighbor
+                      2.4815526089e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 21:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.7048000000e-01 flow_2.4
+                      2.2668000000e-01 density_2.4
+                     -1.1800000000e-03 speed_2.4
+                      4.3658000000e-01 flow_3.6
+                     -1.7410000000e-01 density_3.6
+                      1.1360000000e-02 speed_3.6
+                     -7.8139000000e-01 flow_5.0
+                     -1.7439000000e-01 density_5.0
+                     -7.5400000000e-02 speed_5.0
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 7 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.2642305543e-01 radius
+                      8.3207590306e-01 time_gap
+                      2.0002032211e+00 strength_neighbor
+                      2.5428644008e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.7614356554e-01
+
+---------------------
+Begin Evaluation   22
+---------------------
+Parameters for evaluation 22:
+                      1.2642305543e-01 radius
+                      8.3207590306e-01 time_gap
+                      2.0002032211e+00 strength_neighbor
+                      2.5428644008e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 22:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      9.2740000000e-02 flow_2.4
+                      4.0911000000e-01 density_2.4
+                     -2.3650000000e-02 speed_2.4
+                      1.0180000000e-01 flow_3.6
+                     -2.0350000000e-02 density_3.6
+                     -9.1700000000e-03 speed_3.6
+                     -1.3139500000e+00 flow_5.0
+                     -3.5620000000e-02 density_5.0
+                     -9.2870000000e-02 speed_5.0
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 8 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.5263704720e-01 radius
+                      5.5553269319e-01 time_gap
+                      9.9997967789e+00 strength_neighbor
+                      9.9499060103e-02 range_neighbor
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.7718082777e-69
+
+---------------------
+Begin Evaluation   23
+---------------------
+Parameters for evaluation 23:
+                      1.5263704720e-01 radius
+                      5.5553269319e-01 time_gap
+                      9.9997967789e+00 strength_neighbor
+                      9.9499060103e-02 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 23:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.4110000000e-02 flow_2.4
+                     -1.7740000000e-01 density_2.4
+                     -1.6500000000e-02 speed_2.4
+                      5.0390000000e-02 flow_3.6
+                     -5.4186000000e-01 density_3.6
+                      2.8470000000e-02 speed_3.6
+                     -2.1475300000e+00 flow_5.0
+                     -4.7281000000e-01 density_5.0
+                     -5.4010000000e-02 speed_5.0
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 9 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.8500000000e-01 radius
+                      5.5000000000e-01 time_gap
+                      6.0000000000e+00 strength_neighbor
+                      1.6000000000e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      0.0000000000e+00
+
+---------------------
+Begin Evaluation   24
+---------------------
+Parameters for evaluation 24:
+                      1.8500000000e-01 radius
+                      5.5000000000e-01 time_gap
+                      6.0000000000e+00 strength_neighbor
+                      1.6000000000e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 24:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                     -7.8170000000e-01 flow_2.4
+                     -1.7143800000e+00 density_2.4
+                      6.4150000000e-02 speed_2.4
+                     -1.1184300000e+00 flow_3.6
+                     -1.6512600000e+00 density_3.6
+                      1.1318000000e-01 speed_3.6
+                     -3.0896100000e+00 flow_5.0
+                     -1.3389900000e+00 density_5.0
+                      1.0130000000e-01 speed_5.0
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+Stopping criteria not met: distConvergenceCntr (0) < distConvergenceLimit (1)
+Stopping criteria met:     eifConvergenceCntr (2) >= eifConvergenceLimit (2)
+Stopping criteria not met: globalIterCount (9) < maxIterations (60)
+<<<<< Function evaluation summary: 24 total (24 new, 0 duplicate)
+<<<<< Best parameters          =
+                      1.2748640959e-01 radius
+                      8.1117969822e-01 time_gap
+                      2.0871818320e+00 strength_neighbor
+                      2.4815526089e-01 range_neighbor
+                      1.5500000000e+00 desired_speed
+<<<<< Best residual terms =
+                      2.7048000000e-01
+                      2.2668000000e-01
+                     -1.1800000000e-03
+                      4.3658000000e-01
+                     -1.7410000000e-01
+                      1.1360000000e-02
+                     -7.8139000000e-01
+                     -1.7439000000e-01
+                     -7.5400000000e-02
+<<<<< Best residual norm =  9.9611945338e-01; 0.5 * norm^2 =  4.9612698270e-01
+<<<<< Best evaluation ID: 21
+
+
+<<<<< Iterator efficient_global completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =    6.61315 [parent =    6.61315, child =     -6e-06]
+  Total wall clock =    203.983

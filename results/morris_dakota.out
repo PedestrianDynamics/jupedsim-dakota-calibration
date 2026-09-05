@@ -1,0 +1,2562 @@
+Dakota version 6.24 released May 15 2026.
+Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
+Running MPI Dakota executable in serial mode.
+Start time: Sat Sep  5 12:18:51 2026
+
+------------------
+Begin Dakota input
+------------------
+# Morris one-at-a-time screening of the 7 CFSM parameters on the Hermes
+# bottleneck observables (flow, density, speed at b = 2.4, 3.6, 5.0 m).
+# samples must be a multiple of (n_vars + 1) = 8.
+# Run:  HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'morris_samples.dat'
+
+method
+  psuade_moat
+    samples = 80
+    partitions = 3
+    seed = 11
+
+variables
+  continuous_design = 7
+    descriptors  'desired_speed' 'radius' 'time_gap' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
+    lower_bounds  0.8   0.12  0.10   2.0   0.02   1.0   0.01
+    upper_bounds  1.8   0.25  1.20  15.0   0.50  10.0   0.20
+
+interface
+  fork
+    analysis_drivers = 'python3 driver.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py' '../observables.py' '../scenario.py' '../exp_observables.json'
+  asynchronous evaluation_concurrency = 3
+
+responses
+  response_functions = 9
+    descriptors 'flow_2.4' 'density_2.4' 'speed_2.4' 'flow_3.6' 'density_3.6' 'speed_3.6' 'flow_5.0' 'density_5.0' 'speed_5.0'
+  no_gradients
+  no_hessians
+
+----------------
+End Dakota input
+----------------
+
+Using Dakota parser: standard
+Writing new restart file 'dakota.rst'.
+
+>>>>> Executing environment.
+
+>>>>> Running psuade_moat iterator.
+
+PSUADE DACE method = 2568 Samples = 80 Seed (user-specified) = 11
+            Partitions = 3 (Levels = 4)
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 1 added to queue)
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 2 added to queue)
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 3 added to queue)
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 4 added to queue)
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 5 added to queue)
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 6 added to queue)
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 7 added to queue)
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 8 added to queue)
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                      1.8000000000e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 9 added to queue)
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 10 added to queue)
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 11 added to queue)
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 12 added to queue)
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 13 added to queue)
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                      1.1333333333e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 14 added to queue)
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                      1.1333333333e+00 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 15 added to queue)
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                      1.1333333333e+00 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 16 added to queue)
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                      1.4666666667e+00 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 17 added to queue)
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                      1.4666666667e+00 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 18 added to queue)
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 19 added to queue)
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 20 added to queue)
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 21 added to queue)
+
+---------------------
+Begin Evaluation   22
+---------------------
+Parameters for evaluation 22:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 22 added to queue)
+
+---------------------
+Begin Evaluation   23
+---------------------
+Parameters for evaluation 23:
+                      8.0000000000e-01 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 23 added to queue)
+
+---------------------
+Begin Evaluation   24
+---------------------
+Parameters for evaluation 24:
+                      8.0000000000e-01 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 24 added to queue)
+
+---------------------
+Begin Evaluation   25
+---------------------
+Parameters for evaluation 25:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 25 added to queue)
+
+---------------------
+Begin Evaluation   26
+---------------------
+Parameters for evaluation 26:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 26 added to queue)
+
+---------------------
+Begin Evaluation   27
+---------------------
+Parameters for evaluation 27:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 27 added to queue)
+
+---------------------
+Begin Evaluation   28
+---------------------
+Parameters for evaluation 28:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 28 added to queue)
+
+---------------------
+Begin Evaluation   29
+---------------------
+Parameters for evaluation 29:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 29 added to queue)
+
+---------------------
+Begin Evaluation   30
+---------------------
+Parameters for evaluation 30:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 30 added to queue)
+
+---------------------
+Begin Evaluation   31
+---------------------
+Parameters for evaluation 31:
+                      1.1333333333e+00 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 31 added to queue)
+
+---------------------
+Begin Evaluation   32
+---------------------
+Parameters for evaluation 32:
+                      1.1333333333e+00 desired_speed
+                      1.6333333333e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 32 added to queue)
+
+---------------------
+Begin Evaluation   33
+---------------------
+Parameters for evaluation 33:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 33 added to queue)
+
+---------------------
+Begin Evaluation   34
+---------------------
+Parameters for evaluation 34:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 34 added to queue)
+
+---------------------
+Begin Evaluation   35
+---------------------
+Parameters for evaluation 35:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 35 added to queue)
+
+---------------------
+Begin Evaluation   36
+---------------------
+Parameters for evaluation 36:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 36 added to queue)
+
+---------------------
+Begin Evaluation   37
+---------------------
+Parameters for evaluation 37:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 37 added to queue)
+
+---------------------
+Begin Evaluation   38
+---------------------
+Parameters for evaluation 38:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 38 added to queue)
+
+---------------------
+Begin Evaluation   39
+---------------------
+Parameters for evaluation 39:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 39 added to queue)
+
+---------------------
+Begin Evaluation   40
+---------------------
+Parameters for evaluation 40:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 40 added to queue)
+
+---------------------
+Begin Evaluation   41
+---------------------
+Parameters for evaluation 41:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 41 added to queue)
+
+---------------------
+Begin Evaluation   42
+---------------------
+Parameters for evaluation 42:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 42 added to queue)
+
+---------------------
+Begin Evaluation   43
+---------------------
+Parameters for evaluation 43:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 43 added to queue)
+
+---------------------
+Begin Evaluation   44
+---------------------
+Parameters for evaluation 44:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 44 added to queue)
+
+---------------------
+Begin Evaluation   45
+---------------------
+Parameters for evaluation 45:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 45 added to queue)
+
+---------------------
+Begin Evaluation   46
+---------------------
+Parameters for evaluation 46:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 46 added to queue)
+
+---------------------
+Begin Evaluation   47
+---------------------
+Parameters for evaluation 47:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 47 added to queue)
+
+---------------------
+Begin Evaluation   48
+---------------------
+Parameters for evaluation 48:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 48 added to queue)
+
+---------------------
+Begin Evaluation   49
+---------------------
+Parameters for evaluation 49:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 49 added to queue)
+
+---------------------
+Begin Evaluation   50
+---------------------
+Parameters for evaluation 50:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 50 added to queue)
+
+---------------------
+Begin Evaluation   51
+---------------------
+Parameters for evaluation 51:
+                      8.0000000000e-01 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 51 added to queue)
+
+---------------------
+Begin Evaluation   52
+---------------------
+Parameters for evaluation 52:
+                      8.0000000000e-01 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 52 added to queue)
+
+---------------------
+Begin Evaluation   53
+---------------------
+Parameters for evaluation 53:
+                      8.0000000000e-01 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 53 added to queue)
+
+---------------------
+Begin Evaluation   54
+---------------------
+Parameters for evaluation 54:
+                      1.4666666667e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 54 added to queue)
+
+---------------------
+Begin Evaluation   55
+---------------------
+Parameters for evaluation 55:
+                      1.4666666667e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 55 added to queue)
+
+---------------------
+Begin Evaluation   56
+---------------------
+Parameters for evaluation 56:
+                      1.4666666667e+00 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 56 added to queue)
+
+---------------------
+Begin Evaluation   57
+---------------------
+Parameters for evaluation 57:
+                      1.1333333333e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 57 added to queue)
+
+---------------------
+Begin Evaluation   58
+---------------------
+Parameters for evaluation 58:
+                      1.1333333333e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 58 added to queue)
+
+---------------------
+Begin Evaluation   59
+---------------------
+Parameters for evaluation 59:
+                      1.1333333333e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 59 added to queue)
+
+---------------------
+Begin Evaluation   60
+---------------------
+Parameters for evaluation 60:
+                      1.8000000000e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 60 added to queue)
+
+---------------------
+Begin Evaluation   61
+---------------------
+Parameters for evaluation 61:
+                      1.8000000000e+00 desired_speed
+                      1.6333333333e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 61 added to queue)
+
+---------------------
+Begin Evaluation   62
+---------------------
+Parameters for evaluation 62:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 62 added to queue)
+
+---------------------
+Begin Evaluation   63
+---------------------
+Parameters for evaluation 63:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+Duplication detected: analysis_drivers not invoked.
+
+---------------------
+Begin Evaluation   64
+---------------------
+Parameters for evaluation 64:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 64 added to queue)
+
+---------------------
+Begin Evaluation   65
+---------------------
+Parameters for evaluation 65:
+                      1.4666666667e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+(Asynchronous job 65 added to queue)
+
+---------------------
+Begin Evaluation   66
+---------------------
+Parameters for evaluation 66:
+                      1.4666666667e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 66 added to queue)
+
+---------------------
+Begin Evaluation   67
+---------------------
+Parameters for evaluation 67:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 67 added to queue)
+
+---------------------
+Begin Evaluation   68
+---------------------
+Parameters for evaluation 68:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 68 added to queue)
+
+---------------------
+Begin Evaluation   69
+---------------------
+Parameters for evaluation 69:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 69 added to queue)
+
+---------------------
+Begin Evaluation   70
+---------------------
+Parameters for evaluation 70:
+                      8.0000000000e-01 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 70 added to queue)
+
+---------------------
+Begin Evaluation   71
+---------------------
+Parameters for evaluation 71:
+                      8.0000000000e-01 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 71 added to queue)
+
+---------------------
+Begin Evaluation   72
+---------------------
+Parameters for evaluation 72:
+                      8.0000000000e-01 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+(Asynchronous job 72 added to queue)
+
+---------------------
+Begin Evaluation   73
+---------------------
+Parameters for evaluation 73:
+                      1.8000000000e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 73 added to queue)
+
+---------------------
+Begin Evaluation   74
+---------------------
+Parameters for evaluation 74:
+                      1.8000000000e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 74 added to queue)
+
+---------------------
+Begin Evaluation   75
+---------------------
+Parameters for evaluation 75:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 75 added to queue)
+
+---------------------
+Begin Evaluation   76
+---------------------
+Parameters for evaluation 76:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 76 added to queue)
+
+---------------------
+Begin Evaluation   77
+---------------------
+Parameters for evaluation 77:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 77 added to queue)
+
+---------------------
+Begin Evaluation   78
+---------------------
+Parameters for evaluation 78:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+(Asynchronous job 78 added to queue)
+
+---------------------
+Begin Evaluation   79
+---------------------
+Parameters for evaluation 79:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 79 added to queue)
+
+---------------------
+Begin Evaluation   80
+---------------------
+Parameters for evaluation 80:
+                      1.1333333333e+00 desired_speed
+                      2.5000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+(Asynchronous job 80 added to queue)
+
+Blocking synchronize of 79 asynchronous evaluations, 0 cached evaluations, and 1 duplicates
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 1
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 2
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 3
+nonblocking fork: python3 driver.py params.in results.out
+Second pass: scheduling 76 remaining local asynchronous jobs
+Waiting on completed jobs
+Evaluation 3 has completed
+Initiating evaluation 4
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 2 has completed
+Initiating evaluation 5
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 1 has completed
+Initiating evaluation 6
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 6 has completed
+Initiating evaluation 7
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 4 has completed
+Initiating evaluation 8
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 7 has completed
+Initiating evaluation 9
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 5 has completed
+Initiating evaluation 10
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 8 has completed
+Initiating evaluation 11
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 9 has completed
+Initiating evaluation 12
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 12 has completed
+Initiating evaluation 13
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 13 has completed
+Initiating evaluation 14
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 10 has completed
+Initiating evaluation 15
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 14 has completed
+Initiating evaluation 16
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 11 has completed
+Initiating evaluation 17
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 15 has completed
+Initiating evaluation 18
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 16 has completed
+Initiating evaluation 19
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 17 has completed
+Initiating evaluation 20
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 18 has completed
+Initiating evaluation 21
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 19 has completed
+Initiating evaluation 22
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 21 has completed
+Initiating evaluation 23
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 20 has completed
+Initiating evaluation 24
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 22 has completed
+Initiating evaluation 25
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 24 has completed
+Initiating evaluation 26
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 25 has completed
+Initiating evaluation 27
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 27 has completed
+Initiating evaluation 28
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 28 has completed
+Initiating evaluation 29
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 29 has completed
+Initiating evaluation 30
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 30 has completed
+Initiating evaluation 31
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 26 has completed
+Initiating evaluation 32
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 31 has completed
+Initiating evaluation 33
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 32 has completed
+Initiating evaluation 34
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 23 has completed
+Initiating evaluation 35
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 33 has completed
+Initiating evaluation 36
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 34 has completed
+Initiating evaluation 37
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 36 has completed
+Initiating evaluation 38
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 35 has completed
+Initiating evaluation 39
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 37 has completed
+Initiating evaluation 40
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 40 has completed
+Initiating evaluation 41
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 38 has completed
+Initiating evaluation 42
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 41 has completed
+Initiating evaluation 43
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 42 has completed
+Initiating evaluation 44
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 43 has completed
+Initiating evaluation 45
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 44 has completed
+Initiating evaluation 46
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 39 has completed
+Initiating evaluation 47
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 45 has completed
+Initiating evaluation 48
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 46 has completed
+Initiating evaluation 49
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 48 has completed
+Initiating evaluation 50
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 47 has completed
+Initiating evaluation 51
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 49 has completed
+Initiating evaluation 52
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 50 has completed
+Initiating evaluation 53
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 51 has completed
+Initiating evaluation 54
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 52 has completed
+Initiating evaluation 55
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 54 has completed
+Initiating evaluation 56
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 53 has completed
+Initiating evaluation 57
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 55 has completed
+Initiating evaluation 58
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 56 has completed
+Initiating evaluation 59
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 59 has completed
+Initiating evaluation 60
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 60 has completed
+Initiating evaluation 61
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 61 has completed
+Initiating evaluation 62
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 58 has completed
+Initiating evaluation 64
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 57 has completed
+Initiating evaluation 65
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 62 has completed
+Initiating evaluation 66
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 64 has completed
+Initiating evaluation 67
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 65 has completed
+Initiating evaluation 68
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 66 has completed
+Initiating evaluation 69
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 67 has completed
+Initiating evaluation 70
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 68 has completed
+Initiating evaluation 71
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 69 has completed
+Initiating evaluation 72
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 70 has completed
+Initiating evaluation 73
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 71 has completed
+Initiating evaluation 74
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 73 has completed
+Initiating evaluation 75
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 74 has completed
+Initiating evaluation 76
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 72 has completed
+Initiating evaluation 77
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 75 has completed
+Initiating evaluation 78
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 77 has completed
+Initiating evaluation 79
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 76 has completed
+Initiating evaluation 80
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 78 has completed
+Waiting on completed jobs
+Evaluation 79 has completed
+Waiting on completed jobs
+Evaluation 80 has completed
+
+Active response data for evaluation 1:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.4204700000e+00 flow_2.4
+                      1.3630300000e+00 density_2.4
+                      5.5176000000e-01 speed_2.4
+                      3.6788000000e+00 flow_3.6
+                      1.2330600000e+00 density_3.6
+                      7.7520000000e-01 speed_3.6
+                      5.0724600000e+00 flow_5.0
+                      1.1536400000e+00 density_5.0
+                      8.9206000000e-01 speed_5.0
+
+
+Active response data for evaluation 2:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.0762500000e+00 flow_2.4
+                      2.0913300000e+00 density_2.4
+                      4.3358000000e-01 speed_2.4
+                      4.7886800000e+00 flow_3.6
+                      1.8119800000e+00 density_3.6
+                      6.5742000000e-01 speed_3.6
+                      6.6762000000e+00 flow_5.0
+                      1.6375000000e+00 density_5.0
+                      8.2901000000e-01 speed_5.0
+
+
+Active response data for evaluation 3:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.1979300000e+00 flow_2.4
+                      2.7088600000e+00 density_2.4
+                      5.1758000000e-01 speed_2.4
+                      7.5026800000e+00 flow_3.6
+                      2.4636000000e+00 density_3.6
+                      6.9459000000e-01 speed_3.6
+                      9.9433800000e+00 flow_5.0
+                      2.3165100000e+00 density_5.0
+                      7.5355000000e-01 speed_5.0
+
+
+Active response data for evaluation 4:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      7.0814400000e+00 flow_2.4
+                      2.6750500000e+00 density_2.4
+                      6.6482000000e-01 speed_2.4
+                      1.0205580000e+01 flow_3.6
+                      2.4281800000e+00 density_3.6
+                      9.2077000000e-01 speed_3.6
+                      1.3972060000e+01 flow_5.0
+                      2.2979700000e+00 density_5.0
+                      1.0250900000e+00 speed_5.0
+
+
+Active response data for evaluation 5:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      7.0387100000e+00 flow_2.4
+                      2.6035400000e+00 density_2.4
+                      7.2029000000e-01 speed_2.4
+                      1.0279000000e+01 flow_3.6
+                      2.4356400000e+00 density_3.6
+                      9.1019000000e-01 speed_3.6
+                      1.3716810000e+01 flow_5.0
+                      2.3130300000e+00 density_5.0
+                      1.0141300000e+00 speed_5.0
+
+
+Active response data for evaluation 6:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 7:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 8:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 9:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.2497700000e+00 flow_2.4
+                      1.4931900000e+00 density_2.4
+                      6.1110000000e-01 speed_2.4
+                      4.6760200000e+00 flow_3.6
+                      1.3361600000e+00 density_3.6
+                      7.8920000000e-01 speed_3.6
+                      6.2893100000e+00 flow_5.0
+                      1.2596100000e+00 density_5.0
+                      8.7274000000e-01 speed_5.0
+
+
+Active response data for evaluation 10:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.1328500000e+00 flow_2.4
+                      1.2537500000e+00 density_2.4
+                      5.1553000000e-01 speed_2.4
+                      3.2295300000e+00 flow_3.6
+                      1.1109500000e+00 density_3.6
+                      6.9386000000e-01 speed_3.6
+                      4.5574200000e+00 flow_5.0
+                      1.0134900000e+00 density_5.0
+                      8.9628000000e-01 speed_5.0
+
+
+Active response data for evaluation 11:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.7976400000e+00 flow_2.4
+                      1.2709000000e+00 density_2.4
+                      4.6813000000e-01 speed_2.4
+                      2.7844100000e+00 flow_3.6
+                      1.1972900000e+00 density_3.6
+                      6.2520000000e-01 speed_3.6
+                      4.1261400000e+00 flow_5.0
+                      1.0405100000e+00 density_5.0
+                      8.0981000000e-01 speed_5.0
+
+
+Active response data for evaluation 12:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 13:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 14:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 15:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 16:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 17:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.8503900000e+00 flow_2.4
+                      5.9649900000e+00 density_2.4
+                      1.8028000000e-01 speed_2.4
+                      4.0299400000e+00 flow_3.6
+                      2.6248000000e+00 density_3.6
+                      2.7156000000e-01 speed_3.6
+                      4.5307400000e+00 flow_5.0
+                      1.1097100000e+00 density_5.0
+                      2.3015000000e-01 speed_5.0
+
+
+Active response data for evaluation 18:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.2468300000e+00 flow_2.4
+                      3.4097000000e+00 density_2.4
+                      2.0096000000e-01 speed_2.4
+                      2.5035800000e+00 flow_3.6
+                      1.0815800000e+00 density_3.6
+                      3.3187000000e-01 speed_3.6
+                      2.8044900000e+00 flow_5.0
+                      5.0311000000e-01 density_5.0
+                      7.7880000000e-02 speed_5.0
+
+
+Active response data for evaluation 19:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.0585200000e+00 flow_2.4
+                      3.5849700000e+00 density_2.4
+                      1.6397000000e-01 speed_2.4
+                      2.3031200000e+00 flow_3.6
+                      1.1593000000e+00 density_3.6
+                      3.1696000000e-01 speed_3.6
+                      2.6380300000e+00 flow_5.0
+                      5.5508000000e-01 density_5.0
+                      6.2380000000e-02 speed_5.0
+
+
+Active response data for evaluation 20:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3870400000e+00 flow_2.4
+                      3.3077700000e+00 density_2.4
+                      1.3976000000e-01 speed_2.4
+                      2.5704800000e+00 flow_3.6
+                      6.3733000000e-01 density_3.6
+                      1.7439000000e-01 speed_3.6
+                      2.9972200000e+00 flow_5.0
+                      5.8317000000e-01 density_5.0
+                      6.8390000000e-02 speed_5.0
+
+
+Active response data for evaluation 21:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.0866200000e+01 flow_2.4
+                      4.7263600000e+00 density_2.4
+                      4.7719000000e-01 speed_2.4
+                      1.3145540000e+01 flow_3.6
+                      1.8880400000e+00 density_3.6
+                      6.6851000000e-01 speed_3.6
+                      1.6666670000e+01 flow_5.0
+                      1.7857100000e+00 density_5.0
+                      3.6430000000e-01 speed_5.0
+
+
+Active response data for evaluation 22:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      8.6134500000e+00 flow_2.4
+                      4.1299800000e+00 density_2.4
+                      4.3024000000e-01 speed_2.4
+                      1.3526570000e+01 flow_3.6
+                      1.9601600000e+00 density_3.6
+                      6.8017000000e-01 speed_3.6
+                      1.7094020000e+01 flow_5.0
+                      1.8359000000e+00 density_5.0
+                      3.7071000000e-01 speed_5.0
+
+
+Active response data for evaluation 23:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.0170800000e+00 flow_2.4
+                      3.3578400000e+00 density_2.4
+                      2.2883000000e-01 speed_2.4
+                      5.7542100000e+00 flow_3.6
+                      1.5121400000e+00 density_3.6
+                      6.2156000000e-01 speed_3.6
+                      7.3055000000e+00 flow_5.0
+                      2.0853600000e+00 density_5.0
+                      3.2362000000e-01 speed_5.0
+
+
+Active response data for evaluation 24:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.4233800000e+00 flow_2.4
+                      3.5536700000e+00 density_2.4
+                      4.3404000000e-01 speed_2.4
+                      7.7648400000e+00 flow_3.6
+                      3.3154400000e+00 density_3.6
+                      6.5105000000e-01 speed_3.6
+                      1.2726450000e+01 flow_5.0
+                      3.2530000000e+00 density_5.0
+                      7.4904000000e-01 speed_5.0
+
+
+Active response data for evaluation 25:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.1194200000e+00 flow_2.4
+                      1.2817300000e+00 density_2.4
+                      4.9250000000e-01 speed_2.4
+                      3.3050000000e+00 flow_3.6
+                      1.1094700000e+00 density_3.6
+                      7.0622000000e-01 speed_3.6
+                      4.5381100000e+00 flow_5.0
+                      1.0079900000e+00 density_5.0
+                      8.6270000000e-01 speed_5.0
+
+
+Active response data for evaluation 26:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.9666100000e+00 flow_2.4
+                      8.8983000000e-01 density_2.4
+                      7.0509000000e-01 speed_2.4
+                      2.8753300000e+00 flow_3.6
+                      8.2072000000e-01 density_3.6
+                      8.7272000000e-01 speed_3.6
+                      3.9648800000e+00 flow_5.0
+                      7.5900000000e-01 density_5.0
+                      1.0054600000e+00 speed_5.0
+
+
+Active response data for evaluation 27:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 28:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 29:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 30:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 31:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 32:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 33:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.8098960000e+01 flow_2.4
+                      1.0539880000e+01 density_2.4
+                      5.0642000000e-01 speed_2.4
+                      2.5179210000e+01 flow_3.6
+                      5.0935800000e+00 density_3.6
+                      1.0283100000e+00 speed_3.6
+                      3.0194810000e+01 flow_5.0
+                      2.2327200000e+00 density_5.0
+                      1.3633300000e+00 speed_5.0
+
+
+Active response data for evaluation 34:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.4814810000e+01 flow_2.4
+                      1.1346070000e+01 density_2.4
+                      3.8925000000e-01 speed_2.4
+                      2.3809520000e+01 flow_3.6
+                      6.2898800000e+00 density_3.6
+                      8.2436000000e-01 speed_3.6
+                      2.7876980000e+01 flow_5.0
+                      3.2227400000e+00 density_5.0
+                      9.9513000000e-01 speed_5.0
+
+
+Active response data for evaluation 35:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.0426010000e+01 flow_2.4
+                      5.0950800000e+00 density_2.4
+                      5.8377000000e-01 speed_2.4
+                      1.2046630000e+01 flow_3.6
+                      2.1682400000e+00 density_3.6
+                      8.5676000000e-01 speed_3.6
+                      1.4629050000e+01 flow_5.0
+                      1.0909600000e+00 density_5.0
+                      3.4693000000e-01 speed_5.0
+
+
+Active response data for evaluation 36:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.1137630000e+01 flow_2.4
+                      3.9532300000e+00 density_2.4
+                      5.8348000000e-01 speed_2.4
+                      1.2444440000e+01 flow_3.6
+                      1.2267300000e+00 density_3.6
+                      6.1377000000e-01 speed_3.6
+                      1.8750000000e+01 flow_5.0
+                      1.4013200000e+00 density_5.0
+                      4.0500000000e-01 speed_5.0
+
+
+Active response data for evaluation 37:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.1784510000e+01 flow_2.4
+                      4.1404300000e+00 density_2.4
+                      5.8153000000e-01 speed_2.4
+                      1.3930350000e+01 flow_3.6
+                      1.4243200000e+00 density_3.6
+                      7.9987000000e-01 speed_3.6
+                      1.7415730000e+01 flow_5.0
+                      1.3013100000e+00 density_5.0
+                      3.7594000000e-01 speed_5.0
+
+
+Active response data for evaluation 38:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.2258300000e+00 flow_2.4
+                      2.2834800000e+00 density_2.4
+                      5.6850000000e-01 speed_2.4
+                      6.6499700000e+00 flow_3.6
+                      1.8345200000e+00 density_3.6
+                      6.3360000000e-01 speed_3.6
+                      6.6287900000e+00 flow_5.0
+                      1.2368300000e+00 density_5.0
+                      2.7457000000e-01 speed_5.0
+
+
+Active response data for evaluation 39:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.9485000000e+00 flow_2.4
+                      1.4235800000e+00 density_2.4
+                      2.9315000000e-01 speed_2.4
+                      2.2965900000e+00 flow_3.6
+                      4.4849000000e-01 density_3.6
+                      3.3827000000e-01 speed_3.6
+                      2.1164000000e+00 flow_5.0
+                      6.2192000000e-01 density_5.0
+                      1.4370000000e-01 speed_5.0
+
+
+Active response data for evaluation 40:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.3285800000e+00 flow_2.4
+                      2.6925700000e+00 density_2.4
+                      3.9624000000e-01 speed_2.4
+                      4.6453500000e+00 flow_3.6
+                      2.1965000000e+00 density_3.6
+                      6.1880000000e-01 speed_3.6
+                      6.7437400000e+00 flow_5.0
+                      2.2469600000e+00 density_5.0
+                      5.9046000000e-01 speed_5.0
+
+
+Active response data for evaluation 41:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 42:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 43:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 44:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 45:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 46:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.1914900000e+00 flow_2.4
+                      1.1180900000e+00 density_2.4
+                      7.5688000000e-01 speed_2.4
+                      4.5977000000e+00 flow_3.6
+                      1.0028800000e+00 density_3.6
+                      1.0309200000e+00 speed_3.6
+                      6.1184200000e+00 flow_5.0
+                      9.4589000000e-01 density_5.0
+                      1.1514200000e+00 speed_5.0
+
+
+Active response data for evaluation 47:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.2813500000e+00 flow_2.4
+                      3.7270900000e+00 density_2.4
+                      3.1341000000e-01 speed_2.4
+                      5.9691900000e+00 flow_3.6
+                      3.2873200000e+00 density_3.6
+                      3.8991000000e-01 speed_3.6
+                      7.7390800000e+00 flow_5.0
+                      2.9887100000e+00 density_5.0
+                      4.3754000000e-01 speed_5.0
+
+
+Active response data for evaluation 48:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      8.4563300000e+00 flow_2.4
+                      3.7546000000e+00 density_2.4
+                      6.2680000000e-01 speed_2.4
+                      1.2444440000e+01 flow_3.6
+                      3.3895300000e+00 density_3.6
+                      8.1903000000e-01 speed_3.6
+                      1.7156860000e+01 flow_5.0
+                      3.1161700000e+00 density_5.0
+                      9.3739000000e-01 speed_5.0
+
+
+Active response data for evaluation 49:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.4767930000e+01 flow_2.4
+                      1.1319290000e+01 density_2.4
+                      3.6026000000e-01 speed_2.4
+                      2.1933960000e+01 flow_3.6
+                      7.2367500000e+00 density_3.6
+                      6.3011000000e-01 speed_3.6
+                      2.6974950000e+01 flow_5.0
+                      4.1964300000e+00 density_5.0
+                      7.5484000000e-01 speed_5.0
+
+
+Active response data for evaluation 50:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.7475120000e+01 flow_2.4
+                      1.0558280000e+01 density_2.4
+                      4.4020000000e-01 speed_2.4
+                      2.2875820000e+01 flow_3.6
+                      6.4364100000e+00 density_3.6
+                      6.8343000000e-01 speed_3.6
+                      2.8484850000e+01 flow_5.0
+                      3.8339100000e+00 density_5.0
+                      7.5292000000e-01 speed_5.0
+
+
+Active response data for evaluation 51:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      6.2584100000e+00 flow_2.4
+                      4.9424000000e+00 density_2.4
+                      3.5845000000e-01 speed_2.4
+                      9.5824800000e+00 flow_3.6
+                      4.4910000000e+00 density_3.6
+                      5.0558000000e-01 speed_3.6
+                      1.2433160000e+01 flow_5.0
+                      3.9842900000e+00 density_5.0
+                      5.5918000000e-01 speed_5.0
+
+
+Active response data for evaluation 52:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.2222200000e+00 flow_2.4
+                      2.7320800000e+00 density_2.4
+                      4.2352000000e-01 speed_2.4
+                      6.0028200000e+00 flow_3.6
+                      1.9668000000e+00 density_3.6
+                      5.5774000000e-01 speed_3.6
+                      7.0600100000e+00 flow_5.0
+                      1.5642500000e+00 density_5.0
+                      3.1526000000e-01 speed_5.0
+
+
+Active response data for evaluation 53:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.5454500000e+00 flow_2.4
+                      2.8922700000e+00 density_2.4
+                      4.4539000000e-01 speed_2.4
+                      6.1543600000e+00 flow_3.6
+                      2.5188500000e+00 density_3.6
+                      5.6825000000e-01 speed_3.6
+                      6.9338400000e+00 flow_5.0
+                      1.9578200000e+00 density_5.0
+                      3.3711000000e-01 speed_5.0
+
+
+Active response data for evaluation 54:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.4823200000e+00 flow_2.4
+                      2.0428800000e+00 density_2.4
+                      5.5980000000e-01 speed_2.4
+                      7.5559700000e+00 flow_3.6
+                      1.7571200000e+00 density_3.6
+                      7.4798000000e-01 speed_3.6
+                      7.7629400000e+00 flow_5.0
+                      9.9583000000e-01 density_5.0
+                      4.3224000000e-01 speed_5.0
+
+
+Active response data for evaluation 55:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      8.2595900000e+00 flow_2.4
+                      3.5108500000e+00 density_2.4
+                      8.0614000000e-01 speed_2.4
+                      1.4675050000e+01 flow_3.6
+                      3.1851800000e+00 density_3.6
+                      1.1825400000e+00 speed_3.6
+                      2.1177370000e+01 flow_5.0
+                      3.1319300000e+00 density_5.0
+                      1.3444800000e+00 speed_5.0
+
+
+Active response data for evaluation 56:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.4748100000e+00 flow_2.4
+                      2.7161700000e+00 density_2.4
+                      3.8009000000e-01 speed_2.4
+                      5.1769100000e+00 flow_3.6
+                      2.2351300000e+00 density_3.6
+                      6.1253000000e-01 speed_3.6
+                      7.1759300000e+00 flow_5.0
+                      2.1046100000e+00 density_5.0
+                      6.0964000000e-01 speed_5.0
+
+
+Active response data for evaluation 57:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3403500000e+00 flow_2.4
+                      4.3735200000e+00 density_2.4
+                      1.6267000000e-01 speed_2.4
+                      3.6949100000e+00 flow_3.6
+                      3.7793900000e+00 density_3.6
+                      2.3707000000e-01 speed_3.6
+                      5.2306000000e+00 flow_5.0
+                      3.2445800000e+00 density_5.0
+                      3.0259000000e-01 speed_5.0
+
+
+Active response data for evaluation 58:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3450600000e+00 flow_2.4
+                      2.9915000000e+00 density_2.4
+                      2.4509000000e-01 speed_2.4
+                      3.7214200000e+00 flow_3.6
+                      2.7428900000e+00 density_3.6
+                      3.1531000000e-01 speed_3.6
+                      5.0946100000e+00 flow_5.0
+                      2.5155800000e+00 density_5.0
+                      3.7022000000e-01 speed_5.0
+
+
+Active response data for evaluation 59:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 60:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 61:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 62:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 63:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 64:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 65:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+Active response data for evaluation 66:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.7672960000e+01 flow_2.4
+                      4.7999500000e+00 density_2.4
+                      8.3903000000e-01 speed_2.4
+                      2.5977650000e+01 flow_3.6
+                      4.3551600000e+00 density_3.6
+                      1.1623100000e+00 speed_3.6
+                      3.4595960000e+01 flow_5.0
+                      4.0547800000e+00 density_5.0
+                      1.3087300000e+00 speed_5.0
+
+
+Active response data for evaluation 67:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      9.8039200000e+00 flow_2.4
+                      4.9475900000e+00 density_2.4
+                      4.7581000000e-01 speed_2.4
+                      1.5005360000e+01 flow_3.6
+                      4.3704200000e+00 density_3.6
+                      6.5428000000e-01 speed_3.6
+                      1.9858160000e+01 flow_5.0
+                      4.1321100000e+00 density_5.0
+                      7.4321000000e-01 speed_5.0
+
+
+Active response data for evaluation 68:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.7259700000e+00 flow_2.4
+                      5.0065700000e+00 density_2.4
+                      3.2838000000e-01 speed_2.4
+                      8.7064700000e+00 flow_3.6
+                      4.3721700000e+00 density_3.6
+                      4.5700000000e-01 speed_3.6
+                      1.1754830000e+01 flow_5.0
+                      3.8060800000e+00 density_5.0
+                      5.5211000000e-01 speed_5.0
+
+
+Active response data for evaluation 69:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3712700000e+00 flow_2.4
+                      3.1930600000e+00 density_2.4
+                      1.4135000000e-01 speed_2.4
+                      2.7580100000e+00 flow_3.6
+                      7.0910000000e-01 density_3.6
+                      1.6765000000e-01 speed_3.6
+                      3.0693100000e+00 flow_5.0
+                      5.8943000000e-01 density_5.0
+                      7.0800000000e-02 speed_5.0
+
+
+Active response data for evaluation 70:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.7425900000e+00 flow_2.4
+                      1.5024900000e+00 density_2.4
+                      2.5007000000e-01 speed_2.4
+                      1.9094400000e+00 flow_3.6
+                      4.6458000000e-01 density_3.6
+                      2.7131000000e-01 speed_3.6
+                      2.0676400000e+00 flow_5.0
+                      6.4050000000e-01 density_5.0
+                      1.4511000000e-01 speed_5.0
+
+
+Active response data for evaluation 71:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.6926600000e+00 flow_2.4
+                      1.5462200000e+00 density_2.4
+                      2.3783000000e-01 speed_2.4
+                      1.9387900000e+00 flow_3.6
+                      5.4261000000e-01 density_3.6
+                      2.6631000000e-01 speed_3.6
+                      2.0889300000e+00 flow_5.0
+                      7.1740000000e-01 density_5.0
+                      1.3819000000e-01 speed_5.0
+
+
+Active response data for evaluation 72:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.5376100000e+00 flow_2.4
+                      2.8138600000e+00 density_2.4
+                      2.4897000000e-01 speed_2.4
+                      2.6425100000e+00 flow_3.6
+                      2.1591300000e+00 density_3.6
+                      2.6762000000e-01 speed_3.6
+                      2.9592100000e+00 flow_5.0
+                      1.7053700000e+00 density_5.0
+                      2.2162000000e-01 speed_5.0
+
+
+Active response data for evaluation 73:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      9.7810700000e+00 flow_2.4
+                      7.0805600000e+00 density_2.4
+                      4.1866000000e-01 speed_2.4
+                      1.5005360000e+01 flow_3.6
+                      4.4385300000e+00 density_3.6
+                      8.0501000000e-01 speed_3.6
+                      1.7680610000e+01 flow_5.0
+                      2.3451000000e+00 density_5.0
+                      9.1857000000e-01 speed_5.0
+
+
+Active response data for evaluation 74:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      1.6970800000e+01 flow_3.6
+                      5.9246800000e+00 density_3.6
+                      6.9015000000e-01 speed_3.6
+                      2.2012580000e+01 flow_5.0
+                      3.9595900000e+00 density_5.0
+                      9.2950000000e-01 speed_5.0
+
+
+Active response data for evaluation 75:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      8.1585100000e+00 flow_3.6
+                      3.1114400000e+00 density_3.6
+                      6.9531000000e-01 speed_3.6
+                      1.0416670000e+01 flow_5.0
+                      2.9422500000e+00 density_5.0
+                      7.4416000000e-01 speed_5.0
+
+
+Active response data for evaluation 76:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.8663400000e+00 flow_2.4
+                      3.2802200000e+00 density_2.4
+                      3.9009000000e-01 speed_2.4
+                      7.4310000000e+00 flow_3.6
+                      3.1032800000e+00 density_3.6
+                      6.8716000000e-01 speed_3.6
+                      9.7280300000e+00 flow_5.0
+                      3.0062600000e+00 density_5.0
+                      7.2922000000e-01 speed_5.0
+
+
+Active response data for evaluation 77:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.9709600000e+00 flow_2.4
+                      1.0950500000e+00 density_2.4
+                      1.1794300000e+00 speed_2.4
+                      6.2472100000e+00 flow_3.6
+                      1.1222800000e+00 density_3.6
+                      1.4800600000e+00 speed_3.6
+                      8.7619000000e+00 flow_5.0
+                      1.1006200000e+00 density_5.0
+                      1.6124900000e+00 speed_5.0
+
+
+Active response data for evaluation 78:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.1436200000e+00 flow_2.4
+                      1.1567800000e+00 density_2.4
+                      6.2208000000e-01 speed_2.4
+                      3.4166100000e+00 flow_3.6
+                      1.1156100000e+00 density_3.6
+                      8.0857000000e-01 speed_3.6
+                      4.8633300000e+00 flow_5.0
+                      1.0596500000e+00 density_5.0
+                      8.9917000000e-01 speed_5.0
+
+
+Active response data for evaluation 79:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.5431400000e+00 flow_2.4
+                      1.1677200000e+00 density_2.4
+                      6.5472000000e-01 speed_2.4
+                      3.7513400000e+00 flow_3.6
+                      1.0833300000e+00 density_3.6
+                      8.5452000000e-01 speed_3.6
+                      5.1622400000e+00 flow_5.0
+                      1.0031600000e+00 density_5.0
+                      1.0369600000e+00 speed_5.0
+
+
+Active response data for evaluation 80:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.0149700000e+00 flow_2.4
+                      1.1734700000e+00 density_2.4
+                      5.7030000000e-01 speed_2.4
+                      3.1489000000e+00 flow_3.6
+                      1.1099600000e+00 density_3.6
+                      7.3940000000e-01 speed_3.6
+                      4.3539300000e+00 flow_5.0
+                      1.0465400000e+00 density_5.0
+                      8.4053000000e-01 speed_5.0
+
+
+>>>>>> PSUADE MOAT output for function 0:
+
+>>>>>> PSUADE MOAT output for function 1:
+
+>>>>>> PSUADE MOAT output for function 2:
+
+>>>>>> PSUADE MOAT output for function 3:
+
+>>>>>> PSUADE MOAT output for function 4:
+
+>>>>>> PSUADE MOAT output for function 5:
+
+>>>>>> PSUADE MOAT output for function 6:
+
+>>>>>> PSUADE MOAT output for function 7:
+
+>>>>>> PSUADE MOAT output for function 8:
+<<<<< Function evaluation summary: 80 total (79 new, 1 duplicate)
+
+<<<<< Iterator psuade_moat completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =   0.208867 [parent =   0.208917, child =     -5e-05]
+  Total wall clock =    324.771

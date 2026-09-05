@@ -1,9 +1,10 @@
 """JuPedSim replica of the Hermes 2009 bottleneck.
 
-Outer area 12 x 18 m (x in [-6, 6], y in [-8, 10]); a 1 m thick wall band at
-|y| < 0.5 with a gap of width b centred at x = 0.9. Assumption: the wall band
-spans the full width (the archive WKT leaves the ends at |x| > 4.5 open, which
-lies outside the camera window and cannot be checked).
+Setup after Liao et al. (2014), Validation of FDS+Evac in wide bottlenecks:
+20 m wide corridor, bottleneck boards 1 m long (the wall band |y| < 0.5 in the
+archive coordinates) with a gap of width b centred at x = 0.9, and a
+semicircular holding area of radius 8.618 m directly in front of the
+bottleneck holding 350 participants at 3 persons per square metre.
 """
 import pathlib
 
@@ -13,34 +14,38 @@ import shapely
 
 GAP_CENTER = 0.9
 N_AGENTS = 350
+HOLDING_RADIUS = 8.618  # semicircle in front of the bottleneck, 3 /m2 with 350 people
 DT = 0.01
 MAX_ITER = 30_000
 
 
 def geometry(gap_width):
-    outer = shapely.box(-6, -8, 6, 14)  # y extended beyond the archive box so 350 agents fit for any radius
-    wall = shapely.box(-6, -0.5, 6, 0.5)
+    outer = shapely.box(-10, -8, 10, 11.5)  # 20 m wide corridor, exit 8 m behind the bottleneck
+    wall = shapely.box(-10, -0.5, 10, 0.5)
     gap = shapely.box(GAP_CENTER - gap_width / 2, -0.5, GAP_CENTER + gap_width / 2, 0.5)
     return outer.difference(wall).union(gap)
 
 
 def waiting_positions(seed, radius):
-    """Hexagonal lattice filled row by row from the wall, plus jitter.
-    Spacing 0.5 m (~4.6 /m2) or wider if the radius demands it, so that no two
-    agents overlap at insertion (JuPedSim requires distance >= 2 radius)."""
+    """Hexagonal lattice inside the semicircular holding area, plus jitter.
+    Spacing 0.62 m gives 3 /m2; the N_AGENTS points closest to the bottleneck
+    are kept. No two agents overlap at insertion (distance >= 2 radius)."""
     rng = np.random.default_rng(seed)
-    spacing = max(0.5, 2 * radius + 0.1)
+    spacing = max(0.62, 2 * radius + 0.1)
     jitter = (spacing - 2 * radius - 0.01) / (2 * np.sqrt(2))
+    cx, cy = GAP_CENTER, 0.5 + 0.35  # centre of the semicircle at the bottleneck entrance
     pts = []
-    y = 1.0
-    row = 0
-    while len(pts) < N_AGENTS:
-        x0 = -5.5 + (spacing / 2 if row % 2 else 0)
-        for x in np.arange(x0, 5.5, spacing):
-            pts.append((x, y))
-        y += spacing * np.sqrt(3) / 2
-        row += 1
-    pts = np.array(pts[:N_AGENTS]) + rng.uniform(-jitter, jitter, (N_AGENTS, 2))
+    for row, y in enumerate(np.arange(cy, cy + HOLDING_RADIUS + spacing, spacing * np.sqrt(3) / 2)):
+        x0 = cx + (spacing / 2 if row % 2 else 0)
+        for x in np.arange(x0 - HOLDING_RADIUS - spacing, x0 + HOLDING_RADIUS + spacing, spacing):
+            if (x - cx) ** 2 + (y - cy) ** 2 <= HOLDING_RADIUS ** 2 and abs(x) < 9.5:
+                pts.append((x, y))
+    pts = np.array(pts)
+    d = np.hypot(pts[:, 0] - cx, pts[:, 1] - cy)
+    pts = pts[np.argsort(d)][:N_AGENTS]
+    if len(pts) < N_AGENTS:
+        raise RuntimeError(f"holding area holds only {len(pts)} agents at spacing {spacing}")
+    pts = pts + rng.uniform(-jitter, jitter, pts.shape)
     return [tuple(p) for p in pts]
 
 
