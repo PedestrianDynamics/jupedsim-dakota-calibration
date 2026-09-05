@@ -5,6 +5,7 @@ Usage:  python3 driver.py params.in results.out
 Env:    HERMES_WIDTHS   comma list of gap widths [m]      (default 2.4,3.6,5.0)
         JPS_N_SEEDS     replicates averaged per width     (default 1)
         HERMES_RESIDUALS=1  write sim - experiment instead of raw values
+        HERMES_NORMALIZE=1  divide residuals by sigma = 6 % / 10 % / 10 % of the experiment value
         JPS_WORKERS     parallel simulations inside one evaluation (default 9)
 Responses per width, in order: flow [1/s], density [1/m2], speed [m/s].
 """
@@ -23,6 +24,7 @@ import scenario  # noqa: E402
 PARAMS = ["desired_speed", "radius", "time_gap", "strength_neighbor",
           "range_neighbor", "strength_geometry", "range_geometry"]
 OBS = ["flow", "density", "speed"]
+REL_SIGMA = {"flow": 0.06, "density": 0.10, "speed": 0.10}
 
 
 def read_params(path):
@@ -67,6 +69,8 @@ def main():
                 val = statistics.mean(r[k] for r in block)
                 if exp:
                     val -= exp[f"{w:.1f}"][k]
+                    if os.environ.get("HERMES_NORMALIZE"):
+                        val /= REL_SIGMA[k] * exp[f"{w:.1f}"][k]
                 fh.write(f"{val:.5f} {k}_{w:.1f}\n")
 
 

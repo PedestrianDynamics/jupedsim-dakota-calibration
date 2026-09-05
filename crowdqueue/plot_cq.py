@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 files = sys.argv[1:]
-labels = {"transfer_hermes": "Hermes parameters (transfer)", "calib_h0": "calibrated on h0", "probe_hminus": "h0 params, time gap refit on h-"}
+labels = {"transfer_hermes": "Hermes parameters (transfer)", "calib_h0": "calibrated on CrowdQueue h0", "probe_hminus": "h0 params, time gap refit on h-", "joint": "joint calibration"}
 obs = [("flow", "gate flow [1/s]"), ("density", "density in corridor [1/m$^2$]"), ("speed", "speed in corridor [m/s]")]
 fig, axes = plt.subplots(2, 3, figsize=(15, 8), sharex="col")
 for row, mot in enumerate(["h0", "h-"]):

@@ -1,0 +1,37 @@
+# Joint calibration: Hermes (b = 2.4, 3.6, 5.0 m) + CrowdQueue baseline runs
+# (w = 1.2, 3.4, 5.6 m), 30 sigma-normalised residuals, desired_speed fixed 1.55 m/s.
+# Run: JPS_N_SEEDS=1 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'joint_history.dat'
+
+method
+  efficient_global
+    seed = 5
+    max_iterations = 40
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 6
+    descriptors    'radius' 'time_gap' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
+    initial_point   0.13  0.80   2.0   0.25   5.0   0.02
+    lower_bounds    0.10  0.10   1.0   0.02   0.5   0.01
+    upper_bounds    0.20  1.20  10.0   0.40  10.0   0.20
+  continuous_state = 1
+    descriptors    'desired_speed'
+    initial_state   1.55
+
+interface
+  fork
+    analysis_drivers = 'python3 driver_joint.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = 'driver_joint.py' '../hermes/driver.py' '../hermes/observables.py' '../hermes/scenario.py' '../hermes/exp_observables.json' '../crowdqueue/driver_cq.py' '../crowdqueue/observables_cq.py' '../crowdqueue/scenario_cq.py' '../crowdqueue/exp_observables_cq.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  calibration_terms = 30
+  no_gradients
+  no_hessians

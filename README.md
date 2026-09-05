@@ -79,3 +79,25 @@ recalibration the model reaches ~1.1 /s and stays there, matching low-motivation
 runs, undershooting baseline runs by 10–30 % and clogging in some 1.2 m corridor
 seeds, and it cannot reach the 2.1 /s of the high-motivation run at any time gap
 without destroying density and speed.
+
+## Joint calibration (`joint/`) and semicircle validation (`semicircle/`)
+
+`joint/` calibrates the six parameters on Hermes (3 widths) and CrowdQueue h0
+(7 runs) together, 30 sigma-normalised residuals (`driver_joint.py` chains the
+two drivers). `semicircle/` replays the BaSiGo 2013 unguided entrance
+(doi:10.34735/ped.2013.2, `data/semicircle/entrance_1.h5`): agents are injected
+where and when they first appear in the data; nothing is fitted.
+
+| parameter | Hermes | CrowdQueue h0 | joint |
+|---|---|---|---|
+| radius [m] | 0.127 | 0.101 | 0.110 |
+| time_gap [s] | 0.811 | 0.958 | 0.807 |
+| strength_neighbor | 2.09 | 1.70 | 2.49 |
+| range_neighbor [m] | 0.248 | 0.336 | 0.280 |
+| strength_geometry | 5 (fixed) | 1.39 | 4.36 |
+| range_geometry [m] | 0.02 (fixed) | 0.105 | 0.066 |
+
+The joint set overshoots the Hermes flow by 15–25 % at four widths, clogs in
+four CrowdQueue runs and is bimodal at the semicircle entrance (flow 0.87 ± 0.65
+/s vs 0.57 measured). Hermes parameters at the semicircle: 1.33 /s, too fast and
+too sparse; CrowdQueue parameters: agents pushed through the wall in every seed.
