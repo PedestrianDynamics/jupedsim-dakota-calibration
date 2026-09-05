@@ -7,12 +7,18 @@ import numpy as np
 
 HERE = pathlib.Path(__file__).parent
 txt = (HERE / "sobol/dakota.out").read_text()
-blocks = re.findall(r"(\S+) Sobol' indices:\s*\n\s*Main\s+Total\s*\n((?:\s*\S+\s+\S+\s+\S+\s*\n)+)", txt)
-resp, params, main, total = [], None, [], []
-for name, body in blocks:
-    rows = [l.split() for l in body.strip().splitlines()]
-    params = [r[2] for r in rows]
-    resp.append(name); main.append([float(r[0]) for r in rows]); total.append([float(r[1]) for r in rows])
+resp, params, main, total = [], [], [], []
+for line in txt.splitlines():
+    m = re.match(r"\s*(\S+) Sobol' indices:", line)
+    if m:
+        resp.append(m.group(1)); main.append([]); total.append([]); params = []
+        continue
+    row = line.split()
+    if resp and len(row) == 3 and row[2] not in ("Main", "Total"):
+        try:
+            main[-1].append(float(row[0])); total[-1].append(float(row[1])); params.append(row[2])
+        except ValueError:
+            pass
 main, total = np.array(main).T, np.array(total).T
 fig, axes = plt.subplots(1, 2, figsize=(13, 4.2))
 for ax, m, t in zip(axes, (main, total), ("main (first order)", "total")):
