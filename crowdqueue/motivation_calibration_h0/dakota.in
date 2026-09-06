@@ -1,6 +1,7 @@
 # Exploratory calibration on every usable baseline-motivation (h0) run.
 # This condition has 11 runs and 33 residuals. Desired speed is free only to
 # test whether a static parameter absorbs the motivation condition.
+# Reproduce: CQ_RESIDUALS=1 CQ_RUNS=030_c_56_h0,050_c_45_h0,070_c_23_h0,090_c_12_h0,110_c_12_h0,150_q_56_h0,170_q_12_h0,190_q_34_h0,230_q_23_h0,250_q_45_h0,270_c_34_h0 JPS_N_SEEDS=1 JPS_WORKERS=3 dakota -i dakota.in -o dakota.out
 
 environment
   tabular_data

@@ -69,7 +69,8 @@ def one(run_name, seed, out_file, kwargs):
 def main():
     params_file, results_file = sys.argv[1], sys.argv[2]
     p = read_params(params_file)
-    kwargs = {k: float(p[k]) for k in PARAMS if k in p}
+    kwargs = json.loads(os.environ.get("CQ_FIXED_PARAMS", "{}"))
+    kwargs.update({k: float(p[k]) for k in PARAMS if k in p})
     run_names = os.environ["CQ_RUNS"].split(",")
     n_seeds = int(os.environ.get("JPS_N_SEEDS", "1"))
     out_dir = pathlib.Path(params_file).resolve().parent

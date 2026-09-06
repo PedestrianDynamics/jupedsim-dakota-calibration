@@ -1,0 +1,463 @@
+{
+ "motivation": "h0",
+ "fixed_parameters": {
+  "radius": 0.144,
+  "strength_neighbor": 9.41,
+  "range_neighbor": 0.09,
+  "strength_geometry": 2.6,
+  "range_geometry": 0.032
+ },
+ "seed": 1,
+ "v0_grid": [
+  0.8,
+  0.9666666666666667,
+  1.1333333333333333,
+  1.3,
+  1.4666666666666668,
+  1.6333333333333333,
+  1.8
+ ],
+ "time_gap_grid": [
+  0.1,
+  0.2833333333333333,
+  0.4666666666666667,
+  0.6499999999999999,
+  0.8333333333333333,
+  1.0166666666666666,
+  1.2
+ ],
+ "best": {
+  "desired_speed": 1.3,
+  "time_gap": 0.8333333333333333,
+  "norm": 7.559216295560611,
+  "status_counts": {
+   "emptied": 10,
+   "not emptied": 1
+  }
+ },
+ "grid": [
+  {
+   "desired_speed": 0.8,
+   "time_gap": 0.1,
+   "norm": 31.271509439234286,
+   "status_counts": {
+    "emptied": 9,
+    "stalled": 2
+   }
+  },
+  {
+   "desired_speed": 0.8,
+   "time_gap": 0.2833333333333333,
+   "norm": 21.57314304821453,
+   "status_counts": {
+    "emptied": 10,
+    "stalled": 1
+   }
+  },
+  {
+   "desired_speed": 0.8,
+   "time_gap": 0.4666666666666667,
+   "norm": 8.822527167486344,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 0.8,
+   "time_gap": 0.6499999999999999,
+   "norm": 11.308485935549617,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 0.8,
+   "time_gap": 0.8333333333333333,
+   "norm": 15.676243616090986,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 0.8,
+   "time_gap": 1.0166666666666666,
+   "norm": 20.189507261678,
+   "status_counts": {
+    "emptied": 9,
+    "not emptied": 2
+   }
+  },
+  {
+   "desired_speed": 0.8,
+   "time_gap": 1.2,
+   "norm": 22.484207075464113,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 0.9666666666666667,
+   "time_gap": 0.1,
+   "norm": 49.391148206693686,
+   "status_counts": {
+    "emptied": 9,
+    "stalled": 2
+   }
+  },
+  {
+   "desired_speed": 0.9666666666666667,
+   "time_gap": 0.2833333333333333,
+   "norm": 25.787271220005337,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 0.9666666666666667,
+   "time_gap": 0.4666666666666667,
+   "norm": 11.50850422827971,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 0.9666666666666667,
+   "time_gap": 0.6499999999999999,
+   "norm": 7.907822658723935,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 0.9666666666666667,
+   "time_gap": 0.8333333333333333,
+   "norm": 11.863483230076787,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 0.9666666666666667,
+   "time_gap": 1.0166666666666666,
+   "norm": 15.436613390828676,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 0.9666666666666667,
+   "time_gap": 1.2,
+   "norm": 17.99247081298501,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.1333333333333333,
+   "time_gap": 0.1,
+   "norm": 57.10549276890749,
+   "status_counts": {
+    "emptied": 9,
+    "stalled": 2
+   }
+  },
+  {
+   "desired_speed": 1.1333333333333333,
+   "time_gap": 0.2833333333333333,
+   "norm": 32.764968280346544,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.1333333333333333,
+   "time_gap": 0.4666666666666667,
+   "norm": 15.549458602962268,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.1333333333333333,
+   "time_gap": 0.6499999999999999,
+   "norm": 8.254102655433625,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.1333333333333333,
+   "time_gap": 0.8333333333333333,
+   "norm": 8.648060919705143,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.1333333333333333,
+   "time_gap": 1.0166666666666666,
+   "norm": 11.167512534520325,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.1333333333333333,
+   "time_gap": 1.2,
+   "norm": 13.017572684979376,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 0.1,
+   "norm": 72.63366674943143,
+   "status_counts": {
+    "emptied": 10,
+    "stalled": 1
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 0.2833333333333333,
+   "norm": 40.263355385985435,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 0.4666666666666667,
+   "norm": 19.593722832907698,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 0.6499999999999999,
+   "norm": 9.60059765973216,
+   "status_counts": {
+    "emptied": 9,
+    "not emptied": 2
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 0.8333333333333333,
+   "norm": 7.559216295560611,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 1.0166666666666666,
+   "norm": 7.875800585185391,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 1.2,
+   "norm": 10.151240870969577,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 0.1,
+   "norm": 86.05500219737422,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 0.2833333333333333,
+   "norm": 45.88105345446335,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 0.4666666666666667,
+   "norm": 23.7669875754897,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 0.6499999999999999,
+   "norm": 12.54859509962143,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 0.8333333333333333,
+   "norm": 8.83772869133698,
+   "status_counts": {
+    "emptied": 9,
+    "not emptied": 2
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 1.0166666666666666,
+   "norm": 8.827802903255582,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 1.2,
+   "norm": 11.31232887238001,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 0.1,
+   "norm": 99.84314777285634,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 0.2833333333333333,
+   "norm": 51.075717863242815,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 0.4666666666666667,
+   "norm": 28.124878732605783,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 0.6499999999999999,
+   "norm": 17.91216346050944,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 0.8333333333333333,
+   "norm": 21.281232109522513,
+   "status_counts": {
+    "emptied": 9,
+    "not emptied": 1,
+    "stalled": 1
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 1.0166666666666666,
+   "norm": 12.122446114135611,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 1.2,
+   "norm": 12.667678784214743,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.8,
+   "time_gap": 0.1,
+   "norm": 107.09030407117075,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.8,
+   "time_gap": 0.2833333333333333,
+   "norm": 57.29089388430376,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.8,
+   "time_gap": 0.4666666666666667,
+   "norm": 31.750105679272195,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.8,
+   "time_gap": 0.6499999999999999,
+   "norm": 22.959778572459932,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.8,
+   "time_gap": 0.8333333333333333,
+   "norm": 18.779908678080353,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.8,
+   "time_gap": 1.0166666666666666,
+   "norm": 15.615694976994318,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.8,
+   "time_gap": 1.2,
+   "norm": 14.965614024212972,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  }
+ ]
+}

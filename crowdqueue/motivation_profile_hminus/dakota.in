@@ -1,0 +1,33 @@
+# Two-parameter profile/refit on h- with the five static parameters fixed at set C.
+# Reproduce: CQ_RESIDUALS=1 CQ_RUNS=040_c_56_h-,060_c_45_h-,100_c_12_h-,120_c_12_h-,160_q_56_h-,180_q_12_h-,240_q_23_h-,260_q_45_h-,280_c_34_h- JPS_N_SEEDS=1 JPS_WORKERS=3 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'motivation_profile_history.dat'
+
+method
+  efficient_global
+    seed = 11
+    max_iterations = 20
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 2
+    descriptors  'desired_speed' 'time_gap'
+    initial_point  1.55 0.833
+    lower_bounds   0.80 0.10
+    upper_bounds   1.80 1.20
+
+interface
+  fork
+    analysis_drivers = 'python3 driver_cq_set_c.py'
+    parameters_file = 'params.in'
+    results_file = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver_cq.py' '../driver_cq_set_c.py' '../observables_cq.py' '../scenario_cq.py' '../exp_observables_cq.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  calibration_terms = 27
+  no_gradients
+  no_hessians
