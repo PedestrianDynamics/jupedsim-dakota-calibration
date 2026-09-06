@@ -17,7 +17,7 @@ the PATH (the scripts fall back to `~/opt/dakota/bin`). Experiment data: see
 | folder | content |
 |---|---|
 | `hermes/` | Hermes 2009 wide-bottleneck study: driver, scenario, observables, Morris (`morris*/`), Sobol (`sobol*/`), calibrations (`calib/`, `calib_v0fixed/`, `calib_v0fixed_s9/`), validation and plotting scripts, `truncation_check.py` |
-| `crowdqueue/` | CrowdQueue 2018 narrow-gate study: driver, scenario, observables, calibrations from two starts (`calib_h0/`, `calib_h0_s9/`), motivation probes, per-seed results in `results/` |
+| `crowdqueue/` | CrowdQueue 2018 narrow-gate study: driver, scenario, observables, calibrations from two starts (`calib_h0/`, `calib_h0_s9/`), motivation-condition diagnostic calibrations, motivation probes, per-seed results in `results/` |
 | `semicircle/` | BaSiGo 2013 unguided entrance: boundary-condition replay, density maps, results |
 | `joint/` | joint Hermes + CrowdQueue calibration (`driver_joint.py`, `best_params.json`) |
 | `results/` | Hermes validations (six seeds, sets A and B; three seeds, joint), baseline, seed-noise |
@@ -74,6 +74,11 @@ C/D are two optimizer starts on the same data.
   on average (−1 % to +37 %). The model does not reproduce the difference between
   motivation conditions in either direction. Identical seeds reproduce identical
   simulations.
+- Motivation diagnostic: separate exploratory fits move desired speed from 1.23
+  to 0.82 m/s and time gap from 0.70 to 0.78 s between h0 and h−, but also move
+  neighbor and wall parameters substantially; this supports compensation by
+  static parameters, not a uniquely identified T/v0 mechanism. The h+ condition
+  has only one usable run and is not calibrated separately.
 - Joint: Hermes norm 7.9 vs 2.4–2.7 for the specialists, CrowdQueue norm 12.0 vs
   9.7, 61 of 63 seeds emptied. No set found meets the tolerances in both.
 - Semicircle: Hermes A and the joint set drain the crowd at 1.3 and 1.7 /s where

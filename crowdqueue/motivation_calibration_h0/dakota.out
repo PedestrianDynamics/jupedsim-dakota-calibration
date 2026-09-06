@@ -1,0 +1,2137 @@
+Dakota version 6.24 released May 15 2026.
+Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
+Running MPI Dakota executable in serial mode.
+Start time: Sun Sep  6 14:07:29 2026
+
+------------------
+Begin Dakota input
+------------------
+# Exploratory calibration on every usable baseline-motivation (h0) run.
+# This condition has 11 runs and 33 residuals. Desired speed is free only to
+# test whether a static parameter absorbs the motivation condition.
+
+environment
+  tabular_data
+    tabular_data_file = 'motivation_history.dat'
+
+method
+  efficient_global
+    seed = 5
+    max_iterations = 60
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 7
+    descriptors    'desired_speed' 'radius' 'time_gap' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
+    initial_point  1.55 0.144 0.833 9.41 0.09 2.60 0.032
+    lower_bounds   0.80 0.10  0.10  1.0  0.02 0.50 0.01
+    upper_bounds   1.80 0.20  1.20 10.0  0.40 10.0 0.20
+
+interface
+  fork
+    analysis_drivers = 'python3 driver_cq.py'
+    parameters_file = 'params.in'
+    results_file = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver_cq.py' '../observables_cq.py' '../scenario_cq.py' '../exp_observables_cq.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  calibration_terms = 33
+  no_gradients
+  no_hessians
+
+----------------
+End Dakota input
+----------------
+
+Using Dakota parser: standard
+Writing new restart file 'dakota.rst'.
+
+>>>>> Executing environment.
+
+>>>>> Running efficient_global iterator.
+
+>>>>> Building global_kriging approximations.
+
+NonD lhs Samples = 36 Seed (user-specified) = 5
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      8.0616647698e-01 desired_speed
+                      1.9323107640e-01 radius
+                      1.1789466087e+00 time_gap
+                      2.3188360232e+00 strength_neighbor
+                      1.2509162418e-01 range_neighbor
+                      3.6589473511e+00 strength_geometry
+                      6.3214453529e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 1:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6202550000e+01 least_sq_term_1
+                      3.3215300000e+00 least_sq_term_2
+                     -1.2559100000e+00 least_sq_term_3
+                     -1.5912170000e+01 least_sq_term_4
+                      7.0756200000e+00 least_sq_term_5
+                     -3.7193000000e-01 least_sq_term_6
+                     -1.4825210000e+01 least_sq_term_7
+                      1.0036600000e+00 least_sq_term_8
+                     -4.9530700000e+00 least_sq_term_9
+                     -1.3977060000e+01 least_sq_term_10
+                     -8.9856000000e-01 least_sq_term_11
+                     -1.2728600000e+00 least_sq_term_12
+                     -1.1543550000e+01 least_sq_term_13
+                     -5.3409500000e+00 least_sq_term_14
+                      1.4644400000e+00 least_sq_term_15
+                     -1.6245040000e+01 least_sq_term_16
+                      3.3273400000e+00 least_sq_term_17
+                      5.8072000000e-01 least_sq_term_18
+                     -1.3611580000e+01 least_sq_term_19
+                     -1.2974800000e+00 least_sq_term_20
+                     -2.2636800000e+00 least_sq_term_21
+                     -1.6211570000e+01 least_sq_term_22
+                      1.1626830000e+01 least_sq_term_23
+                      3.9997000000e-01 least_sq_term_24
+                     -1.5526150000e+01 least_sq_term_25
+                      9.6609000000e-01 least_sq_term_26
+                     -3.2070500000e+00 least_sq_term_27
+                     -1.6559390000e+01 least_sq_term_28
+                      7.6286600000e+00 least_sq_term_29
+                      8.8802000000e-01 least_sq_term_30
+                     -1.6546080000e+01 least_sq_term_31
+                      1.9447100000e+00 least_sq_term_32
+                     -3.4422900000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      1.0524950287e+00 desired_speed
+                      1.6665552476e-01 radius
+                      5.0332616512e-01 time_gap
+                      9.9612638077e+00 strength_neighbor
+                      2.8899841423e-01 range_neighbor
+                      7.8856420752e+00 strength_geometry
+                      1.8988278733e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 2:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6550870000e+01 least_sq_term_1
+                     -5.0850000000e-02 least_sq_term_2
+                      1.4642020000e+01 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                      5.4005600000e+00 least_sq_term_5
+                      3.7867910000e+01 least_sq_term_6
+                     -1.6666670000e+01 least_sq_term_7
+                      8.3072100000e+00 least_sq_term_8
+                      1.6528230000e+01 least_sq_term_9
+                     -1.6549880000e+01 least_sq_term_10
+                      3.2225900000e+00 least_sq_term_11
+                      2.0243700000e+00 least_sq_term_12
+                     -1.2997540000e+01 least_sq_term_13
+                     -1.9535600000e+00 least_sq_term_14
+                      1.8563200000e+00 least_sq_term_15
+                     -1.6666670000e+01 least_sq_term_16
+                      1.0549400000e+00 least_sq_term_17
+                      4.4211660000e+01 least_sq_term_18
+                     -1.6539030000e+01 least_sq_term_19
+                     -7.3500000000e-03 least_sq_term_20
+                     -6.0673900000e+00 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                      7.7804000000e+00 least_sq_term_23
+                      3.7418970000e+01 least_sq_term_24
+                     -1.6563190000e+01 least_sq_term_25
+                     -1.2700000000e-03 least_sq_term_26
+                     -1.4328100000e+00 least_sq_term_27
+                     -1.6666670000e+01 least_sq_term_28
+                      8.4681200000e+00 least_sq_term_29
+                      3.2293470000e+01 least_sq_term_30
+                     -1.6546370000e+01 least_sq_term_31
+                     -1.3263000000e-01 least_sq_term_32
+                     -5.7946000000e-01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      1.3577983686e+00 desired_speed
+                      1.2848218945e-01 radius
+                      4.3007629377e-01 time_gap
+                      5.2316706552e+00 strength_neighbor
+                      1.1118815330e-01 range_neighbor
+                      4.1998255029e+00 strength_geometry
+                      5.3965225518e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 3:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.5164360000e+01 least_sq_term_1
+                      8.6066800000e+00 least_sq_term_2
+                      9.2011200000e+00 least_sq_term_3
+                     -1.4674250000e+01 least_sq_term_4
+                      5.7098900000e+00 least_sq_term_5
+                      4.0620700000e+00 least_sq_term_6
+                      4.5123700000e+00 least_sq_term_7
+                     -1.3876500000e+00 least_sq_term_8
+                      1.8316500000e+00 least_sq_term_9
+                      6.4685300000e+00 least_sq_term_10
+                      9.0900000000e-03 least_sq_term_11
+                      2.1648500000e+00 least_sq_term_12
+                     -1.5222710000e+01 least_sq_term_13
+                     -6.1108000000e-01 least_sq_term_14
+                      1.0284050000e+01 least_sq_term_15
+                     -1.4994310000e+01 least_sq_term_16
+                      7.9167700000e+00 least_sq_term_17
+                      9.3784800000e+00 least_sq_term_18
+                      9.2210800000e+00 least_sq_term_19
+                     -2.7542000000e-01 least_sq_term_20
+                      1.9214700000e+00 least_sq_term_21
+                      6.6939900000e+00 least_sq_term_22
+                     -2.7031100000e+00 least_sq_term_23
+                      3.3327600000e+00 least_sq_term_24
+                     -1.5435830000e+01 least_sq_term_25
+                      5.9092200000e+00 least_sq_term_26
+                      1.1899730000e+01 least_sq_term_27
+                     -1.5497760000e+01 least_sq_term_28
+                      1.0161900000e+01 least_sq_term_29
+                      4.3565600000e+00 least_sq_term_30
+                     -1.6066590000e+01 least_sq_term_31
+                      6.0201700000e+00 least_sq_term_32
+                      1.5753250000e+01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      1.6086361324e+00 desired_speed
+                      1.3285153959e-01 radius
+                      5.8895654547e-01 time_gap
+                      1.5628112786e+00 strength_neighbor
+                      2.5587474158e-01 range_neighbor
+                      2.3076336193e+00 strength_geometry
+                      7.2066070267e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 4:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -9.7375800000e+00 least_sq_term_1
+                      2.3736500000e+00 least_sq_term_2
+                     -1.2535600000e+00 least_sq_term_3
+                      7.8333300000e+00 least_sq_term_4
+                     -1.5290300000e+00 least_sq_term_5
+                      2.9166000000e+00 least_sq_term_6
+                      3.1292500000e+00 least_sq_term_7
+                     -1.1515200000e+00 least_sq_term_8
+                      1.1674400000e+00 least_sq_term_9
+                      6.4685300000e+00 least_sq_term_10
+                     -1.9710000000e-02 least_sq_term_11
+                      3.9692000000e+00 least_sq_term_12
+                      1.7573100000e+00 least_sq_term_13
+                      1.3982000000e+00 least_sq_term_14
+                     -1.3402300000e+00 least_sq_term_15
+                      1.0839330000e+01 least_sq_term_16
+                     -7.8358000000e-01 least_sq_term_17
+                      1.1133200000e+00 least_sq_term_18
+                      8.4444400000e+00 least_sq_term_19
+                     -4.1126000000e-01 least_sq_term_20
+                      2.7716200000e+00 least_sq_term_21
+                     -1.5768960000e+01 least_sq_term_22
+                      5.8554100000e+00 least_sq_term_23
+                      1.6179410000e+01 least_sq_term_24
+                     -1.4719800000e+01 least_sq_term_25
+                      3.5627000000e+00 least_sq_term_26
+                      6.2292000000e+00 least_sq_term_27
+                      4.2752200000e+00 least_sq_term_28
+                     -4.2680000000e-01 least_sq_term_29
+                      7.1955000000e-01 least_sq_term_30
+                     -9.5952300000e+00 least_sq_term_31
+                      2.0039800000e+00 least_sq_term_32
+                     -1.8449800000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                      1.5266197185e+00 desired_speed
+                      1.7077056034e-01 radius
+                      5.5597290476e-01 time_gap
+                      6.9210581884e+00 strength_neighbor
+                      3.7349977377e-02 range_neighbor
+                      2.5562859039e+00 strength_geometry
+                      1.3011746755e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 5:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.2096930000e+01 least_sq_term_1
+                      7.9625200000e+00 least_sq_term_2
+                     -6.6039900000e+00 least_sq_term_3
+                     -1.2736480000e+01 least_sq_term_4
+                      2.6455700000e+00 least_sq_term_5
+                     -5.0713000000e+00 least_sq_term_6
+                     -1.5629990000e+01 least_sq_term_7
+                      9.1546000000e+00 least_sq_term_8
+                     -6.3253800000e+00 least_sq_term_9
+                     -1.4667280000e+01 least_sq_term_10
+                      5.3116100000e+00 least_sq_term_11
+                     -5.6867900000e+00 least_sq_term_12
+                     -1.1944690000e+01 least_sq_term_13
+                      5.5320000000e-02 least_sq_term_14
+                     -5.4208100000e+00 least_sq_term_15
+                     -1.4241380000e+01 least_sq_term_16
+                      9.6095400000e+00 least_sq_term_17
+                     -6.4118300000e+00 least_sq_term_18
+                     -1.4355830000e+01 least_sq_term_19
+                      5.8411100000e+00 least_sq_term_20
+                     -7.0859000000e+00 least_sq_term_21
+                     -1.5519970000e+01 least_sq_term_22
+                      8.7445600000e+00 least_sq_term_23
+                     -4.2481100000e+00 least_sq_term_24
+                     -1.4991820000e+01 least_sq_term_25
+                      7.0237000000e+00 least_sq_term_26
+                     -5.0298500000e+00 least_sq_term_27
+                     -1.3293240000e+01 least_sq_term_28
+                      5.2081700000e+00 least_sq_term_29
+                     -6.6032600000e+00 least_sq_term_30
+                     -1.1552150000e+01 least_sq_term_31
+                      7.2684100000e+00 least_sq_term_32
+                     -7.7029100000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                      1.2997450259e+00 desired_speed
+                      1.6163448514e-01 radius
+                      2.8106132876e-01 time_gap
+                      9.4589535416e+00 strength_neighbor
+                      2.5216344085e-01 range_neighbor
+                      5.3585595661e+00 strength_geometry
+                      8.7376678713e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 6:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -8.6902000000e+00 least_sq_term_1
+                     -2.4299900000e+00 least_sq_term_2
+                      9.8365200000e+00 least_sq_term_3
+                     -1.2173180000e+01 least_sq_term_4
+                     -1.4427800000e+00 least_sq_term_5
+                      1.1566190000e+01 least_sq_term_6
+                     -1.5241630000e+01 least_sq_term_7
+                      2.4196800000e+00 least_sq_term_8
+                      6.7876600000e+00 least_sq_term_9
+                     -1.4334140000e+01 least_sq_term_10
+                     -1.8285000000e-01 least_sq_term_11
+                      5.1907100000e+00 least_sq_term_12
+                     -1.0113300000e+01 least_sq_term_13
+                     -2.6478500000e+00 least_sq_term_14
+                      7.1357300000e+00 least_sq_term_15
+                     -9.5567800000e+00 least_sq_term_16
+                     -1.8062400000e+00 least_sq_term_17
+                      1.0780760000e+01 least_sq_term_18
+                     -1.4014080000e+01 least_sq_term_19
+                     -4.1917000000e-01 least_sq_term_20
+                      2.7336600000e+00 least_sq_term_21
+                     -1.5094100000e+01 least_sq_term_22
+                      2.7548600000e+00 least_sq_term_23
+                      8.1948900000e+00 least_sq_term_24
+                     -1.2971670000e+01 least_sq_term_25
+                     -2.3594900000e+00 least_sq_term_26
+                      8.6346300000e+00 least_sq_term_27
+                     -1.2839880000e+01 least_sq_term_28
+                     -2.0053000000e-01 least_sq_term_29
+                      8.6242800000e+00 least_sq_term_30
+                     -9.4632900000e+00 least_sq_term_31
+                     -2.2539900000e+00 least_sq_term_32
+                      4.6713100000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                      1.7966084187e+00 desired_speed
+                      1.0716621614e-01 radius
+                      1.0786672976e+00 time_gap
+                      9.5471669327e+00 strength_neighbor
+                      2.4001530239e-01 range_neighbor
+                      9.8876027236e+00 strength_geometry
+                      7.6113231570e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 7:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -8.2419200000e+00 least_sq_term_1
+                     -1.2036300000e+00 least_sq_term_2
+                      7.0820900000e+00 least_sq_term_3
+                     -1.1685630000e+01 least_sq_term_4
+                     -5.2353000000e-01 least_sq_term_5
+                      1.0060410000e+01 least_sq_term_6
+                     -1.4939750000e+01 least_sq_term_7
+                      1.7194400000e+00 least_sq_term_8
+                      4.3207700000e+00 least_sq_term_9
+                     -1.4220790000e+01 least_sq_term_10
+                     -1.0556800000e+00 least_sq_term_11
+                      8.6241700000e+00 least_sq_term_12
+                     -1.0008910000e+01 least_sq_term_13
+                     -4.0301500000e+00 least_sq_term_14
+                      8.1167400000e+00 least_sq_term_15
+                     -9.0119800000e+00 least_sq_term_16
+                     -9.9214000000e-01 least_sq_term_17
+                      7.6978900000e+00 least_sq_term_18
+                     -1.3892420000e+01 least_sq_term_19
+                     -2.5350400000e+00 least_sq_term_20
+                      8.9358700000e+00 least_sq_term_21
+                     -1.4423150000e+01 least_sq_term_22
+                      1.6642900000e+00 least_sq_term_23
+                      1.1036820000e+01 least_sq_term_24
+                     -1.2673150000e+01 least_sq_term_25
+                     -1.5738500000e+00 least_sq_term_26
+                      5.4043600000e+00 least_sq_term_27
+                     -1.2423230000e+01 least_sq_term_28
+                      5.6758000000e-01 least_sq_term_29
+                      6.4759300000e+00 least_sq_term_30
+                     -8.8813200000e+00 least_sq_term_31
+                     -1.1570800000e+00 least_sq_term_32
+                      2.5145700000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                      9.9218363623e-01 desired_speed
+                      1.1277758111e-01 radius
+                      3.9701709808e-01 time_gap
+                      2.6579415128e+00 strength_neighbor
+                      3.9284013341e-01 range_neighbor
+                      2.9927393381e+00 strength_geometry
+                      8.3538145797e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 8:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      5.6695500000e+00 least_sq_term_1
+                     -1.7162700000e+00 least_sq_term_2
+                      8.0556400000e+00 least_sq_term_3
+                     -1.6417030000e+01 least_sq_term_4
+                      3.4593100000e+00 least_sq_term_5
+                      2.7067110000e+01 least_sq_term_6
+                     -2.2599000000e-01 least_sq_term_7
+                     -1.2113000000e+00 least_sq_term_8
+                      4.7359100000e+00 least_sq_term_9
+                     -1.5945300000e+00 least_sq_term_10
+                      1.1152400000e+00 least_sq_term_11
+                      4.1920000000e-01 least_sq_term_12
+                     -4.7154000000e-01 least_sq_term_13
+                      4.2450000000e-01 least_sq_term_14
+                     -4.5990000000e-01 least_sq_term_15
+                      9.7011500000e+00 least_sq_term_16
+                     -1.8397500000e+00 least_sq_term_17
+                      9.0532300000e+00 least_sq_term_18
+                      2.6992300000e+00 least_sq_term_19
+                      9.0870000000e-02 least_sq_term_20
+                      8.0168000000e-01 least_sq_term_21
+                      1.7799400000e+00 least_sq_term_22
+                     -1.5582200000e+00 least_sq_term_23
+                      7.7270500000e+00 least_sq_term_24
+                      3.1045800000e+00 least_sq_term_25
+                     -2.0272100000e+00 least_sq_term_26
+                      5.9370600000e+00 least_sq_term_27
+                      3.1250000000e+00 least_sq_term_28
+                     -6.1360000000e-01 least_sq_term_29
+                      6.9314200000e+00 least_sq_term_30
+                      6.0659600000e+00 least_sq_term_31
+                     -1.8959300000e+00 least_sq_term_32
+                      2.7111100000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                      1.7199748711e+00 desired_speed
+                      1.8895259192e-01 radius
+                      2.4177151907e-01 time_gap
+                      5.9340786605e+00 strength_neighbor
+                      3.6169929989e-01 range_neighbor
+                      7.9489790150e-01 strength_geometry
+                      5.1456752675e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 9:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.3780510000e+01 least_sq_term_1
+                     -6.9416000000e-01 least_sq_term_2
+                      6.8895800000e+00 least_sq_term_3
+                     -1.2680500000e+01 least_sq_term_4
+                     -1.4983300000e+00 least_sq_term_5
+                      1.1836530000e+01 least_sq_term_6
+                     -1.5142400000e+01 least_sq_term_7
+                      5.8634000000e-01 least_sq_term_8
+                      8.3867800000e+00 least_sq_term_9
+                     -1.6550200000e+01 least_sq_term_10
+                      3.2225900000e+00 least_sq_term_11
+                      1.3250650000e+01 least_sq_term_12
+                     -1.5335120000e+01 least_sq_term_13
+                     -1.5015600000e+00 least_sq_term_14
+                     -4.0293800000e+00 least_sq_term_15
+                     -1.5274910000e+01 least_sq_term_16
+                      8.9701000000e-01 least_sq_term_17
+                      7.1447200000e+00 least_sq_term_18
+                     -1.6540520000e+01 least_sq_term_19
+                      1.6580900000e+00 least_sq_term_20
+                      2.0590660000e+01 least_sq_term_21
+                     -1.5881170000e+01 least_sq_term_22
+                      3.0022500000e+00 least_sq_term_23
+                     -1.2575900000e+00 least_sq_term_24
+                     -1.2876670000e+01 least_sq_term_25
+                     -3.3096000000e+00 least_sq_term_26
+                      1.2279900000e+01 least_sq_term_27
+                     -1.2527930000e+01 least_sq_term_28
+                     -1.7929200000e+00 least_sq_term_29
+                      1.2931780000e+01 least_sq_term_30
+                     -1.0436300000e+01 least_sq_term_31
+                     -2.8368200000e+00 least_sq_term_32
+                      6.4448200000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                      1.1546085517e+00 desired_speed
+                      1.5433704755e-01 radius
+                      7.4363771075e-01 time_gap
+                      4.1588390507e+00 strength_neighbor
+                      1.3850284361e-01 range_neighbor
+                      5.5788933997e+00 strength_geometry
+                      3.3262785809e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 10:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.5972360000e+01 least_sq_term_1
+                      5.7439800000e+00 least_sq_term_2
+                      1.0449030000e+01 least_sq_term_3
+                     -1.5170350000e+01 least_sq_term_4
+                      7.6546700000e+00 least_sq_term_5
+                      2.9350500000e+00 least_sq_term_6
+                     -2.3598800000e+00 least_sq_term_7
+                      1.2819000000e-01 least_sq_term_8
+                     -9.3854000000e-01 least_sq_term_9
+                     -1.5733350000e+01 least_sq_term_10
+                      3.9430500000e+00 least_sq_term_11
+                      2.2997800000e+00 least_sq_term_12
+                     -1.6555560000e+01 least_sq_term_13
+                     -2.6299800000e+00 least_sq_term_14
+                      4.4540300000e+00 least_sq_term_15
+                     -1.6108650000e+01 least_sq_term_16
+                      5.5606600000e+00 least_sq_term_17
+                      1.4188350000e+01 least_sq_term_18
+                      1.3126500000e+00 least_sq_term_19
+                     -4.5940000000e-01 least_sq_term_20
+                      4.3080000000e-02 least_sq_term_21
+                     -1.0929000000e+00 least_sq_term_22
+                     -1.3410300000e+00 least_sq_term_23
+                      1.5746600000e+00 least_sq_term_24
+                     -1.6358540000e+01 least_sq_term_25
+                     -7.8788000000e-01 least_sq_term_26
+                      1.4791260000e+01 least_sq_term_27
+                     -1.6347450000e+01 least_sq_term_28
+                      8.9561800000e+00 least_sq_term_29
+                      1.2542480000e+01 least_sq_term_30
+                     -1.6426390000e+01 least_sq_term_31
+                      1.8974900000e+00 least_sq_term_32
+                      7.6393200000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                      9.0642577333e-01 desired_speed
+                      1.7690254335e-01 radius
+                      6.3702652994e-01 time_gap
+                      9.0127857008e+00 strength_neighbor
+                      9.7254716985e-02 range_neighbor
+                      9.5672177881e+00 strength_geometry
+                      1.1961908911e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 11:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6422870000e+01 least_sq_term_1
+                      1.0245100000e+01 least_sq_term_2
+                     -7.5837500000e+00 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                      5.4005600000e+00 least_sq_term_5
+                      2.3847630000e+01 least_sq_term_6
+                     -1.6666670000e+01 least_sq_term_7
+                      8.3072100000e+00 least_sq_term_8
+                      7.6000800000e+00 least_sq_term_9
+                     -1.6666670000e+01 least_sq_term_10
+                      4.8754200000e+00 least_sq_term_11
+                      2.7528300000e+00 least_sq_term_12
+                     -1.6305400000e+01 least_sq_term_13
+                      1.7597500000e+00 least_sq_term_14
+                     -7.9287500000e+00 least_sq_term_15
+                     -1.6666670000e+01 least_sq_term_16
+                      1.0549400000e+00 least_sq_term_17
+                      2.9330600000e+01 least_sq_term_18
+                     -1.6666670000e+01 least_sq_term_19
+                      3.3235300000e+00 least_sq_term_20
+                      2.7432700000e+00 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                      7.7804000000e+00 least_sq_term_23
+                      2.2866430000e+01 least_sq_term_24
+                     -1.6666670000e+01 least_sq_term_25
+                     -7.7040000000e-01 least_sq_term_26
+                      1.8334570000e+01 least_sq_term_27
+                     -1.6666670000e+01 least_sq_term_28
+                      8.4681200000e+00 least_sq_term_29
+                      1.9534930000e+01 least_sq_term_30
+                     -1.6284550000e+01 least_sq_term_31
+                      7.7405600000e+00 least_sq_term_32
+                     -8.2397500000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                      8.7974256399e-01 desired_speed
+                      1.1740505312e-01 radius
+                      1.1368929852e+00 time_gap
+                      8.7892577779e+00 strength_neighbor
+                      2.7439762122e-01 range_neighbor
+                      7.2686709685e-01 strength_geometry
+                      1.6620496920e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 12:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6666670000e+01 least_sq_term_1
+                     -1.0000000000e+01 least_sq_term_2
+                     -1.0000000000e+01 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                     -1.0000000000e+01 least_sq_term_5
+                     -1.0000000000e+01 least_sq_term_6
+                     -1.6666670000e+01 least_sq_term_7
+                     -1.0000000000e+01 least_sq_term_8
+                     -1.0000000000e+01 least_sq_term_9
+                     -1.6666670000e+01 least_sq_term_10
+                     -1.0000000000e+01 least_sq_term_11
+                     -1.0000000000e+01 least_sq_term_12
+                     -1.6666670000e+01 least_sq_term_13
+                     -1.0000000000e+01 least_sq_term_14
+                     -1.0000000000e+01 least_sq_term_15
+                     -1.6666670000e+01 least_sq_term_16
+                     -1.0000000000e+01 least_sq_term_17
+                     -1.0000000000e+01 least_sq_term_18
+                     -1.6666670000e+01 least_sq_term_19
+                     -1.0000000000e+01 least_sq_term_20
+                     -1.0000000000e+01 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                     -1.0000000000e+01 least_sq_term_23
+                     -1.0000000000e+01 least_sq_term_24
+                     -1.6666670000e+01 least_sq_term_25
+                     -1.0000000000e+01 least_sq_term_26
+                     -1.0000000000e+01 least_sq_term_27
+                     -1.6666670000e+01 least_sq_term_28
+                     -1.0000000000e+01 least_sq_term_29
+                     -1.0000000000e+01 least_sq_term_30
+                     -1.6666670000e+01 least_sq_term_31
+                     -1.0000000000e+01 least_sq_term_32
+                     -1.0000000000e+01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                      1.3052144785e+00 desired_speed
+                      1.8549865162e-01 radius
+                      1.0509362032e+00 time_gap
+                      7.3560514274e+00 strength_neighbor
+                      3.1283359556e-01 range_neighbor
+                      6.8475733313e+00 strength_geometry
+                      3.0215026324e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 13:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -8.3406000000e+00 least_sq_term_1
+                     -3.2005600000e+00 least_sq_term_2
+                      6.4682700000e+00 least_sq_term_3
+                     -1.1797080000e+01 least_sq_term_4
+                     -2.5369800000e+00 least_sq_term_5
+                      9.2740800000e+00 least_sq_term_6
+                     -1.4935690000e+01 least_sq_term_7
+                      3.7114000000e-01 least_sq_term_8
+                      1.8428500000e+00 least_sq_term_9
+                     -1.5150530000e+01 least_sq_term_10
+                     -3.5241000000e-01 least_sq_term_11
+                      4.2026000000e-01 least_sq_term_12
+                     -1.6111300000e+01 least_sq_term_13
+                     -3.2599000000e+00 least_sq_term_14
+                     -1.3850500000e+00 least_sq_term_15
+                     -9.1385500000e+00 least_sq_term_16
+                     -2.7210100000e+00 least_sq_term_17
+                      7.5821200000e+00 least_sq_term_18
+                     -1.4898280000e+01 least_sq_term_19
+                     -7.7769000000e-01 least_sq_term_20
+                     -5.4915000000e-01 least_sq_term_21
+                     -1.5543400000e+01 least_sq_term_22
+                      3.2845800000e+00 least_sq_term_23
+                      3.9014100000e+00 least_sq_term_24
+                     -1.2663760000e+01 least_sq_term_25
+                     -3.6336500000e+00 least_sq_term_26
+                      2.8247100000e+00 least_sq_term_27
+                     -1.2520980000e+01 least_sq_term_28
+                     -1.4154500000e+00 least_sq_term_29
+                      7.1653900000e+00 least_sq_term_30
+                     -1.6186600000e+01 least_sq_term_31
+                      4.2920000000e-02 least_sq_term_32
+                     -1.6111000000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                      1.2526889027e+00 desired_speed
+                      1.4988337083e-01 radius
+                      9.7910943057e-01 time_gap
+                      7.5088772585e+00 strength_neighbor
+                      1.9884847868e-01 range_neighbor
+                      6.2411472780e+00 strength_geometry
+                      1.9404550757e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 14:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -2.6059400000e+00 least_sq_term_1
+                     -2.8418000000e-01 least_sq_term_2
+                      2.5298900000e+00 least_sq_term_3
+                     -1.7945000000e-01 least_sq_term_4
+                     -3.0467000000e-01 least_sq_term_5
+                      6.5842800000e+00 least_sq_term_6
+                     -2.9661000000e+00 least_sq_term_7
+                      1.1648200000e+00 least_sq_term_8
+                      2.3784100000e+00 least_sq_term_9
+                     -1.4217520000e+01 least_sq_term_10
+                      1.6797200000e+00 least_sq_term_11
+                     -1.0408800000e+00 least_sq_term_12
+                     -1.0113300000e+01 least_sq_term_13
+                     -1.2594700000e+00 least_sq_term_14
+                     -3.8848100000e+00 least_sq_term_15
+                      1.3001300000e+00 least_sq_term_16
+                     -1.8498000000e-01 least_sq_term_17
+                      5.0887900000e+00 least_sq_term_18
+                     -1.3886840000e+01 least_sq_term_19
+                     -5.8488000000e-01 least_sq_term_20
+                      1.6005500000e+00 least_sq_term_21
+                     -2.4875600000e+00 least_sq_term_22
+                      2.6394000000e-01 least_sq_term_23
+                      8.3781900000e+00 least_sq_term_24
+                     -3.0405400000e+00 least_sq_term_25
+                     -1.1762500000e+00 least_sq_term_26
+                      1.8233700000e+00 least_sq_term_27
+                     -2.2925300000e+00 least_sq_term_28
+                      1.0075300000e+00 least_sq_term_29
+                      4.6097100000e+00 least_sq_term_30
+                     -1.5706220000e+01 least_sq_term_31
+                      3.8433500000e+00 least_sq_term_32
+                     -9.4555000000e-01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                      1.4316233415e+00 desired_speed
+                      1.3424323317e-01 radius
+                      8.7432443863e-01 time_gap
+                      1.3685791421e+00 strength_neighbor
+                      2.3857820870e-02 range_neighbor
+                      8.0082771949e+00 strength_geometry
+                      1.2402802699e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 15:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6666670000e+01 least_sq_term_1
+                      1.2468700000e+00 least_sq_term_2
+                      1.5860270000e+01 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                      5.4005600000e+00 least_sq_term_5
+                      2.9290330000e+01 least_sq_term_6
+                     -1.6666670000e+01 least_sq_term_7
+                      8.3072100000e+00 least_sq_term_8
+                      1.0669920000e+01 least_sq_term_9
+                     -1.6666670000e+01 least_sq_term_10
+                      4.8754200000e+00 least_sq_term_11
+                      5.3172200000e+00 least_sq_term_12
+                     -1.6666670000e+01 least_sq_term_13
+                     -9.9220000000e-01 least_sq_term_14
+                      4.0645700000e+00 least_sq_term_15
+                     -1.6666670000e+01 least_sq_term_16
+                      1.0549400000e+00 least_sq_term_17
+                      3.3112750000e+01 least_sq_term_18
+                     -1.6666670000e+01 least_sq_term_19
+                      3.3235300000e+00 least_sq_term_20
+                     -1.2831600000e+00 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                      7.7804000000e+00 least_sq_term_23
+                      2.2599950000e+01 least_sq_term_24
+                     -1.6666670000e+01 least_sq_term_25
+                     -7.7040000000e-01 least_sq_term_26
+                      1.6338950000e+01 least_sq_term_27
+                     -1.6666670000e+01 least_sq_term_28
+                      8.4681200000e+00 least_sq_term_29
+                      1.6984480000e+01 least_sq_term_30
+                     -1.6666670000e+01 least_sq_term_31
+                      1.4253700000e+00 least_sq_term_32
+                      1.2010570000e+01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                      1.4616520221e+00 desired_speed
+                      1.7279043207e-01 radius
+                      7.4110043370e-01 time_gap
+                      7.8915878438e+00 strength_neighbor
+                      1.8817738882e-01 range_neighbor
+                      1.3865835074e+00 strength_geometry
+                      1.3658009309e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 16:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6666670000e+01 least_sq_term_1
+                     -1.0000000000e+01 least_sq_term_2
+                     -1.0000000000e+01 least_sq_term_3
+                     -1.1672220000e+01 least_sq_term_4
+                      2.3510000000e-01 least_sq_term_5
+                      7.8053400000e+00 least_sq_term_6
+                     -1.4936270000e+01 least_sq_term_7
+                      2.7886100000e+00 least_sq_term_8
+                      3.9107000000e+00 least_sq_term_9
+                     -1.4102610000e+01 least_sq_term_10
+                      1.6707000000e-01 least_sq_term_11
+                      3.6331200000e+00 least_sq_term_12
+                     -1.6666670000e+01 least_sq_term_13
+                     -1.0000000000e+01 least_sq_term_14
+                     -1.0000000000e+01 least_sq_term_15
+                     -9.0042900000e+00 least_sq_term_16
+                      1.2830000000e-02 least_sq_term_17
+                      6.1085000000e+00 least_sq_term_18
+                     -1.3763400000e+01 least_sq_term_19
+                     -3.7375000000e-01 least_sq_term_20
+                      2.6470900000e+00 least_sq_term_21
+                     -1.4420890000e+01 least_sq_term_22
+                      2.1455200000e+00 least_sq_term_23
+                      8.8841000000e+00 least_sq_term_24
+                     -1.6666670000e+01 least_sq_term_25
+                     -1.0000000000e+01 least_sq_term_26
+                     -1.0000000000e+01 least_sq_term_27
+                     -1.2417530000e+01 least_sq_term_28
+                      1.7220800000e+00 least_sq_term_29
+                      4.7466200000e+00 least_sq_term_30
+                     -1.6666670000e+01 least_sq_term_31
+                     -1.0000000000e+01 least_sq_term_32
+                     -1.0000000000e+01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                      1.5011816780e+00 desired_speed
+                      1.1948494653e-01 radius
+                      8.5819738122e-01 time_gap
+                      1.0278634529e+00 strength_neighbor
+                      8.7049891008e-02 range_neighbor
+                      8.6021652694e+00 strength_geometry
+                      1.5387769094e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 17:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6666670000e+01 least_sq_term_1
+                      1.2468700000e+00 least_sq_term_2
+                      2.0414190000e+01 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                      5.4005600000e+00 least_sq_term_5
+                      3.1826600000e+01 least_sq_term_6
+                     -1.6666670000e+01 least_sq_term_7
+                      8.3072100000e+00 least_sq_term_8
+                      1.1874610000e+01 least_sq_term_9
+                     -1.6666670000e+01 least_sq_term_10
+                      4.8754200000e+00 least_sq_term_11
+                      5.1456000000e+00 least_sq_term_12
+                     -1.6666670000e+01 least_sq_term_13
+                     -9.9220000000e-01 least_sq_term_14
+                      6.8433100000e+00 least_sq_term_15
+                     -1.6666670000e+01 least_sq_term_16
+                      1.0549400000e+00 least_sq_term_17
+                      3.9607800000e+01 least_sq_term_18
+                     -1.6666670000e+01 least_sq_term_19
+                      3.3235300000e+00 least_sq_term_20
+                      9.1174000000e-01 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                      7.7804000000e+00 least_sq_term_23
+                      2.9440040000e+01 least_sq_term_24
+                     -1.6666670000e+01 least_sq_term_25
+                     -7.7040000000e-01 least_sq_term_26
+                      1.4505960000e+01 least_sq_term_27
+                     -1.6666670000e+01 least_sq_term_28
+                      8.4681200000e+00 least_sq_term_29
+                      2.0071430000e+01 least_sq_term_30
+                     -1.6666670000e+01 least_sq_term_31
+                      1.4253700000e+00 least_sq_term_32
+                      1.1702410000e+01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                      9.1685330983e-01 desired_speed
+                      1.2301301634e-01 radius
+                      5.7962031740e-01 time_gap
+                      3.2041650493e+00 strength_neighbor
+                      2.0034277531e-01 range_neighbor
+                      6.5170365147e+00 strength_geometry
+                      1.8651793503e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 18:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6666670000e+01 least_sq_term_1
+                      1.2468700000e+00 least_sq_term_2
+                      3.1585560000e+01 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                      5.4005600000e+00 least_sq_term_5
+                      3.6903440000e+01 least_sq_term_6
+                     -1.6666670000e+01 least_sq_term_7
+                      8.3072100000e+00 least_sq_term_8
+                      1.5572590000e+01 least_sq_term_9
+                     -1.6666670000e+01 least_sq_term_10
+                      4.8754200000e+00 least_sq_term_11
+                      9.7062200000e+00 least_sq_term_12
+                     -1.3956940000e+01 least_sq_term_13
+                      8.4327500000e+00 least_sq_term_14
+                     -6.1094800000e+00 least_sq_term_15
+                     -1.6666670000e+01 least_sq_term_16
+                      1.0549400000e+00 least_sq_term_17
+                      4.0470720000e+01 least_sq_term_18
+                     -1.6666670000e+01 least_sq_term_19
+                      3.3235300000e+00 least_sq_term_20
+                      9.3438500000e+00 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                      7.7804000000e+00 least_sq_term_23
+                      3.0378230000e+01 least_sq_term_24
+                     -1.6666670000e+01 least_sq_term_25
+                     -7.7040000000e-01 least_sq_term_26
+                      2.8800540000e+01 least_sq_term_27
+                     -1.6666670000e+01 least_sq_term_28
+                      8.4681200000e+00 least_sq_term_29
+                      2.8185600000e+01 least_sq_term_30
+                     -1.6536750000e+01 least_sq_term_31
+                      1.1812070000e+01 least_sq_term_32
+                     -6.2779500000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                      1.2032893886e+00 desired_speed
+                      1.0423243135e-01 radius
+                      2.1660512360e-01 time_gap
+                      4.8255004908e+00 strength_neighbor
+                      3.2094263394e-01 range_neighbor
+                      9.0320682614e+00 strength_geometry
+                      1.7537396861e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 19:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6666670000e+01 least_sq_term_1
+                      1.2468700000e+00 least_sq_term_2
+                      6.3209030000e+01 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                      5.4005600000e+00 least_sq_term_5
+                      5.4553190000e+01 least_sq_term_6
+                     -1.6666670000e+01 least_sq_term_7
+                      8.3072100000e+00 least_sq_term_8
+                      2.9255470000e+01 least_sq_term_9
+                     -1.6431920000e+01 least_sq_term_10
+                      6.2344000000e+00 least_sq_term_11
+                     -3.8803400000e+00 least_sq_term_12
+                     -1.2086590000e+01 least_sq_term_13
+                      6.1892000000e-01 least_sq_term_14
+                      4.2605700000e+00 least_sq_term_15
+                     -1.6666670000e+01 least_sq_term_16
+                      1.0549400000e+00 least_sq_term_17
+                      5.9694820000e+01 least_sq_term_18
+                     -1.6282970000e+01 least_sq_term_19
+                      6.6971200000e+00 least_sq_term_20
+                     -4.8436300000e+00 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                      7.7804000000e+00 least_sq_term_23
+                      4.5323500000e+01 least_sq_term_24
+                     -1.6563230000e+01 least_sq_term_25
+                      3.8444000000e+00 least_sq_term_26
+                      1.7580800000e+00 least_sq_term_27
+                     -1.6666670000e+01 least_sq_term_28
+                      8.4681200000e+00 least_sq_term_29
+                      4.8784630000e+01 least_sq_term_30
+                     -1.5704920000e+01 least_sq_term_31
+                      3.0302700000e+00 least_sq_term_32
+                     -9.1719500000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                      1.7003954174e+00 desired_speed
+                      1.9604906351e-01 radius
+                      4.9326476112e-01 time_gap
+                      2.2412288244e+00 strength_neighbor
+                      3.4681164372e-01 range_neighbor
+                      8.3084555330e+00 strength_geometry
+                      1.9812599568e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 20:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6666670000e+01 least_sq_term_1
+                      1.2468700000e+00 least_sq_term_2
+                      2.8889310000e+01 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                      6.1339200000e+00 least_sq_term_5
+                      3.2091120000e+01 least_sq_term_6
+                     -1.6666670000e+01 least_sq_term_7
+                      8.3072100000e+00 least_sq_term_8
+                      9.9006700000e+00 least_sq_term_9
+                     -1.6666670000e+01 least_sq_term_10
+                      4.8754200000e+00 least_sq_term_11
+                     -2.1160300000e+00 least_sq_term_12
+                     -1.6547630000e+01 least_sq_term_13
+                     -9.9220000000e-01 least_sq_term_14
+                     -9.9988900000e+00 least_sq_term_15
+                     -1.6666670000e+01 least_sq_term_16
+                      1.0549400000e+00 least_sq_term_17
+                      4.4577270000e+01 least_sq_term_18
+                     -1.6666670000e+01 least_sq_term_19
+                      3.3235300000e+00 least_sq_term_20
+                     -5.7761000000e-01 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                      7.7804000000e+00 least_sq_term_23
+                      3.8195520000e+01 least_sq_term_24
+                     -1.6666670000e+01 least_sq_term_25
+                     -7.7040000000e-01 least_sq_term_26
+                      1.6448090000e+01 least_sq_term_27
+                     -1.6666670000e+01 least_sq_term_28
+                      7.6286600000e+00 least_sq_term_29
+                      2.7907690000e+01 least_sq_term_30
+                     -1.6666670000e+01 least_sq_term_31
+                      1.4253700000e+00 least_sq_term_32
+                      1.0881860000e+01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                      1.4013738578e+00 desired_speed
+                      1.7972178781e-01 radius
+                      3.1344963455e-01 time_gap
+                      4.3459756528e+00 strength_neighbor
+                      7.4643181360e-02 range_neighbor
+                      6.0377444317e+00 strength_geometry
+                      5.8252698121e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 21:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6550950000e+01 least_sq_term_1
+                      4.2748700000e+00 least_sq_term_2
+                      2.1038330000e+01 least_sq_term_3
+                     -1.1921940000e+01 least_sq_term_4
+                      2.3496100000e+00 least_sq_term_5
+                     -3.6381000000e-01 least_sq_term_6
+                     -1.5036410000e+01 least_sq_term_7
+                      2.3184500000e+00 least_sq_term_8
+                      4.1591000000e-01 least_sq_term_9
+                     -1.4100030000e+01 least_sq_term_10
+                      1.8796700000e+00 least_sq_term_11
+                      2.6740600000e+00 least_sq_term_12
+                     -1.0986690000e+01 least_sq_term_13
+                     -3.1142000000e+00 least_sq_term_14
+                      5.6173900000e+00 least_sq_term_15
+                     -1.4848860000e+01 least_sq_term_16
+                      1.0101670000e+01 least_sq_term_17
+                      3.0517700000e+00 least_sq_term_18
+                     -1.3753640000e+01 least_sq_term_19
+                      1.9046200000e+00 least_sq_term_20
+                      5.9098000000e-01 least_sq_term_21
+                     -1.4635270000e+01 least_sq_term_22
+                      7.7992000000e-01 least_sq_term_23
+                      3.4954900000e+00 least_sq_term_24
+                     -1.6048970000e+01 least_sq_term_25
+                      5.1918300000e+00 least_sq_term_26
+                      3.5173200000e+00 least_sq_term_27
+                     -1.5707720000e+01 least_sq_term_28
+                      1.2261830000e+01 least_sq_term_29
+                      1.4143600000e+00 least_sq_term_30
+                     -1.6546490000e+01 least_sq_term_31
+                      3.5027100000e+00 least_sq_term_32
+                      1.0251540000e+01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   22
+---------------------
+Parameters for evaluation 22:
+                      1.6022204732e+00 desired_speed
+                      1.3928934526e-01 radius
+                      6.6434547808e-01 time_gap
+                      6.2062026787e+00 strength_neighbor
+                      3.7901945489e-01 range_neighbor
+                      7.4113760790e+00 strength_geometry
+                      3.7661206312e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 22:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -8.3517600000e+00 least_sq_term_1
+                     -3.2727300000e+00 least_sq_term_2
+                      1.1119980000e+01 least_sq_term_3
+                     -1.1805260000e+01 least_sq_term_4
+                     -2.5530100000e+00 least_sq_term_5
+                      1.5013990000e+01 least_sq_term_6
+                     -1.4938590000e+01 least_sq_term_7
+                      1.2239000000e-01 least_sq_term_8
+                      7.3914900000e+00 least_sq_term_9
+                     -1.6550160000e+01 least_sq_term_10
+                      3.2225900000e+00 least_sq_term_11
+                      4.6476000000e+00 least_sq_term_12
+                     -1.6222670000e+01 least_sq_term_13
+                     -2.7123000000e-01 least_sq_term_14
+                     -6.4037200000e+00 least_sq_term_15
+                     -9.1486400000e+00 least_sq_term_16
+                     -2.7103900000e+00 least_sq_term_17
+                      1.2235580000e+01 least_sq_term_18
+                     -1.6288110000e+01 least_sq_term_19
+                      1.3315300000e+00 least_sq_term_20
+                      4.6726000000e+00 least_sq_term_21
+                     -1.4534610000e+01 least_sq_term_22
+                      1.5531000000e-01 least_sq_term_23
+                      1.2483520000e+01 least_sq_term_24
+                     -1.2669130000e+01 least_sq_term_25
+                     -3.4965400000e+00 least_sq_term_26
+                      7.9313100000e+00 least_sq_term_27
+                     -1.2526540000e+01 least_sq_term_28
+                     -1.3685900000e+00 least_sq_term_29
+                      1.2597990000e+01 least_sq_term_30
+                     -8.9959500000e+00 least_sq_term_31
+                     -3.5019800000e+00 least_sq_term_32
+                      5.3975300000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   23
+---------------------
+Parameters for evaluation 23:
+                      1.2301843888e+00 desired_speed
+                      1.2525934176e-01 radius
+                      6.9826926495e-01 time_gap
+                      7.0902621041e+00 strength_neighbor
+                      4.3689736960e-02 range_neighbor
+                      5.0002061352e+00 strength_geometry
+                      1.4863316861e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 23:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.5084900000e+00 least_sq_term_1
+                     -9.8094000000e-01 least_sq_term_2
+                     -3.3628400000e+00 least_sq_term_3
+                      3.6484200000e+00 least_sq_term_4
+                     -2.9748000000e+00 least_sq_term_5
+                     -3.2492100000e+00 least_sq_term_6
+                     -5.7080000000e-02 least_sq_term_7
+                     -1.7523800000e+00 least_sq_term_8
+                     -3.0340300000e+00 least_sq_term_9
+                      2.4566500000e+00 least_sq_term_10
+                     -2.5929000000e-01 least_sq_term_11
+                      6.5195000000e-01 least_sq_term_12
+                      1.3376700000e+00 least_sq_term_13
+                      3.2530000000e-02 least_sq_term_14
+                     -6.8021000000e-01 least_sq_term_15
+                      5.9031900000e+00 least_sq_term_16
+                     -1.7153200000e+00 least_sq_term_17
+                     -3.0503600000e+00 least_sq_term_18
+                      4.2592600000e+00 least_sq_term_19
+                     -5.4251000000e-01 least_sq_term_20
+                     -2.0157000000e-01 least_sq_term_21
+                      1.4862000000e+00 least_sq_term_22
+                     -2.9288900000e+00 least_sq_term_23
+                     -2.4758200000e+00 least_sq_term_24
+                     -1.2014300000e+00 least_sq_term_25
+                     -2.5960600000e+00 least_sq_term_26
+                     -2.3838200000e+00 least_sq_term_27
+                      6.0606000000e-01 least_sq_term_28
+                     -1.9434000000e+00 least_sq_term_29
+                     -3.9767400000e+00 least_sq_term_30
+                      2.4422400000e+00 least_sq_term_31
+                     -8.4357000000e-01 least_sq_term_32
+                     -4.2816900000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   24
+---------------------
+Parameters for evaluation 24:
+                      1.6409468463e+00 desired_speed
+                      1.8289826462e-01 radius
+                      8.0819363167e-01 time_gap
+                      4.7029755987e+00 strength_neighbor
+                      7.0614812220e-02 range_neighbor
+                      4.5866094475e+00 strength_geometry
+                      1.1009388706e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 24:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6548770000e+01 least_sq_term_1
+                      5.1400100000e+00 least_sq_term_2
+                     -1.1021000000e-01 least_sq_term_3
+                     -1.4489840000e+01 least_sq_term_4
+                      7.6534500000e+00 least_sq_term_5
+                     -7.2791000000e+00 least_sq_term_6
+                     -1.6245810000e+01 least_sq_term_7
+                      1.3424360000e+01 least_sq_term_8
+                     -7.6685200000e+00 least_sq_term_9
+                     -1.6427490000e+01 least_sq_term_10
+                      7.2221100000e+00 least_sq_term_11
+                     -7.3210300000e+00 least_sq_term_12
+                     -1.6326500000e+01 least_sq_term_13
+                     -1.2849900000e+00 least_sq_term_14
+                     -6.7796400000e+00 least_sq_term_15
+                     -1.4353070000e+01 least_sq_term_16
+                      1.0790050000e+01 least_sq_term_17
+                     -7.9133000000e+00 least_sq_term_18
+                     -1.6407170000e+01 least_sq_term_19
+                      6.6430000000e+00 least_sq_term_20
+                     -7.5167100000e+00 least_sq_term_21
+                     -1.6185960000e+01 least_sq_term_22
+                      1.1218750000e+01 least_sq_term_23
+                     -6.8211100000e+00 least_sq_term_24
+                     -1.6135820000e+01 least_sq_term_25
+                      7.3550300000e+00 least_sq_term_26
+                     -6.5295000000e+00 least_sq_term_27
+                     -1.4251880000e+01 least_sq_term_28
+                      7.9735500000e+00 least_sq_term_29
+                     -7.3328800000e+00 least_sq_term_30
+                     -1.5798270000e+01 least_sq_term_31
+                      8.4369400000e+00 least_sq_term_32
+                     -7.2623700000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   25
+---------------------
+Parameters for evaluation 25:
+                      1.1709482790e+00 desired_speed
+                      1.6673418489e-01 radius
+                      1.7686166298e-01 time_gap
+                      8.6990356813e+00 strength_neighbor
+                      5.3083652322e-02 range_neighbor
+                      2.7469447409e+00 strength_geometry
+                      1.8086127105e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 25:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.5967670000e+01 least_sq_term_1
+                      1.2338180000e+01 least_sq_term_2
+                     -5.3997900000e+00 least_sq_term_3
+                     -1.5909090000e+01 least_sq_term_4
+                      1.2706830000e+01 least_sq_term_5
+                     -8.2954100000e+00 least_sq_term_6
+                     -1.6563950000e+01 least_sq_term_7
+                      1.5630090000e+01 least_sq_term_8
+                      3.5146200000e+00 least_sq_term_9
+                     -1.5482160000e+01 least_sq_term_10
+                      1.2640360000e+01 least_sq_term_11
+                     -1.7964000000e+00 least_sq_term_12
+                     -1.6666670000e+01 least_sq_term_13
+                     -1.0000000000e+01 least_sq_term_14
+                     -1.0000000000e+01 least_sq_term_15
+                     -1.5537370000e+01 least_sq_term_16
+                      1.2552470000e+01 least_sq_term_17
+                     -3.9121200000e+00 least_sq_term_18
+                     -1.5117660000e+01 least_sq_term_19
+                      1.2293720000e+01 least_sq_term_20
+                     -3.8053300000e+00 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                      7.7804000000e+00 least_sq_term_23
+                      4.0859970000e+01 least_sq_term_24
+                     -1.4595810000e+01 least_sq_term_25
+                      8.3381800000e+00 least_sq_term_26
+                     -2.8072400000e+00 least_sq_term_27
+                     -1.6558810000e+01 least_sq_term_28
+                      1.6862720000e+01 least_sq_term_29
+                     -1.0091400000e+00 least_sq_term_30
+                     -1.3035710000e+01 least_sq_term_31
+                      9.1952800000e+00 least_sq_term_32
+                     -5.6358800000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   26
+---------------------
+Parameters for evaluation 26:
+                      1.6667820764e+00 desired_speed
+                      1.0174663308e-01 radius
+                      1.0314840052e+00 time_gap
+                      8.1365895884e+00 strength_neighbor
+                      1.6662393163e-01 range_neighbor
+                      1.0570986702e+00 strength_geometry
+                      1.7347573335e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 26:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6666670000e+01 least_sq_term_1
+                     -1.0000000000e+01 least_sq_term_2
+                     -1.0000000000e+01 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                     -1.0000000000e+01 least_sq_term_5
+                     -1.0000000000e+01 least_sq_term_6
+                      1.1642200000e+00 least_sq_term_7
+                     -1.4500000000e-03 least_sq_term_8
+                      3.0639000000e+00 least_sq_term_9
+                     -1.6666670000e+01 least_sq_term_10
+                     -1.0000000000e+01 least_sq_term_11
+                     -1.0000000000e+01 least_sq_term_12
+                     -1.6666670000e+01 least_sq_term_13
+                     -1.0000000000e+01 least_sq_term_14
+                     -1.0000000000e+01 least_sq_term_15
+                     -1.6666670000e+01 least_sq_term_16
+                     -1.0000000000e+01 least_sq_term_17
+                     -1.0000000000e+01 least_sq_term_18
+                     -1.6666670000e+01 least_sq_term_19
+                     -1.0000000000e+01 least_sq_term_20
+                     -1.0000000000e+01 least_sq_term_21
+                      2.4608500000e+00 least_sq_term_22
+                     -6.5840000000e-01 least_sq_term_23
+                      6.2326300000e+00 least_sq_term_24
+                     -1.6666670000e+01 least_sq_term_25
+                     -1.0000000000e+01 least_sq_term_26
+                     -1.0000000000e+01 least_sq_term_27
+                     -1.6666670000e+01 least_sq_term_28
+                     -1.0000000000e+01 least_sq_term_29
+                     -1.0000000000e+01 least_sq_term_30
+                     -1.6666670000e+01 least_sq_term_31
+                     -1.0000000000e+01 least_sq_term_32
+                     -1.0000000000e+01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   27
+---------------------
+Parameters for evaluation 27:
+                      1.0947706628e+00 desired_speed
+                      1.3842636874e-01 radius
+                      1.0005017742e-01 time_gap
+                      2.8064970956e+00 strength_neighbor
+                      2.6650096649e-01 range_neighbor
+                      1.6817839146e+00 strength_geometry
+                      2.5588605452e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 27:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.4583750000e+01 least_sq_term_1
+                      5.6421000000e+00 least_sq_term_2
+                      1.1570260000e+01 least_sq_term_3
+                     -1.1803630000e+01 least_sq_term_4
+                     -8.2315000000e-01 least_sq_term_5
+                      1.1284330000e+01 least_sq_term_6
+                     -1.4933940000e+01 least_sq_term_7
+                      1.3934300000e+00 least_sq_term_8
+                      6.1508000000e+00 least_sq_term_9
+                     -1.5382920000e+01 least_sq_term_10
+                      6.1233000000e+00 least_sq_term_11
+                      1.4934000000e-01 least_sq_term_12
+                     -1.6555520000e+01 least_sq_term_13
+                     -1.8110900000e+00 least_sq_term_14
+                      3.8937300000e+01 least_sq_term_15
+                     -1.4992070000e+01 least_sq_term_16
+                      6.0744800000e+00 least_sq_term_17
+                      1.5982410000e+01 least_sq_term_18
+                     -1.5022940000e+01 least_sq_term_19
+                      5.6422300000e+00 least_sq_term_20
+                     -4.1673000000e-01 least_sq_term_21
+                     -1.4530320000e+01 least_sq_term_22
+                      3.2604000000e-01 least_sq_term_23
+                      1.3014310000e+01 least_sq_term_24
+                      1.3077680000e+01 least_sq_term_25
+                     -1.8630200000e+00 least_sq_term_26
+                      1.0211140000e+01 least_sq_term_27
+                      1.3276030000e+01 least_sq_term_28
+                     -2.5267000000e-01 least_sq_term_29
+                      1.0294910000e+01 least_sq_term_30
+                     -1.6546450000e+01 least_sq_term_31
+                      3.5027100000e+00 least_sq_term_32
+                      2.1987270000e+01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   28
+---------------------
+Parameters for evaluation 28:
+                      8.2931055891e-01 desired_speed
+                      1.4490448015e-01 radius
+                      3.5236131538e-01 time_gap
+                      8.3037448055e+00 strength_neighbor
+                      1.3076382557e-01 range_neighbor
+                      4.0653271790e+00 strength_geometry
+                      1.4671807383e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 28:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.0285070000e+01 least_sq_term_1
+                      3.8912800000e+00 least_sq_term_2
+                     -6.8068000000e-01 least_sq_term_3
+                     -1.3778350000e+01 least_sq_term_4
+                      5.4883300000e+00 least_sq_term_5
+                      9.6727000000e-01 least_sq_term_6
+                     -1.5744070000e+01 least_sq_term_7
+                      8.4365500000e+00 least_sq_term_8
+                     -6.2196000000e-01 least_sq_term_9
+                     -1.4561050000e+01 least_sq_term_10
+                      4.7050200000e+00 least_sq_term_11
+                      1.0708000000e-01 least_sq_term_12
+                     -1.0309930000e+01 least_sq_term_13
+                      2.2813300000e+00 least_sq_term_14
+                     -6.0463000000e-01 least_sq_term_15
+                     -1.1333320000e+01 least_sq_term_16
+                      4.3232400000e+00 least_sq_term_17
+                      1.9682000000e-01 least_sq_term_18
+                     -1.4245600000e+01 least_sq_term_19
+                      4.9109000000e+00 least_sq_term_20
+                     -1.5705900000e+00 least_sq_term_21
+                     -1.5637810000e+01 least_sq_term_22
+                      6.5877100000e+00 least_sq_term_23
+                     -6.0012100000e+00 least_sq_term_24
+                     -1.3466590000e+01 least_sq_term_25
+                      3.4104800000e+00 least_sq_term_26
+                     -1.7113500000e+00 least_sq_term_27
+                     -1.4201080000e+01 least_sq_term_28
+                      7.9743200000e+00 least_sq_term_29
+                     -4.3606000000e-01 least_sq_term_30
+                     -1.0157390000e+01 least_sq_term_31
+                      3.2030900000e+00 least_sq_term_32
+                     -2.5562300000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   29
+---------------------
+Parameters for evaluation 29:
+                      9.4899269154e-01 desired_speed
+                      1.8782256898e-01 radius
+                      9.9208395697e-01 time_gap
+                      3.4857633834e+00 strength_neighbor
+                      3.4759332922e-01 range_neighbor
+                      7.2946178521e+00 strength_geometry
+                      1.1092334499e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 29:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6434920000e+01 least_sq_term_1
+                      2.0380200000e+00 least_sq_term_2
+                      3.3582700000e+00 least_sq_term_3
+                     -1.6540060000e+01 least_sq_term_4
+                      2.4671200000e+00 least_sq_term_5
+                     -2.6288600000e+00 least_sq_term_6
+                     -1.6562030000e+01 least_sq_term_7
+                      4.6457700000e+00 least_sq_term_8
+                     -6.0926700000e+00 least_sq_term_9
+                     -1.6549810000e+01 least_sq_term_10
+                      3.2225900000e+00 least_sq_term_11
+                     -4.7250500000e+00 least_sq_term_12
+                     -1.2551420000e+01 least_sq_term_13
+                     -3.0515700000e+00 least_sq_term_14
+                     -6.0022100000e+00 least_sq_term_15
+                     -1.5680210000e+01 least_sq_term_16
+                      3.0344100000e+00 least_sq_term_17
+                     -7.5411100000e+00 least_sq_term_18
+                     -1.5258810000e+01 least_sq_term_19
+                      3.2092000000e+00 least_sq_term_20
+                     -7.3095200000e+00 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                      7.7804000000e+00 least_sq_term_23
+                      2.6409620000e+01 least_sq_term_24
+                     -1.4896240000e+01 least_sq_term_25
+                      7.6438000000e-01 least_sq_term_26
+                     -5.5761900000e+00 least_sq_term_27
+                     -1.6558920000e+01 least_sq_term_28
+                      5.9497400000e+00 least_sq_term_29
+                     -1.6951700000e+00 least_sq_term_30
+                     -1.6303450000e+01 least_sq_term_31
+                      2.1380800000e+00 least_sq_term_32
+                     -4.6444000000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   30
+---------------------
+Parameters for evaluation 30:
+                      1.4789252562e+00 desired_speed
+                      1.0970037777e-01 radius
+                      1.1415327293e+00 time_gap
+                      5.7281566913e+00 strength_neighbor
+                      2.2912016868e-01 range_neighbor
+                      2.0035328983e+00 strength_geometry
+                      1.5092486216e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 30:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -8.2334500000e+00 least_sq_term_1
+                     -2.0462000000e-01 least_sq_term_2
+                      2.8298500000e+00 least_sq_term_3
+                     -1.1678930000e+01 least_sq_term_4
+                     -5.9160000000e-02 least_sq_term_5
+                      5.3989200000e+00 least_sq_term_6
+                     -1.4734640000e+01 least_sq_term_7
+                      9.5659000000e-01 least_sq_term_8
+                      2.9652900000e+00 least_sq_term_9
+                     -1.4102610000e+01 least_sq_term_10
+                      1.2392000000e+00 least_sq_term_11
+                      2.6916800000e+00 least_sq_term_12
+                     -1.6666670000e+01 least_sq_term_13
+                     -1.0000000000e+01 least_sq_term_14
+                     -1.0000000000e+01 least_sq_term_15
+                     -9.0068500000e+00 least_sq_term_16
+                      3.9530000000e-02 least_sq_term_17
+                      4.2454300000e+00 least_sq_term_18
+                     -1.3764380000e+01 least_sq_term_19
+                     -1.6972000000e-01 least_sq_term_20
+                      1.7543500000e+00 least_sq_term_21
+                     -1.4421640000e+01 least_sq_term_22
+                      1.1723200000e+00 least_sq_term_23
+                      7.5266800000e+00 least_sq_term_24
+                     -1.2462710000e+01 least_sq_term_25
+                     -5.6753000000e-01 least_sq_term_26
+                      2.3679600000e+00 least_sq_term_27
+                     -1.2417530000e+01 least_sq_term_28
+                      1.6270500000e+00 least_sq_term_29
+                      2.3224700000e+00 least_sq_term_30
+                     -1.6666670000e+01 least_sq_term_31
+                     -1.0000000000e+01 least_sq_term_32
+                     -1.0000000000e+01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   31
+---------------------
+Parameters for evaluation 31:
+                      1.3502300468e+00 desired_speed
+                      1.1592186416e-01 radius
+                      1.5166734210e-01 time_gap
+                      6.5235506831e+00 strength_neighbor
+                      1.5282583061e-01 range_neighbor
+                      8.8141825080e+00 strength_geometry
+                      1.0039804893e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 31:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -9.3862400000e+00 least_sq_term_1
+                      2.3417000000e+00 least_sq_term_2
+                      4.0991400000e+00 least_sq_term_3
+                     -1.3421370000e+01 least_sq_term_4
+                      3.8957400000e+00 least_sq_term_5
+                      5.0561800000e+00 least_sq_term_6
+                     -1.5647420000e+01 least_sq_term_7
+                      7.7986800000e+00 least_sq_term_8
+                      3.1000600000e+00 least_sq_term_9
+                     -1.4566690000e+01 least_sq_term_10
+                      4.1013100000e+00 least_sq_term_11
+                      7.0379200000e+00 least_sq_term_12
+                     -1.0324840000e+01 least_sq_term_13
+                     -4.3107000000e-01 least_sq_term_14
+                      9.9450400000e+00 least_sq_term_15
+                     -1.0801630000e+01 least_sq_term_16
+                      3.0207900000e+00 least_sq_term_17
+                      3.4822800000e+00 least_sq_term_18
+                     -1.4261060000e+01 least_sq_term_19
+                      4.4011700000e+00 least_sq_term_20
+                      4.1203100000e+00 least_sq_term_21
+                     -1.5420220000e+01 least_sq_term_22
+                      5.0350800000e+00 least_sq_term_23
+                      3.8079500000e+00 least_sq_term_24
+                     -1.3380020000e+01 least_sq_term_25
+                      2.9379200000e+00 least_sq_term_26
+                      3.9124300000e+00 least_sq_term_27
+                     -1.3476610000e+01 least_sq_term_28
+                      4.3907400000e+00 least_sq_term_29
+                      2.2255700000e+00 least_sq_term_30
+                     -9.9457800000e+00 least_sq_term_31
+                      2.8082900000e+00 least_sq_term_32
+                      1.1808100000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   32
+---------------------
+Parameters for evaluation 32:
+                      1.7526688870e+00 desired_speed
+                      1.5858485748e-01 radius
+                      3.1406412686e-01 time_gap
+                      3.6415204999e+00 strength_neighbor
+                      1.7769260425e-01 range_neighbor
+                      3.2567437321e+00 strength_geometry
+                      1.6182758227e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 32:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.0310740000e+01 least_sq_term_1
+                      3.8243000000e+00 least_sq_term_2
+                      1.6070700000e+00 least_sq_term_3
+                     -1.3797760000e+01 least_sq_term_4
+                      5.5247100000e+00 least_sq_term_5
+                      4.2627500000e+00 least_sq_term_6
+                     -1.5749030000e+01 least_sq_term_7
+                      4.3738800000e+00 least_sq_term_8
+                     -5.8941500000e+00 least_sq_term_9
+                     -1.5733030000e+01 least_sq_term_10
+                      5.5296600000e+00 least_sq_term_11
+                      7.6599200000e+00 least_sq_term_12
+                     -1.0436100000e+01 least_sq_term_13
+                      3.6782000000e-01 least_sq_term_14
+                      3.8975500000e+00 least_sq_term_15
+                     -1.1501580000e+01 least_sq_term_16
+                      4.4838900000e+00 least_sq_term_17
+                      2.3107900000e+00 least_sq_term_18
+                     -1.5526400000e+01 least_sq_term_19
+                      5.0464000000e+00 least_sq_term_20
+                      5.0339000000e+00 least_sq_term_21
+                     -1.5987930000e+01 least_sq_term_22
+                      9.5706000000e+00 least_sq_term_23
+                      2.4838700000e+00 least_sq_term_24
+                     -1.3480580000e+01 least_sq_term_25
+                      3.1981300000e+00 least_sq_term_26
+                      1.6468700000e+00 least_sq_term_27
+                     -1.4218490000e+01 least_sq_term_28
+                      7.6286600000e+00 least_sq_term_29
+                      1.0738800000e+00 least_sq_term_30
+                     -1.5706860000e+01 least_sq_term_31
+                      6.2249400000e+00 least_sq_term_32
+                      7.0999600000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   33
+---------------------
+Parameters for evaluation 33:
+                      1.5712325723e+00 desired_speed
+                      1.9824489500e-01 radius
+                      9.1114172628e-01 time_gap
+                      6.4818255143e+00 strength_neighbor
+                      2.9849154011e-01 range_neighbor
+                      6.7350338633e+00 strength_geometry
+                      9.2945440606e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 33:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.2278240000e+01 least_sq_term_1
+                     -8.8445000000e-01 least_sq_term_2
+                     -8.8557000000e-01 least_sq_term_3
+                     -1.5292270000e+01 least_sq_term_4
+                      7.1958000000e-01 least_sq_term_5
+                     -2.7117100000e+00 least_sq_term_6
+                     -1.6361300000e+01 least_sq_term_7
+                      4.9006800000e+00 least_sq_term_8
+                     -2.4026800000e+00 least_sq_term_9
+                     -1.4686010000e+01 least_sq_term_10
+                     -7.8248000000e-01 least_sq_term_11
+                     -2.4452000000e-01 least_sq_term_12
+                     -1.1116680000e+01 least_sq_term_13
+                     -5.0224500000e+00 least_sq_term_14
+                      2.4555400000e+00 least_sq_term_15
+                     -1.3881280000e+01 least_sq_term_16
+                      2.9356000000e-01 least_sq_term_17
+                     -9.7098000000e-01 least_sq_term_18
+                     -1.4395310000e+01 least_sq_term_19
+                     -8.3472000000e-01 least_sq_term_20
+                     -1.7173400000e+00 least_sq_term_21
+                     -1.6553080000e+01 least_sq_term_22
+                      4.5476000000e+00 least_sq_term_23
+                      7.2476000000e-01 least_sq_term_24
+                     -1.4197530000e+01 least_sq_term_25
+                     -1.8861500000e+00 least_sq_term_26
+                     -1.9181000000e+00 least_sq_term_27
+                     -1.5605100000e+01 least_sq_term_28
+                      2.7447400000e+00 least_sq_term_29
+                     -2.6441300000e+00 least_sq_term_30
+                     -1.6067190000e+01 least_sq_term_31
+                      3.0961000000e-01 least_sq_term_32
+                     -2.7303700000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   34
+---------------------
+Parameters for evaluation 34:
+                      1.0216512499e+00 desired_speed
+                      1.4414558616e-01 radius
+                      4.5649347345e-01 time_gap
+                      3.8443186590e+00 strength_neighbor
+                      3.3004595100e-01 range_neighbor
+                      9.2656718732e+00 strength_geometry
+                      4.6409125533e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 34:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6203490000e+01 least_sq_term_1
+                      3.4497800000e+00 least_sq_term_2
+                      8.4434000000e+00 least_sq_term_3
+                     -1.6541600000e+01 least_sq_term_4
+                      4.6672000000e+00 least_sq_term_5
+                      1.6503590000e+01 least_sq_term_6
+                     -1.4932780000e+01 least_sq_term_7
+                      1.3668600000e+00 least_sq_term_8
+                      4.1855900000e+00 least_sq_term_9
+                     -1.4098310000e+01 least_sq_term_10
+                      7.1009000000e-01 least_sq_term_11
+                      1.5999400000e+00 least_sq_term_12
+                     -1.6221920000e+01 least_sq_term_13
+                     -2.4773000000e+00 least_sq_term_14
+                      9.0818700000e+00 least_sq_term_15
+                     -9.1259100000e+00 least_sq_term_16
+                     -1.3774300000e+00 least_sq_term_17
+                      7.5769800000e+00 least_sq_term_18
+                     -1.3756580000e+01 least_sq_term_19
+                      8.6945000000e-01 least_sq_term_20
+                      7.5330000000e-02 least_sq_term_21
+                     -1.4529600000e+01 least_sq_term_22
+                      1.1763900000e+00 least_sq_term_23
+                      9.0896700000e+00 least_sq_term_24
+                     -1.5638210000e+01 least_sq_term_25
+                      1.0330800000e+00 least_sq_term_26
+                      5.2481300000e+00 least_sq_term_27
+                     -1.2512610000e+01 least_sq_term_28
+                      1.2093000000e-01 least_sq_term_29
+                      6.1435800000e+00 least_sq_term_30
+                     -1.2817110000e+01 least_sq_term_31
+                      9.2588000000e-01 least_sq_term_32
+                     -1.4774600000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   35
+---------------------
+Parameters for evaluation 35:
+                      1.1165760168e+00 desired_speed
+                      1.5822285201e-01 radius
+                      7.8441220241e-01 time_gap
+                      5.2987827457e+00 strength_neighbor
+                      3.6994477734e-01 range_neighbor
+                      3.8779034993e+00 strength_geometry
+                      9.9157417114e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 35:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -8.5664500000e+00 least_sq_term_1
+                     -2.8240600000e+00 least_sq_term_2
+                      5.9150300000e+00 least_sq_term_3
+                     -1.2417100000e+01 least_sq_term_4
+                     -1.6517400000e+00 least_sq_term_5
+                      7.2971900000e+00 least_sq_term_6
+                     -1.5035870000e+01 least_sq_term_7
+                      9.6812000000e-01 least_sq_term_8
+                      3.0710800000e+00 least_sq_term_9
+                     -1.4215880000e+01 least_sq_term_10
+                     -5.9689000000e-01 least_sq_term_11
+                      1.4102300000e+00 least_sq_term_12
+                     -1.4888290000e+01 least_sq_term_13
+                     -6.8790000000e-01 least_sq_term_14
+                     -3.9800400000e+00 least_sq_term_15
+                     -9.4100700000e+00 least_sq_term_16
+                     -2.4436300000e+00 least_sq_term_17
+                      7.8916000000e+00 least_sq_term_18
+                     -1.3885910000e+01 least_sq_term_19
+                     -1.0487800000e+00 least_sq_term_20
+                      7.8269000000e-01 least_sq_term_21
+                     -1.4755200000e+01 least_sq_term_22
+                      1.5266000000e-01 least_sq_term_23
+                      5.8536200000e+00 least_sq_term_24
+                     -1.2762460000e+01 least_sq_term_25
+                     -2.7589200000e+00 least_sq_term_26
+                      3.8735800000e+00 least_sq_term_27
+                     -1.2728290000e+01 least_sq_term_28
+                     -1.0631100000e+00 least_sq_term_29
+                      6.8271500000e+00 least_sq_term_30
+                     -9.2156700000e+00 least_sq_term_31
+                     -3.0256900000e+00 least_sq_term_32
+                      1.3112300000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation   36
+---------------------
+Parameters for evaluation 36:
+                      1.0357891997e+00 desired_speed
+                      1.5267758480e-01 radius
+                      9.4359924562e-01 time_gap
+                      1.7655528886e+00 strength_neighbor
+                      2.1117897558e-01 range_neighbor
+                      4.8733299216e+00 strength_geometry
+                      1.4041414772e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 36:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.6194770000e+01 least_sq_term_1
+                      9.7190600000e+00 least_sq_term_2
+                     -1.4635400000e+00 least_sq_term_3
+                     -1.6538930000e+01 least_sq_term_4
+                      9.8007200000e+00 least_sq_term_5
+                      3.1716900000e+00 least_sq_term_6
+                     -1.6450690000e+01 least_sq_term_7
+                      1.3793270000e+01 least_sq_term_8
+                     -9.0161800000e+00 least_sq_term_9
+                     -1.6543920000e+01 least_sq_term_10
+                      9.8338900000e+00 least_sq_term_11
+                     -7.7834900000e+00 least_sq_term_12
+                     -1.6428760000e+01 least_sq_term_13
+                      1.8334300000e+00 least_sq_term_14
+                     -8.9796600000e+00 least_sq_term_15
+                     -1.5666650000e+01 least_sq_term_16
+                      1.0519490000e+01 least_sq_term_17
+                     -5.2767500000e+00 least_sq_term_18
+                     -1.6526800000e+01 least_sq_term_19
+                      9.9852900000e+00 least_sq_term_20
+                     -9.5138400000e+00 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_22
+                      7.7804000000e+00 least_sq_term_23
+                      2.5810230000e+01 least_sq_term_24
+                     -1.6448410000e+01 least_sq_term_25
+                      8.2345800000e+00 least_sq_term_26
+                     -7.7749100000e+00 least_sq_term_27
+                     -1.6119750000e+01 least_sq_term_28
+                      1.3557730000e+01 least_sq_term_29
+                     -5.8643900000e+00 least_sq_term_30
+                     -1.6420940000e+01 least_sq_term_31
+                      6.5652600000e+00 least_sq_term_32
+                     -3.6268300000e+00 least_sq_term_33
+
+
+
+>>>>> Appending 36 points to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+Constructing global approximations with no anchor, 36 DACE samples, and 0 reused points.
+
+<<<<< global_kriging approximation builds completed.
+
+>>>>> Initiating global iteration 1 (acquisition batch 1)
+Beginning Approximate Fn Evaluations...
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.3000000000e+00 desired_speed
+                      1.5000000000e-01 radius
+                      6.5000000000e-01 time_gap
+                      5.5000000000e+00 strength_neighbor
+                      2.1000000000e-01 range_neighbor
+                      5.2500000000e+00 strength_geometry
+                      1.0500000000e-01 range_geometry
+Expected Improvement    =
+                      0.0000000000e+00
+
+---------------------
+Begin Evaluation   37
+---------------------
+Parameters for evaluation 37:
+                      1.3000000000e+00 desired_speed
+                      1.5000000000e-01 radius
+                      6.5000000000e-01 time_gap
+                      5.5000000000e+00 strength_neighbor
+                      2.1000000000e-01 range_neighbor
+                      5.2500000000e+00 strength_geometry
+                      1.0500000000e-01 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 37:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -9.2682000000e+00 least_sq_term_1
+                      1.0047600000e+00 least_sq_term_2
+                      1.8473600000e+00 least_sq_term_3
+                     -1.2797270000e+01 least_sq_term_4
+                      2.0273900000e+00 least_sq_term_5
+                      3.2524400000e+00 least_sq_term_6
+                     -1.5445210000e+01 least_sq_term_7
+                      6.0263100000e+00 least_sq_term_8
+                      2.3694800000e+00 least_sq_term_9
+                     -1.4334140000e+01 least_sq_term_10
+                      1.9033600000e+00 least_sq_term_11
+                      1.4679000000e+00 least_sq_term_12
+                     -1.1779410000e+01 least_sq_term_13
+                     -6.9453000000e-01 least_sq_term_14
+                      1.3750200000e+00 least_sq_term_15
+                     -1.0253830000e+01 least_sq_term_16
+                      1.7173500000e+00 least_sq_term_17
+                      2.5074100000e+00 least_sq_term_18
+                     -1.4014080000e+01 least_sq_term_19
+                      1.0886100000e+00 least_sq_term_20
+                      8.8799000000e-01 least_sq_term_21
+                     -1.5313770000e+01 least_sq_term_22
+                      5.8310000000e+00 least_sq_term_23
+                      3.4117100000e+00 least_sq_term_24
+                     -1.6049590000e+01 least_sq_term_25
+                      2.0821100000e+00 least_sq_term_26
+                      8.9681300000e+00 least_sq_term_27
+                     -1.3371380000e+01 least_sq_term_28
+                      3.8273000000e+00 least_sq_term_29
+                      1.6963400000e+00 least_sq_term_30
+                     -1.4025430000e+01 least_sq_term_31
+                      4.5846600000e+00 least_sq_term_32
+                     -2.5882500000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 2 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.3000000000e+00 desired_speed
+                      1.5000000000e-01 radius
+                      6.5000000000e-01 time_gap
+                      5.5000000000e+00 strength_neighbor
+                      2.1000000000e-01 range_neighbor
+                      5.2500000000e+00 strength_geometry
+                      1.0500000000e-01 range_geometry
+Expected Improvement    =
+                      0.0000000000e+00
+
+---------------------
+Begin Evaluation   38
+---------------------
+Parameters for evaluation 38:
+                      1.3000000000e+00 desired_speed
+                      1.5000000000e-01 radius
+                      6.5000000000e-01 time_gap
+                      5.5000000000e+00 strength_neighbor
+                      2.1000000000e-01 range_neighbor
+                      5.2500000000e+00 strength_geometry
+                      1.0500000000e-01 range_geometry
+
+Duplication detected: analysis_drivers not invoked.
+
+Active response data retrieved from database:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -9.2682000000e+00 least_sq_term_1
+                      1.0047600000e+00 least_sq_term_2
+                      1.8473600000e+00 least_sq_term_3
+                     -1.2797270000e+01 least_sq_term_4
+                      2.0273900000e+00 least_sq_term_5
+                      3.2524400000e+00 least_sq_term_6
+                     -1.5445210000e+01 least_sq_term_7
+                      6.0263100000e+00 least_sq_term_8
+                      2.3694800000e+00 least_sq_term_9
+                     -1.4334140000e+01 least_sq_term_10
+                      1.9033600000e+00 least_sq_term_11
+                      1.4679000000e+00 least_sq_term_12
+                     -1.1779410000e+01 least_sq_term_13
+                     -6.9453000000e-01 least_sq_term_14
+                      1.3750200000e+00 least_sq_term_15
+                     -1.0253830000e+01 least_sq_term_16
+                      1.7173500000e+00 least_sq_term_17
+                      2.5074100000e+00 least_sq_term_18
+                     -1.4014080000e+01 least_sq_term_19
+                      1.0886100000e+00 least_sq_term_20
+                      8.8799000000e-01 least_sq_term_21
+                     -1.5313770000e+01 least_sq_term_22
+                      5.8310000000e+00 least_sq_term_23
+                      3.4117100000e+00 least_sq_term_24
+                     -1.6049590000e+01 least_sq_term_25
+                      2.0821100000e+00 least_sq_term_26
+                      8.9681300000e+00 least_sq_term_27
+                     -1.3371380000e+01 least_sq_term_28
+                      3.8273000000e+00 least_sq_term_29
+                      1.6963400000e+00 least_sq_term_30
+                     -1.4025430000e+01 least_sq_term_31
+                      4.5846600000e+00 least_sq_term_32
+                     -2.5882500000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+Stopping criteria met:     distConvergenceCntr (1) >= distConvergenceLimit (1)
+Stopping criteria met:     eifConvergenceCntr (2) >= eifConvergenceLimit (2)
+Stopping criteria not met: globalIterCount (2) < maxIterations (60)
+<<<<< Function evaluation summary: 38 total (37 new, 1 duplicate)
+<<<<< Best parameters          =
+                      1.2301843888e+00 desired_speed
+                      1.2525934176e-01 radius
+                      6.9826926495e-01 time_gap
+                      7.0902621041e+00 strength_neighbor
+                      4.3689736960e-02 range_neighbor
+                      5.0002061352e+00 strength_geometry
+                      1.4863316861e-02 range_geometry
+<<<<< Best residual terms =
+                      1.5084900000e+00
+                     -9.8094000000e-01
+                     -3.3628400000e+00
+                      3.6484200000e+00
+                     -2.9748000000e+00
+                     -3.2492100000e+00
+                     -5.7080000000e-02
+                     -1.7523800000e+00
+                     -3.0340300000e+00
+                      2.4566500000e+00
+                     -2.5929000000e-01
+                      6.5195000000e-01
+                      1.3376700000e+00
+                      3.2530000000e-02
+                     -6.8021000000e-01
+                      5.9031900000e+00
+                     -1.7153200000e+00
+                     -3.0503600000e+00
+                      4.2592600000e+00
+                     -5.4251000000e-01
+                     -2.0157000000e-01
+                      1.4862000000e+00
+                     -2.9288900000e+00
+                     -2.4758200000e+00
+                     -1.2014300000e+00
+                     -2.5960600000e+00
+                     -2.3838200000e+00
+                      6.0606000000e-01
+                     -1.9434000000e+00
+                     -3.9767400000e+00
+                      2.4422400000e+00
+                     -8.4357000000e-01
+                     -4.2816900000e+00
+<<<<< Best residual norm =  1.4479126976e+01; 0.5 * norm^2 =  1.0482255899e+02
+<<<<< Best evaluation ID: 23
+
+
+<<<<< Iterator efficient_global completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =    14.6258 [parent =    14.6259, child =   -5.3e-05]
+  Total wall clock =    474.376

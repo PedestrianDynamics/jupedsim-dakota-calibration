@@ -1,0 +1,34 @@
+# Exploratory calibration on every usable low-motivation (h-) run.
+# This condition has 9 runs and 27 residuals. Desired speed is free only to
+# test whether a static parameter absorbs the motivation condition.
+
+environment
+  tabular_data
+    tabular_data_file = 'motivation_history.dat'
+
+method
+  efficient_global
+    seed = 5
+    max_iterations = 60
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 7
+    descriptors    'desired_speed' 'radius' 'time_gap' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
+    initial_point  1.55 0.144 0.833 9.41 0.09 2.60 0.032
+    lower_bounds   0.80 0.10  0.10  1.0  0.02 0.50 0.01
+    upper_bounds   1.80 0.20  1.20 10.0  0.40 10.0 0.20
+
+interface
+  fork
+    analysis_drivers = 'python3 driver_cq.py'
+    parameters_file = 'params.in'
+    results_file = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver_cq.py' '../observables_cq.py' '../scenario_cq.py' '../exp_observables_cq.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  calibration_terms = 27
+  no_gradients
+  no_hessians
