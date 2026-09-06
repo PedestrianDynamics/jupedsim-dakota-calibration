@@ -42,15 +42,16 @@ def one(run_name, seed, out_file, kwargs):
     'failed'  JuPedSim aborted (an agent was pushed through a wall); observables set to 0."""
     width = obs.runs()[run_name]["width"]
     try:
-        scenario_cq.run(run_name, seed, out_file, **kwargs)
+        dropped = scenario_cq.run(run_name, seed, out_file, **kwargs)
         tr = obs.load_simulation(out_file)
         r = obs.compute(tr, width)
-        n_agents = int(tr.data["id"].nunique())
-        status = "ok" if r["n_total"] >= n_agents else "clogged"
-        return {**{k: float(r[k]) for k in OBS}, "status": status, "passed": r["n_total"], "agents": n_agents}
+        status = "emptied" if r["emptied"] else ("stalled" if r["max_gap"] >= 20.0 else "not emptied")
+        return {**{k: float(r[k]) for k in OBS}, "flow_active": r["flow_active"], "flow_total": r["flow_total"],
+                "max_gap": r["max_gap"], "status": status, "passed": r["n_total"], "agents": r["n_agents"], "dropped": dropped,
+                "nt": [list(map(float, r["t"][::5])), list(map(int, r["n"][::5]))]}
     except Exception as e:
         print(f"run failed ({run_name}, seed={seed}): {e}", file=sys.stderr)
-        return dict(flow=0.0, density=0.0, speed=0.0, status="failed", passed=0, agents=0)
+        return dict(flow=0.0, density=0.0, speed=0.0, flow_active=0.0, flow_total=0.0, max_gap=0.0, status="failed", passed=0, agents=0, dropped=0, nt=[[], []], error=str(e)[:80])
 
 
 def main():

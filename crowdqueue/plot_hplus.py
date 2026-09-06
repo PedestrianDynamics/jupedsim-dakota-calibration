@@ -1,21 +1,20 @@
-"""Figure 8: the high-motivation run 020 (1.2 m, h+): observables vs time gap from the
-1-D Dakota sweep (all other parameters at the CrowdQueue calibration), against the experiment."""
-import json, pathlib
+"""Figure 8: high-motivation run 020: observables vs time gap, three seeds per point (explicit sweep)."""
+import json
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-d = np.loadtxt("probe_hplus/probe_history.dat", skiprows=1, usecols=(2, 9, 10, 11))
-exp = json.load(open("exp_observables_cq.json"))["020_c_12_h+"]
+d = json.load(open("results/hplus_sweep.json")); exp = json.load(open("exp_observables_cq.json"))["020_c_12_h+"]
 REL = {"flow": 0.06, "density": 0.10, "speed": 0.10}
-o = d[np.argsort(d[:, 0])]
-fig, axes = plt.subplots(1, 3, figsize=(13, 3.8))
-for ax, (i, k, lab) in zip(axes, [(1, "flow", "gate flow [1/s]"), (2, "density", "density [1/m$^2$]"), (3, "speed", "speed [m/s]")]):
-    sim = exp[k] + o[:, i] * REL[k] * exp[k]  # residuals were normalised: sim = exp + r*sigma
-    ax.axhspan(exp[k] * (1 - REL[k]), exp[k] * (1 + REL[k]), color="0.85", label="experiment ± sigma")
+fig, axes = plt.subplots(1, 3, figsize=(13, 3.9))
+for ax, (k, lab) in zip(axes, [("flow", "gate flow [1/s]"), ("density", "density in corridor [1/m$^2$]"), ("speed", "speed in corridor [m/s]")]):
+    ax.axhspan(exp[k] * (1 - REL[k]), exp[k] * (1 + REL[k]), color="0.85", label="experiment ± assumed uncertainty")
     ax.axhline(exp[k], color="k")
-    ax.plot(o[:, 0], sim, "o-", ms=4, color="C1", label="simulation (3 seeds averaged)")
+    for r in d["results"]:
+        ax.plot(r["time_gap"], r[k], "o" if r["status"] == "emptied" else "o", ms=4, color="C1", mfc="C1" if r["status"] == "emptied" else "none")
+    T = d["T"]; m = [np.mean([r[k] for r in d["results"] if r["time_gap"] == t]) for t in T]
+    ax.plot(T, m, "-", color="C1", lw=1, label="mean of 3 seeds (open: not emptied)")
     ax.set_xlabel("time gap [s]"); ax.set_ylabel(lab); ax.set_ylim(bottom=0)
 axes[0].legend(fontsize=8)
-fig.suptitle("High-motivation run (1.2 m corridor, 11 people): no time gap reaches the measured flow without breaking density and speed", fontsize=10)
+fig.suptitle("High-motivation run 020 (1.2 m corridor, 11 people): sweep of the time gap, other parameters at CrowdQueue set C", fontsize=10)
 fig.tight_layout(); fig.savefig("hplus_sweep.png", dpi=150); print("fig8 ok")

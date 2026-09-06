@@ -51,6 +51,8 @@ def waiting_positions(seed, radius):
 
 def run(gap_width, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
         strength_neighbor=8.0, range_neighbor=0.1, strength_geometry=5.0, range_geometry=0.02):
+    # the writer buffers 100 frames and only writes them on close()
+    writer = jps.SqliteTrajectoryWriter(output_file=pathlib.Path(out_file), every_nth_frame=6)
     sim = jps.Simulation(
         model=jps.CollisionFreeSpeedModel(
             strength_neighbor_repulsion=strength_neighbor,
@@ -60,7 +62,7 @@ def run(gap_width, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
         ),
         geometry=geometry(gap_width),
         dt=DT,
-        trajectory_writer=jps.SqliteTrajectoryWriter(output_file=pathlib.Path(out_file), every_nth_frame=6),
+        trajectory_writer=writer,
     )
     exit_id = sim.add_exit_stage(shapely.box(-6, -8, 6, -7))
     journey_id = sim.add_journey(jps.JourneyDescription([exit_id]))
@@ -70,4 +72,5 @@ def run(gap_width, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
             desired_speed=desired_speed, radius=radius, time_gap=time_gap))
     while sim.agent_count() > 0 and sim.iteration_count() < MAX_ITER:
         sim.iterate()
+    writer.close()
     return sim.elapsed_time()

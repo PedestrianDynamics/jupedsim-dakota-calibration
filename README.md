@@ -108,3 +108,19 @@ Sobol replicates at 40 base samples (seeds 3, 11, 17) and runs at 80 and 160
 base samples (`plot_sobol_convergence.py`); Morris with twenty trajectories.
 At N = 40 replicate totals differ by up to 0.25 and 20 of 45 first-order indices
 exceed their totals; at N = 160 none do. The ranking is stable across all runs.
+
+## Corrections after review (2026-09-06)
+
+Three pipeline errors were found and fixed, and everything downstream was
+recomputed (`run_all_fixed.sh`): (1) CrowdQueue runs 110/120/170/270/280 have
+participants entering the tracked corridor after the first frame; they are now
+injected at their first observation (`observables_cq.arrivals`). (2) The JuPedSim
+`SqliteTrajectoryWriter` must be closed (`writer.close()`), otherwise the last
+100 frames of every run are lost. (3) The CrowdQueue walkable area is clipped to
+the corridor and the exit stage placed at the gate outlet; before, the router
+could send agents around the barriers. Hermes calibrations and sensitivity
+analyses use steady-phase observables unaffected by (2) and were kept.
+
+Final parameter sets: see the article table (sets A/B on Hermes, C/D on
+CrowdQueue, and the joint set). `results/*.json` and `crowdqueue/results/*.json`
+hold per-seed outcomes with completion status.

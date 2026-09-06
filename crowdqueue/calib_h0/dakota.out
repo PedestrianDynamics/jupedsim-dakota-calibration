@@ -1,7 +1,7 @@
 Dakota version 6.24 released May 15 2026.
 Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
 Running MPI Dakota executable in serial mode.
-Start time: Sat Sep  5 19:33:54 2026
+Start time: Sun Sep  6 10:56:52 2026
 
 ------------------
 Begin Dakota input
@@ -77,27 +77,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 1:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4308080000e+01 least_sq_term_1
-                      5.0716200000e+00 least_sq_term_2
-                     -4.2241400000e+00 least_sq_term_3
-                     -1.3620280000e+01 least_sq_term_4
-                     -1.2262800000e+00 least_sq_term_5
-                     -3.9074900000e+00 least_sq_term_6
-                     -1.4097750000e+01 least_sq_term_7
-                      4.3259800000e+00 least_sq_term_8
-                     -4.9003800000e+00 least_sq_term_9
-                     -1.5000320000e+01 least_sq_term_10
-                      1.5182400000e+00 least_sq_term_11
-                     -6.0339100000e+00 least_sq_term_12
-                     -1.5203190000e+01 least_sq_term_13
-                      1.0937530000e+01 least_sq_term_14
-                     -5.6505100000e+00 least_sq_term_15
-                     -1.6373730000e+01 least_sq_term_16
-                      1.3968400000e+00 least_sq_term_17
-                     -6.0371200000e+00 least_sq_term_18
-                     -1.3901810000e+01 least_sq_term_19
-                      8.2044100000e+00 least_sq_term_20
-                     -6.4727500000e+00 least_sq_term_21
+                     -1.4308880000e+01 least_sq_term_1
+                      6.3192000000e+00 least_sq_term_2
+                     -4.9563900000e+00 least_sq_term_3
+                     -1.0297230000e+01 least_sq_term_4
+                      3.6147200000e+00 least_sq_term_5
+                     -6.1944900000e+00 least_sq_term_6
+                     -1.3967470000e+01 least_sq_term_7
+                      4.7252000000e+00 least_sq_term_8
+                     -5.6394800000e+00 least_sq_term_9
+                     -1.4713610000e+01 least_sq_term_10
+                     -5.7985000000e-01 least_sq_term_11
+                     -5.9290700000e+00 least_sq_term_12
+                     -1.4533440000e+01 least_sq_term_13
+                      1.1230190000e+01 least_sq_term_14
+                     -6.7278700000e+00 least_sq_term_15
+                     -1.6549490000e+01 least_sq_term_16
+                      9.2494400000e+00 least_sq_term_17
+                      7.3509700000e+00 least_sq_term_18
+                     -1.4186450000e+01 least_sq_term_19
+                      8.1773700000e+00 least_sq_term_20
+                     -6.6189900000e+00 least_sq_term_21
 
 
 
@@ -117,27 +117,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 2:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                      3.1302400000e+00 least_sq_term_1
-                      1.1759700000e+00 least_sq_term_2
-                      2.4552900000e+00 least_sq_term_3
-                      1.7912500000e+00 least_sq_term_4
-                     -3.4865900000e+00 least_sq_term_5
-                      3.5419600000e+00 least_sq_term_6
-                      4.9131900000e+00 least_sq_term_7
-                      7.6803000000e-01 least_sq_term_8
-                      1.6396800000e+00 least_sq_term_9
-                     -1.5992710000e+01 least_sq_term_10
-                      9.5420900000e+00 least_sq_term_11
-                      1.5451910000e+01 least_sq_term_12
-                     -1.6306860000e+01 least_sq_term_13
-                     -2.9653700000e+00 least_sq_term_14
-                     -2.0481300000e+00 least_sq_term_15
-                     -1.4586970000e+01 least_sq_term_16
-                      8.8321600000e+00 least_sq_term_17
-                      2.1630700000e+00 least_sq_term_18
-                     -1.6109590000e+01 least_sq_term_19
-                     -1.2229100000e+00 least_sq_term_20
-                      4.2465000000e-01 least_sq_term_21
+                      5.6126800000e+00 least_sq_term_1
+                      6.7670000000e-02 least_sq_term_2
+                      4.3101100000e+00 least_sq_term_3
+                     -5.5910900000e+00 least_sq_term_4
+                     -2.1260800000e+00 least_sq_term_5
+                      5.5573200000e+00 least_sq_term_6
+                      7.5953400000e+00 least_sq_term_7
+                     -5.0189000000e-01 least_sq_term_8
+                      3.5556900000e+00 least_sq_term_9
+                     -1.5768360000e+01 least_sq_term_10
+                      8.1237000000e+00 least_sq_term_11
+                      1.2586150000e+01 least_sq_term_12
+                     -1.5527660000e+01 least_sq_term_13
+                      5.3554200000e+00 least_sq_term_14
+                      4.8028000000e+00 least_sq_term_15
+                     -1.3952770000e+01 least_sq_term_16
+                      7.8758500000e+00 least_sq_term_17
+                      2.4332400000e+00 least_sq_term_18
+                     -1.5622240000e+01 least_sq_term_19
+                      6.8964500000e+00 least_sq_term_20
+                      1.2430910000e+01 least_sq_term_21
 
 
 
@@ -157,27 +157,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 3:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4218750000e+01 least_sq_term_1
-                     -5.6620000000e-02 least_sq_term_2
-                     -2.4659000000e-01 least_sq_term_3
-                     -1.3667670000e+01 least_sq_term_4
-                     -4.8539500000e+00 least_sq_term_5
-                      1.8139100000e+00 least_sq_term_6
-                     -1.4015860000e+01 least_sq_term_7
-                     -1.1876800000e+00 least_sq_term_8
-                     -2.4687000000e-01 least_sq_term_9
-                     -1.4533180000e+01 least_sq_term_10
-                      1.2968500000e+00 least_sq_term_11
-                      5.4051200000e+00 least_sq_term_12
-                     -1.6007020000e+01 least_sq_term_13
-                     -3.9237800000e+00 least_sq_term_14
-                     -6.3023100000e+00 least_sq_term_15
-                     -1.1697490000e+01 least_sq_term_16
-                      9.5185000000e-01 least_sq_term_17
-                      7.1090000000e-02 least_sq_term_18
-                     -1.6666670000e+01 least_sq_term_19
-                     -1.0000000000e+01 least_sq_term_20
-                     -1.0000000000e+01 least_sq_term_21
+                     -1.4219160000e+01 least_sq_term_1
+                     -1.1638300000e+00 least_sq_term_2
+                      5.4591500000e+00 least_sq_term_3
+                     -1.0283090000e+01 least_sq_term_4
+                     -5.3777100000e+00 least_sq_term_5
+                      1.0476310000e+01 least_sq_term_6
+                     -1.3890560000e+01 least_sq_term_7
+                     -3.0424300000e+00 least_sq_term_8
+                      7.2164500000e+00 least_sq_term_9
+                     -1.4533900000e+01 least_sq_term_10
+                      1.5801200000e+00 least_sq_term_11
+                      7.6949500000e+00 least_sq_term_12
+                     -1.5767450000e+01 least_sq_term_13
+                      1.5781600000e+00 least_sq_term_14
+                      1.7030700000e+00 least_sq_term_15
+                     -1.4067970000e+01 least_sq_term_16
+                      2.9372400000e+00 least_sq_term_17
+                      7.9470000000e-02 least_sq_term_18
+                     -1.5622150000e+01 least_sq_term_19
+                      3.3661500000e+00 least_sq_term_20
+                      7.8624500000e+00 least_sq_term_21
 
 
 
@@ -197,27 +197,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 4:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5613150000e+01 least_sq_term_1
-                      1.3238090000e+01 least_sq_term_2
-                     -8.9714400000e+00 least_sq_term_3
-                     -1.5275760000e+01 least_sq_term_4
-                      5.1255600000e+00 least_sq_term_5
-                     -8.8515200000e+00 least_sq_term_6
-                     -1.5503760000e+01 least_sq_term_7
-                      1.3795620000e+01 least_sq_term_8
-                     -9.2849500000e+00 least_sq_term_9
+                     -1.5969600000e+01 least_sq_term_1
+                      1.5622540000e+01 least_sq_term_2
+                     -9.1466500000e+00 least_sq_term_3
+                     -1.4367550000e+01 least_sq_term_4
+                      1.2209500000e+01 least_sq_term_5
+                     -8.8344500000e+00 least_sq_term_6
+                     -1.5731690000e+01 least_sq_term_7
+                      1.5309190000e+01 least_sq_term_8
+                     -9.3522100000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
-                     -1.0000000000e+01 least_sq_term_11
-                     -1.0000000000e+01 least_sq_term_12
-                     -1.6666670000e+01 least_sq_term_13
-                     -1.0000000000e+01 least_sq_term_14
-                     -1.0000000000e+01 least_sq_term_15
-                     -1.6356220000e+01 least_sq_term_16
-                      1.8729700000e+00 least_sq_term_17
-                     -9.0948800000e+00 least_sq_term_18
-                     -1.6666670000e+01 least_sq_term_19
-                     -1.0000000000e+01 least_sq_term_20
-                     -1.0000000000e+01 least_sq_term_21
+                      7.7804000000e+00 least_sq_term_11
+                      3.0851220000e+01 least_sq_term_12
+                     -1.6173150000e+01 least_sq_term_13
+                      1.5841800000e+01 least_sq_term_14
+                     -7.7295700000e+00 least_sq_term_15
+                     -1.6271230000e+01 least_sq_term_16
+                      1.3794260000e+01 least_sq_term_17
+                     -8.3728600000e+00 least_sq_term_18
+                     -1.6510900000e+01 least_sq_term_19
+                      1.2662620000e+01 least_sq_term_20
+                     -6.9024200000e+00 least_sq_term_21
 
 
 
@@ -237,27 +237,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 5:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6067380000e+01 least_sq_term_1
-                      7.9672700000e+00 least_sq_term_2
-                     -5.8764300000e+00 least_sq_term_3
-                     -1.6318170000e+01 least_sq_term_4
-                     -4.6276300000e+00 least_sq_term_5
-                     -7.7214500000e+00 least_sq_term_6
-                     -1.6666670000e+01 least_sq_term_7
-                     -1.0000000000e+01 least_sq_term_8
-                     -1.0000000000e+01 least_sq_term_9
+                     -1.6186490000e+01 least_sq_term_1
+                      8.9593000000e+00 least_sq_term_2
+                     -5.5411000000e+00 least_sq_term_3
+                     -1.4532520000e+01 least_sq_term_4
+                      1.7388800000e+00 least_sq_term_5
+                     -5.7253600000e+00 least_sq_term_6
+                     -1.6006660000e+01 least_sq_term_7
+                      9.2386200000e+00 least_sq_term_8
+                     -6.3503500000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
-                     -1.0000000000e+01 least_sq_term_11
-                     -1.0000000000e+01 least_sq_term_12
-                     -1.4718280000e+01 least_sq_term_13
-                      4.6455100000e+00 least_sq_term_14
-                     -6.3656800000e+00 least_sq_term_15
-                     -1.6666670000e+01 least_sq_term_16
-                     -1.0000000000e+01 least_sq_term_17
-                     -1.0000000000e+01 least_sq_term_18
+                      7.7804000000e+00 least_sq_term_11
+                      3.8175440000e+01 least_sq_term_12
+                     -1.5874860000e+01 least_sq_term_13
+                      6.0193000000e+00 least_sq_term_14
+                     -4.5390400000e+00 least_sq_term_15
+                     -1.6371370000e+01 least_sq_term_16
+                      6.8318600000e+00 least_sq_term_17
+                     -3.5878300000e+00 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
-                     -1.0000000000e+01 least_sq_term_20
-                     -1.0000000000e+01 least_sq_term_21
+                      1.0549400000e+00 least_sq_term_20
+                      4.1075990000e+01 least_sq_term_21
 
 
 
@@ -278,26 +278,26 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 6:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
-                     -1.0000000000e+01 least_sq_term_2
-                     -1.0000000000e+01 least_sq_term_3
-                     -1.5584980000e+01 least_sq_term_4
-                      2.2214400000e+00 least_sq_term_5
-                     -8.8808500000e+00 least_sq_term_6
-                     -1.6666670000e+01 least_sq_term_7
-                     -1.0000000000e+01 least_sq_term_8
-                     -1.0000000000e+01 least_sq_term_9
+                      4.8754200000e+00 least_sq_term_2
+                     -4.3044000000e-01 least_sq_term_3
+                     -1.5188270000e+01 least_sq_term_4
+                      3.9896400000e+00 least_sq_term_5
+                     -9.4110200000e+00 least_sq_term_6
+                     -1.6510310000e+01 least_sq_term_7
+                      1.4981620000e+01 least_sq_term_8
+                     -9.3316700000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
-                     -1.0000000000e+01 least_sq_term_11
-                     -1.0000000000e+01 least_sq_term_12
-                     -1.6666670000e+01 least_sq_term_13
-                     -1.0000000000e+01 least_sq_term_14
-                     -1.0000000000e+01 least_sq_term_15
+                      7.7804000000e+00 least_sq_term_11
+                      2.0406370000e+01 least_sq_term_12
+                     -1.6530980000e+01 least_sq_term_13
+                      1.0254070000e+01 least_sq_term_14
+                     -7.4843300000e+00 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
-                     -1.0000000000e+01 least_sq_term_17
-                     -1.0000000000e+01 least_sq_term_18
+                      1.4631500000e+00 least_sq_term_17
+                      1.7931720000e+01 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
-                     -1.0000000000e+01 least_sq_term_20
-                     -1.0000000000e+01 least_sq_term_21
+                      1.0549400000e+00 least_sq_term_20
+                      1.9511490000e+01 least_sq_term_21
 
 
 
@@ -317,27 +317,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 7:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                      7.4561000000e-01 least_sq_term_1
-                     -3.3250000000e-01 least_sq_term_2
-                      5.6042000000e-01 least_sq_term_3
-                      2.4335000000e-01 least_sq_term_4
-                     -3.4437800000e+00 least_sq_term_5
-                      1.9634800000e+00 least_sq_term_6
-                      2.1666700000e+00 least_sq_term_7
-                     -8.6630000000e-01 least_sq_term_8
-                     -5.0439000000e-01 least_sq_term_9
-                      7.0609000000e-01 least_sq_term_10
-                     -7.6079000000e-01 least_sq_term_11
-                      4.0090100000e+00 least_sq_term_12
-                      1.3551500000e+00 least_sq_term_13
-                      3.4028000000e-01 least_sq_term_14
-                     -2.3961000000e+00 least_sq_term_15
-                     -6.2869400000e+00 least_sq_term_16
-                      3.1750600000e+00 least_sq_term_17
-                     -8.1405000000e-01 least_sq_term_18
-                     -5.2185700000e+00 least_sq_term_19
-                      3.5128000000e+00 least_sq_term_20
-                      1.8490700000e+00 least_sq_term_21
+                     -1.5385070000e+01 least_sq_term_1
+                      2.3367700000e+00 least_sq_term_2
+                      6.2782600000e+00 least_sq_term_3
+                      2.9552900000e+00 least_sq_term_4
+                     -3.5881000000e-01 least_sq_term_5
+                      1.2863000000e+00 least_sq_term_6
+                      7.0604300000e+00 least_sq_term_7
+                     -1.1002400000e+00 least_sq_term_8
+                      3.4845600000e+00 least_sq_term_9
+                      4.2508300000e+00 least_sq_term_10
+                     -2.4706100000e+00 least_sq_term_11
+                      3.4609800000e+00 least_sq_term_12
+                      6.0125700000e+00 least_sq_term_13
+                      2.1390000000e-01 least_sq_term_14
+                     -7.9273000000e-01 least_sq_term_15
+                      5.1512000000e+00 least_sq_term_16
+                      6.8100000000e-03 least_sq_term_17
+                      1.1701900000e+00 least_sq_term_18
+                     -3.0831100000e+00 least_sq_term_19
+                      2.5549200000e+00 least_sq_term_20
+                      1.3729270000e+01 least_sq_term_21
 
 
 
@@ -357,27 +357,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 8:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5792260000e+01 least_sq_term_1
-                     -6.1933500000e+00 least_sq_term_2
-                     -4.1885300000e+00 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_1
+                     -1.0000000000e+01 least_sq_term_2
+                     -1.0000000000e+01 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                      -1.0000000000e+01 least_sq_term_5
                      -1.0000000000e+01 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                      -1.0000000000e+01 least_sq_term_8
                      -1.0000000000e+01 least_sq_term_9
-                     -1.5712210000e+01 least_sq_term_10
-                      2.1596000000e+00 least_sq_term_11
-                      8.3592200000e+00 least_sq_term_12
+                     -1.5768660000e+01 least_sq_term_10
+                      2.1609300000e+00 least_sq_term_11
+                      8.1886700000e+00 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                      -1.0000000000e+01 least_sq_term_17
                      -1.0000000000e+01 least_sq_term_18
-                     -1.0397450000e+01 least_sq_term_19
-                     -2.9703400000e+00 least_sq_term_20
-                      7.4061600000e+00 least_sq_term_21
+                     -1.6666670000e+01 least_sq_term_19
+                     -1.0000000000e+01 least_sq_term_20
+                     -1.0000000000e+01 least_sq_term_21
 
 
 
@@ -397,27 +397,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 9:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5650080000e+01 least_sq_term_1
-                      1.3795890000e+01 least_sq_term_2
-                     -7.8836600000e+00 least_sq_term_3
-                     -1.4844790000e+01 least_sq_term_4
-                      2.5874100000e+00 least_sq_term_5
-                     -8.3665500000e+00 least_sq_term_6
-                     -1.5541660000e+01 least_sq_term_7
-                      1.4082310000e+01 least_sq_term_8
-                     -8.3382000000e+00 least_sq_term_9
+                     -1.6284750000e+01 least_sq_term_1
+                      1.7149400000e+01 least_sq_term_2
+                     -7.2191600000e+00 least_sq_term_3
+                     -1.1771140000e+01 least_sq_term_4
+                      8.3082900000e+00 least_sq_term_5
+                     -7.1726900000e+00 least_sq_term_6
+                     -1.6108510000e+01 least_sq_term_7
+                      1.7938150000e+01 least_sq_term_8
+                     -7.9167100000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
-                     -1.0000000000e+01 least_sq_term_11
-                     -1.0000000000e+01 least_sq_term_12
-                     -1.4506270000e+01 least_sq_term_13
-                      1.1572020000e+01 least_sq_term_14
-                     -8.5288100000e+00 least_sq_term_15
-                     -1.5512730000e+01 least_sq_term_16
-                      1.4315950000e+01 least_sq_term_17
-                     -7.4968000000e+00 least_sq_term_18
+                      7.7804000000e+00 least_sq_term_11
+                      2.8183600000e+01 least_sq_term_12
+                     -1.4382960000e+01 least_sq_term_13
+                      1.3081310000e+01 least_sq_term_14
+                     -7.8584800000e+00 least_sq_term_15
+                     -1.5270570000e+01 least_sq_term_16
+                      1.3754280000e+01 least_sq_term_17
+                     -8.0265200000e+00 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
-                     -1.0000000000e+01 least_sq_term_20
-                     -1.0000000000e+01 least_sq_term_21
+                      1.0549400000e+00 least_sq_term_20
+                      3.9696730000e+01 least_sq_term_21
 
 
 
@@ -437,27 +437,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 10:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4683690000e+01 least_sq_term_1
-                      2.7600200000e+00 least_sq_term_2
-                     -3.1452600000e+00 least_sq_term_3
-                     -1.4776510000e+01 least_sq_term_4
-                     -2.6655600000e+00 least_sq_term_5
-                     -1.6181200000e+00 least_sq_term_6
-                     -1.4510660000e+01 least_sq_term_7
-                      2.6362300000e+00 least_sq_term_8
-                     -3.5041100000e+00 least_sq_term_9
-                     -1.6666670000e+01 least_sq_term_10
-                     -1.0000000000e+01 least_sq_term_11
-                     -1.0000000000e+01 least_sq_term_12
-                     -1.1308860000e+01 least_sq_term_13
-                      1.4544600000e+00 least_sq_term_14
-                     -3.8950400000e+00 least_sq_term_15
-                     -1.1504230000e+01 least_sq_term_16
-                      3.0761100000e+00 least_sq_term_17
-                     -2.4120400000e+00 least_sq_term_18
-                     -1.2948000000e+01 least_sq_term_19
-                      4.7908600000e+00 least_sq_term_20
-                     -2.2863400000e+00 least_sq_term_21
+                     -1.4684020000e+01 least_sq_term_1
+                      2.7533400000e+00 least_sq_term_2
+                     -2.7970900000e+00 least_sq_term_3
+                     -1.4887880000e+01 least_sq_term_4
+                     -2.2858700000e+00 least_sq_term_5
+                     -1.2453100000e+00 least_sq_term_6
+                     -1.4383840000e+01 least_sq_term_7
+                      2.6659700000e+00 least_sq_term_8
+                     -3.5927800000e+00 least_sq_term_9
+                     -1.6266550000e+01 least_sq_term_10
+                      1.0953740000e+01 least_sq_term_11
+                     -5.1071800000e+00 least_sq_term_12
+                     -1.0890390000e+01 least_sq_term_13
+                      1.9152400000e+00 least_sq_term_14
+                     -3.7562700000e+00 least_sq_term_15
+                     -1.1505970000e+01 least_sq_term_16
+                      3.1694600000e+00 least_sq_term_17
+                     -2.1428800000e+00 least_sq_term_18
+                     -1.2879100000e+01 least_sq_term_19
+                      4.5739600000e+00 least_sq_term_20
+                     -2.0016600000e+00 least_sq_term_21
 
 
 
@@ -477,27 +477,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 11:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6666670000e+01 least_sq_term_1
-                     -1.0000000000e+01 least_sq_term_2
-                     -1.0000000000e+01 least_sq_term_3
-                     -1.6666670000e+01 least_sq_term_4
-                     -1.0000000000e+01 least_sq_term_5
-                     -1.0000000000e+01 least_sq_term_6
-                     -1.5656840000e+01 least_sq_term_7
-                      2.2403700000e+00 least_sq_term_8
-                     -2.8504900000e+00 least_sq_term_9
-                     -1.4645470000e+01 least_sq_term_10
-                      1.4820000000e-01 least_sq_term_11
-                      1.0860030000e+01 least_sq_term_12
-                     -9.9502900000e+00 least_sq_term_13
-                     -4.0472000000e+00 least_sq_term_14
-                      8.3562900000e+00 least_sq_term_15
-                     -8.3489700000e+00 least_sq_term_16
-                     -3.4984200000e+00 least_sq_term_17
-                      1.4457480000e+01 least_sq_term_18
-                     -9.1436000000e+00 least_sq_term_19
-                     -3.0039400000e+00 least_sq_term_20
-                      1.4822690000e+01 least_sq_term_21
+                     -1.6550140000e+01 least_sq_term_1
+                      1.5697700000e+00 least_sq_term_2
+                      1.3035730000e+01 least_sq_term_3
+                     -1.5778560000e+01 least_sq_term_4
+                     -5.4729000000e-01 least_sq_term_5
+                     -4.6969500000e+00 least_sq_term_6
+                     -1.5783360000e+01 least_sq_term_7
+                      2.2058100000e+00 least_sq_term_8
+                     -6.0924000000e-01 least_sq_term_9
+                     -1.4533900000e+01 least_sq_term_10
+                     -2.8430000000e-01 least_sq_term_11
+                      1.3661210000e+01 least_sq_term_12
+                     -1.2770070000e+01 least_sq_term_13
+                     -1.9815600000e+00 least_sq_term_14
+                      5.0664800000e+00 least_sq_term_15
+                     -8.3517600000e+00 least_sq_term_16
+                     -3.4676700000e+00 least_sq_term_17
+                      1.4228180000e+01 least_sq_term_18
+                     -9.1461200000e+00 least_sq_term_19
+                     -3.0339500000e+00 least_sq_term_20
+                      1.4493220000e+01 least_sq_term_21
 
 
 
@@ -517,27 +517,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 12:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5615450000e+01 least_sq_term_1
-                      4.1519000000e+00 least_sq_term_2
-                     -1.5459900000e+00 least_sq_term_3
-                     -1.4886210000e+01 least_sq_term_4
-                     -1.7618400000e+00 least_sq_term_5
-                      5.8678200000e+00 least_sq_term_6
-                     -1.5525060000e+01 least_sq_term_7
-                      4.3173000000e+00 least_sq_term_8
-                     -2.0293800000e+00 least_sq_term_9
+                     -1.5615270000e+01 least_sq_term_1
+                      4.9807700000e+00 least_sq_term_2
+                      1.4626900000e+00 least_sq_term_3
+                     -1.1378270000e+01 least_sq_term_4
+                     -4.7533000000e-01 least_sq_term_5
+                      8.8007600000e+00 least_sq_term_6
+                     -1.5460810000e+01 least_sq_term_7
+                      5.4641500000e+00 least_sq_term_8
+                      4.3102000000e-01 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
-                     -1.0000000000e+01 least_sq_term_11
-                     -1.0000000000e+01 least_sq_term_12
-                     -1.3968120000e+01 least_sq_term_13
-                      2.5726500000e+00 least_sq_term_14
-                     -2.1397800000e+00 least_sq_term_15
-                     -1.4700130000e+01 least_sq_term_16
-                      4.5272800000e+00 least_sq_term_17
-                     -2.4077600000e+00 least_sq_term_18
-                     -1.6666670000e+01 least_sq_term_19
-                     -1.0000000000e+01 least_sq_term_20
-                     -1.0000000000e+01 least_sq_term_21
+                      7.7804000000e+00 least_sq_term_11
+                      5.8375100000e+01 least_sq_term_12
+                     -1.3489450000e+01 least_sq_term_13
+                      2.8398400000e+00 least_sq_term_14
+                     -1.0037900000e+00 least_sq_term_15
+                     -1.4814680000e+01 least_sq_term_16
+                      4.7556200000e+00 least_sq_term_17
+                     -2.1824400000e+00 least_sq_term_18
+                     -1.6455810000e+01 least_sq_term_19
+                      6.7321100000e+00 least_sq_term_20
+                      8.2484000000e-01 least_sq_term_21
 
 
 
@@ -557,27 +557,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 13:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4620580000e+01 least_sq_term_1
-                      3.7807000000e+00 least_sq_term_2
-                     -3.0504100000e+00 least_sq_term_3
-                     -1.3878630000e+01 least_sq_term_4
-                     -1.5139500000e+00 least_sq_term_5
-                     -3.3678100000e+00 least_sq_term_6
-                     -1.4375350000e+01 least_sq_term_7
-                      3.6251200000e+00 least_sq_term_8
-                     -4.2064400000e+00 least_sq_term_9
-                     -1.5640950000e+01 least_sq_term_10
-                      6.6202700000e+00 least_sq_term_11
-                     -1.5219900000e+00 least_sq_term_12
-                     -1.0634470000e+01 least_sq_term_13
-                      3.3743600000e+00 least_sq_term_14
-                     -4.6968900000e+00 least_sq_term_15
-                     -9.7166200000e+00 least_sq_term_16
-                      3.4185700000e+00 least_sq_term_17
-                     -2.5330500000e+00 least_sq_term_18
-                     -1.0758950000e+01 least_sq_term_19
-                      3.3631100000e+00 least_sq_term_20
-                     -2.1508600000e+00 least_sq_term_21
+                     -1.4562110000e+01 least_sq_term_1
+                      3.7625800000e+00 least_sq_term_2
+                     -3.0432500000e+00 least_sq_term_3
+                     -1.0311000000e+01 least_sq_term_4
+                      2.2862700000e+00 least_sq_term_5
+                     -4.6299900000e+00 least_sq_term_6
+                     -1.4247240000e+01 least_sq_term_7
+                      3.9714900000e+00 least_sq_term_8
+                     -4.2371500000e+00 least_sq_term_9
+                     -1.5639380000e+01 least_sq_term_10
+                      6.5237800000e+00 least_sq_term_11
+                     -1.6044300000e+00 least_sq_term_12
+                     -1.0161780000e+01 least_sq_term_13
+                      3.7579000000e+00 least_sq_term_14
+                     -4.5859900000e+00 least_sq_term_15
+                     -9.7201200000e+00 least_sq_term_16
+                      3.3766600000e+00 least_sq_term_17
+                     -2.5578500000e+00 least_sq_term_18
+                     -1.0760950000e+01 least_sq_term_19
+                      3.3875700000e+00 least_sq_term_20
+                     -2.1260000000e+00 least_sq_term_21
 
 
 
@@ -597,27 +597,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 14:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.3979770000e+01 least_sq_term_1
-                      1.3232000000e+00 least_sq_term_2
-                      2.6140600000e+00 least_sq_term_3
-                     -1.4889480000e+01 least_sq_term_4
-                     -1.9688400000e+00 least_sq_term_5
-                      2.6689700000e+00 least_sq_term_6
-                     -1.3750210000e+01 least_sq_term_7
-                      1.2343100000e+00 least_sq_term_8
-                      1.2187000000e-01 least_sq_term_9
-                     -1.4293900000e+01 least_sq_term_10
-                      1.1576100000e+00 least_sq_term_11
-                     -2.8781200000e+00 least_sq_term_12
-                     -1.0607800000e+01 least_sq_term_13
-                      2.7542900000e+00 least_sq_term_14
-                     -5.0410000000e+00 least_sq_term_15
-                     -1.4754760000e+01 least_sq_term_16
-                      1.0394190000e+01 least_sq_term_17
-                     -1.5102900000e+00 least_sq_term_18
-                     -8.8334600000e+00 least_sq_term_19
-                      7.6846000000e-01 least_sq_term_20
-                     -4.6947300000e+00 least_sq_term_21
+                     -1.3980670000e+01 least_sq_term_1
+                      1.1322600000e+00 least_sq_term_2
+                      4.1145500000e+00 least_sq_term_3
+                     -1.0282050000e+01 least_sq_term_4
+                     -2.3520000000e+00 least_sq_term_5
+                      4.0891100000e+00 least_sq_term_6
+                     -1.4574780000e+01 least_sq_term_7
+                      2.1974100000e+00 least_sq_term_8
+                      2.5035000000e-01 least_sq_term_9
+                     -1.4294700000e+01 least_sq_term_10
+                      1.0491700000e+00 least_sq_term_11
+                     -1.9347600000e+00 least_sq_term_12
+                     -1.1564280000e+01 least_sq_term_13
+                      4.1493600000e+00 least_sq_term_14
+                     -3.4024100000e+00 least_sq_term_15
+                     -1.1974080000e+01 least_sq_term_16
+                      3.9863200000e+00 least_sq_term_17
+                      8.7990000000e-01 least_sq_term_18
+                     -1.4918770000e+01 least_sq_term_19
+                      1.0277310000e+01 least_sq_term_20
+                     -8.2915000000e-01 least_sq_term_21
 
 
 
@@ -637,27 +637,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 15:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5306570000e+01 least_sq_term_1
-                      1.0402190000e+01 least_sq_term_2
-                     -1.9471000000e+00 least_sq_term_3
-                     -1.4580010000e+01 least_sq_term_4
-                      1.7733000000e+00 least_sq_term_5
-                      3.5173000000e-01 least_sq_term_6
-                     -1.5187540000e+01 least_sq_term_7
-                      1.0673690000e+01 least_sq_term_8
-                     -3.7632700000e+00 least_sq_term_9
+                     -1.5246460000e+01 least_sq_term_1
+                      1.0208110000e+01 least_sq_term_2
+                     -2.5506700000e+00 least_sq_term_3
+                     -1.1030950000e+01 least_sq_term_4
+                      6.3592700000e+00 least_sq_term_5
+                     -7.6900000000e-02 least_sq_term_6
+                     -1.5122160000e+01 least_sq_term_7
+                      1.1298890000e+01 least_sq_term_8
+                     -3.5341800000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
-                     -1.0000000000e+01 least_sq_term_11
-                     -1.0000000000e+01 least_sq_term_12
-                     -1.2852850000e+01 least_sq_term_13
-                      6.4740700000e+00 least_sq_term_14
-                     -5.9356200000e+00 least_sq_term_15
-                     -1.1601490000e+01 least_sq_term_16
-                      6.4242100000e+00 least_sq_term_17
-                     -3.6361600000e+00 least_sq_term_18
-                     -1.3070550000e+01 least_sq_term_19
-                      6.5467000000e+00 least_sq_term_20
-                     -5.1525300000e+00 least_sq_term_21
+                      7.7804000000e+00 least_sq_term_11
+                      5.9627180000e+01 least_sq_term_12
+                     -1.2137150000e+01 least_sq_term_13
+                      6.3780200000e+00 least_sq_term_14
+                     -6.4297000000e+00 least_sq_term_15
+                     -1.1488550000e+01 least_sq_term_16
+                      5.3568600000e+00 least_sq_term_17
+                     -3.9185000000e+00 least_sq_term_18
+                     -1.2860470000e+01 least_sq_term_19
+                      6.2117300000e+00 least_sq_term_20
+                     -4.7098700000e+00 least_sq_term_21
 
 
 
@@ -677,27 +677,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 16:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -4.6147800000e+00 least_sq_term_1
-                     -7.8482000000e-01 least_sq_term_2
-                     -1.6739900000e+00 least_sq_term_3
-                     -5.1738700000e+00 least_sq_term_4
-                     -3.6271200000e+00 least_sq_term_5
-                     -1.5611300000e+00 least_sq_term_6
-                      1.4974600000e+00 least_sq_term_7
-                     -1.0255900000e+00 least_sq_term_8
-                      6.5748000000e-01 least_sq_term_9
-                     -1.6255000000e-01 least_sq_term_10
-                      1.2713900000e+00 least_sq_term_11
-                      1.8664200000e+00 least_sq_term_12
-                     -3.5510000000e-02 least_sq_term_13
-                      7.8945000000e-01 least_sq_term_14
-                     -3.3592000000e+00 least_sq_term_15
-                     -1.1857800000e+00 least_sq_term_16
-                      9.8222000000e-01 least_sq_term_17
-                     -1.8545100000e+00 least_sq_term_18
-                      2.8702600000e+00 least_sq_term_19
-                      6.0457000000e-01 least_sq_term_20
-                     -1.3270000000e+00 least_sq_term_21
+                     -1.6317140000e+01 least_sq_term_1
+                      2.9278900000e+00 least_sq_term_2
+                      4.4365700000e+00 least_sq_term_3
+                      1.2473900000e+00 least_sq_term_4
+                     -2.3156300000e+00 least_sq_term_5
+                      2.5577500000e+00 least_sq_term_6
+                      5.2964000000e+00 least_sq_term_7
+                     -1.5154500000e+00 least_sq_term_8
+                      4.3992400000e+00 least_sq_term_9
+                      1.9769100000e+00 least_sq_term_10
+                     -4.0003000000e-01 least_sq_term_11
+                      1.2633100000e+00 least_sq_term_12
+                     -5.5355300000e+00 least_sq_term_13
+                      2.8835600000e+00 least_sq_term_14
+                     -1.4185600000e+00 least_sq_term_15
+                     -1.3895030000e+01 least_sq_term_16
+                      6.5037500000e+00 least_sq_term_17
+                      5.1329000000e-01 least_sq_term_18
+                      5.4840600000e+00 least_sq_term_19
+                      2.8445000000e-01 least_sq_term_20
+                     -5.4896000000e-01 least_sq_term_21
 
 
 
@@ -726,9 +726,9 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_7
                      -1.0000000000e+01 least_sq_term_8
                      -1.0000000000e+01 least_sq_term_9
-                      1.5781150000e+01 least_sq_term_10
-                      1.7465000000e-01 least_sq_term_11
-                      1.5049470000e+01 least_sq_term_12
+                      1.3492910000e+01 least_sq_term_10
+                     -1.9095800000e+00 least_sq_term_11
+                      1.0255780000e+01 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
@@ -757,27 +757,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 18:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4218340000e+01 least_sq_term_1
-                      5.4006000000e-01 least_sq_term_2
-                      9.4949000000e+00 least_sq_term_3
-                     -1.3667670000e+01 least_sq_term_4
-                     -4.0453400000e+00 least_sq_term_5
-                      1.2171900000e+01 least_sq_term_6
-                     -1.4015860000e+01 least_sq_term_7
-                      4.4769000000e-01 least_sq_term_8
-                      6.4395300000e+00 least_sq_term_9
-                     -1.4645470000e+01 least_sq_term_10
-                      4.0294000000e-01 least_sq_term_11
-                      1.1285320000e+01 least_sq_term_12
-                     -1.1389510000e+01 least_sq_term_13
-                     -9.6368000000e-01 least_sq_term_14
-                      5.3967700000e+00 least_sq_term_15
-                     -1.2564210000e+01 least_sq_term_16
-                     -5.9956700000e+00 least_sq_term_17
-                      1.1651800000e+00 least_sq_term_18
-                     -9.2829200000e+00 least_sq_term_19
-                     -1.7898600000e+00 least_sq_term_20
-                      1.2761760000e+01 least_sq_term_21
+                     -1.5209820000e+01 least_sq_term_1
+                      2.7979600000e+00 least_sq_term_2
+                      1.1290640000e+01 least_sq_term_3
+                     -1.6555650000e+01 least_sq_term_4
+                     -2.6299800000e+00 least_sq_term_5
+                      3.4741210000e+01 least_sq_term_6
+                     -1.3890560000e+01 least_sq_term_7
+                      6.4253000000e-01 least_sq_term_8
+                      6.4649900000e+00 least_sq_term_9
+                     -1.4646150000e+01 least_sq_term_10
+                      5.6987000000e-01 least_sq_term_11
+                      1.2671870000e+01 least_sq_term_12
+                     -1.2290490000e+01 least_sq_term_13
+                     -3.4700000000e-02 least_sq_term_14
+                      5.3636800000e+00 least_sq_term_15
+                     -1.6435660000e+01 least_sq_term_16
+                      2.7726600000e+00 least_sq_term_17
+                      3.2866310000e+01 least_sq_term_18
+                     -9.2853900000e+00 least_sq_term_19
+                     -1.7302500000e+00 least_sq_term_20
+                      1.3302310000e+01 least_sq_term_21
 
 
 
@@ -797,27 +797,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 19:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4918150000e+01 least_sq_term_1
-                      1.3236900000e+00 least_sq_term_2
-                     -7.3160000000e-01 least_sq_term_3
-                     -1.4389650000e+01 least_sq_term_4
-                     -4.1091500000e+00 least_sq_term_5
-                     -7.2554000000e-01 least_sq_term_6
-                     -1.4772900000e+01 least_sq_term_7
-                      7.0557000000e-01 least_sq_term_8
-                     -2.1511500000e+00 least_sq_term_9
-                     -1.4533180000e+01 least_sq_term_10
-                      9.3484000000e-01 least_sq_term_11
-                      1.1961220000e+01 least_sq_term_12
-                     -9.4705400000e+00 least_sq_term_13
-                     -2.6905400000e+00 least_sq_term_14
-                      3.7665200000e+00 least_sq_term_15
-                     -8.3461800000e+00 least_sq_term_16
-                     -2.2312500000e+00 least_sq_term_17
-                      9.3030400000e+00 least_sq_term_18
-                     -9.1436000000e+00 least_sq_term_19
-                     -1.6489800000e+00 least_sq_term_20
-                      9.7984200000e+00 least_sq_term_21
+                     -1.4802210000e+01 least_sq_term_1
+                      1.0459100000e+00 least_sq_term_2
+                     -4.0090000000e-02 least_sq_term_3
+                     -1.5223500000e+01 least_sq_term_4
+                     -7.2653000000e-01 least_sq_term_5
+                     -4.6667200000e+00 least_sq_term_6
+                     -1.4647680000e+01 least_sq_term_7
+                      1.0858300000e+00 least_sq_term_8
+                     -1.4462000000e-01 least_sq_term_9
+                     -1.4533900000e+01 least_sq_term_10
+                      1.0733800000e+00 least_sq_term_11
+                      1.2190390000e+01 least_sq_term_12
+                     -1.2770070000e+01 least_sq_term_13
+                     -5.3991000000e-01 least_sq_term_14
+                      6.8250300000e+00 least_sq_term_15
+                     -8.3489700000e+00 least_sq_term_16
+                     -2.2403400000e+00 least_sq_term_17
+                      9.1691100000e+00 least_sq_term_18
+                     -9.1461200000e+00 least_sq_term_19
+                     -1.6568300000e+00 least_sq_term_20
+                      1.0290300000e+01 least_sq_term_21
 
 
 
@@ -837,27 +837,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 20:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4684690000e+01 least_sq_term_1
-                      2.8811400000e+00 least_sq_term_2
-                      6.5452900000e+00 least_sq_term_3
-                     -1.4000890000e+01 least_sq_term_4
-                     -2.4771200000e+00 least_sq_term_5
-                      7.9034200000e+00 least_sq_term_6
-                     -1.4519340000e+01 least_sq_term_7
-                      2.5856000000e+00 least_sq_term_8
-                      4.6717800000e+00 least_sq_term_9
-                     -1.6102200000e+01 least_sq_term_10
-                      9.8078900000e+00 least_sq_term_11
-                      4.5536000000e-01 least_sq_term_12
-                     -1.1149640000e+01 least_sq_term_13
-                      6.0570000000e-01 least_sq_term_14
-                      1.5122900000e+00 least_sq_term_15
-                     -1.0542890000e+01 least_sq_term_16
-                      9.7661000000e-01 least_sq_term_17
-                      2.9176800000e+00 least_sq_term_18
-                     -1.1858650000e+01 least_sq_term_19
-                      2.0914200000e+00 least_sq_term_20
-                      2.9691800000e+00 least_sq_term_21
+                     -1.4685350000e+01 least_sq_term_1
+                      3.0612700000e+00 least_sq_term_2
+                      6.8382900000e+00 least_sq_term_3
+                     -1.0448610000e+01 least_sq_term_4
+                     -2.6411000000e-01 least_sq_term_5
+                      7.6064900000e+00 least_sq_term_6
+                     -1.4393020000e+01 least_sq_term_7
+                      2.8337000000e+00 least_sq_term_8
+                      5.2288600000e+00 least_sq_term_9
+                     -1.6102390000e+01 least_sq_term_10
+                      9.8672400000e+00 least_sq_term_11
+                      1.4862200000e+00 least_sq_term_12
+                     -1.0671910000e+01 least_sq_term_13
+                      1.1390100000e+00 least_sq_term_14
+                      1.8236600000e+00 least_sq_term_15
+                     -1.0430490000e+01 least_sq_term_16
+                      9.1271000000e-01 least_sq_term_17
+                      4.2143700000e+00 least_sq_term_18
+                     -1.1651290000e+01 least_sq_term_19
+                      1.7502800000e+00 least_sq_term_20
+                      4.3147100000e+00 least_sq_term_21
 
 
 
@@ -877,27 +877,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 21:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.9190500000e+00 least_sq_term_1
-                     -8.1676000000e-01 least_sq_term_2
-                     -2.3674000000e-01 least_sq_term_3
-                     -3.4837700000e+00 least_sq_term_4
-                     -3.8991400000e+00 least_sq_term_5
-                     -2.7792000000e-01 least_sq_term_6
-                      4.5455000000e-01 least_sq_term_7
-                     -3.7684000000e-01 least_sq_term_8
-                     -7.5526000000e-01 least_sq_term_9
-                     -2.1258500000e+00 least_sq_term_10
-                     -2.6274900000e+00 least_sq_term_11
-                      2.6862000000e-01 least_sq_term_12
-                     -6.0923000000e-01 least_sq_term_13
-                     -9.0754000000e-01 least_sq_term_14
-                     -2.7802100000e+00 least_sq_term_15
-                     -1.4016800000e+00 least_sq_term_16
-                     -7.7179000000e-01 least_sq_term_17
-                      6.9470000000e-01 least_sq_term_18
-                      1.3689500000e+00 least_sq_term_19
-                     -9.7616000000e-01 least_sq_term_20
-                      9.2380000000e-01 least_sq_term_21
+                      3.5694900000e+00 least_sq_term_1
+                     -8.1402000000e-01 least_sq_term_2
+                      3.1467600000e+00 least_sq_term_3
+                      1.7575100000e+00 least_sq_term_4
+                     -5.0083000000e-01 least_sq_term_5
+                      6.9864000000e-01 least_sq_term_6
+                     -4.3894600000e+00 least_sq_term_7
+                     -2.2618000000e-01 least_sq_term_8
+                      3.2564400000e+00 least_sq_term_9
+                      2.7210900000e+00 least_sq_term_10
+                     -2.4303200000e+00 least_sq_term_11
+                      2.9609600000e+00 least_sq_term_12
+                      5.4796500000e+00 least_sq_term_13
+                     -6.6146000000e-01 least_sq_term_14
+                     -1.5564900000e+00 least_sq_term_15
+                      4.8057600000e+00 least_sq_term_16
+                     -8.3646000000e-01 least_sq_term_17
+                      1.8775800000e+00 least_sq_term_18
+                     -4.1907000000e-01 least_sq_term_19
+                     -6.8977000000e-01 least_sq_term_20
+                      2.3316100000e+00 least_sq_term_21
 
 
 
@@ -917,27 +917,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 22:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6666670000e+01 least_sq_term_1
-                     -1.0000000000e+01 least_sq_term_2
-                     -1.0000000000e+01 least_sq_term_3
-                     -1.6000220000e+01 least_sq_term_4
-                     -2.7323400000e+00 least_sq_term_5
-                      1.5536810000e+01 least_sq_term_6
-                      1.3838030000e+01 least_sq_term_7
-                      8.3985000000e-01 least_sq_term_8
-                      4.7361000000e+00 least_sq_term_9
-                     -1.5824500000e+01 least_sq_term_10
-                      7.1814400000e+00 least_sq_term_11
-                      1.6395890000e+01 least_sq_term_12
-                     -1.2408960000e+01 least_sq_term_13
-                      4.6704000000e+00 least_sq_term_14
-                     -1.0863500000e+00 least_sq_term_15
-                     -1.6666670000e+01 least_sq_term_16
-                     -1.0000000000e+01 least_sq_term_17
-                     -1.0000000000e+01 least_sq_term_18
-                     -1.5899020000e+01 least_sq_term_19
-                      6.9288700000e+00 least_sq_term_20
-                      1.9244030000e+01 least_sq_term_21
+                     -1.6200470000e+01 least_sq_term_1
+                      4.0490000000e+00 least_sq_term_2
+                      1.1155580000e+01 least_sq_term_3
+                     -1.6000560000e+01 least_sq_term_4
+                     -2.7218100000e+00 least_sq_term_5
+                      1.5948580000e+01 least_sq_term_6
+                      1.3956640000e+01 least_sq_term_7
+                      4.5789000000e-01 least_sq_term_8
+                      4.6185200000e+00 least_sq_term_9
+                     -1.6217660000e+01 least_sq_term_10
+                      9.9758900000e+00 least_sq_term_11
+                      3.8037540000e+01 least_sq_term_12
+                     -1.3909080000e+01 least_sq_term_13
+                      5.7911600000e+00 least_sq_term_14
+                      1.4686500000e+00 least_sq_term_15
+                     -1.6204570000e+01 least_sq_term_16
+                      4.6779000000e+00 least_sq_term_17
+                      3.6499700000e+01 least_sq_term_18
+                     -1.3045660000e+01 least_sq_term_19
+                      3.6716400000e+00 least_sq_term_20
+                      1.6290910000e+01 least_sq_term_21
 
 
 
@@ -958,26 +958,26 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 23:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.4907850000e+01 least_sq_term_1
-                      6.1683300000e+00 least_sq_term_2
-                     -3.1946100000e+00 least_sq_term_3
-                     -1.5154940000e+01 least_sq_term_4
-                      2.5117000000e-01 least_sq_term_5
-                     -2.0064900000e+00 least_sq_term_6
-                     -1.4754330000e+01 least_sq_term_7
-                      6.3190100000e+00 least_sq_term_8
-                     -4.4515100000e+00 least_sq_term_9
-                     -1.6666670000e+01 least_sq_term_10
-                     -1.0000000000e+01 least_sq_term_11
-                     -1.0000000000e+01 least_sq_term_12
-                     -1.1856340000e+01 least_sq_term_13
-                      3.5044500000e+00 least_sq_term_14
-                     -4.0263300000e+00 least_sq_term_15
-                     -1.2840280000e+01 least_sq_term_16
-                      5.2928700000e+00 least_sq_term_17
-                     -2.6276300000e+00 least_sq_term_18
-                     -1.2882910000e+01 least_sq_term_19
-                      4.7233400000e+00 least_sq_term_20
-                     -2.1172000000e+00 least_sq_term_21
+                      5.9832500000e+00 least_sq_term_2
+                     -3.1112000000e+00 least_sq_term_3
+                     -1.0618080000e+01 least_sq_term_4
+                      2.2376800000e+00 least_sq_term_5
+                     -2.2683800000e+00 least_sq_term_6
+                     -1.4626500000e+01 least_sq_term_7
+                      6.4966600000e+00 least_sq_term_8
+                     -4.3671700000e+00 least_sq_term_9
+                     -1.6527550000e+01 least_sq_term_10
+                      1.2629590000e+01 least_sq_term_11
+                     -4.4585600000e+00 least_sq_term_12
+                     -1.5584440000e+01 least_sq_term_13
+                      6.5602700000e+00 least_sq_term_14
+                      6.1175000000e-01 least_sq_term_15
+                     -1.1218800000e+01 least_sq_term_16
+                      3.3637600000e+00 least_sq_term_17
+                     -1.7929900000e+00 least_sq_term_18
+                     -1.3584150000e+01 least_sq_term_19
+                      4.8964100000e+00 least_sq_term_20
+                     -3.2461500000e+00 least_sq_term_21
 
 
 
@@ -997,27 +997,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 24:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -3.0448100000e+00 least_sq_term_1
-                      8.1909000000e-01 least_sq_term_2
-                     -8.9670000000e-01 least_sq_term_3
-                     -9.8730000000e+00 least_sq_term_4
-                     -3.0865300000e+00 least_sq_term_5
-                      9.5375000000e-01 least_sq_term_6
-                     -1.8866000000e+00 least_sq_term_7
-                     -1.2140400000e+00 least_sq_term_8
-                     -5.1874000000e-01 least_sq_term_9
-                     -1.5992930000e+01 least_sq_term_10
-                      7.6966100000e+00 least_sq_term_11
-                      1.2136100000e+01 least_sq_term_12
-                     -1.5827120000e+01 least_sq_term_13
-                      3.9993900000e+00 least_sq_term_14
-                      2.6492100000e+00 least_sq_term_15
-                     -1.6666670000e+01 least_sq_term_16
-                     -1.0000000000e+01 least_sq_term_17
-                     -1.0000000000e+01 least_sq_term_18
-                     -1.4925800000e+01 least_sq_term_19
-                      6.3339400000e+00 least_sq_term_20
-                      5.2863200000e+00 least_sq_term_21
+                      1.7643000000e+00 least_sq_term_1
+                     -8.9307000000e-01 least_sq_term_2
+                      4.2264000000e+00 least_sq_term_3
+                      6.1365000000e-01 least_sq_term_4
+                     -1.5410900000e+00 least_sq_term_5
+                      1.4038700000e+00 least_sq_term_6
+                      3.5032300000e+00 least_sq_term_7
+                     -2.1065500000e+00 least_sq_term_8
+                      4.5442300000e+00 least_sq_term_9
+                      1.4577500000e+00 least_sq_term_10
+                     -1.4214700000e+00 least_sq_term_11
+                      2.8878500000e+00 least_sq_term_12
+                     -1.4808290000e+01 least_sq_term_13
+                      5.0419400000e+00 least_sq_term_14
+                      6.8672000000e-01 least_sq_term_15
+                     -1.5280850000e+01 least_sq_term_16
+                      5.4501900000e+00 least_sq_term_17
+                      7.1905800000e+00 least_sq_term_18
+                     -1.6039950000e+01 least_sq_term_19
+                      4.2365200000e+00 least_sq_term_20
+                      1.5698080000e+01 least_sq_term_21
 
 
 
@@ -1038,26 +1038,26 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 25:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
-                     -1.0000000000e+01 least_sq_term_2
-                     -1.0000000000e+01 least_sq_term_3
-                     -1.6666670000e+01 least_sq_term_4
-                     -1.0000000000e+01 least_sq_term_5
-                     -1.0000000000e+01 least_sq_term_6
+                      4.8754200000e+00 least_sq_term_2
+                      4.4042200000e+00 least_sq_term_3
+                     -1.2888410000e+01 least_sq_term_4
+                      2.1391100000e+00 least_sq_term_5
+                     -6.0955500000e+00 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
-                     -1.0000000000e+01 least_sq_term_8
-                     -1.0000000000e+01 least_sq_term_9
+                      3.3235300000e+00 least_sq_term_8
+                      1.0125520000e+01 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
-                     -1.0000000000e+01 least_sq_term_11
-                     -1.0000000000e+01 least_sq_term_12
-                     -1.6666670000e+01 least_sq_term_13
-                     -1.0000000000e+01 least_sq_term_14
-                     -1.0000000000e+01 least_sq_term_15
+                      7.7804000000e+00 least_sq_term_11
+                      3.2460620000e+01 least_sq_term_12
+                     -1.6541720000e+01 least_sq_term_13
+                      4.5413800000e+00 least_sq_term_14
+                     -5.1494500000e+00 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
-                     -1.0000000000e+01 least_sq_term_17
-                     -1.0000000000e+01 least_sq_term_18
+                      1.2468700000e+00 least_sq_term_17
+                      2.6883850000e+01 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
-                     -1.0000000000e+01 least_sq_term_20
-                     -1.0000000000e+01 least_sq_term_21
+                      1.0549400000e+00 least_sq_term_20
+                      3.6786320000e+01 least_sq_term_21
 
 
 
@@ -1077,27 +1077,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 26:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4451880000e+01 least_sq_term_1
-                     -1.2689800000e+00 least_sq_term_2
-                      3.4661800000e+00 least_sq_term_3
-                     -1.4334110000e+01 least_sq_term_4
-                     -5.2546300000e+00 least_sq_term_5
-                      4.8931700000e+00 least_sq_term_6
-                     -1.4394550000e+01 least_sq_term_7
-                     -1.5296100000e+00 least_sq_term_8
-                      1.5954700000e+00 least_sq_term_9
-                     -1.5206910000e+01 least_sq_term_10
-                      1.2064200000e+00 least_sq_term_11
-                      6.2556500000e+00 least_sq_term_12
+                     -1.4335710000e+01 least_sq_term_1
+                     -7.2057000000e-01 least_sq_term_2
+                      4.6679400000e+00 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                     -1.0000000000e+01 least_sq_term_5
+                     -1.0000000000e+01 least_sq_term_6
+                     -1.4016750000e+01 least_sq_term_7
+                     -9.1773000000e-01 least_sq_term_8
+                      2.5171800000e+00 least_sq_term_9
+                     -1.5207400000e+01 least_sq_term_10
+                      1.4321200000e+00 least_sq_term_11
+                      9.6873500000e+00 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
-                     -9.2731600000e+00 least_sq_term_16
-                     -2.9035000000e+00 least_sq_term_17
-                      8.5828200000e+00 least_sq_term_18
-                     -1.0258130000e+01 least_sq_term_19
-                     -2.2833300000e+00 least_sq_term_20
-                      8.6815700000e+00 least_sq_term_21
+                     -9.3911200000e+00 least_sq_term_16
+                     -2.8051300000e+00 least_sq_term_17
+                      9.2982500000e+00 least_sq_term_18
+                     -1.0399550000e+01 least_sq_term_19
+                     -2.2532900000e+00 least_sq_term_20
+                      9.7286500000e+00 least_sq_term_21
 
 
 
@@ -1117,27 +1117,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 27:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5734130000e+01 least_sq_term_1
-                      3.5779400000e+00 least_sq_term_2
-                     -6.0922100000e+00 least_sq_term_3
-                     -1.5833610000e+01 least_sq_term_4
-                     -6.2826400000e+00 least_sq_term_5
-                     -7.9610500000e+00 least_sq_term_6
-                     -1.5656840000e+01 least_sq_term_7
-                      3.7297800000e+00 least_sq_term_8
-                     -5.5886000000e+00 least_sq_term_9
-                     -1.5431490000e+01 least_sq_term_10
-                      6.9238000000e+00 least_sq_term_11
-                      3.6530200000e+00 least_sq_term_12
-                     -1.2828730000e+01 least_sq_term_13
-                      1.2612600000e+00 least_sq_term_14
-                     -3.1693600000e+00 least_sq_term_15
-                     -8.6363900000e+00 least_sq_term_16
-                     -6.5297000000e-01 least_sq_term_17
-                      2.0033000000e+00 least_sq_term_18
-                     -9.8401800000e+00 least_sq_term_19
-                      3.4791000000e-01 least_sq_term_20
-                      2.4976600000e+00 least_sq_term_21
+                     -1.5734440000e+01 least_sq_term_1
+                      3.8251700000e+00 least_sq_term_2
+                     -4.8543700000e+00 least_sq_term_3
+                     -1.4945870000e+01 least_sq_term_4
+                     -4.5086000000e-01 least_sq_term_5
+                     -3.9059100000e+00 least_sq_term_6
+                     -1.5530990000e+01 least_sq_term_7
+                      3.7658300000e+00 least_sq_term_8
+                     -6.0301900000e+00 least_sq_term_9
+                     -1.4814520000e+01 least_sq_term_10
+                      3.4255400000e+00 least_sq_term_11
+                      8.0529000000e+00 least_sq_term_12
+                     -1.2350440000e+01 least_sq_term_13
+                      1.5670400000e+00 least_sq_term_14
+                     -1.7396200000e+00 least_sq_term_15
+                     -8.6404700000e+00 least_sq_term_16
+                     -5.8225000000e-01 least_sq_term_17
+                      3.5490600000e+00 least_sq_term_18
+                     -9.1461200000e+00 least_sq_term_19
+                     -7.4174000000e-01 least_sq_term_20
+                      4.7133400000e+00 least_sq_term_21
 
 
 
@@ -1157,27 +1157,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 28:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4218750000e+01 least_sq_term_1
-                      1.2040000000e-02 least_sq_term_2
-                      3.5030500000e+00 least_sq_term_3
-                     -1.3778740000e+01 least_sq_term_4
-                     -4.4864100000e+00 least_sq_term_5
-                      5.0242100000e+00 least_sq_term_6
-                     -1.4015860000e+01 least_sq_term_7
-                     -1.6261000000e-01 least_sq_term_8
-                      1.9883900000e+00 least_sq_term_9
-                     -1.4533180000e+01 least_sq_term_10
-                      5.4530000000e-02 least_sq_term_11
-                      1.1434050000e+01 least_sq_term_12
-                     -9.4705400000e+00 least_sq_term_13
-                     -2.5295900000e+00 least_sq_term_14
-                      3.3133900000e+00 least_sq_term_15
-                     -8.3475800000e+00 least_sq_term_16
-                     -2.2792100000e+00 least_sq_term_17
-                      8.1456600000e+00 least_sq_term_18
-                     -9.1436000000e+00 least_sq_term_19
-                     -1.9240100000e+00 least_sq_term_20
-                      1.0138520000e+01 least_sq_term_21
+                     -1.4219160000e+01 least_sq_term_1
+                      1.1687000000e-01 least_sq_term_2
+                      5.1306700000e+00 least_sq_term_3
+                     -1.0061070000e+01 least_sq_term_4
+                     -2.8889500000e+00 least_sq_term_5
+                      5.0054800000e+00 least_sq_term_6
+                     -1.3890560000e+01 least_sq_term_7
+                     -8.5440000000e-02 least_sq_term_8
+                      3.6511800000e+00 least_sq_term_9
+                     -1.4533900000e+01 least_sq_term_10
+                      8.4430000000e-02 least_sq_term_11
+                      1.1332170000e+01 least_sq_term_12
+                     -8.9933800000e+00 least_sq_term_13
+                     -2.4422800000e+00 least_sq_term_14
+                      4.5742500000e+00 least_sq_term_15
+                     -8.3517600000e+00 least_sq_term_16
+                     -2.3797500000e+00 least_sq_term_17
+                      9.3656000000e+00 least_sq_term_18
+                     -9.1461200000e+00 least_sq_term_19
+                     -2.0043600000e+00 least_sq_term_20
+                      1.1469440000e+01 least_sq_term_21
 
 
 
@@ -1221,27 +1221,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 29:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4218340000e+01 least_sq_term_1
-                      1.4317900000e+00 least_sq_term_2
-                      1.7851000000e+00 least_sq_term_3
-                     -1.4500720000e+01 least_sq_term_4
-                     -2.8247600000e+00 least_sq_term_5
-                      3.5175800000e+00 least_sq_term_6
-                     -1.4015860000e+01 least_sq_term_7
-                      7.8981000000e-01 least_sq_term_8
-                      9.1947000000e-01 least_sq_term_9
-                     -1.5091720000e+01 least_sq_term_10
-                      4.0785100000e+00 least_sq_term_11
-                      4.7746800000e+00 least_sq_term_12
-                     -1.0070220000e+01 least_sq_term_13
-                      6.9729000000e-01 least_sq_term_14
-                     -1.1405900000e+00 least_sq_term_15
-                     -8.9252900000e+00 least_sq_term_16
-                      7.9422000000e-01 least_sq_term_17
-                      1.9418100000e+00 least_sq_term_18
-                     -9.8401800000e+00 least_sq_term_19
-                      1.0842800000e+00 least_sq_term_20
-                      3.1992600000e+00 least_sq_term_21
+                     -1.4219160000e+01 least_sq_term_1
+                      1.3451700000e+00 least_sq_term_2
+                      3.2419200000e+00 least_sq_term_3
+                     -1.2448350000e+01 least_sq_term_4
+                     -1.6642200000e+00 least_sq_term_5
+                      4.1436800000e+00 least_sq_term_6
+                     -1.3890560000e+01 least_sq_term_7
+                      4.1547000000e-01 least_sq_term_8
+                      3.1735800000e+00 least_sq_term_9
+                     -1.5092520000e+01 least_sq_term_10
+                      4.0249400000e+00 least_sq_term_11
+                      5.2810800000e+00 least_sq_term_12
+                     -1.2770070000e+01 least_sq_term_13
+                      2.3383700000e+00 least_sq_term_14
+                      2.8139200000e+00 least_sq_term_15
+                     -1.2451470000e+01 least_sq_term_16
+                      2.9035400000e+00 least_sq_term_17
+                      8.2573900000e+00 least_sq_term_18
+                     -9.8424700000e+00 least_sq_term_19
+                      1.0767400000e+00 least_sq_term_20
+                      4.0334800000e+00 least_sq_term_21
 
 
 
@@ -1250,58 +1250,58 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
 <<<<< global_kriging approximation updates completed.
 
 >>>>> Initiating global iteration 2 (acquisition batch 1)
-NCSU DIRECT succeeded with code 1
-(maximum function evaluations exceeded)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
 
 Results of EGO iteration:
 Final point =
-                      1.4000000000e-01 radius
-                      6.5000000000e-01 time_gap
-                      5.5000000000e+00 strength_neighbor
-                      2.1000000000e-01 range_neighbor
-                      5.2500000000e+00 strength_geometry
-                      1.0500000000e-01 range_geometry
+                      1.1113854595e-01 radius
+                      9.3367626886e-01 time_gap
+                      1.8209876543e+00 strength_neighbor
+                      1.7507544582e-01 range_neighbor
+                      1.7575445816e+00 strength_geometry
+                      1.0291495199e-01 range_geometry
                       1.5500000000e+00 desired_speed
 Expected Improvement    =
-                      0.0000000000e+00
+                      1.9761015526e-34
 
 ---------------------
 Begin Evaluation   30
 ---------------------
 Parameters for evaluation 30:
-                      1.4000000000e-01 radius
-                      6.5000000000e-01 time_gap
-                      5.5000000000e+00 strength_neighbor
-                      2.1000000000e-01 range_neighbor
-                      5.2500000000e+00 strength_geometry
-                      1.0500000000e-01 range_geometry
+                      1.1113854595e-01 radius
+                      9.3367626886e-01 time_gap
+                      1.8209876543e+00 strength_neighbor
+                      1.7507544582e-01 range_neighbor
+                      1.7575445816e+00 strength_geometry
+                      1.0291495199e-01 range_geometry
                       1.5500000000e+00 desired_speed
 
-Duplication detected: analysis_drivers not invoked.
+blocking fork: python3 driver_cq.py params.in results.out
 
-Active response data retrieved from database:
+Active response data for evaluation 30:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4218340000e+01 least_sq_term_1
-                      1.4317900000e+00 least_sq_term_2
-                      1.7851000000e+00 least_sq_term_3
-                     -1.4500720000e+01 least_sq_term_4
-                     -2.8247600000e+00 least_sq_term_5
-                      3.5175800000e+00 least_sq_term_6
-                     -1.4015860000e+01 least_sq_term_7
-                      7.8981000000e-01 least_sq_term_8
-                      9.1947000000e-01 least_sq_term_9
-                     -1.5091720000e+01 least_sq_term_10
-                      4.0785100000e+00 least_sq_term_11
-                      4.7746800000e+00 least_sq_term_12
-                     -1.0070220000e+01 least_sq_term_13
-                      6.9729000000e-01 least_sq_term_14
-                     -1.1405900000e+00 least_sq_term_15
-                     -8.9252900000e+00 least_sq_term_16
-                      7.9422000000e-01 least_sq_term_17
-                      1.9418100000e+00 least_sq_term_18
-                     -9.8401800000e+00 least_sq_term_19
-                      1.0842800000e+00 least_sq_term_20
-                      3.1992600000e+00 least_sq_term_21
+                      3.4447800000e+00 least_sq_term_1
+                     -5.0628000000e-01 least_sq_term_2
+                      2.8067200000e+00 least_sq_term_3
+                      2.9685300000e+00 least_sq_term_4
+                     -8.9556000000e-01 least_sq_term_5
+                      1.2349600000e+00 least_sq_term_6
+                      5.2008200000e+00 least_sq_term_7
+                     -8.5550000000e-01 least_sq_term_8
+                      1.6138600000e+00 least_sq_term_9
+                      2.7213100000e+00 least_sq_term_10
+                     -2.7177900000e+00 least_sq_term_11
+                      8.5820000000e-02 least_sq_term_12
+                      4.2219800000e+00 least_sq_term_13
+                     -3.7647000000e-01 least_sq_term_14
+                     -3.5441800000e+00 least_sq_term_15
+                     -4.2359100000e+00 least_sq_term_16
+                      1.8073500000e+00 least_sq_term_17
+                     -2.5590400000e+00 least_sq_term_18
+                     -1.0609310000e+01 least_sq_term_19
+                      7.7025000000e-01 least_sq_term_20
+                     -1.8058800000e+00 least_sq_term_21
 
 
 
@@ -1309,10 +1309,10 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
 
 <<<<< global_kriging approximation updates completed.
 
-Stopping criteria met:     distConvergenceCntr (1) >= distConvergenceLimit (1)
+Stopping criteria not met: distConvergenceCntr (0) < distConvergenceLimit (1)
 Stopping criteria met:     eifConvergenceCntr (2) >= eifConvergenceLimit (2)
 Stopping criteria not met: globalIterCount (2) < maxIterations (80)
-<<<<< Function evaluation summary: 30 total (29 new, 1 duplicate)
+<<<<< Function evaluation summary: 30 total (30 new, 0 duplicate)
 <<<<< Best parameters          =
                       1.0063426620e-01 radius
                       9.5774435783e-01 time_gap
@@ -1322,33 +1322,33 @@ Stopping criteria not met: globalIterCount (2) < maxIterations (80)
                       1.0470175840e-01 range_geometry
                       1.5500000000e+00 desired_speed
 <<<<< Best residual terms =
-                     -1.9190500000e+00
-                     -8.1676000000e-01
-                     -2.3674000000e-01
-                     -3.4837700000e+00
-                     -3.8991400000e+00
-                     -2.7792000000e-01
-                      4.5455000000e-01
-                     -3.7684000000e-01
-                     -7.5526000000e-01
-                     -2.1258500000e+00
-                     -2.6274900000e+00
-                      2.6862000000e-01
-                     -6.0923000000e-01
-                     -9.0754000000e-01
-                     -2.7802100000e+00
-                     -1.4016800000e+00
-                     -7.7179000000e-01
-                      6.9470000000e-01
-                      1.3689500000e+00
-                     -9.7616000000e-01
-                      9.2380000000e-01
-<<<<< Best residual norm =  7.7385317071e+00; 0.5 * norm^2 =  2.9942436491e+01
+                      3.5694900000e+00
+                     -8.1402000000e-01
+                      3.1467600000e+00
+                      1.7575100000e+00
+                     -5.0083000000e-01
+                      6.9864000000e-01
+                     -4.3894600000e+00
+                     -2.2618000000e-01
+                      3.2564400000e+00
+                      2.7210900000e+00
+                     -2.4303200000e+00
+                      2.9609600000e+00
+                      5.4796500000e+00
+                     -6.6146000000e-01
+                     -1.5564900000e+00
+                      4.8057600000e+00
+                     -8.3646000000e-01
+                      1.8775800000e+00
+                     -4.1907000000e-01
+                     -6.8977000000e-01
+                      2.3316100000e+00
+<<<<< Best residual norm =  1.2059419857e+01; 0.5 * norm^2 =  7.2714803638e+01
 <<<<< Best evaluation ID: 21
 
 
 <<<<< Iterator efficient_global completed.
 <<<<< Environment execution completed.
 DAKOTA execution time in seconds:
-  Total CPU        =     7.6937 [parent =    7.69375, child =     -5e-05]
-  Total wall clock =    255.717
+  Total CPU        =    4.42117 [parent =    4.42117, child =     -3e-06]
+  Total wall clock =    240.878

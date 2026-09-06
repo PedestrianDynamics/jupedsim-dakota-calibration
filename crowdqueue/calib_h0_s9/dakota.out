@@ -1,7 +1,7 @@
 Dakota version 6.24 released May 15 2026.
 Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
 Running MPI Dakota executable in serial mode.
-Start time: Sat Sep  5 22:28:41 2026
+Start time: Sun Sep  6 11:00:53 2026
 
 ------------------
 Begin Dakota input
@@ -77,27 +77,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 1:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5323670000e+01 least_sq_term_1
-                      4.2680000000e+00 least_sq_term_2
-                     -9.5245000000e-01 least_sq_term_3
-                     -1.5328180000e+01 least_sq_term_4
-                     -2.1768300000e+00 least_sq_term_5
-                      7.1264000000e-01 least_sq_term_6
-                     -1.4685210000e+01 least_sq_term_7
-                      4.0494600000e+00 least_sq_term_8
-                     -3.3355300000e+00 least_sq_term_9
-                     -1.6439160000e+01 least_sq_term_10
-                      1.2872050000e+01 least_sq_term_11
-                     -3.2874600000e+00 least_sq_term_12
-                     -1.5764430000e+01 least_sq_term_13
-                      5.4084700000e+00 least_sq_term_14
-                      1.7416000000e-01 least_sq_term_15
-                     -1.5913080000e+01 least_sq_term_16
-                      7.2802500000e+00 least_sq_term_17
-                      4.3019800000e+00 least_sq_term_18
-                     -1.5476500000e+01 least_sq_term_19
-                      8.1414500000e+00 least_sq_term_20
-                      2.6446900000e+00 least_sq_term_21
+                     -1.5848500000e+01 least_sq_term_1
+                      5.1391100000e+00 least_sq_term_2
+                     -4.0695000000e-01 least_sq_term_3
+                     -1.3710350000e+01 least_sq_term_4
+                     -2.1524900000e+00 least_sq_term_5
+                     -6.0644000000e-01 least_sq_term_6
+                     -1.5459400000e+01 least_sq_term_7
+                      4.4888300000e+00 least_sq_term_8
+                     -2.9306800000e+00 least_sq_term_9
+                     -1.6439230000e+01 least_sq_term_10
+                      1.2764290000e+01 least_sq_term_11
+                     -5.0191500000e+00 least_sq_term_12
+                     -1.4201370000e+01 least_sq_term_13
+                      5.1762300000e+00 least_sq_term_14
+                     -1.8039000000e+00 least_sq_term_15
+                     -1.5855460000e+01 least_sq_term_16
+                      7.2117500000e+00 least_sq_term_17
+                      2.7883400000e+00 least_sq_term_18
+                     -1.5546720000e+01 least_sq_term_19
+                      8.1371600000e+00 least_sq_term_20
+                      2.1752900000e+00 least_sq_term_21
 
 
 
@@ -117,27 +117,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 2:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                      0.0000000000e+00 least_sq_term_1
-                      2.1179000000e-01 least_sq_term_2
-                      6.1360000000e-01 least_sq_term_3
-                     -3.2032000000e-01 least_sq_term_4
-                     -2.7953900000e+00 least_sq_term_5
-                      6.7064000000e-01 least_sq_term_6
-                      1.3150200000e+00 least_sq_term_7
-                     -7.0819000000e-01 least_sq_term_8
-                      3.4411000000e-01 least_sq_term_9
-                     -1.6255000000e-01 least_sq_term_10
-                      9.5382000000e-01 least_sq_term_11
-                     -1.6624400000e+00 least_sq_term_12
-                     -1.2949920000e+01 least_sq_term_13
-                      6.0476800000e+00 least_sq_term_14
-                     -5.0146100000e+00 least_sq_term_15
-                     -1.6089050000e+01 least_sq_term_16
-                      5.0599100000e+00 least_sq_term_17
-                      1.0279710000e+01 least_sq_term_18
-                     -1.3811650000e+01 least_sq_term_19
-                      6.7351000000e+00 least_sq_term_20
-                      2.2648000000e-01 least_sq_term_21
+                      3.6610800000e+00 least_sq_term_1
+                     -3.4960000000e-02 least_sq_term_2
+                      4.0918400000e+00 least_sq_term_3
+                      2.8381400000e+00 least_sq_term_4
+                     -1.6721200000e+00 least_sq_term_5
+                      2.5607700000e+00 least_sq_term_6
+                      4.5025700000e+00 least_sq_term_7
+                     -8.7265000000e-01 least_sq_term_8
+                      2.9001000000e+00 least_sq_term_9
+                      2.6470600000e+00 least_sq_term_10
+                     -4.0428000000e-01 least_sq_term_11
+                     -2.5803400000e+00 least_sq_term_12
+                     -1.3070400000e+01 least_sq_term_13
+                      6.5204100000e+00 least_sq_term_14
+                     -4.0383500000e+00 least_sq_term_15
+                     -5.9553100000e+00 least_sq_term_16
+                      3.4529400000e+00 least_sq_term_17
+                      1.0347000000e+00 least_sq_term_18
+                     -3.1872700000e+00 least_sq_term_19
+                      4.2046900000e+00 least_sq_term_20
+                     -2.8028800000e+00 least_sq_term_21
 
 
 
@@ -157,27 +157,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 3:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -2.3660000000e-01 least_sq_term_1
-                      2.8522000000e-01 least_sq_term_2
-                      6.8742000000e-01 least_sq_term_3
-                     -1.3288300000e+00 least_sq_term_4
-                     -4.1969900000e+00 least_sq_term_5
-                      1.8436500000e+00 least_sq_term_6
-                      1.2327800000e+00 least_sq_term_7
-                     -3.8272000000e-01 least_sq_term_8
-                      1.2646000000e-01 least_sq_term_9
-                     -1.3439800000e+00 least_sq_term_10
-                     -6.9612000000e-01 least_sq_term_11
-                     -2.8169200000e+00 least_sq_term_12
-                     -4.6209000000e-01 least_sq_term_13
-                     -4.3428000000e-01 least_sq_term_14
-                     -5.4259900000e+00 least_sq_term_15
-                     -1.1491900000e+00 least_sq_term_16
-                      9.1000000000e-04 least_sq_term_17
-                     -5.0374900000e+00 least_sq_term_18
-                      1.4601800000e+00 least_sq_term_19
-                     -1.1541800000e+00 least_sq_term_20
-                     -4.8693900000e+00 least_sq_term_21
+                      3.5369400000e+00 least_sq_term_1
+                     -3.7993000000e-01 least_sq_term_2
+                      4.2520900000e+00 least_sq_term_3
+                      1.9020000000e+00 least_sq_term_4
+                     -2.7608800000e+00 least_sq_term_5
+                      3.7730700000e+00 least_sq_term_6
+                      3.9163600000e+00 least_sq_term_7
+                     -5.2245000000e-01 least_sq_term_8
+                      1.8765900000e+00 least_sq_term_9
+                      2.2108200000e+00 least_sq_term_10
+                      5.8940000000e-01 least_sq_term_11
+                     -8.2043000000e-01 least_sq_term_12
+                      2.9773500000e+00 least_sq_term_13
+                      1.2287000000e-01 least_sq_term_14
+                     -4.8535900000e+00 least_sq_term_15
+                      1.7541200000e+00 least_sq_term_16
+                      1.3567000000e-01 least_sq_term_17
+                     -4.5341300000e+00 least_sq_term_18
+                      5.7393500000e+00 least_sq_term_19
+                     -9.1423000000e-01 least_sq_term_20
+                     -3.8196200000e+00 least_sq_term_21
 
 
 
@@ -197,27 +197,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 4:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5098740000e+01 least_sq_term_1
-                      8.2815800000e+00 least_sq_term_2
-                     -5.3428100000e+00 least_sq_term_3
-                     -1.4241200000e+01 least_sq_term_4
-                      5.4289000000e-01 least_sq_term_5
-                     -5.1415100000e+00 least_sq_term_6
-                     -1.4813770000e+01 least_sq_term_7
-                      7.9899700000e+00 least_sq_term_8
-                     -6.5007600000e+00 least_sq_term_9
-                     -1.6433460000e+01 least_sq_term_10
-                      1.0902450000e+01 least_sq_term_11
-                     -4.9855900000e+00 least_sq_term_12
-                     -1.1525880000e+01 least_sq_term_13
-                      5.3946600000e+00 least_sq_term_14
-                     -6.6572100000e+00 least_sq_term_15
-                     -1.0267700000e+01 least_sq_term_16
-                      4.3302900000e+00 least_sq_term_17
-                     -5.9136700000e+00 least_sq_term_18
-                     -1.1551840000e+01 least_sq_term_19
-                      4.5408200000e+00 least_sq_term_20
-                     -5.7570400000e+00 least_sq_term_21
+                     -1.4974100000e+01 least_sq_term_1
+                      7.6637300000e+00 least_sq_term_2
+                     -5.6556200000e+00 least_sq_term_3
+                     -1.0612500000e+01 least_sq_term_4
+                      6.6561200000e+00 least_sq_term_5
+                     -6.1979700000e+00 least_sq_term_6
+                     -1.4674420000e+01 least_sq_term_7
+                      8.2297200000e+00 least_sq_term_8
+                     -6.5300600000e+00 least_sq_term_9
+                     -1.6434140000e+01 least_sq_term_10
+                      1.1238190000e+01 least_sq_term_11
+                     -4.9154700000e+00 least_sq_term_12
+                     -1.0916830000e+01 least_sq_term_13
+                      5.7948100000e+00 least_sq_term_14
+                     -6.6709600000e+00 least_sq_term_15
+                     -1.0268800000e+01 least_sq_term_16
+                      3.7480300000e+00 least_sq_term_17
+                     -5.8705600000e+00 least_sq_term_18
+                     -1.1552710000e+01 least_sq_term_19
+                      4.5436700000e+00 least_sq_term_20
+                     -5.7043400000e+00 least_sq_term_21
 
 
 
@@ -246,18 +246,18 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_7
                      -1.0000000000e+01 least_sq_term_8
                      -1.0000000000e+01 least_sq_term_9
-                      7.3666500000e+00 least_sq_term_10
-                      1.0472700000e+00 least_sq_term_11
-                      1.5705290000e+01 least_sq_term_12
+                      6.7905200000e+00 least_sq_term_10
+                     -3.9462000000e-01 least_sq_term_11
+                      1.6709180000e+01 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                      -1.0000000000e+01 least_sq_term_17
                      -1.0000000000e+01 least_sq_term_18
-                      1.9539660000e+01 least_sq_term_19
-                     -1.3570200000e+00 least_sq_term_20
-                      1.3173760000e+01 least_sq_term_21
+                      1.3181000000e-01 least_sq_term_19
+                     -5.6139100000e+00 least_sq_term_20
+                      1.3305600000e+00 least_sq_term_21
 
 
 
@@ -277,27 +277,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 6:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -2.9247500000e+00 least_sq_term_1
-                     -5.8880000000e-02 least_sq_term_2
-                     -3.4348000000e-01 least_sq_term_3
-                     -3.6043700000e+00 least_sq_term_4
-                     -4.1042500000e+00 least_sq_term_5
-                      1.0956100000e+00 least_sq_term_6
-                     -1.7101900000e+00 least_sq_term_7
-                     -1.4070700000e+00 least_sq_term_8
-                     -1.9437000000e-01 least_sq_term_9
-                     -2.8685500000e+00 least_sq_term_10
-                      7.0313000000e-01 least_sq_term_11
-                      2.6599200000e+00 least_sq_term_12
-                     -1.6066990000e+01 least_sq_term_13
-                      2.3734600000e+00 least_sq_term_14
-                      2.0503300000e+00 least_sq_term_15
-                     -1.6435540000e+01 least_sq_term_16
-                      1.7384200000e+00 least_sq_term_17
-                      1.4138370000e+01 least_sq_term_18
-                     -1.6109500000e+01 least_sq_term_19
-                      4.4792300000e+00 least_sq_term_20
-                      1.1669880000e+01 least_sq_term_21
+                      2.1842400000e+00 least_sq_term_1
+                     -1.4353700000e+00 least_sq_term_2
+                      6.2151500000e+00 least_sq_term_3
+                      6.9300000000e-01 least_sq_term_4
+                     -2.3471300000e+00 least_sq_term_5
+                      2.7013300000e+00 least_sq_term_6
+                      3.9444100000e+00 least_sq_term_7
+                     -2.9315500000e+00 least_sq_term_8
+                      7.0480700000e+00 least_sq_term_9
+                      5.0263000000e-01 least_sq_term_10
+                     -9.2856000000e-01 least_sq_term_11
+                      3.0410000000e+00 least_sq_term_12
+                     -1.6067190000e+01 least_sq_term_13
+                      2.2196800000e+00 least_sq_term_14
+                      2.8365700000e+00 least_sq_term_15
+                     -1.6435660000e+01 least_sq_term_16
+                      1.5491600000e+00 least_sq_term_17
+                      1.4658920000e+01 least_sq_term_18
+                     -1.5761420000e+01 least_sq_term_19
+                      4.8943000000e+00 least_sq_term_20
+                      1.0368700000e+01 least_sq_term_21
 
 
 
@@ -317,27 +317,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 7:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.3985160000e+01 least_sq_term_1
-                      1.1391000000e+00 least_sq_term_2
-                      6.8692300000e+00 least_sq_term_3
+                     -1.3986060000e+01 least_sq_term_1
+                      1.1565600000e+00 least_sq_term_2
+                      7.4856200000e+00 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                      -1.0000000000e+01 least_sq_term_5
                      -1.0000000000e+01 least_sq_term_6
-                     -1.3763400000e+01 least_sq_term_7
-                      4.7892000000e-01 least_sq_term_8
-                      5.8060400000e+00 least_sq_term_9
-                     -1.4307810000e+01 least_sq_term_10
-                     -5.1911000000e-01 least_sq_term_11
-                      8.9278000000e+00 least_sq_term_12
+                     -1.3638190000e+01 least_sq_term_7
+                      6.6007000000e-01 least_sq_term_8
+                      6.0602300000e+00 least_sq_term_9
+                     -1.4308600000e+01 least_sq_term_10
+                     -4.5750000000e-01 least_sq_term_11
+                      8.4028700000e+00 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                      -1.0000000000e+01 least_sq_term_17
                      -1.0000000000e+01 least_sq_term_18
-                     -1.6666670000e+01 least_sq_term_19
-                     -1.0000000000e+01 least_sq_term_20
-                     -1.0000000000e+01 least_sq_term_21
+                     -1.2767130000e+01 least_sq_term_19
+                     -4.7544800000e+00 least_sq_term_20
+                     -2.0427400000e+00 least_sq_term_21
 
 
 
@@ -357,27 +357,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 8:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                      2.4085480000e+01 least_sq_term_1
-                      5.0690000000e-02 least_sq_term_2
-                      1.3568350000e+01 least_sq_term_3
-                      2.2109120000e+01 least_sq_term_4
-                     -3.2726700000e+00 least_sq_term_5
-                      1.1673550000e+01 least_sq_term_6
-                      2.6322460000e+01 least_sq_term_7
-                      6.6400000000e-01 least_sq_term_8
-                      1.1586730000e+01 least_sq_term_9
-                      2.7012140000e+01 least_sq_term_10
-                     -3.8360500000e+00 least_sq_term_11
-                      9.8458500000e+00 least_sq_term_12
-                      3.6341780000e+01 least_sq_term_13
-                     -1.6130000000e-01 least_sq_term_14
-                      6.2847500000e+00 least_sq_term_15
-                      3.2833740000e+01 least_sq_term_16
-                      5.3279000000e-01 least_sq_term_17
-                      6.3645300000e+00 least_sq_term_18
-                      4.3397590000e+01 least_sq_term_19
-                     -9.2734000000e-01 least_sq_term_20
-                      1.1978780000e+01 least_sq_term_21
+                      2.3556600000e+01 least_sq_term_1
+                     -1.2610600000e+00 least_sq_term_2
+                      1.0454840000e+01 least_sq_term_3
+                      2.2402760000e+01 least_sq_term_4
+                     -1.4058000000e+00 least_sq_term_5
+                      1.4198250000e+01 least_sq_term_6
+                      2.6136360000e+01 least_sq_term_7
+                     -1.0517800000e+00 least_sq_term_8
+                      8.9100800000e+00 least_sq_term_9
+                      2.8039900000e+01 least_sq_term_10
+                     -3.7863800000e+00 least_sq_term_11
+                      1.1117000000e+01 least_sq_term_12
+                      3.6799630000e+01 least_sq_term_13
+                     -6.5833000000e-01 least_sq_term_14
+                      5.9741900000e+00 least_sq_term_15
+                      1.0370110000e+01 least_sq_term_16
+                      3.0379900000e+00 least_sq_term_17
+                      2.2071290000e+01 least_sq_term_18
+                      4.5602610000e+01 least_sq_term_19
+                     -1.5212600000e+00 least_sq_term_20
+                      1.2119800000e+01 least_sq_term_21
 
 
 
@@ -397,27 +397,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 9:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -3.6259700000e+00 least_sq_term_1
-                     -2.2372000000e-01 least_sq_term_2
-                     -1.6433000000e-01 least_sq_term_3
-                     -4.4638800000e+00 least_sq_term_4
-                     -4.6249300000e+00 least_sq_term_5
-                      1.4392000000e+00 least_sq_term_6
-                     -2.4771700000e+00 least_sq_term_7
-                     -1.1842200000e+00 least_sq_term_8
-                     -3.8900000000e-01 least_sq_term_9
-                     -1.0460100000e+01 least_sq_term_10
-                      3.1063500000e+00 least_sq_term_11
-                      1.2657770000e+01 least_sq_term_12
-                     -1.3848190000e+01 least_sq_term_13
-                      2.5803300000e+00 least_sq_term_14
-                     -4.5586700000e+00 least_sq_term_15
-                     -1.5511040000e+01 least_sq_term_16
-                      3.1297200000e+00 least_sq_term_17
-                      7.6656200000e+00 least_sq_term_18
-                     -1.4855560000e+01 least_sq_term_19
-                      5.2190300000e+00 least_sq_term_20
-                     -4.6582000000e-01 least_sq_term_21
+                      1.1202000000e+00 least_sq_term_1
+                     -2.3983900000e+00 least_sq_term_2
+                      7.7947800000e+00 least_sq_term_3
+                     -5.9532000000e-01 least_sq_term_4
+                     -3.3748500000e+00 least_sq_term_5
+                      4.4991300000e+00 least_sq_term_6
+                      3.2102000000e+00 least_sq_term_7
+                     -3.8510200000e+00 least_sq_term_8
+                      9.1201800000e+00 least_sq_term_9
+                      1.9783000000e-01 least_sq_term_10
+                     -5.6090000000e-01 least_sq_term_11
+                      6.3675100000e+00 least_sq_term_12
+                     -1.4508550000e+01 least_sq_term_13
+                      2.6853900000e+00 least_sq_term_14
+                     -1.5234000000e+00 least_sq_term_15
+                     -6.1851000000e+00 least_sq_term_16
+                      1.7619400000e+00 least_sq_term_17
+                     -2.1611000000e-01 least_sq_term_18
+                     -4.5963000000e+00 least_sq_term_19
+                      2.0877000000e+00 least_sq_term_20
+                      1.3415800000e+00 least_sq_term_21
 
 
 
@@ -438,26 +438,26 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 10:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.5951710000e+01 least_sq_term_1
-                      1.1921490000e+01 least_sq_term_2
-                     -5.0615100000e+00 least_sq_term_3
-                     -1.5304620000e+01 least_sq_term_4
-                      1.9192600000e+00 least_sq_term_5
-                     -3.1734700000e+00 least_sq_term_6
-                     -1.5888830000e+01 least_sq_term_7
-                      1.1965070000e+01 least_sq_term_8
-                     -6.1150200000e+00 least_sq_term_9
+                      1.1867910000e+01 least_sq_term_2
+                     -5.3788300000e+00 least_sq_term_3
+                     -1.1673350000e+01 least_sq_term_4
+                      4.9509400000e+00 least_sq_term_5
+                     -3.4057200000e+00 least_sq_term_6
+                     -1.5888700000e+01 least_sq_term_7
+                      1.2749580000e+01 least_sq_term_8
+                     -5.9805700000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      5.2355880000e+01 least_sq_term_12
-                     -1.3928670000e+01 least_sq_term_13
-                      7.7478100000e+00 least_sq_term_14
-                     -5.9211600000e+00 least_sq_term_15
-                     -1.4615450000e+01 least_sq_term_16
-                      1.0189490000e+01 least_sq_term_17
-                     -5.6762400000e+00 least_sq_term_18
-                     -1.6310890000e+01 least_sq_term_19
-                      1.2852140000e+01 least_sq_term_20
-                     -5.7808800000e+00 least_sq_term_21
+                      5.2735870000e+01 least_sq_term_12
+                     -1.3510750000e+01 least_sq_term_13
+                      8.3600300000e+00 least_sq_term_14
+                     -5.6097300000e+00 least_sq_term_15
+                     -1.4792280000e+01 least_sq_term_16
+                      1.0202990000e+01 least_sq_term_17
+                     -6.2191800000e+00 least_sq_term_18
+                     -1.6382120000e+01 least_sq_term_19
+                      1.2779800000e+01 least_sq_term_20
+                     -5.4178200000e+00 least_sq_term_21
 
 
 
@@ -477,27 +477,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 11:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6550080000e+01 least_sq_term_1
-                      4.0490000000e+00 least_sq_term_2
-                      1.5971750000e+01 least_sq_term_3
-                     -1.6555590000e+01 least_sq_term_4
+                     -1.6550120000e+01 least_sq_term_1
+                      3.2225900000e+00 least_sq_term_2
+                      1.6376480000e+01 least_sq_term_3
+                     -1.6555630000e+01 least_sq_term_4
                      -2.6299800000e+00 least_sq_term_5
-                      2.3110860000e+01 least_sq_term_6
-                      1.3838030000e+01 least_sq_term_7
-                      5.4419000000e-01 least_sq_term_8
-                      3.1066400000e+00 least_sq_term_9
-                     -2.5785700000e+00 least_sq_term_10
-                     -1.9881900000e+00 least_sq_term_11
-                      7.3947000000e-01 least_sq_term_12
+                      2.3242130000e+01 least_sq_term_6
+                      1.4462810000e+01 least_sq_term_7
+                      3.7645000000e-01 least_sq_term_8
+                      3.3419200000e+00 least_sq_term_9
+                      1.0739710000e+01 least_sq_term_10
+                     -3.2012200000e+00 least_sq_term_11
+                     -1.2054700000e+00 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                       1.6850400000e+00 least_sq_term_14
-                      4.2677300000e+01 least_sq_term_15
-                     -1.6435620000e+01 least_sq_term_16
+                      4.1600920000e+01 least_sq_term_15
+                     -1.6435700000e+01 least_sq_term_16
                       4.8072600000e+00 least_sq_term_17
-                      4.1121430000e+01 least_sq_term_18
-                     -1.6248860000e+01 least_sq_term_19
-                      5.8616700000e+00 least_sq_term_20
-                      4.4044100000e+01 least_sq_term_21
+                      4.1252390000e+01 least_sq_term_18
+                     -1.6527420000e+01 least_sq_term_19
+                      4.3714200000e+00 least_sq_term_20
+                      5.7388220000e+01 least_sq_term_21
 
 
 
@@ -517,27 +517,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 12:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5904910000e+01 least_sq_term_1
-                      1.6099520000e+01 least_sq_term_2
-                     -9.0289300000e+00 least_sq_term_3
-                     -1.5999410000e+01 least_sq_term_4
-                      4.4467600000e+00 least_sq_term_5
-                     -8.8613600000e+00 least_sq_term_6
-                     -1.5826920000e+01 least_sq_term_7
-                      1.6940870000e+01 least_sq_term_8
-                     -9.2647500000e+00 least_sq_term_9
+                     -1.6025450000e+01 least_sq_term_1
+                      1.6272730000e+01 least_sq_term_2
+                     -8.8300500000e+00 least_sq_term_3
+                     -1.5286350000e+01 least_sq_term_4
+                      8.2260800000e+00 least_sq_term_5
+                     -9.0529900000e+00 least_sq_term_6
+                     -1.5673660000e+01 least_sq_term_7
+                      1.8354190000e+01 least_sq_term_8
+                     -9.2693600000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      3.0629530000e+01 least_sq_term_12
-                     -1.6158900000e+01 least_sq_term_13
-                      1.3624820000e+01 least_sq_term_14
-                     -8.0363000000e+00 least_sq_term_15
-                     -1.6243110000e+01 least_sq_term_16
-                      1.4125140000e+01 least_sq_term_17
-                     -6.8065400000e+00 least_sq_term_18
-                     -1.6516830000e+01 least_sq_term_19
+                      3.0920690000e+01 least_sq_term_12
+                     -1.6412870000e+01 least_sq_term_13
+                      1.2086970000e+01 least_sq_term_14
+                     -6.5280400000e+00 least_sq_term_15
+                     -1.6242900000e+01 least_sq_term_16
+                      1.4319360000e+01 least_sq_term_17
+                     -7.3700700000e+00 least_sq_term_18
+                     -1.6516850000e+01 least_sq_term_19
                       1.4044490000e+01 least_sq_term_20
-                     -6.2035000000e+00 least_sq_term_21
+                     -5.8860400000e+00 least_sq_term_21
 
 
 
@@ -557,27 +557,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 13:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6550100000e+01 least_sq_term_1
+                     -1.6550160000e+01 least_sq_term_1
                       3.2225900000e+00 least_sq_term_2
-                      6.2027300000e+00 least_sq_term_3
-                     -1.6444520000e+01 least_sq_term_4
-                     -2.0934600000e+00 least_sq_term_5
-                      3.1106000000e+00 least_sq_term_6
-                     -1.6540440000e+01 least_sq_term_7
+                      6.6275900000e+00 least_sq_term_3
+                     -1.6167110000e+01 least_sq_term_4
+                     -1.1069100000e+00 least_sq_term_5
+                     -5.5502900000e+00 least_sq_term_6
+                     -1.6540480000e+01 least_sq_term_7
                      -7.3500000000e-03 least_sq_term_8
-                      1.2997900000e+01 least_sq_term_9
-                     -1.4533180000e+01 least_sq_term_10
-                      1.9305000000e-01 least_sq_term_11
-                      1.0846480000e+01 least_sq_term_12
-                     -1.5527280000e+01 least_sq_term_13
-                     -1.1676000000e-01 least_sq_term_14
-                     -2.5655000000e-01 least_sq_term_15
-                     -8.3461800000e+00 least_sq_term_16
-                     -2.8338300000e+00 least_sq_term_17
-                      9.7277800000e+00 least_sq_term_18
-                     -9.1436000000e+00 least_sq_term_19
-                     -2.4360700000e+00 least_sq_term_20
-                      1.0828730000e+01 least_sq_term_21
+                      1.1595740000e+01 least_sq_term_9
+                     -1.4533900000e+01 least_sq_term_10
+                      1.5188000000e-01 least_sq_term_11
+                      1.1490090000e+01 least_sq_term_12
+                     -1.2470340000e+01 least_sq_term_13
+                     -1.4459700000e+00 least_sq_term_14
+                      2.5760100000e+00 least_sq_term_15
+                     -1.2392300000e+01 least_sq_term_16
+                     -1.0794500000e+00 least_sq_term_17
+                      1.5743430000e+01 least_sq_term_18
+                     -9.1461200000e+00 least_sq_term_19
+                     -2.3418000000e+00 least_sq_term_20
+                      1.1387950000e+01 least_sq_term_21
 
 
 
@@ -597,27 +597,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 14:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4218340000e+01 least_sq_term_1
-                      1.8498300000e+00 least_sq_term_2
-                     -4.3636000000e-01 least_sq_term_3
-                     -1.3556600000e+01 least_sq_term_4
-                     -2.9803200000e+00 least_sq_term_5
-                      1.3813000000e-01 least_sq_term_6
-                     -1.4014080000e+01 least_sq_term_7
-                      4.7216000000e-01 least_sq_term_8
-                     -2.1642000000e-01 least_sq_term_9
-                     -1.4864920000e+01 least_sq_term_10
-                      1.8671400000e+00 least_sq_term_11
-                      2.4957100000e+00 least_sq_term_12
-                     -9.8303500000e+00 least_sq_term_13
-                      1.3294600000e+00 least_sq_term_14
-                     -3.7108100000e+00 least_sq_term_15
-                     -8.6955400000e+00 least_sq_term_16
-                      1.5308400000e+00 least_sq_term_17
-                     -1.6598700000e+00 least_sq_term_18
-                     -9.5544000000e+00 least_sq_term_19
-                      1.0469600000e+00 least_sq_term_20
-                     -9.7528000000e-01 least_sq_term_21
+                     -1.4335710000e+01 least_sq_term_1
+                      1.8612800000e+00 least_sq_term_2
+                      2.9298600000e+00 least_sq_term_3
+                     -1.0171010000e+01 least_sq_term_4
+                     -6.9773000000e-01 least_sq_term_5
+                      1.0998900000e+00 least_sq_term_6
+                     -1.4014970000e+01 least_sq_term_7
+                      4.1895000000e-01 least_sq_term_8
+                      2.8860700000e+00 least_sq_term_9
+                     -1.4865220000e+01 least_sq_term_10
+                      1.6770500000e+00 least_sq_term_11
+                      3.5021200000e+00 least_sq_term_12
+                     -1.0432120000e+01 least_sq_term_13
+                      3.1660900000e+00 least_sq_term_14
+                     -3.6296300000e+00 least_sq_term_15
+                     -8.6982100000e+00 least_sq_term_16
+                      1.2256800000e+00 least_sq_term_17
+                     -4.1720000000e-02 least_sq_term_18
+                     -1.1508520000e+01 least_sq_term_19
+                      3.6993400000e+00 least_sq_term_20
+                      5.4160000000e-02 least_sq_term_21
 
 
 
@@ -677,27 +677,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 16:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6550100000e+01 least_sq_term_1
+                     -1.6550160000e+01 least_sq_term_1
                       3.2225900000e+00 least_sq_term_2
-                      6.5399500000e+00 least_sq_term_3
-                     -1.6555590000e+01 least_sq_term_4
-                     -2.6299800000e+00 least_sq_term_5
-                      2.7550370000e+01 least_sq_term_6
-                     -1.6540440000e+01 least_sq_term_7
+                      7.0339700000e+00 least_sq_term_3
+                     -1.6444630000e+01 least_sq_term_4
+                     -3.1066300000e+00 least_sq_term_5
+                     -5.4035300000e+00 least_sq_term_6
+                     -1.6540480000e+01 least_sq_term_7
                       1.6580900000e+00 least_sq_term_8
-                      1.3853220000e+01 least_sq_term_9
-                     -1.6329800000e+01 least_sq_term_10
-                      2.9732500000e+00 least_sq_term_11
-                      1.4932290000e+01 least_sq_term_12
-                     -1.3428410000e+01 least_sq_term_13
-                     -3.6035400000e+00 least_sq_term_14
-                      3.3249700000e+00 least_sq_term_15
-                     -1.1756100000e+01 least_sq_term_16
-                     -2.8351600000e+00 least_sq_term_17
-                      4.2525600000e+00 least_sq_term_18
-                     -1.2765820000e+01 least_sq_term_19
-                     -2.0113300000e+00 least_sq_term_20
-                      3.9163900000e+00 least_sq_term_21
+                      1.4012780000e+01 least_sq_term_9
+                     -1.6329910000e+01 least_sq_term_10
+                      2.8577200000e+00 least_sq_term_11
+                      1.8300130000e+01 least_sq_term_12
+                     -1.1451230000e+01 least_sq_term_13
+                     -2.9317100000e+00 least_sq_term_14
+                      2.9687600000e+00 least_sq_term_15
+                     -1.2278240000e+01 least_sq_term_16
+                     -2.4667500000e+00 least_sq_term_17
+                      5.6464400000e+00 least_sq_term_18
+                     -1.4159820000e+01 least_sq_term_19
+                     -1.1896700000e+00 least_sq_term_20
+                      6.3387100000e+00 least_sq_term_21
 
 
 
@@ -717,27 +717,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 17:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -2.6778800000e+00 least_sq_term_1
-                     -2.8568000000e-01 least_sq_term_2
-                     -7.1340000000e-02 least_sq_term_3
-                     -3.1746500000e+00 least_sq_term_4
-                     -3.8220700000e+00 least_sq_term_5
-                      1.4293700000e+00 least_sq_term_6
-                     -1.4072500000e+00 least_sq_term_7
-                     -1.4229800000e+00 least_sq_term_8
-                     -3.0820000000e-02 least_sq_term_9
-                     -2.8685500000e+00 least_sq_term_10
-                      8.4349000000e-01 least_sq_term_11
-                      3.7011000000e+00 least_sq_term_12
-                     -1.4987570000e+01 least_sq_term_13
-                      4.4336900000e+00 least_sq_term_14
-                     -1.6679500000e+00 least_sq_term_15
-                     -1.5742170000e+01 least_sq_term_16
-                      6.1968700000e+00 least_sq_term_17
-                      3.4634200000e+00 least_sq_term_18
-                     -1.4507480000e+01 least_sq_term_19
-                      6.4869000000e+00 least_sq_term_20
-                      2.5726000000e+00 least_sq_term_21
+                      1.5610700000e+00 least_sq_term_1
+                     -1.1978000000e+00 least_sq_term_2
+                      4.9952600000e+00 least_sq_term_3
+                     -1.3558230000e+01 least_sq_term_4
+                     -2.6383100000e+00 least_sq_term_5
+                      5.1845200000e+00 least_sq_term_6
+                      3.8601300000e+00 least_sq_term_7
+                     -2.9173500000e+00 least_sq_term_8
+                      6.7322700000e+00 least_sq_term_9
+                      3.0138000000e-01 least_sq_term_10
+                     -8.2832000000e-01 least_sq_term_11
+                      4.5121000000e+00 least_sq_term_12
+                      1.8033200000e+00 least_sq_term_13
+                      5.9807000000e-01 least_sq_term_14
+                     -1.7374900000e+00 least_sq_term_15
+                     -1.6435700000e+01 least_sq_term_16
+                      1.5786900000e+00 least_sq_term_17
+                      1.5838990000e+01 least_sq_term_18
+                     -1.3184930000e+01 least_sq_term_19
+                      5.5596100000e+00 least_sq_term_20
+                      2.1639600000e+00 least_sq_term_21
 
 
 
@@ -757,27 +757,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 18:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.3985160000e+01 least_sq_term_1
-                      7.9003000000e-01 least_sq_term_2
-                      1.7192900000e+00 least_sq_term_3
-                     -1.3334450000e+01 least_sq_term_4
-                     -3.1303000000e+00 least_sq_term_5
-                      3.0982100000e+00 least_sq_term_6
-                     -1.3763400000e+01 least_sq_term_7
-                      1.5086000000e-01 least_sq_term_8
-                      6.5057000000e-01 least_sq_term_9
-                     -1.4303860000e+01 least_sq_term_10
-                     -3.5252300000e+00 least_sq_term_11
-                     -4.2333000000e-01 least_sq_term_12
-                     -1.2041650000e+01 least_sq_term_13
-                      3.7769600000e+00 least_sq_term_14
-                     -5.9990000000e-01 least_sq_term_15
-                     -1.1468110000e+01 least_sq_term_16
-                      4.2905100000e+00 least_sq_term_17
-                     -2.5007400000e+00 least_sq_term_18
-                     -8.8675800000e+00 least_sq_term_19
-                     -1.0910000000e+00 least_sq_term_20
-                     -1.1030000000e+00 least_sq_term_21
+                     -1.3986060000e+01 least_sq_term_1
+                      9.0546000000e-01 least_sq_term_2
+                      3.9273400000e+00 least_sq_term_3
+                     -9.8379000000e+00 least_sq_term_4
+                     -2.2690000000e-01 least_sq_term_5
+                      1.5074800000e+00 least_sq_term_6
+                     -1.3638190000e+01 least_sq_term_7
+                      4.0144000000e-01 least_sq_term_8
+                      2.7174900000e+00 least_sq_term_9
+                     -1.4304650000e+01 least_sq_term_10
+                     -3.2020200000e+00 least_sq_term_11
+                      8.5321000000e-01 least_sq_term_12
+                     -1.4748340000e+01 least_sq_term_13
+                      7.5837900000e+00 least_sq_term_14
+                      3.3804100000e+00 least_sq_term_15
+                     -8.1207900000e+00 least_sq_term_16
+                     -1.9787000000e-01 least_sq_term_17
+                     -8.6505000000e-01 least_sq_term_18
+                     -8.8688900000e+00 least_sq_term_19
+                     -1.0650600000e+00 least_sq_term_20
+                     -1.3712000000e-01 least_sq_term_21
 
 
 
@@ -799,25 +799,25 @@ Active response data for evaluation 19:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
                       4.8754200000e+00 least_sq_term_2
-                      4.8028800000e+00 least_sq_term_3
-                     -1.6553260000e+01 least_sq_term_4
-                     -1.8110900000e+00 least_sq_term_5
-                     -5.3279100000e+00 least_sq_term_6
+                      5.5823300000e+00 least_sq_term_3
+                     -1.3192750000e+01 least_sq_term_4
+                      1.1232000000e-01 least_sq_term_5
+                     -3.9787500000e+00 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       3.3235300000e+00 least_sq_term_8
-                      1.0982140000e+01 least_sq_term_9
+                      1.2505840000e+01 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      4.2977340000e+01 least_sq_term_12
-                     -1.6545430000e+01 least_sq_term_13
+                      4.3318070000e+01 least_sq_term_12
+                     -1.6545450000e+01 least_sq_term_13
                       1.4253700000e+00 least_sq_term_14
-                     -5.4366000000e+00 least_sq_term_15
+                     -5.0677400000e+00 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
-                      1.2468700000e+00 least_sq_term_17
-                      3.7958920000e+01 least_sq_term_18
+                      1.4631500000e+00 least_sq_term_17
+                      3.8637550000e+01 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
                       1.0549400000e+00 least_sq_term_20
-                      4.2881680000e+01 least_sq_term_21
+                      4.4097980000e+01 least_sq_term_21
 
 
 
@@ -839,25 +839,25 @@ Active response data for evaluation 20:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
                       4.8754200000e+00 least_sq_term_2
-                      2.9069300000e+00 least_sq_term_3
-                     -1.6552730000e+01 least_sq_term_4
-                     -2.6299800000e+00 least_sq_term_5
-                     -5.8674600000e+00 least_sq_term_6
+                      3.7770200000e+00 least_sq_term_3
+                     -1.6549080000e+01 least_sq_term_4
+                     -9.9220000000e-01 least_sq_term_5
+                     -8.0908300000e+00 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       3.3235300000e+00 least_sq_term_8
-                      8.4505400000e+00 least_sq_term_9
+                      1.0935850000e+01 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      3.9802190000e+01 least_sq_term_12
-                     -1.6666670000e+01 least_sq_term_13
-                      1.6850400000e+00 least_sq_term_14
-                      1.3095980000e+01 least_sq_term_15
+                      4.0149120000e+01 least_sq_term_12
+                     -1.6544430000e+01 least_sq_term_13
+                     -1.3263000000e-01 least_sq_term_14
+                     -3.9049800000e+00 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
-                      1.2468700000e+00 least_sq_term_17
-                      3.2240320000e+01 least_sq_term_18
+                      1.4631500000e+00 least_sq_term_17
+                      3.3578940000e+01 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
                       1.0549400000e+00 least_sq_term_20
-                      3.1801860000e+01 least_sq_term_21
+                      3.1963500000e+01 least_sq_term_21
 
 
 
@@ -877,27 +877,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 21:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4801270000e+01 least_sq_term_1
-                      1.4484300000e+00 least_sq_term_2
-                      1.8684100000e+00 least_sq_term_3
-                     -1.4334110000e+01 least_sq_term_4
-                     -3.7942400000e+00 least_sq_term_5
-                      3.7007300000e+00 least_sq_term_6
-                     -1.4645650000e+01 least_sq_term_7
-                      9.8865000000e-01 least_sq_term_8
-                      8.2036000000e-01 least_sq_term_9
-                     -1.6440350000e+01 least_sq_term_10
-                      9.3526200000e+00 least_sq_term_11
-                     -4.9949600000e+00 least_sq_term_12
-                     -1.1509450000e+01 least_sq_term_13
-                     -8.0390000000e-01 least_sq_term_14
-                     -1.0335800000e+00 least_sq_term_15
-                     -1.1351690000e+01 least_sq_term_16
-                     -1.0998000000e-01 least_sq_term_17
-                      1.2698700000e+00 least_sq_term_18
-                     -1.2834190000e+01 least_sq_term_19
-                      8.8476000000e-01 least_sq_term_20
-                      6.7311000000e-01 least_sq_term_21
+                     -1.4918450000e+01 least_sq_term_1
+                      1.6497300000e+00 least_sq_term_2
+                      3.9989400000e+00 least_sq_term_3
+                     -1.0837240000e+01 least_sq_term_4
+                     -3.4279200000e+00 least_sq_term_5
+                      7.4561900000e+00 least_sq_term_6
+                     -1.4646330000e+01 least_sq_term_7
+                      1.1739500000e+00 least_sq_term_8
+                      2.9068200000e+00 least_sq_term_9
+                     -1.6440460000e+01 least_sq_term_10
+                      9.6546300000e+00 least_sq_term_11
+                     -6.1679600000e+00 least_sq_term_12
+                     -1.3549390000e+01 least_sq_term_13
+                      7.6757000000e-01 least_sq_term_14
+                      1.0457600000e+00 least_sq_term_15
+                     -1.1527590000e+01 least_sq_term_16
+                      1.3932000000e-01 least_sq_term_17
+                      2.2331300000e+00 least_sq_term_18
+                     -1.2974790000e+01 least_sq_term_19
+                      1.0167400000e+00 least_sq_term_20
+                      1.5361000000e+00 least_sq_term_21
 
 
 
@@ -917,27 +917,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 22:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5092740000e+01 least_sq_term_1
-                      1.7574700000e+00 least_sq_term_2
-                      5.3330100000e+00 least_sq_term_3
-                     -1.4667340000e+01 least_sq_term_4
-                     -3.5537100000e+00 least_sq_term_5
-                      8.8634600000e+00 least_sq_term_6
-                     -1.5214060000e+01 least_sq_term_7
-                      1.4738100000e+00 least_sq_term_8
-                      2.9177000000e+00 least_sq_term_9
-                     -1.6553640000e+01 least_sq_term_10
-                      6.1640000000e+00 least_sq_term_11
-                      2.2600900000e+00 least_sq_term_12
-                     -1.2468930000e+01 least_sq_term_13
-                     -1.0901000000e-01 least_sq_term_14
-                      2.0630400000e+00 least_sq_term_15
-                     -1.2853730000e+01 least_sq_term_16
-                      5.6715000000e-01 least_sq_term_17
-                      2.2359300000e+00 least_sq_term_18
-                     -1.5133680000e+01 least_sq_term_19
-                      2.8338300000e+00 least_sq_term_20
-                      1.5363800000e+00 least_sq_term_21
+                     -1.5268090000e+01 least_sq_term_1
+                      2.5173600000e+00 least_sq_term_2
+                      5.9772000000e+00 least_sq_term_3
+                     -1.1004740000e+01 least_sq_term_4
+                     -1.9411500000e+00 least_sq_term_5
+                      1.3082710000e+01 least_sq_term_6
+                     -1.5024590000e+01 least_sq_term_7
+                      2.6236300000e+00 least_sq_term_8
+                      3.9210400000e+00 least_sq_term_9
+                     -1.6553580000e+01 least_sq_term_10
+                      7.7804000000e+00 least_sq_term_11
+                      2.0699000000e+00 least_sq_term_12
+                     -1.1990760000e+01 least_sq_term_13
+                     -1.3050000000e-02 least_sq_term_14
+                      2.5257800000e+00 least_sq_term_15
+                     -1.2971150000e+01 least_sq_term_16
+                      7.1887000000e-01 least_sq_term_17
+                      3.6117000000e+00 least_sq_term_18
+                     -1.4855560000e+01 least_sq_term_19
+                      2.5574800000e+00 least_sq_term_20
+                      2.0357600000e+00 least_sq_term_21
 
 
 
@@ -957,27 +957,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 23:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4679700000e+01 least_sq_term_1
-                      3.5567400000e+00 least_sq_term_2
-                     -4.0417000000e+00 least_sq_term_3
-                     -1.3989250000e+01 least_sq_term_4
-                     -2.7047600000e+00 least_sq_term_5
-                     -3.1466100000e+00 least_sq_term_6
-                     -1.4500450000e+01 least_sq_term_7
-                      3.2728100000e+00 least_sq_term_8
-                     -4.7706000000e+00 least_sq_term_9
-                     -1.5980880000e+01 least_sq_term_10
-                      7.1379700000e+00 least_sq_term_11
-                     -7.1566000000e+00 least_sq_term_12
-                     -1.6425420000e+01 least_sq_term_13
-                      2.8968200000e+00 least_sq_term_14
-                      2.5490500000e+00 least_sq_term_15
-                     -1.2896990000e+01 least_sq_term_16
-                      5.0755900000e+00 least_sq_term_17
-                     -2.0830900000e+00 least_sq_term_18
-                     -1.1327010000e+01 least_sq_term_19
-                      3.3076600000e+00 least_sq_term_20
-                     -2.9368100000e+00 least_sq_term_21
+                     -1.4796260000e+01 least_sq_term_1
+                      3.7214500000e+00 least_sq_term_2
+                     -3.3843300000e+00 least_sq_term_3
+                     -1.1977450000e+01 least_sq_term_4
+                      1.0453800000e+00 least_sq_term_5
+                     -4.2373500000e+00 least_sq_term_6
+                     -1.4498980000e+01 least_sq_term_7
+                      3.8139100000e+00 least_sq_term_8
+                     -4.5993000000e+00 least_sq_term_9
+                     -1.6095470000e+01 least_sq_term_10
+                      1.0321770000e+01 least_sq_term_11
+                     -3.4386200000e+00 least_sq_term_12
+                     -1.2687430000e+01 least_sq_term_13
+                      5.0652400000e+00 least_sq_term_14
+                     -5.3195900000e+00 least_sq_term_15
+                     -1.0170130000e+01 least_sq_term_16
+                      2.7497900000e+00 least_sq_term_17
+                     -3.1718300000e+00 least_sq_term_18
+                     -1.1329720000e+01 least_sq_term_19
+                      3.4521900000e+00 least_sq_term_20
+                     -2.6049000000e+00 least_sq_term_21
 
 
 
@@ -997,27 +997,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 24:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4218750000e+01 least_sq_term_1
-                      3.9025000000e-01 least_sq_term_2
-                     -1.5801000000e-01 least_sq_term_3
-                     -1.3667670000e+01 least_sq_term_4
-                     -3.9505100000e+00 least_sq_term_5
-                      3.6505000000e-01 least_sq_term_6
-                     -1.4015860000e+01 least_sq_term_7
-                     -8.0189000000e-01 least_sq_term_8
-                     -3.2072000000e-01 least_sq_term_9
-                     -1.4420890000e+01 least_sq_term_10
-                      1.8346200000e+00 least_sq_term_11
-                      6.3637300000e+00 least_sq_term_12
-                     -9.3506100000e+00 least_sq_term_13
-                     -1.0583500000e+00 least_sq_term_14
-                     -1.1254500000e+00 least_sq_term_15
-                     -8.2320400000e+00 least_sq_term_16
-                     -7.9119000000e-01 least_sq_term_17
-                      2.2688700000e+00 least_sq_term_18
-                     -9.0042900000e+00 least_sq_term_19
-                     -4.9716000000e-01 least_sq_term_20
-                      3.3461500000e+00 least_sq_term_21
+                     -1.4219160000e+01 least_sq_term_1
+                     -1.1181300000e+00 least_sq_term_2
+                      6.2494700000e+00 least_sq_term_3
+                     -1.0061090000e+01 least_sq_term_4
+                     -3.2803900000e+00 least_sq_term_5
+                      3.4757900000e+00 least_sq_term_6
+                     -1.3890560000e+01 least_sq_term_7
+                     -2.7041500000e+00 least_sq_term_8
+                      6.9545300000e+00 least_sq_term_9
+                     -1.4421640000e+01 least_sq_term_10
+                      2.0987400000e+00 least_sq_term_11
+                      8.8948000000e+00 least_sq_term_12
+                     -8.8734800000e+00 least_sq_term_13
+                     -7.2958000000e-01 least_sq_term_14
+                      3.7060000000e-01 least_sq_term_15
+                     -8.2362700000e+00 least_sq_term_16
+                     -7.9301000000e-01 least_sq_term_17
+                      4.1895900000e+00 least_sq_term_18
+                     -9.0068500000e+00 least_sq_term_19
+                     -4.9025000000e-01 least_sq_term_20
+                      5.7112300000e+00 least_sq_term_21
 
 
 
@@ -1037,27 +1037,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 25:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4101750000e+01 least_sq_term_1
-                     -1.2306000000e-01 least_sq_term_2
-                      4.1171000000e-01 least_sq_term_3
-                     -1.3445520000e+01 least_sq_term_4
-                     -4.3295300000e+00 least_sq_term_5
-                      1.7587400000e+00 least_sq_term_6
-                     -1.3889630000e+01 least_sq_term_7
-                     -1.1306000000e+00 least_sq_term_8
-                      1.6155000000e-01 least_sq_term_9
-                     -1.4420890000e+01 least_sq_term_10
-                      1.7974600000e+00 least_sq_term_11
-                      4.5048100000e+00 least_sq_term_12
-                     -1.2348990000e+01 least_sq_term_13
-                      1.6460500000e+00 least_sq_term_14
-                     -2.3331600000e+00 least_sq_term_15
-                     -8.2306200000e+00 least_sq_term_16
-                      3.0620000000e-01 least_sq_term_17
-                      7.3455000000e-01 least_sq_term_18
-                     -9.0042900000e+00 least_sq_term_19
-                      4.5928000000e-01 least_sq_term_20
-                      2.2231200000e+00 least_sq_term_21
+                     -1.4102610000e+01 least_sq_term_1
+                     -1.5778900000e+00 least_sq_term_2
+                      5.7941700000e+00 least_sq_term_3
+                     -1.0338630000e+01 least_sq_term_4
+                     -4.5597300000e+00 least_sq_term_5
+                      6.4576100000e+00 least_sq_term_6
+                     -1.3764380000e+01 least_sq_term_7
+                     -2.7100100000e+00 least_sq_term_8
+                      5.6177000000e+00 least_sq_term_9
+                     -1.4421640000e+01 least_sq_term_10
+                      2.1290300000e+00 least_sq_term_11
+                      6.3577500000e+00 least_sq_term_12
+                     -8.9334300000e+00 least_sq_term_13
+                      9.7280000000e-02 least_sq_term_14
+                     -1.1657800000e+00 least_sq_term_15
+                     -8.2348600000e+00 least_sq_term_16
+                      3.1924000000e-01 least_sq_term_17
+                      2.3021800000e+00 least_sq_term_18
+                     -8.9372200000e+00 least_sq_term_19
+                      4.7973000000e-01 least_sq_term_20
+                      3.4387500000e+00 least_sq_term_21
 
 
 
@@ -1077,27 +1077,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 26:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4102180000e+01 least_sq_term_1
-                      1.9584600000e+00 least_sq_term_2
-                      6.1229200000e+00 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_1
+                     -1.0000000000e+01 least_sq_term_2
+                     -1.0000000000e+01 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                      -1.0000000000e+01 least_sq_term_5
                      -1.0000000000e+01 least_sq_term_6
-                     -1.3889630000e+01 least_sq_term_7
-                      2.3640200000e+00 least_sq_term_8
-                      3.1003900000e+00 least_sq_term_9
-                     -1.4420890000e+01 least_sq_term_10
-                      1.1042600000e+00 least_sq_term_11
-                      1.1865600000e+01 least_sq_term_12
+                     -1.6666670000e+01 least_sq_term_7
+                     -1.0000000000e+01 least_sq_term_8
+                     -1.0000000000e+01 least_sq_term_9
+                     -1.4421640000e+01 least_sq_term_10
+                      1.0909200000e+00 least_sq_term_11
+                      1.2659220000e+01 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                      -1.0000000000e+01 least_sq_term_17
                      -1.0000000000e+01 least_sq_term_18
-                     -9.0042900000e+00 least_sq_term_19
-                      1.8111000000e-01 least_sq_term_20
-                      7.7282200000e+00 least_sq_term_21
+                     -9.0068500000e+00 least_sq_term_19
+                      1.5000000000e-02 least_sq_term_20
+                      8.0792400000e+00 least_sq_term_21
 
 
 
@@ -1117,27 +1117,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 27:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6602200000e+01 least_sq_term_1
-                      7.3546500000e+00 least_sq_term_2
-                      1.1414100000e+00 least_sq_term_3
-                     -1.6140490000e+01 least_sq_term_4
-                      1.0941800000e+00 least_sq_term_5
-                     -6.9590700000e+00 least_sq_term_6
+                     -1.6666670000e+01 least_sq_term_1
+                      4.8754200000e+00 least_sq_term_2
+                      8.6514200000e+00 least_sq_term_3
+                     -1.4908000000e+01 least_sq_term_4
+                      3.7632700000e+00 least_sq_term_5
+                     -8.2676600000e+00 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       3.3235300000e+00 least_sq_term_8
-                      1.2936830000e+01 least_sq_term_9
+                      1.5171940000e+01 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      5.1836360000e+01 least_sq_term_12
-                     -1.6666670000e+01 least_sq_term_13
-                      1.6850400000e+00 least_sq_term_14
-                      2.7386600000e+01 least_sq_term_15
+                      5.2125390000e+01 least_sq_term_12
+                     -1.6541190000e+01 least_sq_term_13
+                      6.6187200000e+00 least_sq_term_14
+                     -4.4515100000e+00 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                       1.2468700000e+00 least_sq_term_17
-                      4.3944470000e+01 least_sq_term_18
+                      4.4192010000e+01 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
                       1.0549400000e+00 least_sq_term_20
-                      5.7245380000e+01 least_sq_term_21
+                      5.7755310000e+01 least_sq_term_21
 
 
 
@@ -1157,27 +1157,27 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 28:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5825930000e+01 least_sq_term_1
-                      1.1086670000e+01 least_sq_term_2
-                     -4.6969900000e+00 least_sq_term_3
-                     -1.5068040000e+01 least_sq_term_4
-                      1.6614800000e+00 least_sq_term_5
-                     -3.0682500000e+00 least_sq_term_6
-                     -1.5754130000e+01 least_sq_term_7
-                      1.1105700000e+01 least_sq_term_8
-                     -5.6023200000e+00 least_sq_term_9
+                     -1.5944170000e+01 least_sq_term_1
+                      1.2231420000e+01 least_sq_term_2
+                     -4.8295700000e+00 least_sq_term_3
+                     -1.4101420000e+01 least_sq_term_4
+                     -2.0356900000e+00 least_sq_term_5
+                     -7.2294600000e+00 least_sq_term_6
+                     -1.5481140000e+01 least_sq_term_7
+                      1.2241180000e+01 least_sq_term_8
+                     -6.1929500000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      3.5225630000e+01 least_sq_term_12
-                     -1.3856750000e+01 least_sq_term_13
-                      8.0342200000e+00 least_sq_term_14
-                     -6.4898700000e+00 least_sq_term_15
-                     -1.4309190000e+01 least_sq_term_16
-                      1.0010230000e+01 least_sq_term_17
-                     -6.2052100000e+00 least_sq_term_18
-                     -1.6523860000e+01 least_sq_term_19
-                      6.8926200000e+00 least_sq_term_20
-                      2.6214670000e+01 least_sq_term_21
+                      3.6572180000e+01 least_sq_term_12
+                     -1.3498380000e+01 least_sq_term_13
+                      8.6090100000e+00 least_sq_term_14
+                     -6.1220200000e+00 least_sq_term_15
+                     -1.5192690000e+01 least_sq_term_16
+                      1.0503140000e+01 least_sq_term_17
+                     -5.8513200000e+00 least_sq_term_18
+                     -1.6523900000e+01 least_sq_term_19
+                      6.8541000000e+00 least_sq_term_20
+                      2.4544330000e+01 least_sq_term_21
 
 
 
@@ -1195,53 +1195,53 @@ NCSU DIRECT succeeded with code 4
 
 Results of EGO iteration:
 Final point =
-                      1.0740740741e-01 radius
-                      9.0048010974e-01 time_gap
-                      7.8827160494e+00 strength_neighbor
-                      1.0366255144e-01 range_neighbor
-                      5.0805898491e+00 strength_geometry
-                      4.0363511660e-02 range_geometry
+                      1.1113854595e-01 radius
+                      8.7482853224e-01 time_gap
+                      5.5246913580e+00 strength_neighbor
+                      2.7307270233e-01 range_neighbor
+                      5.3672839506e+00 strength_geometry
+                      3.1241426612e-02 range_geometry
                       1.5500000000e+00 desired_speed
 Expected Improvement    =
-                      1.3560744157e-23
+                      1.1923768778e-13
 
 ---------------------
 Begin Evaluation   29
 ---------------------
 Parameters for evaluation 29:
-                      1.0740740741e-01 radius
-                      9.0048010974e-01 time_gap
-                      7.8827160494e+00 strength_neighbor
-                      1.0366255144e-01 range_neighbor
-                      5.0805898491e+00 strength_geometry
-                      4.0363511660e-02 range_geometry
+                      1.1113854595e-01 radius
+                      8.7482853224e-01 time_gap
+                      5.5246913580e+00 strength_neighbor
+                      2.7307270233e-01 range_neighbor
+                      5.3672839506e+00 strength_geometry
+                      3.1241426612e-02 range_geometry
                       1.5500000000e+00 desired_speed
 
 blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 29:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -9.6707000000e-01 least_sq_term_1
-                      1.2469500000e+00 least_sq_term_2
-                     -8.5426000000e-01 least_sq_term_3
-                     -1.8700000000e+00 least_sq_term_4
-                     -3.2310600000e+00 least_sq_term_5
-                     -9.0786000000e-01 least_sq_term_6
-                      4.5455000000e-01 least_sq_term_7
-                      7.4250000000e-02 least_sq_term_8
-                     -5.7488000000e-01 least_sq_term_9
-                     -1.6072000000e+00 least_sq_term_10
-                     -2.8636000000e+00 least_sq_term_11
-                     -1.0216100000e+00 least_sq_term_12
-                     -6.7821000000e-01 least_sq_term_13
-                     -2.0310000000e-01 least_sq_term_14
-                     -3.2078700000e+00 least_sq_term_15
-                     -1.1444600000e+00 least_sq_term_16
-                     -3.4620000000e-02 least_sq_term_17
-                     -1.9785300000e+00 least_sq_term_18
-                      2.0293400000e+00 least_sq_term_19
-                     -8.8572000000e-01 least_sq_term_20
-                     -1.2056100000e+00 least_sq_term_21
+                     -1.5035540000e+01 least_sq_term_1
+                      3.0960900000e+00 least_sq_term_2
+                      5.3759000000e-01 least_sq_term_3
+                     -1.0782700000e+01 least_sq_term_4
+                      5.7370000000e-02 least_sq_term_5
+                     -2.2077300000e+00 least_sq_term_6
+                     -1.4773870000e+01 least_sq_term_7
+                      2.6609200000e+00 least_sq_term_8
+                     -5.7556000000e-01 least_sq_term_9
+                      2.4934800000e+00 least_sq_term_10
+                     -4.6926000000e-01 least_sq_term_11
+                      9.9444200000e+00 least_sq_term_12
+                      4.4011400000e+00 least_sq_term_13
+                     -1.0716400000e+00 least_sq_term_14
+                      3.0709100000e+00 least_sq_term_15
+                      3.3950600000e+00 least_sq_term_16
+                     -8.6191000000e-01 least_sq_term_17
+                      6.9734600000e+00 least_sq_term_18
+                      7.4705400000e+00 least_sq_term_19
+                     -7.2215000000e-01 least_sq_term_20
+                      9.0794900000e+00 least_sq_term_21
 
 
 
@@ -1250,58 +1250,2578 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
 <<<<< global_kriging approximation updates completed.
 
 >>>>> Initiating global iteration 2 (acquisition batch 1)
-NCSU DIRECT succeeded with code 1
-(maximum function evaluations exceeded)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
 
 Results of EGO iteration:
 Final point =
-                      1.4000000000e-01 radius
-                      6.5000000000e-01 time_gap
-                      5.5000000000e+00 strength_neighbor
-                      2.1000000000e-01 range_neighbor
-                      5.2500000000e+00 strength_geometry
-                      1.0500000000e-01 range_geometry
+                      1.2661179698e-01 radius
+                      5.8813443073e-01 time_gap
+                      3.1049382716e+00 strength_neighbor
+                      8.1769547325e-02 range_neighbor
+                      2.0703017833e+00 strength_geometry
+                      9.4574759945e-02 range_geometry
                       1.5500000000e+00 desired_speed
 Expected Improvement    =
-                      0.0000000000e+00
+                      1.0655584249e+02
 
 ---------------------
 Begin Evaluation   30
 ---------------------
 Parameters for evaluation 30:
-                      1.4000000000e-01 radius
-                      6.5000000000e-01 time_gap
-                      5.5000000000e+00 strength_neighbor
-                      2.1000000000e-01 range_neighbor
-                      5.2500000000e+00 strength_geometry
-                      1.0500000000e-01 range_geometry
+                      1.2661179698e-01 radius
+                      5.8813443073e-01 time_gap
+                      3.1049382716e+00 strength_neighbor
+                      8.1769547325e-02 range_neighbor
+                      2.0703017833e+00 strength_geometry
+                      9.4574759945e-02 range_geometry
                       1.5500000000e+00 desired_speed
 
 blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 30:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4218340000e+01 least_sq_term_1
-                      1.4317900000e+00 least_sq_term_2
-                      1.7851000000e+00 least_sq_term_3
-                     -1.4500720000e+01 least_sq_term_4
-                     -2.8247600000e+00 least_sq_term_5
-                      3.5175800000e+00 least_sq_term_6
-                     -1.4015860000e+01 least_sq_term_7
-                      7.8981000000e-01 least_sq_term_8
-                      9.1947000000e-01 least_sq_term_9
-                     -1.5091720000e+01 least_sq_term_10
-                      4.0785100000e+00 least_sq_term_11
-                      4.7746800000e+00 least_sq_term_12
-                     -1.0070220000e+01 least_sq_term_13
-                      6.9729000000e-01 least_sq_term_14
-                     -1.1405900000e+00 least_sq_term_15
-                     -8.9252900000e+00 least_sq_term_16
-                      7.9422000000e-01 least_sq_term_17
-                      1.9418100000e+00 least_sq_term_18
-                     -9.8401800000e+00 least_sq_term_19
-                      1.0842800000e+00 least_sq_term_20
-                      3.1992600000e+00 least_sq_term_21
+                      5.9160800000e+00 least_sq_term_1
+                      2.8243000000e-01 least_sq_term_2
+                      2.0862700000e+00 least_sq_term_3
+                      5.0425400000e+00 least_sq_term_4
+                     -8.0559000000e-01 least_sq_term_5
+                      2.4090900000e+00 least_sq_term_6
+                      7.8320400000e+00 least_sq_term_7
+                     -1.3974000000e-01 least_sq_term_8
+                      2.8769100000e+00 least_sq_term_9
+                      5.3410600000e+00 least_sq_term_10
+                     -2.5334800000e+00 least_sq_term_11
+                      1.8220000000e-02 least_sq_term_12
+                     -1.3907830000e+01 least_sq_term_13
+                      6.7940600000e+00 least_sq_term_14
+                     -1.5635000000e-01 least_sq_term_15
+                     -1.3952770000e+01 least_sq_term_16
+                      6.7517500000e+00 least_sq_term_17
+                      2.0623700000e+00 least_sq_term_18
+                     -2.4507500000e+00 least_sq_term_19
+                      3.2848800000e+00 least_sq_term_20
+                      4.7489000000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 3 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1333333333e-01 radius
+                      9.7894375857e-01 time_gap
+                      7.3024691358e+00 strength_neighbor
+                      8.6982167353e-02 range_neighbor
+                      4.7157064472e+00 strength_geometry
+                      5.9650205761e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.9742259174e+01
+
+---------------------
+Begin Evaluation   31
+---------------------
+Parameters for evaluation 31:
+                      1.1333333333e-01 radius
+                      9.7894375857e-01 time_gap
+                      7.3024691358e+00 strength_neighbor
+                      8.6982167353e-02 range_neighbor
+                      4.7157064472e+00 strength_geometry
+                      5.9650205761e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 31:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.0259700000e+00 least_sq_term_1
+                     -1.1515700000e+00 least_sq_term_2
+                      4.0899800000e+00 least_sq_term_3
+                      2.2386800000e+00 least_sq_term_4
+                     -5.9234000000e-01 least_sq_term_5
+                      5.2302000000e-01 least_sq_term_6
+                      4.4680700000e+00 least_sq_term_7
+                     -1.0160100000e+00 least_sq_term_8
+                      1.8328600000e+00 least_sq_term_9
+                      2.0851600000e+00 least_sq_term_10
+                     -1.6793400000e+00 least_sq_term_11
+                      3.7840000000e-02 least_sq_term_12
+                      3.7135700000e+00 least_sq_term_13
+                      2.5494000000e-01 least_sq_term_14
+                     -2.8407100000e+00 least_sq_term_15
+                      2.9945800000e+00 least_sq_term_16
+                     -7.2500000000e-03 least_sq_term_17
+                     -1.8650600000e+00 least_sq_term_18
+                      7.0957300000e+00 least_sq_term_19
+                     -7.2522000000e-01 least_sq_term_20
+                     -1.0173800000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 4 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1388203018e-01 radius
+                      9.5480109739e-01 time_gap
+                      7.1172839506e+00 strength_neighbor
+                      8.8545953361e-02 range_neighbor
+                      5.6148834019e+00 strength_geometry
+                      6.2777777778e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      1.0799947992e+02
+
+---------------------
+Begin Evaluation   32
+---------------------
+Parameters for evaluation 32:
+                      1.1388203018e-01 radius
+                      9.5480109739e-01 time_gap
+                      7.1172839506e+00 strength_neighbor
+                      8.8545953361e-02 range_neighbor
+                      5.6148834019e+00 strength_geometry
+                      6.2777777778e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 32:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.1194500000e+00 least_sq_term_1
+                     -7.3716000000e-01 least_sq_term_2
+                      3.8296800000e+00 least_sq_term_3
+                      2.0399500000e+00 least_sq_term_4
+                     -4.8286000000e-01 least_sq_term_5
+                      3.0378000000e-01 least_sq_term_6
+                      5.0120400000e+00 least_sq_term_7
+                     -1.1328200000e+00 least_sq_term_8
+                      3.3210500000e+00 least_sq_term_9
+                      1.9316300000e+00 least_sq_term_10
+                     -1.8406000000e+00 least_sq_term_11
+                      1.2370800000e+00 least_sq_term_12
+                      3.6391200000e+00 least_sq_term_13
+                      6.3697000000e-01 least_sq_term_14
+                     -3.1468000000e+00 least_sq_term_15
+                      3.0977400000e+00 least_sq_term_16
+                      2.2191000000e-01 least_sq_term_17
+                     -1.9802100000e+00 least_sq_term_18
+                      6.8353500000e+00 least_sq_term_19
+                     -6.0137000000e-01 least_sq_term_20
+                     -1.2114700000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 5 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1596707819e-01 radius
+                      9.7592592593e-01 time_gap
+                      7.9938271605e+00 strength_neighbor
+                      8.6982167353e-02 range_neighbor
+                      4.3117283951e+00 strength_geometry
+                      5.9389574760e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      6.0485902688e+01
+
+---------------------
+Begin Evaluation   33
+---------------------
+Parameters for evaluation 33:
+                      1.1596707819e-01 radius
+                      9.7592592593e-01 time_gap
+                      7.9938271605e+00 strength_neighbor
+                      8.6982167353e-02 range_neighbor
+                      4.3117283951e+00 strength_geometry
+                      5.9389574760e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 33:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.2931600000e+00 least_sq_term_1
+                     -9.0794000000e-01 least_sq_term_2
+                      4.2877200000e+00 least_sq_term_3
+                      2.1693000000e+00 least_sq_term_4
+                     -5.7214000000e-01 least_sq_term_5
+                      4.7493000000e-01 least_sq_term_6
+                      4.7656800000e+00 least_sq_term_7
+                     -7.6506000000e-01 least_sq_term_8
+                      2.1086300000e+00 least_sq_term_9
+                      2.0317100000e+00 least_sq_term_10
+                     -1.8280900000e+00 least_sq_term_11
+                      5.6844000000e-01 least_sq_term_12
+                      3.6277800000e+00 least_sq_term_13
+                      5.1827000000e-01 least_sq_term_14
+                     -2.8037400000e+00 least_sq_term_15
+                      2.9477900000e+00 least_sq_term_16
+                      1.5922000000e-01 least_sq_term_17
+                     -1.6138100000e+00 least_sq_term_18
+                      6.8084400000e+00 least_sq_term_19
+                     -6.4617000000e-01 least_sq_term_20
+                     -4.8832000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 6 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1475994513e-01 radius
+                      9.6234567901e-01 time_gap
+                      7.0679012346e+00 strength_neighbor
+                      7.0823045267e-02 range_neighbor
+                      4.1814128944e+00 strength_geometry
+                      6.5644718793e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      5.0799140095e+01
+
+---------------------
+Begin Evaluation   34
+---------------------
+Parameters for evaluation 34:
+                      1.1475994513e-01 radius
+                      9.6234567901e-01 time_gap
+                      7.0679012346e+00 strength_neighbor
+                      7.0823045267e-02 range_neighbor
+                      4.1814128944e+00 strength_geometry
+                      6.5644718793e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 34:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.3232600000e+00 least_sq_term_1
+                     -7.6758000000e-01 least_sq_term_2
+                      4.0353500000e+00 least_sq_term_3
+                      2.0825300000e+00 least_sq_term_4
+                     -4.7140000000e-01 least_sq_term_5
+                      3.9658000000e-01 least_sq_term_6
+                      4.8879800000e+00 least_sq_term_7
+                     -8.5324000000e-01 least_sq_term_8
+                      3.2565500000e+00 least_sq_term_9
+                      2.2401100000e+00 least_sq_term_10
+                     -1.3273100000e+00 least_sq_term_11
+                     -3.2051000000e-01 least_sq_term_12
+                      3.5892100000e+00 least_sq_term_13
+                      6.1860000000e-02 least_sq_term_14
+                     -3.5914700000e+00 least_sq_term_15
+                      3.2020500000e+00 least_sq_term_16
+                     -2.8374000000e-01 least_sq_term_17
+                     -2.2598400000e+00 least_sq_term_18
+                      6.6068900000e+00 least_sq_term_19
+                     -8.8203000000e-01 least_sq_term_20
+                     -1.8895300000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 7 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1541838134e-01 radius
+                      2.4108367627e-01 time_gap
+                      6.5493827160e+00 strength_neighbor
+                      1.6569272977e-01 range_neighbor
+                      3.7904663923e+00 strength_geometry
+                      1.1542524005e-01 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.8035496598e-05
+
+---------------------
+Begin Evaluation   35
+---------------------
+Parameters for evaluation 35:
+                      1.1541838134e-01 radius
+                      2.4108367627e-01 time_gap
+                      6.5493827160e+00 strength_neighbor
+                      1.6569272977e-01 range_neighbor
+                      3.7904663923e+00 strength_geometry
+                      1.1542524005e-01 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 35:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.4102610000e+01 least_sq_term_1
+                      2.6178400000e+00 least_sq_term_2
+                      9.2851700000e+00 least_sq_term_3
+                     -9.8934200000e+00 least_sq_term_4
+                      1.3298000000e-01 least_sq_term_5
+                      7.7548900000e+00 least_sq_term_6
+                     -1.3701280000e+01 least_sq_term_7
+                      2.0423700000e+00 least_sq_term_8
+                      7.6662300000e+00 least_sq_term_9
+                     -1.4420140000e+01 least_sq_term_10
+                      4.8700000000e-02 least_sq_term_11
+                      1.2044660000e+01 least_sq_term_12
+                     -8.8734800000e+00 least_sq_term_13
+                      1.1273900000e+00 least_sq_term_14
+                      3.8828400000e+00 least_sq_term_15
+                     -8.2362700000e+00 least_sq_term_16
+                      9.9963000000e-01 least_sq_term_17
+                      6.9412200000e+00 least_sq_term_18
+                     -9.0068500000e+00 least_sq_term_19
+                      5.8528000000e-01 least_sq_term_20
+                      8.6953900000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 8 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1157750343e-01 radius
+                      9.3065843621e-01 time_gap
+                      5.5000000000e+00 strength_neighbor
+                      6.8216735254e-02 range_neighbor
+                      4.7287379973e+00 strength_geometry
+                      8.4670781893e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      6.3551979114e+01
+
+---------------------
+Begin Evaluation   36
+---------------------
+Parameters for evaluation 36:
+                      1.1157750343e-01 radius
+                      9.3065843621e-01 time_gap
+                      5.5000000000e+00 strength_neighbor
+                      6.8216735254e-02 range_neighbor
+                      4.7287379973e+00 strength_geometry
+                      8.4670781893e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 36:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.3979770000e+01 least_sq_term_1
+                      6.3963000000e-01 least_sq_term_2
+                      3.3396200000e+00 least_sq_term_3
+                     -9.8672900000e+00 least_sq_term_4
+                     -9.7310000000e-01 least_sq_term_5
+                      1.3621100000e+00 least_sq_term_6
+                     -1.3624940000e+01 least_sq_term_7
+                     -1.4029000000e-01 least_sq_term_8
+                      2.5732800000e+00 least_sq_term_9
+                     -1.4289500000e+01 least_sq_term_10
+                     -1.2452800000e+00 least_sq_term_11
+                     -1.6703300000e+00 least_sq_term_12
+                     -8.7376300000e+00 least_sq_term_13
+                      6.0135000000e-01 least_sq_term_14
+                     -4.2783200000e+00 least_sq_term_15
+                     -8.1093200000e+00 least_sq_term_16
+                      1.2840000000e-02 least_sq_term_17
+                     -3.3502600000e+00 least_sq_term_18
+                     -1.1913990000e+01 least_sq_term_19
+                      3.7077200000e+00 least_sq_term_20
+                      5.0116000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 9 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1475994513e-01 radius
+                      1.0181755830e+00 time_gap
+                      8.4876543210e+00 strength_neighbor
+                      1.1200274348e-01 range_neighbor
+                      4.7287379973e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      7.3956637159e+01
+
+---------------------
+Begin Evaluation   37
+---------------------
+Parameters for evaluation 37:
+                      1.1475994513e-01 radius
+                      1.0181755830e+00 time_gap
+                      8.4876543210e+00 strength_neighbor
+                      1.1200274348e-01 range_neighbor
+                      4.7287379973e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 37:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.6531000000e+00 least_sq_term_1
+                     -4.6728000000e-01 least_sq_term_2
+                      3.1819700000e+00 least_sq_term_3
+                      2.0411600000e+00 least_sq_term_4
+                     -6.5806000000e-01 least_sq_term_5
+                      5.5699000000e-01 least_sq_term_6
+                      4.7958200000e+00 least_sq_term_7
+                     -2.2642100000e+00 least_sq_term_8
+                      5.6460900000e+00 least_sq_term_9
+                      1.4584800000e+00 least_sq_term_10
+                     -1.5823000000e+00 least_sq_term_11
+                      2.5124100000e+00 least_sq_term_12
+                      3.7674300000e+00 least_sq_term_13
+                      1.2535000000e+00 least_sq_term_14
+                     -1.8922700000e+00 least_sq_term_15
+                      2.8743000000e+00 least_sq_term_16
+                      6.9265000000e-01 least_sq_term_17
+                     -1.4864000000e-01 least_sq_term_18
+                      6.9786800000e+00 least_sq_term_19
+                     -5.3840000000e-02 least_sq_term_20
+                      5.7035000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 10 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.0839506173e-01 radius
+                      1.0015775034e+00 time_gap
+                      6.2037037037e+00 strength_neighbor
+                      1.0470507545e-01 range_neighbor
+                      5.4194101509e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      9.4532466856e+01
+
+---------------------
+Begin Evaluation   38
+---------------------
+Parameters for evaluation 38:
+                      1.0839506173e-01 radius
+                      1.0015775034e+00 time_gap
+                      6.2037037037e+00 strength_neighbor
+                      1.0470507545e-01 range_neighbor
+                      5.4194101509e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 38:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.5692900000e+00 least_sq_term_1
+                     -5.7988000000e-01 least_sq_term_2
+                      1.7849600000e+00 least_sq_term_3
+                      2.3429300000e+00 least_sq_term_4
+                     -5.4430000000e-01 least_sq_term_5
+                      6.2615000000e-01 least_sq_term_6
+                      4.9808400000e+00 least_sq_term_7
+                     -6.5158000000e-01 least_sq_term_8
+                      1.7121600000e+00 least_sq_term_9
+                      2.5900900000e+00 least_sq_term_10
+                     -1.9125600000e+00 least_sq_term_11
+                      7.8127000000e-01 least_sq_term_12
+                      4.1308400000e+00 least_sq_term_13
+                      4.5151000000e-01 least_sq_term_14
+                     -2.7226300000e+00 least_sq_term_15
+                      3.4533100000e+00 least_sq_term_16
+                     -2.7940000000e-02 least_sq_term_17
+                     -1.6056400000e+00 least_sq_term_18
+                      7.6084800000e+00 least_sq_term_19
+                     -7.9747000000e-01 least_sq_term_20
+                     -3.9258000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 11 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1234567901e-01 radius
+                      9.5631001372e-01 time_gap
+                      2.2777777778e+00 strength_neighbor
+                      1.9853223594e-01 range_neighbor
+                      2.5915637860e+00 strength_geometry
+                      9.5617283951e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      7.7654069502e-94
+
+---------------------
+Begin Evaluation   39
+---------------------
+Parameters for evaluation 39:
+                      1.1234567901e-01 radius
+                      9.5631001372e-01 time_gap
+                      2.2777777778e+00 strength_neighbor
+                      1.9853223594e-01 range_neighbor
+                      2.5915637860e+00 strength_geometry
+                      9.5617283951e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 39:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.1734600000e+00 least_sq_term_1
+                     -3.0789000000e-01 least_sq_term_2
+                      2.4234900000e+00 least_sq_term_3
+                      2.1827600000e+00 least_sq_term_4
+                      2.4159400000e+00 least_sq_term_5
+                     -1.8966100000e+00 least_sq_term_6
+                      4.9498300000e+00 least_sq_term_7
+                     -1.6157000000e+00 least_sq_term_8
+                      3.8967800000e+00 least_sq_term_9
+                      2.2093700000e+00 least_sq_term_10
+                     -2.4088400000e+00 least_sq_term_11
+                      1.0800600000e+00 least_sq_term_12
+                     -3.2064100000e+00 least_sq_term_13
+                      1.7868700000e+00 least_sq_term_14
+                     -3.3975400000e+00 least_sq_term_15
+                      3.2527700000e+00 least_sq_term_16
+                     -9.9700000000e-02 least_sq_term_17
+                     -1.3541500000e+00 least_sq_term_18
+                     -2.7331500000e+00 least_sq_term_19
+                      1.7981500000e+00 least_sq_term_20
+                      2.2366000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 12 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.4548696845e-01 radius
+                      8.0994513032e-01 time_gap
+                      8.3395061728e+00 strength_neighbor
+                      6.7695473251e-02 range_neighbor
+                      1.9269547325e+00 strength_geometry
+                      4.5054869684e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      8.3683495274e-02
+
+---------------------
+Begin Evaluation   40
+---------------------
+Parameters for evaluation 40:
+                      1.4548696845e-01 radius
+                      8.0994513032e-01 time_gap
+                      8.3395061728e+00 strength_neighbor
+                      6.7695473251e-02 range_neighbor
+                      1.9269547325e+00 strength_geometry
+                      4.5054869684e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 40:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.2331300000e+00 least_sq_term_1
+                     -5.5790000000e-02 least_sq_term_2
+                      3.4118700000e+00 least_sq_term_3
+                      7.0219000000e-01 least_sq_term_4
+                     -1.2945000000e+00 least_sq_term_5
+                      7.7135000000e-01 least_sq_term_6
+                      4.8879800000e+00 least_sq_term_7
+                     -1.5801400000e+00 least_sq_term_8
+                      4.3247200000e+00 least_sq_term_9
+                      1.6615000000e+00 least_sq_term_10
+                     -1.1713700000e+00 least_sq_term_11
+                      4.6549000000e-01 least_sq_term_12
+                      3.3136800000e+00 least_sq_term_13
+                      6.4448000000e-01 least_sq_term_14
+                     -2.7905000000e+00 least_sq_term_15
+                      1.6167900000e+00 least_sq_term_16
+                      3.1527000000e-01 least_sq_term_17
+                     -1.6441800000e+00 least_sq_term_18
+                      5.8390200000e+00 least_sq_term_19
+                     -3.0130000000e-01 least_sq_term_20
+                     -1.0559600000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 13 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.0290809328e-01 radius
+                      8.3257887517e-01 time_gap
+                      2.5246913580e+00 strength_neighbor
+                      2.1677640604e-01 range_neighbor
+                      2.5915637860e+00 strength_geometry
+                      9.5096021948e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      6.9332493585e+01
+
+---------------------
+Begin Evaluation   41
+---------------------
+Parameters for evaluation 41:
+                      1.0290809328e-01 radius
+                      8.3257887517e-01 time_gap
+                      2.5246913580e+00 strength_neighbor
+                      2.1677640604e-01 range_neighbor
+                      2.5915637860e+00 strength_geometry
+                      9.5096021948e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 41:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -5.7375700000e+00 least_sq_term_1
+                      1.5597700000e+00 least_sq_term_2
+                      6.6396800000e+00 least_sq_term_3
+                      3.2913100000e+00 least_sq_term_4
+                     -2.5210000000e-01 least_sq_term_5
+                      7.9249000000e-01 least_sq_term_6
+                      6.0241000000e+00 least_sq_term_7
+                     -1.3052000000e+00 least_sq_term_8
+                      2.8456400000e+00 least_sq_term_9
+                      3.4037600000e+00 least_sq_term_10
+                     -2.6751600000e+00 least_sq_term_11
+                      1.6455400000e+00 least_sq_term_12
+                      5.4283600000e+00 least_sq_term_13
+                      2.3734000000e-01 least_sq_term_14
+                     -1.9876900000e+00 least_sq_term_15
+                     -5.3632900000e+00 least_sq_term_16
+                      3.2912600000e+00 least_sq_term_17
+                      4.0354000000e+00 least_sq_term_18
+                     -7.7276000000e-01 least_sq_term_19
+                      5.3343000000e-01 least_sq_term_20
+                     -1.5960000000e-02 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 14 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.0982167353e-01 radius
+                      9.7441700960e-01 time_gap
+                      5.4135802469e+00 strength_neighbor
+                      9.9492455418e-02 range_neighbor
+                      5.7712620027e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      7.8186557545e+01
+
+---------------------
+Begin Evaluation   42
+---------------------
+Parameters for evaluation 42:
+                      1.0982167353e-01 radius
+                      9.7441700960e-01 time_gap
+                      5.4135802469e+00 strength_neighbor
+                      9.9492455418e-02 range_neighbor
+                      5.7712620027e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 42:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.7430600000e+00 least_sq_term_1
+                     -1.2279400000e+00 least_sq_term_2
+                      3.1287300000e+00 least_sq_term_3
+                      2.5096100000e+00 least_sq_term_4
+                     -7.9888000000e-01 least_sq_term_5
+                      9.6660000000e-01 least_sq_term_6
+                      4.4958800000e+00 least_sq_term_7
+                     -6.6012000000e-01 least_sq_term_8
+                      1.7090800000e+00 least_sq_term_9
+                      2.6562600000e+00 least_sq_term_10
+                     -2.0140700000e+00 least_sq_term_11
+                      5.4964000000e-01 least_sq_term_12
+                      4.3687600000e+00 least_sq_term_13
+                      2.5774000000e-01 least_sq_term_14
+                     -3.1041000000e+00 least_sq_term_15
+                      3.6509700000e+00 least_sq_term_16
+                     -1.9922000000e-01 least_sq_term_17
+                     -1.9265400000e+00 least_sq_term_18
+                      7.5779200000e+00 least_sq_term_19
+                     -8.9673000000e-01 least_sq_term_20
+                     -1.1182800000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 15 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.0982167353e-01 radius
+                      8.3257887517e-01 time_gap
+                      2.0185185185e+00 strength_neighbor
+                      2.1208504801e-01 range_neighbor
+                      2.4351851852e+00 strength_geometry
+                      9.4574759945e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      2.9772805774e+01
+
+---------------------
+Begin Evaluation   43
+---------------------
+Parameters for evaluation 43:
+                      1.0982167353e-01 radius
+                      8.3257887517e-01 time_gap
+                      2.0185185185e+00 strength_neighbor
+                      2.1208504801e-01 range_neighbor
+                      2.4351851852e+00 strength_geometry
+                      9.4574759945e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 43:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.8309400000e+00 least_sq_term_1
+                     -5.1375000000e-01 least_sq_term_2
+                      1.6970200000e+00 least_sq_term_3
+                     -5.9722200000e+00 least_sq_term_4
+                     -6.1169000000e-01 least_sq_term_5
+                      3.4768600000e+00 least_sq_term_6
+                      5.9220900000e+00 least_sq_term_7
+                     -9.7576000000e-01 least_sq_term_8
+                      2.8662700000e+00 least_sq_term_9
+                     -5.8036200000e+00 least_sq_term_10
+                     -1.0908900000e+00 least_sq_term_11
+                      2.3864000000e+00 least_sq_term_12
+                     -3.4138700000e+00 least_sq_term_13
+                      2.5086300000e+00 least_sq_term_14
+                     -2.4558300000e+00 least_sq_term_15
+                     -1.1296620000e+01 least_sq_term_16
+                      3.6478700000e+00 least_sq_term_17
+                     -8.1810000000e-01 least_sq_term_18
+                     -2.5777400000e+00 least_sq_term_19
+                      2.0770700000e+00 least_sq_term_20
+                      6.0221000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 16 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.2474622771e-01 radius
+                      1.1509602195e+00 time_gap
+                      8.5370370370e+00 strength_neighbor
+                      2.3137174211e-01 range_neighbor
+                      3.8295610425e+00 strength_geometry
+                      4.5054869684e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      5.3118308279e-26
+
+---------------------
+Begin Evaluation   44
+---------------------
+Parameters for evaluation 44:
+                      1.2474622771e-01 radius
+                      1.1509602195e+00 time_gap
+                      8.5370370370e+00 strength_neighbor
+                      2.3137174211e-01 range_neighbor
+                      3.8295610425e+00 strength_geometry
+                      4.5054869684e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 44:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.4103040000e+01 least_sq_term_1
+                      8.2426000000e-01 least_sq_term_2
+                      1.1326500000e+00 least_sq_term_3
+                     -9.9500700000e+00 least_sq_term_4
+                     -2.6660400000e+00 least_sq_term_5
+                      1.2665700000e+00 least_sq_term_6
+                     -1.3764380000e+01 least_sq_term_7
+                     -1.7806700000e+00 least_sq_term_8
+                      4.6793700000e+00 least_sq_term_9
+                     -1.2063000000e-01 least_sq_term_10
+                      2.9220000000e-01 least_sq_term_11
+                      1.1045470000e+01 least_sq_term_12
+                      1.6402500000e+00 least_sq_term_13
+                     -9.9635000000e-01 least_sq_term_14
+                      1.0440400000e+00 least_sq_term_15
+                      1.1408500000e+00 least_sq_term_16
+                     -1.0160800000e+00 least_sq_term_17
+                      5.7045300000e+00 least_sq_term_18
+                      4.3641800000e+00 least_sq_term_19
+                     -7.8984000000e-01 least_sq_term_20
+                      6.9094600000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 17 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.4438957476e-01 radius
+                      8.3257887517e-01 time_gap
+                      9.4135802469e+00 strength_neighbor
+                      9.0109739369e-02 range_neighbor
+                      2.6045953361e+00 strength_geometry
+                      3.2283950617e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      7.2294330032e+01
+
+---------------------
+Begin Evaluation   45
+---------------------
+Parameters for evaluation 45:
+                      1.4438957476e-01 radius
+                      8.3257887517e-01 time_gap
+                      9.4135802469e+00 strength_neighbor
+                      9.0109739369e-02 range_neighbor
+                      2.6045953361e+00 strength_geometry
+                      3.2283950617e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 45:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.4344900000e+00 least_sq_term_1
+                     -7.4179000000e-01 least_sq_term_2
+                      3.2511300000e+00 least_sq_term_3
+                      1.4667300000e+00 least_sq_term_4
+                     -7.4412000000e-01 least_sq_term_5
+                      5.1026000000e-01 least_sq_term_6
+                      3.5335700000e+00 least_sq_term_7
+                     -1.5891200000e+00 least_sq_term_8
+                      3.3307800000e+00 least_sq_term_9
+                      1.9913200000e+00 least_sq_term_10
+                     -5.3595000000e-01 least_sq_term_11
+                      3.7764700000e+00 least_sq_term_12
+                      2.3496100000e+00 least_sq_term_13
+                      1.2717100000e+00 least_sq_term_14
+                     -2.3065700000e+00 least_sq_term_15
+                      1.8919100000e+00 least_sq_term_16
+                      1.2110700000e+00 least_sq_term_17
+                     -1.9511000000e-01 least_sq_term_18
+                      5.0344300000e+00 least_sq_term_19
+                      1.8233000000e-01 least_sq_term_20
+                      4.1791000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 18 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.2211248285e-01 radius
+                      1.0151577503e+00 time_gap
+                      5.3888888889e+00 strength_neighbor
+                      1.4692729767e-01 range_neighbor
+                      5.7712620027e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.1233732066e+01
+
+---------------------
+Begin Evaluation   46
+---------------------
+Parameters for evaluation 46:
+                      1.2211248285e-01 radius
+                      1.0151577503e+00 time_gap
+                      5.3888888889e+00 strength_neighbor
+                      1.4692729767e-01 range_neighbor
+                      5.7712620027e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 46:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.6240700000e+00 least_sq_term_1
+                     -7.0290000000e-01 least_sq_term_2
+                      3.9584800000e+00 least_sq_term_3
+                     -5.4936500000e+00 least_sq_term_4
+                     -1.1467700000e+00 least_sq_term_5
+                      2.2016900000e+00 least_sq_term_6
+                      4.6742200000e+00 least_sq_term_7
+                     -2.6842900000e+00 least_sq_term_8
+                      6.4383900000e+00 least_sq_term_9
+                      1.6908700000e+00 least_sq_term_10
+                     -1.2898500000e+00 least_sq_term_11
+                      3.2592600000e+00 least_sq_term_12
+                     -6.1034900000e+00 least_sq_term_13
+                      2.5870400000e+00 least_sq_term_14
+                      1.4862100000e+00 least_sq_term_15
+                      2.7543200000e+00 least_sq_term_16
+                      8.5969000000e-01 least_sq_term_17
+                      2.4763000000e-01 least_sq_term_18
+                      6.5333100000e+00 least_sq_term_19
+                      1.7528000000e-01 least_sq_term_20
+                      1.3732800000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 19 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.5338820302e-01 radius
+                      8.7181069959e-01 time_gap
+                      9.2160493827e+00 strength_neighbor
+                      8.8545953361e-02 range_neighbor
+                      2.5655006859e+00 strength_geometry
+                      4.1666666667e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.3227153273e+01
+
+---------------------
+Begin Evaluation   47
+---------------------
+Parameters for evaluation 47:
+                      1.5338820302e-01 radius
+                      8.7181069959e-01 time_gap
+                      9.2160493827e+00 strength_neighbor
+                      8.8545953361e-02 range_neighbor
+                      2.5655006859e+00 strength_geometry
+                      4.1666666667e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 47:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.8458700000e+00 least_sq_term_1
+                     -1.2336500000e+00 least_sq_term_2
+                      4.2714800000e+00 least_sq_term_3
+                      7.5378000000e-01 least_sq_term_4
+                     -1.5308200000e+00 least_sq_term_5
+                      9.4395000000e-01 least_sq_term_6
+                      4.1724700000e+00 least_sq_term_7
+                     -1.7782000000e+00 least_sq_term_8
+                      5.3278500000e+00 least_sq_term_9
+                      6.8594000000e-01 least_sq_term_10
+                     -2.7037000000e-01 least_sq_term_11
+                      3.2288800000e+00 least_sq_term_12
+                      1.5384500000e+00 least_sq_term_13
+                      1.5745200000e+00 least_sq_term_14
+                     -2.7419600000e+00 least_sq_term_15
+                      1.0969400000e+00 least_sq_term_16
+                      1.0346900000e+00 least_sq_term_17
+                     -3.9382000000e-01 least_sq_term_18
+                      4.8900100000e+00 least_sq_term_19
+                      6.0730000000e-01 least_sq_term_20
+                      5.8648000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 20 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1048010974e-01 radius
+                      8.7331961591e-01 time_gap
+                      5.5493827160e+00 strength_neighbor
+                      1.0001371742e-01 range_neighbor
+                      6.1622085048e+00 strength_geometry
+                      6.3038408779e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.5832508024e+01
+
+---------------------
+Begin Evaluation   48
+---------------------
+Parameters for evaluation 48:
+                      1.1048010974e-01 radius
+                      8.7331961591e-01 time_gap
+                      5.5493827160e+00 strength_neighbor
+                      1.0001371742e-01 range_neighbor
+                      6.1622085048e+00 strength_geometry
+                      6.3038408779e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 48:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      4.0106200000e+00 least_sq_term_1
+                     -8.9745000000e-01 least_sq_term_2
+                      3.9282700000e+00 least_sq_term_3
+                      2.7246100000e+00 least_sq_term_4
+                     -2.7566000000e-01 least_sq_term_5
+                      3.8158000000e-01 least_sq_term_6
+                      5.6543700000e+00 least_sq_term_7
+                     -5.0183000000e-01 least_sq_term_8
+                      2.0482400000e+00 least_sq_term_9
+                      3.1594800000e+00 least_sq_term_10
+                     -2.1927200000e+00 least_sq_term_11
+                      7.7143000000e-01 least_sq_term_12
+                      4.6480500000e+00 least_sq_term_13
+                      6.0171000000e-01 least_sq_term_14
+                     -3.0243400000e+00 least_sq_term_15
+                      3.8119600000e+00 least_sq_term_16
+                     -1.0847000000e-01 least_sq_term_17
+                     -1.7339800000e+00 least_sq_term_18
+                      8.1441600000e+00 least_sq_term_19
+                     -7.0533000000e-01 least_sq_term_20
+                     -8.6704000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 21 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1684499314e-01 radius
+                      1.0045953361e+00 time_gap
+                      5.1913580247e+00 strength_neighbor
+                      9.7928669410e-02 range_neighbor
+                      5.2630315501e+00 strength_geometry
+                      4.1927297668e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      3.0988272842e+01
+
+---------------------
+Begin Evaluation   49
+---------------------
+Parameters for evaluation 49:
+                      1.1684499314e-01 radius
+                      1.0045953361e+00 time_gap
+                      5.1913580247e+00 strength_neighbor
+                      9.7928669410e-02 range_neighbor
+                      5.2630315501e+00 strength_geometry
+                      4.1927297668e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 49:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.6280100000e+00 least_sq_term_1
+                     -3.2008000000e-01 least_sq_term_2
+                      2.2353300000e+00 least_sq_term_3
+                      1.8195100000e+00 least_sq_term_4
+                     -7.5280000000e-01 least_sq_term_5
+                      5.9335000000e-01 least_sq_term_6
+                      4.2014500000e+00 least_sq_term_7
+                     -7.6886000000e-01 least_sq_term_8
+                      1.0974900000e+00 least_sq_term_9
+                      2.4608500000e+00 least_sq_term_10
+                     -1.9882800000e+00 least_sq_term_11
+                      4.6753000000e-01 least_sq_term_12
+                     -5.4955400000e+00 least_sq_term_13
+                      3.1536800000e+00 least_sq_term_14
+                     -7.8340000000e-01 least_sq_term_15
+                      3.1546700000e+00 least_sq_term_16
+                     -6.6630000000e-02 least_sq_term_17
+                     -2.3238400000e+00 least_sq_term_18
+                      6.9633300000e+00 least_sq_term_19
+                     -9.4826000000e-01 least_sq_term_20
+                     -1.1901300000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 22 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.2661179698e-01 radius
+                      7.9334705075e-01 time_gap
+                      9.5864197531e+00 strength_neighbor
+                      9.2716049383e-02 range_neighbor
+                      3.7513717421e+00 strength_geometry
+                      2.4204389575e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.0924870542e+01
+
+---------------------
+Begin Evaluation   50
+---------------------
+Parameters for evaluation 50:
+                      1.2661179698e-01 radius
+                      7.9334705075e-01 time_gap
+                      9.5864197531e+00 strength_neighbor
+                      9.2716049383e-02 range_neighbor
+                      3.7513717421e+00 strength_geometry
+                      2.4204389575e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 50:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.9969200000e+00 least_sq_term_1
+                      8.1481000000e-01 least_sq_term_2
+                      1.0570500000e+00 least_sq_term_3
+                      1.6335400000e+00 least_sq_term_4
+                      3.7147000000e-01 least_sq_term_5
+                     -5.9380000000e-01 least_sq_term_6
+                      4.8275300000e+00 least_sq_term_7
+                      2.0312000000e-01 least_sq_term_8
+                      1.2251700000e+00 least_sq_term_9
+                      2.4524700000e+00 least_sq_term_10
+                     -1.9288200000e+00 least_sq_term_11
+                      2.3043700000e+00 least_sq_term_12
+                      4.1441400000e+00 least_sq_term_13
+                      1.0422900000e+00 least_sq_term_14
+                     -1.9536600000e+00 least_sq_term_15
+                      3.8831000000e+00 least_sq_term_16
+                      6.0694000000e-01 least_sq_term_17
+                      3.3556000000e-01 least_sq_term_18
+                      7.9385000000e+00 least_sq_term_19
+                     -1.9368000000e-01 least_sq_term_20
+                      8.4832000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 23 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3550068587e-01 radius
+                      7.7071330590e-01 time_gap
+                      9.5493827160e+00 strength_neighbor
+                      9.2716049383e-02 range_neighbor
+                      3.6731824417e+00 strength_geometry
+                      3.3587105624e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      2.8560984841e+01
+
+---------------------
+Begin Evaluation   51
+---------------------
+Parameters for evaluation 51:
+                      1.3550068587e-01 radius
+                      7.7071330590e-01 time_gap
+                      9.5493827160e+00 strength_neighbor
+                      9.2716049383e-02 range_neighbor
+                      3.6731824417e+00 strength_geometry
+                      3.3587105624e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 51:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.6655700000e+00 least_sq_term_1
+                     -1.7694000000e-01 least_sq_term_2
+                      1.2614500000e+00 least_sq_term_3
+                      2.0610900000e+00 least_sq_term_4
+                     -1.8893000000e-01 least_sq_term_5
+                      1.8613000000e-01 least_sq_term_6
+                      3.3439200000e+00 least_sq_term_7
+                     -9.5596000000e-01 least_sq_term_8
+                      1.5281800000e+00 least_sq_term_9
+                      2.8205700000e+00 least_sq_term_10
+                     -1.2266600000e+00 least_sq_term_11
+                      2.7324900000e+00 least_sq_term_12
+                      3.8109300000e+00 least_sq_term_13
+                      1.4947200000e+00 least_sq_term_14
+                     -1.6218600000e+00 least_sq_term_15
+                      3.4446800000e+00 least_sq_term_16
+                      9.9907000000e-01 least_sq_term_17
+                      3.9038000000e-01 least_sq_term_18
+                      6.8330500000e+00 least_sq_term_19
+                      3.6727000000e-01 least_sq_term_20
+                      8.5954000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 24 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.5196159122e-01 radius
+                      7.7524005487e-01 time_gap
+                      9.1172839506e+00 strength_neighbor
+                      8.2812071331e-02 range_neighbor
+                      4.0641289438e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      6.4214613466e+01
+
+---------------------
+Begin Evaluation   52
+---------------------
+Parameters for evaluation 52:
+                      1.5196159122e-01 radius
+                      7.7524005487e-01 time_gap
+                      9.1172839506e+00 strength_neighbor
+                      8.2812071331e-02 range_neighbor
+                      4.0641289438e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 52:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.4146800000e+00 least_sq_term_1
+                     -6.2833000000e-01 least_sq_term_2
+                      5.1925400000e+00 least_sq_term_3
+                      2.0388200000e+00 least_sq_term_4
+                     -1.8944400000e+00 least_sq_term_5
+                      2.9214300000e+00 least_sq_term_6
+                      4.9808400000e+00 least_sq_term_7
+                     -1.6393900000e+00 least_sq_term_8
+                      4.8897200000e+00 least_sq_term_9
+                      2.0833300000e+00 least_sq_term_10
+                     -6.0368000000e-01 least_sq_term_11
+                      2.2685200000e+00 least_sq_term_12
+                      9.8134000000e-01 least_sq_term_13
+                      2.0269700000e+00 least_sq_term_14
+                     -2.9204900000e+00 least_sq_term_15
+                      1.0170900000e+00 least_sq_term_16
+                      1.6526900000e+00 least_sq_term_17
+                     -5.1826000000e-01 least_sq_term_18
+                      5.4228900000e+00 least_sq_term_19
+                      8.2727000000e-01 least_sq_term_20
+                      5.5404000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 25 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.0993141289e-01 radius
+                      9.1406035665e-01 time_gap
+                      2.4506172840e+00 strength_neighbor
+                      2.3085048011e-01 range_neighbor
+                      2.2006172840e+00 strength_geometry
+                      1.0161179698e-01 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.7069067819e+01
+
+---------------------
+Begin Evaluation   53
+---------------------
+Parameters for evaluation 53:
+                      1.0993141289e-01 radius
+                      9.1406035665e-01 time_gap
+                      2.4506172840e+00 strength_neighbor
+                      2.3085048011e-01 range_neighbor
+                      2.2006172840e+00 strength_geometry
+                      1.0161179698e-01 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 53:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.5679800000e+00 least_sq_term_1
+                     -2.8727000000e-01 least_sq_term_2
+                      2.0129400000e+00 least_sq_term_3
+                     -5.0497700000e+00 least_sq_term_4
+                      3.6323000000e-01 least_sq_term_5
+                      2.6354000000e-01 least_sq_term_6
+                      5.1375300000e+00 least_sq_term_7
+                     -1.4325000000e+00 least_sq_term_8
+                      3.1404600000e+00 least_sq_term_9
+                      2.4608500000e+00 least_sq_term_10
+                     -2.1585700000e+00 least_sq_term_11
+                      2.4533700000e+00 least_sq_term_12
+                      4.5538400000e+00 least_sq_term_13
+                      2.0617000000e-01 least_sq_term_14
+                     -1.7746200000e+00 least_sq_term_15
+                     -1.0315000000e+01 least_sq_term_16
+                      2.9231000000e+00 least_sq_term_17
+                     -1.6742500000e+00 least_sq_term_18
+                     -1.1165530000e+01 least_sq_term_19
+                      2.8750900000e+00 least_sq_term_20
+                     -9.0800000000e-03 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 26 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.2661179698e-01 radius
+                      8.3257887517e-01 time_gap
+                      8.4506172840e+00 strength_neighbor
+                      7.6035665295e-02 range_neighbor
+                      1.5099451303e+00 strength_geometry
+                      4.4533607682e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.8255312028e-04
+
+---------------------
+Begin Evaluation   54
+---------------------
+Parameters for evaluation 54:
+                      1.2661179698e-01 radius
+                      8.3257887517e-01 time_gap
+                      8.4506172840e+00 strength_neighbor
+                      7.6035665295e-02 range_neighbor
+                      1.5099451303e+00 strength_geometry
+                      4.4533607682e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 54:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.5068500000e+00 least_sq_term_1
+                     -6.7820000000e-01 least_sq_term_2
+                      2.8018300000e+00 least_sq_term_3
+                      2.3983700000e+00 least_sq_term_4
+                     -6.3050000000e-02 least_sq_term_5
+                     -2.1980000000e-02 least_sq_term_6
+                      5.5884300000e+00 least_sq_term_7
+                     -1.0594600000e+00 least_sq_term_8
+                      2.8449100000e+00 least_sq_term_9
+                      3.0921800000e+00 least_sq_term_10
+                     -1.4601600000e+00 least_sq_term_11
+                      1.1276300000e+00 least_sq_term_12
+                      4.6240700000e+00 least_sq_term_13
+                      5.0650000000e-02 least_sq_term_14
+                     -2.4165500000e+00 least_sq_term_15
+                      3.8429500000e+00 least_sq_term_16
+                     -3.9683000000e-01 least_sq_term_17
+                     -9.2902000000e-01 least_sq_term_18
+                      8.0322400000e+00 least_sq_term_19
+                     -1.1498500000e+00 least_sq_term_20
+                     -3.8588000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 27 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.5338820302e-01 radius
+                      8.3408779150e-01 time_gap
+                      7.6728395062e+00 strength_neighbor
+                      5.4663923182e-02 range_neighbor
+                      1.3796296296e+00 strength_geometry
+                      4.3491083676e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      2.4762267224e+00
+
+---------------------
+Begin Evaluation   55
+---------------------
+Parameters for evaluation 55:
+                      1.5338820302e-01 radius
+                      8.3408779150e-01 time_gap
+                      7.6728395062e+00 strength_neighbor
+                      5.4663923182e-02 range_neighbor
+                      1.3796296296e+00 strength_geometry
+                      4.3491083676e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 55:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.6804800000e+00 least_sq_term_1
+                     -6.5098000000e-01 least_sq_term_2
+                      4.6233100000e+00 least_sq_term_3
+                      9.7728000000e-01 least_sq_term_4
+                     -2.2978000000e+00 least_sq_term_5
+                      2.3833600000e+00 least_sq_term_6
+                      4.5539900000e+00 least_sq_term_7
+                     -1.8014400000e+00 least_sq_term_8
+                      4.8060500000e+00 least_sq_term_9
+                      1.0726100000e+00 least_sq_term_10
+                     -5.0676000000e-01 least_sq_term_11
+                     -4.1020000000e-02 least_sq_term_12
+                      9.7497000000e-01 least_sq_term_13
+                     -1.2750000000e-02 least_sq_term_14
+                     -3.7672300000e+00 least_sq_term_15
+                      1.0446000000e-01 least_sq_term_16
+                      6.6608000000e-01 least_sq_term_17
+                     -3.1423200000e+00 least_sq_term_18
+                      4.6004000000e+00 least_sq_term_19
+                     -2.1052000000e-01 least_sq_term_20
+                     -2.3067400000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 28 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3561042524e-01 radius
+                      8.3257887517e-01 time_gap
+                      6.2530864198e+00 strength_neighbor
+                      8.6460905350e-02 range_neighbor
+                      5.4194101509e+00 strength_geometry
+                      6.6165980796e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      3.2125397109e-02
+
+---------------------
+Begin Evaluation   56
+---------------------
+Parameters for evaluation 56:
+                      1.3561042524e-01 radius
+                      8.3257887517e-01 time_gap
+                      6.2530864198e+00 strength_neighbor
+                      8.6460905350e-02 range_neighbor
+                      5.4194101509e+00 strength_geometry
+                      6.6165980796e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 56:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.3986060000e+01 least_sq_term_1
+                      4.9462000000e-01 least_sq_term_2
+                      3.7717000000e+00 least_sq_term_3
+                     -1.0004460000e+01 least_sq_term_4
+                     -1.8554100000e+00 least_sq_term_5
+                      2.8767700000e+00 least_sq_term_6
+                     -1.3638190000e+01 least_sq_term_7
+                     -1.2720700000e+00 least_sq_term_8
+                      4.8544400000e+00 least_sq_term_9
+                     -1.4300680000e+01 least_sq_term_10
+                     -2.2819000000e-01 least_sq_term_11
+                      1.8848000000e+00 least_sq_term_12
+                     -8.7535900000e+00 least_sq_term_13
+                      1.5564900000e+00 least_sq_term_14
+                     -3.1590600000e+00 least_sq_term_15
+                     -8.1207900000e+00 least_sq_term_16
+                      1.0557100000e+00 least_sq_term_17
+                     -1.6577400000e+00 least_sq_term_18
+                     -8.8675800000e+00 least_sq_term_19
+                      4.8451000000e-01 least_sq_term_20
+                     -9.5510000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 29 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.2079561043e-01 radius
+                      7.9183813443e-01 time_gap
+                      5.1172839506e+00 strength_neighbor
+                      8.9588477366e-02 range_neighbor
+                      5.3933470508e+00 strength_geometry
+                      4.5054869684e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      5.1820690367e+01
+
+---------------------
+Begin Evaluation   57
+---------------------
+Parameters for evaluation 57:
+                      1.2079561043e-01 radius
+                      7.9183813443e-01 time_gap
+                      5.1172839506e+00 strength_neighbor
+                      8.9588477366e-02 range_neighbor
+                      5.3933470508e+00 strength_geometry
+                      4.5054869684e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 57:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.7079300000e+00 least_sq_term_1
+                     -7.6756000000e-01 least_sq_term_2
+                      2.6504900000e+00 least_sq_term_3
+                      2.6753500000e+00 least_sq_term_4
+                     -5.8532000000e-01 least_sq_term_5
+                      1.0773100000e+00 least_sq_term_6
+                      6.0583700000e+00 least_sq_term_7
+                     -1.0995700000e+00 least_sq_term_8
+                      2.8285600000e+00 least_sq_term_9
+                      3.1250000000e+00 least_sq_term_10
+                     -1.7054600000e+00 least_sq_term_11
+                      1.2957000000e-01 least_sq_term_12
+                      4.7577800000e+00 least_sq_term_13
+                      3.2335000000e-01 least_sq_term_14
+                     -3.0038900000e+00 least_sq_term_15
+                     -4.7391400000e+00 least_sq_term_16
+                      3.1798700000e+00 least_sq_term_17
+                     -8.6500000000e-01 least_sq_term_18
+                     -1.4438800000e+01 least_sq_term_19
+                      6.6506800000e+00 least_sq_term_20
+                      5.0946800000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 30 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3550068587e-01 radius
+                      7.8882030178e-01 time_gap
+                      9.6604938272e+00 strength_neighbor
+                      8.7503429355e-02 range_neighbor
+                      2.9564471879e+00 strength_geometry
+                      3.9320987654e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      5.5577194407e+01
+
+---------------------
+Begin Evaluation   58
+---------------------
+Parameters for evaluation 58:
+                      1.3550068587e-01 radius
+                      7.8882030178e-01 time_gap
+                      9.6604938272e+00 strength_neighbor
+                      8.7503429355e-02 range_neighbor
+                      2.9564471879e+00 strength_geometry
+                      3.9320987654e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 58:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.3481600000e+00 least_sq_term_1
+                     -2.5562000000e-01 least_sq_term_2
+                      2.1931400000e+00 least_sq_term_3
+                      2.2834900000e+00 least_sq_term_4
+                     -2.7097000000e-01 least_sq_term_5
+                      3.0291000000e-01 least_sq_term_6
+                      4.5645100000e+00 least_sq_term_7
+                     -1.1685200000e+00 least_sq_term_8
+                      2.8957900000e+00 least_sq_term_9
+                      2.7929300000e+00 least_sq_term_10
+                     -9.5931000000e-01 least_sq_term_11
+                      2.9235900000e+00 least_sq_term_12
+                      4.0092200000e+00 least_sq_term_13
+                      1.2822000000e+00 least_sq_term_14
+                     -1.8745600000e+00 least_sq_term_15
+                      3.2791500000e+00 least_sq_term_16
+                      7.9972000000e-01 least_sq_term_17
+                     -1.1323000000e-01 least_sq_term_18
+                      6.5430500000e+00 least_sq_term_19
+                     -8.0110000000e-02 least_sq_term_20
+                      1.0528600000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 31 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3857338820e-01 radius
+                      8.1296296296e-01 time_gap
+                      8.0802469136e+00 strength_neighbor
+                      8.4897119342e-02 range_neighbor
+                      4.8590534979e+00 strength_geometry
+                      3.8017832647e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      5.1594428006e+01
+
+---------------------
+Begin Evaluation   59
+---------------------
+Parameters for evaluation 59:
+                      1.3857338820e-01 radius
+                      8.1296296296e-01 time_gap
+                      8.0802469136e+00 strength_neighbor
+                      8.4897119342e-02 range_neighbor
+                      4.8590534979e+00 strength_geometry
+                      3.8017832647e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 59:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.4029600000e+00 least_sq_term_1
+                     -3.2661000000e-01 least_sq_term_2
+                      2.9285500000e+00 least_sq_term_3
+                      4.4075000000e-01 least_sq_term_4
+                     -5.2787000000e-01 least_sq_term_5
+                     -5.3107000000e-01 least_sq_term_6
+                      5.1690800000e+00 least_sq_term_7
+                     -1.3454800000e+00 least_sq_term_8
+                      4.0392400000e+00 least_sq_term_9
+                      2.1484900000e+00 least_sq_term_10
+                     -9.3809000000e-01 least_sq_term_11
+                      1.7965100000e+00 least_sq_term_12
+                      2.6783000000e+00 least_sq_term_13
+                      1.2648600000e+00 least_sq_term_14
+                     -2.5010000000e+00 least_sq_term_15
+                      2.4771900000e+00 least_sq_term_16
+                      9.7511000000e-01 least_sq_term_17
+                     -6.2512000000e-01 least_sq_term_18
+                      6.5091700000e+00 least_sq_term_19
+                      2.8047000000e-01 least_sq_term_20
+                     -1.1978000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 32 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.2968449931e-01 radius
+                      1.0061042524e+00 time_gap
+                      8.2530864198e+00 strength_neighbor
+                      9.7407407407e-02 range_neighbor
+                      3.6601508916e+00 strength_geometry
+                      6.3820301783e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      2.8852425580e+01
+
+---------------------
+Begin Evaluation   60
+---------------------
+Parameters for evaluation 60:
+                      1.2968449931e-01 radius
+                      1.0061042524e+00 time_gap
+                      8.2530864198e+00 strength_neighbor
+                      9.7407407407e-02 range_neighbor
+                      3.6601508916e+00 strength_geometry
+                      6.3820301783e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 60:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.8516900000e+00 least_sq_term_1
+                     -6.8617000000e-01 least_sq_term_2
+                      4.8474500000e+00 least_sq_term_3
+                      1.3312400000e+00 least_sq_term_4
+                     -1.3131900000e+00 least_sq_term_5
+                      1.1070900000e+00 least_sq_term_6
+                      4.2884000000e+00 least_sq_term_7
+                     -2.0441200000e+00 least_sq_term_8
+                      5.3309100000e+00 least_sq_term_9
+                      1.0679200000e+00 least_sq_term_10
+                     -1.0901700000e+00 least_sq_term_11
+                      1.7594300000e+00 least_sq_term_12
+                      2.9884100000e+00 least_sq_term_13
+                      1.2705800000e+00 least_sq_term_14
+                     -2.5809800000e+00 least_sq_term_15
+                      2.3969000000e+00 least_sq_term_16
+                      7.6259000000e-01 least_sq_term_17
+                     -6.9445000000e-01 least_sq_term_18
+                      5.6298500000e+00 least_sq_term_19
+                      1.3277000000e-01 least_sq_term_20
+                     -5.1050000000e-02 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 33 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.4340192044e-01 radius
+                      7.0582990398e-01 time_gap
+                      9.7962962963e+00 strength_neighbor
+                      8.0205761317e-02 range_neighbor
+                      2.6045953361e+00 strength_geometry
+                      3.1241426612e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      3.2497059284e+01
+
+---------------------
+Begin Evaluation   61
+---------------------
+Parameters for evaluation 61:
+                      1.4340192044e-01 radius
+                      7.0582990398e-01 time_gap
+                      9.7962962963e+00 strength_neighbor
+                      8.0205761317e-02 range_neighbor
+                      2.6045953361e+00 strength_geometry
+                      3.1241426612e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 61:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.8516900000e+00 least_sq_term_1
+                     -2.4780000000e-02 least_sq_term_2
+                      2.3099600000e+00 least_sq_term_3
+                      2.4310800000e+00 least_sq_term_4
+                      2.9840000000e-02 least_sq_term_5
+                     -9.3560000000e-02 least_sq_term_6
+                      5.1707300000e+00 least_sq_term_7
+                     -1.3501500000e+00 least_sq_term_8
+                      3.5495100000e+00 least_sq_term_9
+                      2.2505100000e+00 least_sq_term_10
+                     -9.3053000000e-01 least_sq_term_11
+                      2.1021200000e+00 least_sq_term_12
+                      3.9023200000e+00 least_sq_term_13
+                      1.5627500000e+00 least_sq_term_14
+                     -2.1044300000e+00 least_sq_term_15
+                      3.1928800000e+00 least_sq_term_16
+                      1.0169800000e+00 least_sq_term_17
+                      3.9388000000e-01 least_sq_term_18
+                      7.3946700000e+00 least_sq_term_19
+                      1.6618000000e-01 least_sq_term_20
+                      1.0715400000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 34 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3561042524e-01 radius
+                      8.1748971193e-01 time_gap
+                      7.1172839506e+00 strength_neighbor
+                      8.6460905350e-02 range_neighbor
+                      4.7287379973e+00 strength_geometry
+                      4.2187928669e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      3.6045436399e+01
+
+---------------------
+Begin Evaluation   62
+---------------------
+Parameters for evaluation 62:
+                      1.3561042524e-01 radius
+                      8.1748971193e-01 time_gap
+                      7.1172839506e+00 strength_neighbor
+                      8.6460905350e-02 range_neighbor
+                      4.7287379973e+00 strength_geometry
+                      4.2187928669e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 62:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.4853300000e+00 least_sq_term_1
+                     -8.5969000000e-01 least_sq_term_2
+                      3.3342500000e+00 least_sq_term_3
+                      4.9255000000e-01 least_sq_term_4
+                     -4.6696000000e-01 least_sq_term_5
+                     -6.0845000000e-01 least_sq_term_6
+                      5.3613800000e+00 least_sq_term_7
+                     -1.0978100000e+00 least_sq_term_8
+                      3.7073300000e+00 least_sq_term_9
+                      1.5771200000e+00 least_sq_term_10
+                     -1.0212400000e+00 least_sq_term_11
+                      1.3894600000e+00 least_sq_term_12
+                      3.1797300000e+00 least_sq_term_13
+                      1.1313600000e+00 least_sq_term_14
+                     -2.6745900000e+00 least_sq_term_15
+                      2.3275900000e+00 least_sq_term_16
+                      9.0817000000e-01 least_sq_term_17
+                     -1.1404500000e+00 least_sq_term_18
+                      6.8037700000e+00 least_sq_term_19
+                      6.8680000000e-02 least_sq_term_20
+                     -5.4930000000e-02 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 35 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3561042524e-01 radius
+                      8.0692729767e-01 time_gap
+                      8.8950617284e+00 strength_neighbor
+                      8.6982167353e-02 range_neighbor
+                      4.8981481481e+00 strength_geometry
+                      4.9746227709e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      4.4148980441e+01
+
+---------------------
+Begin Evaluation   63
+---------------------
+Parameters for evaluation 63:
+                      1.3561042524e-01 radius
+                      8.0692729767e-01 time_gap
+                      8.8950617284e+00 strength_neighbor
+                      8.6982167353e-02 range_neighbor
+                      4.8981481481e+00 strength_geometry
+                      4.9746227709e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 63:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.9689200000e+00 least_sq_term_1
+                     -6.2567000000e-01 least_sq_term_2
+                      3.5774100000e+00 least_sq_term_3
+                      1.8789200000e+00 least_sq_term_4
+                     -9.2637000000e-01 least_sq_term_5
+                      1.1319100000e+00 least_sq_term_6
+                      5.4577100000e+00 least_sq_term_7
+                     -1.2652200000e+00 least_sq_term_8
+                      4.2657000000e+00 least_sq_term_9
+                      1.9609800000e+00 least_sq_term_10
+                     -9.5699000000e-01 least_sq_term_11
+                      1.7994200000e+00 least_sq_term_12
+                      3.6548900000e+00 least_sq_term_13
+                      1.7057400000e+00 least_sq_term_14
+                     -2.1148800000e+00 least_sq_term_15
+                      2.4112700000e+00 least_sq_term_16
+                      1.2921700000e+00 least_sq_term_17
+                     -5.9307000000e-01 least_sq_term_18
+                      6.8183200000e+00 least_sq_term_19
+                      2.5582000000e-01 least_sq_term_20
+                      3.9560000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 36 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.5042524005e-01 radius
+                      8.3106995885e-01 time_gap
+                      8.9938271605e+00 strength_neighbor
+                      8.8024691358e-02 range_neighbor
+                      4.7287379973e+00 strength_geometry
+                      3.1241426612e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      3.4151934675e+01
+
+---------------------
+Begin Evaluation   64
+---------------------
+Parameters for evaluation 64:
+                      1.5042524005e-01 radius
+                      8.3106995885e-01 time_gap
+                      8.9938271605e+00 strength_neighbor
+                      8.8024691358e-02 range_neighbor
+                      4.7287379973e+00 strength_geometry
+                      3.1241426612e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 64:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.5679900000e+00 least_sq_term_1
+                     -5.5238000000e-01 least_sq_term_2
+                      3.9386700000e+00 least_sq_term_3
+                      5.2830000000e-02 least_sq_term_4
+                     -9.4491000000e-01 least_sq_term_5
+                     -6.7225000000e-01 least_sq_term_6
+                      4.5839600000e+00 least_sq_term_7
+                     -1.2019700000e+00 least_sq_term_8
+                      3.7440300000e+00 least_sq_term_9
+                      1.2314000000e+00 least_sq_term_10
+                     -2.9744000000e-01 least_sq_term_11
+                      2.9388600000e+00 least_sq_term_12
+                      1.2278700000e+00 least_sq_term_13
+                      1.8572600000e+00 least_sq_term_14
+                     -2.7302600000e+00 least_sq_term_15
+                      9.2182000000e-01 least_sq_term_16
+                      1.4242400000e+00 least_sq_term_17
+                     -4.2556000000e-01 least_sq_term_18
+                      5.1366900000e+00 least_sq_term_19
+                      7.7639000000e-01 least_sq_term_20
+                      8.5320000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 37 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.4449931413e-01 radius
+                      8.3257887517e-01 time_gap
+                      8.0061728395e+00 strength_neighbor
+                      8.5939643347e-02 range_neighbor
+                      5.1327160494e+00 strength_geometry
+                      4.2187928669e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      8.7074109699e-01
+
+---------------------
+Begin Evaluation   65
+---------------------
+Parameters for evaluation 65:
+                      1.4449931413e-01 radius
+                      8.3257887517e-01 time_gap
+                      8.0061728395e+00 strength_neighbor
+                      8.5939643347e-02 range_neighbor
+                      5.1327160494e+00 strength_geometry
+                      4.2187928669e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 65:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.8262000000e+00 least_sq_term_1
+                     -6.5887000000e-01 least_sq_term_2
+                      4.0262500000e+00 least_sq_term_3
+                      1.3252200000e+00 least_sq_term_4
+                     -9.0961000000e-01 least_sq_term_5
+                      6.5978000000e-01 least_sq_term_6
+                      4.5873500000e+00 least_sq_term_7
+                     -1.3286700000e+00 least_sq_term_8
+                      4.1750200000e+00 least_sq_term_9
+                      9.3012000000e-01 least_sq_term_10
+                     -4.7970000000e-01 least_sq_term_11
+                      2.1715000000e+00 least_sq_term_12
+                      1.3048000000e+00 least_sq_term_13
+                      1.9078400000e+00 least_sq_term_14
+                     -3.0120900000e+00 least_sq_term_15
+                      1.3725200000e+00 least_sq_term_16
+                      1.3097600000e+00 least_sq_term_17
+                     -1.0001400000e+00 least_sq_term_18
+                      5.6793400000e+00 least_sq_term_19
+                      6.3785000000e-01 least_sq_term_20
+                      7.4270000000e-02 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 38 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.4746227709e-01 radius
+                      7.5562414266e-01 time_gap
+                      8.0061728395e+00 strength_neighbor
+                      8.6982167353e-02 range_neighbor
+                      5.7842935528e+00 strength_geometry
+                      5.0528120713e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      7.2254906573e+00
+
+---------------------
+Begin Evaluation   66
+---------------------
+Parameters for evaluation 66:
+                      1.4746227709e-01 radius
+                      7.5562414266e-01 time_gap
+                      8.0061728395e+00 strength_neighbor
+                      8.6982167353e-02 range_neighbor
+                      5.7842935528e+00 strength_geometry
+                      5.0528120713e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 66:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.7867600000e+00 least_sq_term_1
+                     -5.1343000000e-01 least_sq_term_2
+                      4.9904200000e+00 least_sq_term_3
+                      2.5140200000e+00 least_sq_term_4
+                     -1.8926200000e+00 least_sq_term_5
+                      3.2681100000e+00 least_sq_term_6
+                      5.2964000000e+00 least_sq_term_7
+                     -1.4525100000e+00 least_sq_term_8
+                      4.6050000000e+00 least_sq_term_9
+                      2.4934800000e+00 least_sq_term_10
+                     -6.3481000000e-01 least_sq_term_11
+                      3.0781000000e+00 least_sq_term_12
+                      2.1626700000e+00 least_sq_term_13
+                      2.0767300000e+00 least_sq_term_14
+                     -2.5176300000e+00 least_sq_term_15
+                      7.1309000000e-01 least_sq_term_16
+                      2.0619900000e+00 least_sq_term_17
+                     -9.0726000000e-01 least_sq_term_18
+                      6.5615000000e+00 least_sq_term_19
+                      5.7408000000e-01 least_sq_term_20
+                      7.1515000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 39 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.6227709191e-01 radius
+                      8.3257887517e-01 time_gap
+                      9.6728395062e+00 strength_neighbor
+                      9.9492455418e-02 range_neighbor
+                      3.8034979424e+00 strength_geometry
+                      3.4890260631e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      2.2270618441e-01
+
+---------------------
+Begin Evaluation   67
+---------------------
+Parameters for evaluation 67:
+                      1.6227709191e-01 radius
+                      8.3257887517e-01 time_gap
+                      9.6728395062e+00 strength_neighbor
+                      9.9492455418e-02 range_neighbor
+                      3.8034979424e+00 strength_geometry
+                      3.4890260631e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 67:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.5968500000e+00 least_sq_term_1
+                     -9.4798000000e-01 least_sq_term_2
+                      5.3601100000e+00 least_sq_term_3
+                     -1.3780230000e+01 least_sq_term_4
+                     -2.1768700000e+00 least_sq_term_5
+                      3.9453200000e+00 least_sq_term_6
+                      4.3761600000e+00 least_sq_term_7
+                     -2.0879900000e+00 least_sq_term_8
+                      5.6116300000e+00 least_sq_term_9
+                      1.3432200000e+00 least_sq_term_10
+                     -9.2940000000e-02 least_sq_term_11
+                      4.4304600000e+00 least_sq_term_12
+                      3.9873000000e-01 least_sq_term_13
+                      1.9587800000e+00 least_sq_term_14
+                     -2.7792800000e+00 least_sq_term_15
+                      3.7373000000e-01 least_sq_term_16
+                      1.6861900000e+00 least_sq_term_17
+                      2.9545000000e-01 least_sq_term_18
+                      3.4988600000e+00 least_sq_term_19
+                      1.2078900000e+00 least_sq_term_20
+                      1.1129800000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 40 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.5338820302e-01 radius
+                      8.0692729767e-01 time_gap
+                      7.0061728395e+00 strength_neighbor
+                      9.8449931413e-02 range_neighbor
+                      4.9763374486e+00 strength_geometry
+                      4.2448559671e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      1.1882653579e+01
+
+---------------------
+Begin Evaluation   68
+---------------------
+Parameters for evaluation 68:
+                      1.5338820302e-01 radius
+                      8.0692729767e-01 time_gap
+                      7.0061728395e+00 strength_neighbor
+                      9.8449931413e-02 range_neighbor
+                      4.9763374486e+00 strength_geometry
+                      4.2448559671e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 68:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.9383100000e+00 least_sq_term_1
+                     -3.5164000000e-01 least_sq_term_2
+                      3.8507600000e+00 least_sq_term_3
+                      1.9050800000e+00 least_sq_term_4
+                     -2.2136900000e+00 least_sq_term_5
+                      3.1601400000e+00 least_sq_term_6
+                      4.7653300000e+00 least_sq_term_7
+                     -1.8027300000e+00 least_sq_term_8
+                      5.1363200000e+00 least_sq_term_9
+                      1.4862000000e+00 least_sq_term_10
+                     -4.0423000000e-01 least_sq_term_11
+                      3.9103900000e+00 least_sq_term_12
+                     -7.5686400000e+00 least_sq_term_13
+                      4.0416800000e+00 least_sq_term_14
+                     -1.3214100000e+00 least_sq_term_15
+                     -8.3403400000e+00 least_sq_term_16
+                      3.6772000000e+00 least_sq_term_17
+                      3.6943700000e+00 least_sq_term_18
+                      4.3379500000e+00 least_sq_term_19
+                      1.0200900000e+00 least_sq_term_20
+                      2.0574000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 41 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.2672153635e-01 radius
+                      9.5631001372e-01 time_gap
+                      8.5493827160e+00 strength_neighbor
+                      8.2812071331e-02 range_neighbor
+                      8.0908779150e+00 strength_geometry
+                      4.7921810700e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                     5.1790096636e-106
+
+---------------------
+Begin Evaluation   69
+---------------------
+Parameters for evaluation 69:
+                      1.2672153635e-01 radius
+                      9.5631001372e-01 time_gap
+                      8.5493827160e+00 strength_neighbor
+                      8.2812071331e-02 range_neighbor
+                      8.0908779150e+00 strength_geometry
+                      4.7921810700e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 69:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.1734600000e+00 least_sq_term_1
+                     -4.0193000000e-01 least_sq_term_2
+                      4.4580500000e+00 least_sq_term_3
+                      1.5066700000e+00 least_sq_term_4
+                     -9.8606000000e-01 least_sq_term_5
+                      1.0443200000e+00 least_sq_term_6
+                      4.3761600000e+00 least_sq_term_7
+                     -1.5475400000e+00 least_sq_term_8
+                      4.4512400000e+00 least_sq_term_9
+                      2.0841400000e+00 least_sq_term_10
+                     -8.6336000000e-01 least_sq_term_11
+                      1.4754700000e+00 least_sq_term_12
+                      2.5541200000e+00 least_sq_term_13
+                      1.3088900000e+00 least_sq_term_14
+                     -3.0765100000e+00 least_sq_term_15
+                      1.2047300000e+00 least_sq_term_16
+                      1.3278200000e+00 least_sq_term_17
+                     -1.8698800000e+00 least_sq_term_18
+                      4.9358500000e+00 least_sq_term_19
+                      5.4979000000e-01 least_sq_term_20
+                     -1.0140400000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 42 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.1783264746e-01 radius
+                      9.4725651578e-01 time_gap
+                      5.3395061728e+00 strength_neighbor
+                      9.0109739369e-02 range_neighbor
+                      5.4324417010e+00 strength_geometry
+                      4.8443072702e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      5.4811370898e+01
+
+---------------------
+Begin Evaluation   70
+---------------------
+Parameters for evaluation 70:
+                      1.1783264746e-01 radius
+                      9.4725651578e-01 time_gap
+                      5.3395061728e+00 strength_neighbor
+                      9.0109739369e-02 range_neighbor
+                      5.4324417010e+00 strength_geometry
+                      4.8443072702e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 70:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.7941200000e+00 least_sq_term_1
+                     -2.2847000000e-01 least_sq_term_2
+                      2.9389900000e+00 least_sq_term_3
+                      2.2282800000e+00 least_sq_term_4
+                     -1.0719000000e+00 least_sq_term_5
+                      1.4678000000e+00 least_sq_term_6
+                      4.8001800000e+00 least_sq_term_7
+                     -1.4249600000e+00 least_sq_term_8
+                      3.1859800000e+00 least_sq_term_9
+                      1.7559500000e+00 least_sq_term_10
+                     -1.9130700000e+00 least_sq_term_11
+                     -5.6430000000e-01 least_sq_term_12
+                      3.5533500000e+00 least_sq_term_13
+                      2.7855000000e-01 least_sq_term_14
+                     -3.3326700000e+00 least_sq_term_15
+                      3.1639700000e+00 least_sq_term_16
+                     -2.3145000000e-01 least_sq_term_17
+                     -1.9452200000e+00 least_sq_term_18
+                      7.3946000000e+00 least_sq_term_19
+                     -8.1561000000e-01 least_sq_term_20
+                     -1.4308500000e+00 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 43 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.6754458162e-01 radius
+                      7.7373113855e-01 time_gap
+                      8.4629629630e+00 strength_neighbor
+                      8.8024691358e-02 range_neighbor
+                      6.8398491084e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      8.5786162860e-12
+
+---------------------
+Begin Evaluation   71
+---------------------
+Parameters for evaluation 71:
+                      1.6754458162e-01 radius
+                      7.7373113855e-01 time_gap
+                      8.4629629630e+00 strength_neighbor
+                      8.8024691358e-02 range_neighbor
+                      6.8398491084e+00 strength_geometry
+                      5.2091906722e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 71:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.3986060000e+01 least_sq_term_1
+                     -7.3918000000e-01 least_sq_term_2
+                      5.8695900000e+00 least_sq_term_3
+                     -1.0614160000e+01 least_sq_term_4
+                     -4.9180700000e+00 least_sq_term_5
+                      9.3227100000e+00 least_sq_term_6
+                     -1.3638190000e+01 least_sq_term_7
+                     -1.4474100000e+00 least_sq_term_8
+                      4.6532700000e+00 least_sq_term_9
+                     -1.4298290000e+01 least_sq_term_10
+                      3.7780000000e-01 least_sq_term_11
+                      3.2872200000e+00 least_sq_term_12
+                     -8.7535900000e+00 least_sq_term_13
+                      1.9871700000e+00 least_sq_term_14
+                     -2.8119100000e+00 least_sq_term_15
+                     -8.1179300000e+00 least_sq_term_16
+                      1.9603500000e+00 least_sq_term_17
+                     -3.6076000000e-01 least_sq_term_18
+                     -8.8492500000e+00 least_sq_term_19
+                      1.5835800000e+00 least_sq_term_20
+                      3.7422000000e-01 least_sq_term_21
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 44 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3561042524e-01 radius
+                      8.8840877915e-01 time_gap
+                      6.0061728395e+00 strength_neighbor
+                      2.5743484225e-01 range_neighbor
+                      2.2527434842e+00 strength_geometry
+                      3.8278463649e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+Expected Improvement    =
+                      1.4853955773e-24
+
+---------------------
+Begin Evaluation   72
+---------------------
+Parameters for evaluation 72:
+                      1.3561042524e-01 radius
+                      8.8840877915e-01 time_gap
+                      6.0061728395e+00 strength_neighbor
+                      2.5743484225e-01 range_neighbor
+                      2.2527434842e+00 strength_geometry
+                      3.8278463649e-02 range_geometry
+                      1.5500000000e+00 desired_speed
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 72:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.5035540000e+01 least_sq_term_1
+                      2.8453000000e+00 least_sq_term_2
+                      1.4029000000e-01 least_sq_term_3
+                     -1.0838220000e+01 least_sq_term_4
+                     -1.5172200000e+00 least_sq_term_5
+                      2.9888000000e-01 least_sq_term_6
+                     -1.4773870000e+01 least_sq_term_7
+                      2.1963900000e+00 least_sq_term_8
+                     -2.8654000000e-01 least_sq_term_9
+                      1.4584800000e+00 least_sq_term_10
+                      3.6960000000e-02 least_sq_term_11
+                      1.3582220000e+01 least_sq_term_12
+                     -1.4448610000e+01 least_sq_term_13
+                      2.5997500000e+00 least_sq_term_14
+                     -1.1878000000e+00 least_sq_term_15
+                      2.3875400000e+00 least_sq_term_16
+                     -1.0330400000e+00 least_sq_term_17
+                      7.1758800000e+00 least_sq_term_18
+                      5.9167200000e+00 least_sq_term_19
+                     -9.0257000000e-01 least_sq_term_20
+                      8.0921200000e+00 least_sq_term_21
 
 
 
@@ -1311,44 +3831,44 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
 
 Stopping criteria not met: distConvergenceCntr (0) < distConvergenceLimit (1)
 Stopping criteria met:     eifConvergenceCntr (2) >= eifConvergenceLimit (2)
-Stopping criteria not met: globalIterCount (2) < maxIterations (80)
-<<<<< Function evaluation summary: 30 total (30 new, 0 duplicate)
+Stopping criteria not met: globalIterCount (44) < maxIterations (80)
+<<<<< Function evaluation summary: 72 total (72 new, 0 duplicate)
 <<<<< Best parameters          =
-                      1.0740740741e-01 radius
-                      9.0048010974e-01 time_gap
-                      7.8827160494e+00 strength_neighbor
-                      1.0366255144e-01 range_neighbor
-                      5.0805898491e+00 strength_geometry
-                      4.0363511660e-02 range_geometry
+                      1.4438957476e-01 radius
+                      8.3257887517e-01 time_gap
+                      9.4135802469e+00 strength_neighbor
+                      9.0109739369e-02 range_neighbor
+                      2.6045953361e+00 strength_geometry
+                      3.2283950617e-02 range_geometry
                       1.5500000000e+00 desired_speed
 <<<<< Best residual terms =
-                     -9.6707000000e-01
-                      1.2469500000e+00
-                     -8.5426000000e-01
-                     -1.8700000000e+00
-                     -3.2310600000e+00
-                     -9.0786000000e-01
-                      4.5455000000e-01
-                      7.4250000000e-02
-                     -5.7488000000e-01
-                     -1.6072000000e+00
-                     -2.8636000000e+00
-                     -1.0216100000e+00
-                     -6.7821000000e-01
-                     -2.0310000000e-01
-                     -3.2078700000e+00
-                     -1.1444600000e+00
-                     -3.4620000000e-02
-                     -1.9785300000e+00
-                      2.0293400000e+00
-                     -8.8572000000e-01
-                     -1.2056100000e+00
-<<<<< Best residual norm =  7.2611128406e+00; 0.5 * norm^2 =  2.6361879842e+01
-<<<<< Best evaluation ID: 29
+                      1.4344900000e+00
+                     -7.4179000000e-01
+                      3.2511300000e+00
+                      1.4667300000e+00
+                     -7.4412000000e-01
+                      5.1026000000e-01
+                      3.5335700000e+00
+                     -1.5891200000e+00
+                      3.3307800000e+00
+                      1.9913200000e+00
+                     -5.3595000000e-01
+                      3.7764700000e+00
+                      2.3496100000e+00
+                      1.2717100000e+00
+                     -2.3065700000e+00
+                      1.8919100000e+00
+                      1.2110700000e+00
+                     -1.9511000000e-01
+                      5.0344300000e+00
+                      1.8233000000e-01
+                      4.1791000000e-01
+<<<<< Best residual norm =  1.0191109561e+01; 0.5 * norm^2 =  5.1929357039e+01
+<<<<< Best evaluation ID: 45
 
 
 <<<<< Iterator efficient_global completed.
 <<<<< Environment execution completed.
 DAKOTA execution time in seconds:
-  Total CPU        =    6.84906 [parent =    6.84912, child =   -5.8e-05]
-  Total wall clock =    312.686
+  Total CPU        =    16.8363 [parent =    16.8364, child =     -5e-06]
+  Total wall clock =    424.883

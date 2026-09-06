@@ -34,10 +34,11 @@ def run(seed, out_file, desired_speed=1.55, radius=0.13, time_gap=0.8, strength_
     rng = np.random.default_rng(seed)
     geo = geometry()
     region = geo.buffer(-(radius + 0.03))
+    writer = jps.SqliteTrajectoryWriter(output_file=pathlib.Path(out_file), every_nth_frame=4)  # closed after the loop
     sim = jps.Simulation(
         model=jps.CollisionFreeSpeedModel(strength_neighbor_repulsion=strength_neighbor, range_neighbor_repulsion=range_neighbor,
                                           strength_geometry_repulsion=strength_geometry, range_geometry_repulsion=range_geometry),
-        geometry=geo, dt=DT, trajectory_writer=jps.SqliteTrajectoryWriter(output_file=pathlib.Path(out_file), every_nth_frame=4))
+        geometry=geo, dt=DT, trajectory_writer=writer)
     exit_id = sim.add_exit_stage(shapely.box(-2.4, -2.0, 6.0, -1.7))
     journey = sim.add_journey(jps.JourneyDescription([exit_id]))
     pending = arrivals()
@@ -68,4 +69,5 @@ def run(seed, out_file, desired_speed=1.55, radius=0.13, time_gap=0.8, strength_
                 still.append((ta, x, y))
         pending = still
         sim.iterate(10)
+    writer.close()
     return len(pending)
