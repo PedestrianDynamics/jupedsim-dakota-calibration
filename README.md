@@ -119,6 +119,12 @@ profile figure marks stalled and failed grid points instead of interpreting its
 yellow stall cliff as an ordinary residual landscape. `evaluate_front_occupancy.py`
 derives the number of people in the upstream measurement area over time for the
 paired 1.2 m runs, both at common set C and at the condition-specific profile
-points. For a production Dakota
+points. `directed_speed.py` (`cd crowdqueue && python3 directed_speed.py`,
+output `results/directed_speed.json` and `directed_speed.png`) decomposes the
+front-area speed into the radial component towards the gate and the tangential
+remainder for all 21 runs and the two profile points, and recomputes the h0 and
+h− norms with radial speed as a sensitivity check; people standing still
+register 0.09–0.13 m/s with the calibrated speed definition, which bounds how
+well the wide-corridor speed terms can be resolved. For a production Dakota
 calibration, capture failures separately and use a declared recovery value or a
 smooth, documented penalty; a finite fallback is not a physical zero.

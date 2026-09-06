@@ -68,3 +68,4 @@ python3 evaluate_front_occupancy.py
 python3 plot_motivation_profile.py
 python3 plot_front_occupancy.py
 python3 plot_hplus.py
+python3 directed_speed.py
