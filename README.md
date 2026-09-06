@@ -125,6 +125,8 @@ front-area speed into the radial component towards the gate and the tangential
 remainder for all 21 runs and the two profile points, and recomputes the h0 and
 h− norms with radial speed as a sensitivity check; people standing still
 register 0.09–0.13 m/s with the calibrated speed definition, which bounds how
-well the wide-corridor speed terms can be resolved. For a production Dakota
+well the wide-corridor speed terms can be resolved. `animate_motivation_pair.py`
+renders the two 63-person 1.2 m runs, experiment beside simulation, as
+`motivation_pair.gif` for the note (illustration only). For a production Dakota
 calibration, capture failures separately and use a declared recovery value or a
 smooth, documented penalty; a finite fallback is not a physical zero.
