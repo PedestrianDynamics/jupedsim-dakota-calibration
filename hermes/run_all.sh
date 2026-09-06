@@ -2,8 +2,8 @@
 # Full pipeline: baseline -> (Morris | EGO calibration) -> Sobol -> validation -> figures
 set -e
 setopt null_glob
-export PATH=~/opt/dakota/bin:$PATH
-H=/Users/chraibi/_sciebo_mixed/dakota/v2/hermes
+command -v dakota >/dev/null || export PATH=~/opt/dakota/bin:$PATH
+H=$ROOT/hermes
 builtin cd $H
 W=2.4,3.6,5.0
 [ -f baseline/baseline.json ] || python3 compare_baseline.py > logs_baseline.txt

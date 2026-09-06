@@ -1,9 +1,10 @@
 #!/bin/zsh
 # Recompute the whole CrowdQueue chain on the corrected scenario (late entrants injected).
 set -e; setopt null_glob
-export PATH=~/opt/dakota/bin:$PATH
+ROOT=$(cd "$(dirname "$0")" && pwd)
+command -v dakota >/dev/null || export PATH=~/opt/dakota/bin:$PATH
 export JPS_WORKERS=6
-V=/Users/chraibi/_sciebo_mixed/dakota/v2; C=$V/crowdqueue; LOG=$V/cq_chain.log
+V=$ROOT; C=$V/crowdqueue; LOG=$V/cq_chain.log
 H0=090_c_12_h0,110_c_12_h0,170_q_12_h0,190_q_34_h0,270_c_34_h0,030_c_56_h0,150_q_56_h0
 HM=100_c_12_h-,120_c_12_h-,180_q_12_h-,280_c_34_h-,040_c_56_h-,160_q_56_h-,240_q_23_h-,060_c_45_h-,260_q_45_h-
 best() { python3 -c "

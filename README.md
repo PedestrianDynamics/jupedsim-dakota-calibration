@@ -1,126 +1,80 @@
-# Calibrating JuPedSim's Collision Free Speed model with Dakota
+# Calibrating and validating JuPedSim's Collision Free Speed model with Dakota
 
-Code and results for the note [How do you validate a pedestrian model against real data?](https://pedestriandynamics.org/notes/dakota-calibration/) on pedestriandynamics.org.
+Code, Dakota inputs, results and figures for the note
+[How do you validate a pedestrian model against real data?](https://pedestriandynamics.org/notes/dakota-calibration/)
+on pedestriandynamics.org. This README describes the final state of the study;
+earlier intermediate results have been superseded and are not repeated here.
 
-Requirements: Python 3 with `jupedsim`, `pedpy`, `h5py`, `matplotlib`;
-[Dakota](https://github.com/snl-dakota/dakota/releases) 6.24 on the PATH.
+## Requirements
 
-Data: download `2009bottleneck_trajectories_hdf5.zip` from
-https://ped.fz-juelich.de/db/doku.php?id=hermes_bottleneck and unpack the
-five `ao-*.h5` files into `data/`.
+Python 3 with `jupedsim` 1.4.2, `pedpy` 1.4.0, `h5py`, `shapely`, `numpy`,
+`matplotlib`; [Dakota](https://github.com/snl-dakota/dakota/releases) 6.24 on
+the PATH (the scripts fall back to `~/opt/dakota/bin`). Experiment data: see
+`data/README.md` (three archive downloads, not included).
 
-| file | purpose |
+## Layout
+
+| folder | content |
 |---|---|
-| `observables.py` | flow, density, speed from a trajectory (experiment or simulation) |
-| `scenario.py` | JuPedSim replica of the bottleneck geometry |
-| `driver.py` | Dakota analysis driver: parameters in, observables (or residuals) out |
-| `compare_baseline.py` | default-parameter simulation vs experiment |
-| `morris/dakota.in` | Morris screening, 7 parameters |
-| `sobol/dakota.in` | Sobol indices, 5 parameters |
-| `calib/dakota.in` | EGO calibration, all five parameters free |
-| `calib_v0fixed/dakota.in` | EGO calibration with desired_speed fixed at 1.55 m/s |
-| `run_all.sh` | full pipeline |
-| `validate.py` | calibrated parameters on all five widths |
-| `plot_*.py` | figures |
-| `results/` | Dakota tabular outputs, calibration log, observables |
-| `figures/` | figures used in the note |
+| `hermes/` | Hermes 2009 wide-bottleneck study: driver, scenario, observables, Morris (`morris*/`), Sobol (`sobol*/`), calibrations (`calib/`, `calib_v0fixed/`, `calib_v0fixed_s9/`), validation and plotting scripts, `truncation_check.py` |
+| `crowdqueue/` | CrowdQueue 2018 narrow-gate study: driver, scenario, observables, calibrations from two starts (`calib_h0/`, `calib_h0_s9/`), motivation probes, per-seed results in `results/` |
+| `semicircle/` | BaSiGo 2013 unguided entrance: boundary-condition replay, density maps, results |
+| `joint/` | joint Hermes + CrowdQueue calibration (`driver_joint.py`, `best_params.json`) |
+| `results/` | Hermes validations (six seeds, sets A and B; three seeds, joint), baseline, seed-noise |
+| `figures/` | the figures of the note |
+| `run_all_fixed.sh` | recomputes the whole CrowdQueue chain, the Hermes validations and the semicircle from a checkout |
 
-Run a study from its folder:
+Every per-seed record in `crowdqueue/results/*.json` carries the run, seed,
+expected (tracked) and injected population, dropped injections, completion
+status (`emptied` / `not emptied` / `stalled` / `failed` with the exception
+type), the measurement window, active-passage and throughput flow, density,
+speed, and a subsampled N(t) curve.
 
-    python3 compare_baseline.py                    # writes exp_observables.json
-    cd morris && HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
-    cd sobol  && HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
-    cd calib  && HERMES_RESIDUALS=1 JPS_N_SEEDS=2 HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
-    python3 validate.py <desired_speed> <radius> <time_gap> <strength_neighbor> <range_neighbor>
+## Running
 
-Setup after Liao et al. (2014): 20 m corridor, 1 m boards, semicircular holding
-area r = 8.618 m with 350 agents at 3 /m2. Calibrated on b = 2.4, 3.6, 5.0 m,
-validated on 3.0 and 4.4 m. `run_all.sh` runs the whole pipeline.
+    cd hermes && python3 compare_baseline.py            # baseline and exp_observables.json
+    cd hermes/morris_r20 && HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
+    cd hermes/calib_v0fixed && HERMES_RESIDUALS=1 JPS_N_SEEDS=2 HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
+    ./run_all_fixed.sh                                   # CrowdQueue chain + Hermes validations + semicircle (about 1 h)
 
-| parameter | default | all five free (`calib/`) | desired speed fixed (`calib_v0fixed/`) |
-|---|---|---|---|
-| desired_speed [m/s] | 1.2 | 0.80 (lower bound) | 1.55 (measured free speed) |
-| radius [m] | 0.20 | 0.141 | 0.127 |
-| time_gap [s] | 1.0 | 0.561 | 0.811 |
-| strength_neighbor_repulsion | 8 | 6.05 | 2.09 |
-| range_neighbor_repulsion [m] | 0.10 | 0.155 | 0.248 |
+## Final parameter sets
 
-Wall repulsion kept at defaults (strength 5, range 0.02).
+Desired speed fixed at the measured 1.55 m/s in all calibrated sets. Sets A/B and
+C/D are two optimizer starts on the same data.
 
-## Second experiment: CrowdQueue (`crowdqueue/`)
+| parameter | default | Hermes A | Hermes B | CrowdQueue C | CrowdQueue D | joint |
+|---|---|---|---|---|---|---|
+| radius [m] | 0.20 | 0.127 | 0.148 | 0.144 | 0.101 | 0.115 |
+| time_gap [s] | 1.0 | 0.811 | 0.553 | 0.833 | 0.958 | 1.024 |
+| strength_neighbor | 8 | 2.09 | 9.44 | 9.41 | 1.70 | 4.01 |
+| range_neighbor [m] | 0.10 | 0.248 | 0.102 | 0.090 | 0.336 | 0.190 |
+| strength_geometry | 5 | 5 (fixed) | 5 (fixed) | 2.60 | 1.39 | 2.60 |
+| range_geometry [m] | 0.02 | 0.02 (fixed) | 0.02 (fixed) | 0.032 | 0.105 | 0.045 |
 
-Wuppertal 2018 entrance experiment (doi:10.34735/ped.2018.1): 0.5 m gate,
-corridor widths 1.2–5.6 m, baseline / low / high motivation, 11–75 people.
-Download `trajectories_hdf5.zip` from
-https://ped.fz-juelich.de/db/doku.php?id=crowdqueue into `data/crowdqueue/`.
-Geometry and initial positions come from the HDF5 files.
+## Final findings (short)
 
-| file | purpose |
-|---|---|
-| `observables_cq.py` | gate flow (clog-aware), density and speed in the corridor |
-| `scenario_cq.py` | geometry from the archive WKT, agents at the measured first-frame positions |
-| `driver_cq.py` | Dakota driver, residuals normalised by sigma |
-| `evaluate_cq.py` | one parameter set on all runs, 3 seeds |
-| `calib_h0/` | EGO, 6 parameters (wall repulsion free), baseline-motivation runs at 1.2/3.4/5.6 m |
-| `probe_hminus/`, `probe_hplus/` | time gap refit on low / high motivation runs |
-| `results/` | transfer test with Hermes parameters, calibrated, refit |
+- Hermes: both calibrated sets improve all observables substantially; by the
+  stated tolerance (6 % flow, 10 % density and speed) both fail at the held-out
+  3.0 m flow and at the 5.0 m calibration flow, set A also at the held-out 4.4 m
+  speed. At 5.0 m set A keeps density and underpredicts speed, set B the reverse.
+- Sobol: the group of influential parameters is stable across 40/80/160 base
+  samples and three replicate seeds; magnitudes and within-group order are not.
+- CrowdQueue: Hermes set A stalls in 46 of 63 seeds, set B empties 62 but is
+  20–40 % too fast. Set C (best of two starts) empties all 63 seeds with baseline
+  flows +12 % on average (−19 % to +36 %). The model does not reproduce the
+  difference between motivation conditions in either direction.
+- Joint: Hermes norm 7.9 vs 2.4–2.7 for the specialists, CrowdQueue norm 12.0 vs
+  10.9, 60 of 63 seeds emptied. No set found meets the tolerances in both.
+- Semicircle: Hermes A and the joint set drain the crowd at 1.3 and 1.7 /s where
+  the experiment gave 0.6 /s, with a regular, too-shallow density profile.
 
-| parameter | Hermes (v0 fixed) | CrowdQueue h0 |
-|---|---|---|
-| radius [m] | 0.127 | 0.101 (lower bound) |
-| time_gap [s] | 0.811 | 0.958 |
-| strength_neighbor | 2.09 | 1.70 |
-| range_neighbor [m] | 0.248 | 0.336 |
-| strength_geometry | 5 (fixed) | 1.39 |
-| range_geometry [m] | 0.02 (fixed) | 0.105 |
+## Pipeline corrections (2026-09-06)
 
-Findings: the Hermes parameters clog at the 0.5 m gate in 16 of 21 runs; after
-recalibration the model reaches ~1.1 /s and stays there, matching low-motivation
-runs, undershooting baseline runs by 10–30 % and clogging in some 1.2 m corridor
-seeds, and it cannot reach the 2.1 /s of the high-motivation run at any time gap
-without destroying density and speed.
-
-## Joint calibration (`joint/`) and semicircle validation (`semicircle/`)
-
-`joint/` calibrates the six parameters on Hermes (3 widths) and CrowdQueue h0
-(7 runs) together, 30 sigma-normalised residuals (`driver_joint.py` chains the
-two drivers). `semicircle/` replays the BaSiGo 2013 unguided entrance
-(doi:10.34735/ped.2013.2, `data/semicircle/entrance_1.h5`): agents are injected
-where and when they first appear in the data; nothing is fitted.
-
-| parameter | Hermes | CrowdQueue h0 | joint |
-|---|---|---|---|
-| radius [m] | 0.127 | 0.101 | 0.110 |
-| time_gap [s] | 0.811 | 0.958 | 0.807 |
-| strength_neighbor | 2.09 | 1.70 | 2.49 |
-| range_neighbor [m] | 0.248 | 0.336 | 0.280 |
-| strength_geometry | 5 (fixed) | 1.39 | 4.36 |
-| range_geometry [m] | 0.02 (fixed) | 0.105 | 0.066 |
-
-The joint set overshoots the Hermes flow by 15–25 % at four widths, clogs in
-four CrowdQueue runs and is bimodal at the semicircle entrance (flow 0.87 ± 0.65
-/s vs 0.57 measured). Hermes parameters at the semicircle: 1.33 /s, too fast and
-too sparse; CrowdQueue parameters: agents pushed through the wall in every seed.
-
-## Sensitivity convergence (`sobol_N*`, `morris_r20`)
-
-Sobol replicates at 40 base samples (seeds 3, 11, 17) and runs at 80 and 160
-base samples (`plot_sobol_convergence.py`); Morris with twenty trajectories.
-At N = 40 replicate totals differ by up to 0.25 and 20 of 45 first-order indices
-exceed their totals; at N = 160 none do. The ranking is stable across all runs.
-
-## Corrections after review (2026-09-06)
-
-Three pipeline errors were found and fixed, and everything downstream was
-recomputed (`run_all_fixed.sh`): (1) CrowdQueue runs 110/120/170/270/280 have
-participants entering the tracked corridor after the first frame; they are now
-injected at their first observation (`observables_cq.arrivals`). (2) The JuPedSim
-`SqliteTrajectoryWriter` must be closed (`writer.close()`), otherwise the last
-100 frames of every run are lost. (3) The CrowdQueue walkable area is clipped to
-the corridor and the exit stage placed at the gate outlet; before, the router
-could send agents around the barriers. Hermes calibrations and sensitivity
-analyses use steady-phase observables unaffected by (2) and were kept.
-
-Final parameter sets: see the article table (sets A/B on Hermes, C/D on
-CrowdQueue, and the joint set). `results/*.json` and `crowdqueue/results/*.json`
-hold per-seed outcomes with completion status.
+Three errors were found by review and fixed; everything downstream was
+recomputed: (1) participants entering the tracked corridor after the first frame
+are injected at their first observation (`crowdqueue/observables_cq.arrivals`);
+(2) the JuPedSim trajectory writer is closed so no frames are lost
+(`writer.close()`); (3) the CrowdQueue walkable area is clipped to the corridor
+and the exit placed at the gate outlet. `hermes/truncation_check.py` shows the
+retained Hermes analyses are insensitive to (2): at most two crossings and 0.4 %
+in any observable.

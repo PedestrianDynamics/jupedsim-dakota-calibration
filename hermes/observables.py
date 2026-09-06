@@ -41,4 +41,4 @@ def compute(traj, gap_width):
     f_lo, f_hi = nt.index[lo], nt.index[hi]
     rho = density.loc[f_lo:f_hi, "density"].mean()
     v = speed.loc[f_lo:f_hi].mean()
-    return {"flow": flow, "density": rho, "speed": v, "t": t, "n": n, "n_total": int(n_tot)}
+    return {"flow": flow, "density": rho, "speed": v, "t": t, "n": n, "n_total": int(n_tot), "window": (float(t[lo]), float(t[hi]))}

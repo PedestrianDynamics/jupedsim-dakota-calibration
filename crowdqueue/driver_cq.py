@@ -36,22 +36,33 @@ def read_params(path):
 
 
 def one(run_name, seed, out_file, kwargs):
-    """Returns the three observables plus a status:
-    'ok'      every agent passed the gate within the 120 s cap,
-    'clogged' the run did not empty within the cap (flow = passed / run time),
-    'failed'  JuPedSim aborted (an agent was pushed through a wall); observables set to 0."""
-    width = obs.runs()[run_name]["width"]
+    """Simulate one run with one seed and return a complete record:
+    observables, measurement window, expected (tracked) and injected population,
+    completion status and, for failures, the exception category.
+    Status: 'emptied'      every expected agent passed the gate within the 120 s cap,
+            'not emptied'  not everyone passed, discharge continued to the end,
+            'stalled'      not everyone passed and there was a >= 20 s interval without a crossing,
+            'failed'       the simulation raised; see 'error_type' and 'error'."""
+    run = obs.runs()[run_name]
+    expected = len(obs.arrivals(run["file"]))  # every tracked participant
+    rec = dict(run=run_name, seed=seed, expected=expected, injected=0, dropped=0,
+               flow=0.0, density=0.0, speed=0.0, flow_active=0.0, flow_total=0.0, max_gap=0.0,
+               passed=0, window=None, status="failed", error_type=None, error=None, nt=[[], []])
     try:
-        dropped = scenario_cq.run(run_name, seed, out_file, **kwargs)
+        rec["dropped"] = scenario_cq.run(run_name, seed, out_file, **kwargs)
         tr = obs.load_simulation(out_file)
-        r = obs.compute(tr, width)
-        status = "emptied" if r["emptied"] else ("stalled" if r["max_gap"] >= 20.0 else "not emptied")
-        return {**{k: float(r[k]) for k in OBS}, "flow_active": r["flow_active"], "flow_total": r["flow_total"],
-                "max_gap": r["max_gap"], "status": status, "passed": r["n_total"], "agents": r["n_agents"], "dropped": dropped,
-                "nt": [list(map(float, r["t"][::5])), list(map(int, r["n"][::5]))]}
-    except Exception as e:
-        print(f"run failed ({run_name}, seed={seed}): {e}", file=sys.stderr)
-        return dict(flow=0.0, density=0.0, speed=0.0, flow_active=0.0, flow_total=0.0, max_gap=0.0, status="failed", passed=0, agents=0, dropped=0, nt=[[], []], error=str(e)[:80])
+        r = obs.compute(tr, run["width"])
+        rec["injected"] = r["n_agents"]
+        emptied = r["n_total"] >= expected and rec["dropped"] == 0
+        rec.update({k: float(r[k]) for k in OBS}, flow_active=r["flow_active"], flow_total=r["flow_total"],
+                   max_gap=r["max_gap"], passed=r["n_total"], window=list(r["window"]),
+                   status="emptied" if emptied else ("stalled" if r["max_gap"] >= 20.0 else "not emptied"),
+                   nt=[list(map(float, r["t"][::5])), list(map(int, r["n"][::5]))])
+    except Exception as e:  # keep the category: a wall violation is a model failure, anything else is a pipeline error
+        rec["error_type"] = type(e).__name__
+        rec["error"] = str(e)[:120]
+        print(f"run failed ({run_name}, seed={seed}): {type(e).__name__}: {e}", file=sys.stderr)
+    return rec
 
 
 def main():

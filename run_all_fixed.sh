@@ -1,7 +1,8 @@
 #!/bin/zsh
 set -e; setopt null_glob
-V=/Users/chraibi/_sciebo_mixed/dakota/v2; export JPS_WORKERS=6
-$V/run_cq_chain.sh
+ROOT=$(cd "$(dirname "$0")" && pwd)
+V=$ROOT; export JPS_WORKERS=6
+$ROOT/run_cq_chain.sh
 builtin cd $V/hermes
 python3 validate.py 1.55 0.12749 0.81118 2.0872 0.24816 > logs_validation.txt 2>&1; cp validation/validation.json validation/validation_seed5.json
 python3 validate.py 1.55 0.14763 0.55329 9.4434 0.10243 > logs_validation_B.txt 2>&1; cp validation/validation.json validation/validation_seed9.json; cp validation/validation_seed5.json validation/validation.json

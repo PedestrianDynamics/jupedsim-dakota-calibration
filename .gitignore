@@ -1,3 +1,6 @@
+# results and figures are part of the record: override any global ignore of json/png
+!*.json
+!*.png
 runs/
 *.sqlite
 dakota.rst
@@ -6,5 +9,4 @@ console.log
 fort.*
 __pycache__/
 data/*.h5
-baseline/
-validation/
+data/**/*.h5

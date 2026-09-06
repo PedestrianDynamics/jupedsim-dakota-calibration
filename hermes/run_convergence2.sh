@@ -1,8 +1,9 @@
 #!/bin/zsh
 set -e; setopt null_glob
-export PATH=~/opt/dakota/bin:$PATH
+ROOT=$(cd "$(dirname "$0")/.." && pwd)
+command -v dakota >/dev/null || export PATH=~/opt/dakota/bin:$PATH
 export JPS_WORKERS=6
-H=/Users/chraibi/_sciebo_mixed/dakota/v2/hermes
+H=$ROOT/hermes
 for d in sobol_N80_s3 sobol_N160_s3 morris_r20; do
   builtin cd $H/$d; rm -rf runs dakota.rst LHS_* fort.*
   HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out > console.log 2>&1

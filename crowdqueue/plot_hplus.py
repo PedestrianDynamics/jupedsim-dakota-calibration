@@ -11,10 +11,17 @@ for ax, (k, lab) in zip(axes, [("flow", "gate flow [1/s]"), ("density", "density
     ax.axhspan(exp[k] * (1 - REL[k]), exp[k] * (1 + REL[k]), color="0.85", label="experiment ± assumed uncertainty")
     ax.axhline(exp[k], color="k")
     for r in d["results"]:
-        ax.plot(r["time_gap"], r[k], "o" if r["status"] == "emptied" else "o", ms=4, color="C1", mfc="C1" if r["status"] == "emptied" else "none")
-    T = d["T"]; m = [np.mean([r[k] for r in d["results"] if r["time_gap"] == t]) for t in T]
-    ax.plot(T, m, "-", color="C1", lw=1, label="mean of 3 seeds (open: not emptied)")
+        if k == "flow":
+            # emptied runs: active-passage flow (filled); incomplete runs: throughput over the run (open), a different estimator
+            v = r["flow_active"] if r["status"] == "emptied" else r["flow_total"]
+        else:
+            v = r[k]
+        ax.plot(r["time_gap"], v, "o", ms=4, color="C1", mfc="C1" if r["status"] == "emptied" else "none")
+    T = d["T"]
+    m = [np.mean([r["flow_active"] if k == "flow" else r[k] for r in d["results"] if r["time_gap"] == t and r["status"] == "emptied"] or [np.nan]) for t in T]
+    ax.plot(T, m, "-", color="C1", lw=1, label="mean over emptied seeds" + (" (active-passage flow)" if k == "flow" else ""))
     ax.set_xlabel("time gap [s]"); ax.set_ylabel(lab); ax.set_ylim(bottom=0)
-axes[0].legend(fontsize=8)
+axes[0].legend(fontsize=7.5)
+axes[0].text(0.02, 0.02, "open markers: run not emptied, throughput over the run", transform=axes[0].transAxes, fontsize=7)
 fig.suptitle("High-motivation run 020 (1.2 m corridor, 11 people): sweep of the time gap, other parameters at CrowdQueue set C", fontsize=10)
 fig.tight_layout(); fig.savefig("hplus_sweep.png", dpi=150); print("fig8 ok")
