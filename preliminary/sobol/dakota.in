@@ -1,0 +1,35 @@
+# Global sensitivity analysis: Sobol indices via variance-based decomposition.
+# Cost = samples * (n_vars + 2) evaluations = 100 * 5 = 500 runs.
+# Run:  dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'sobol_samples.dat'
+
+method
+  sampling
+    sample_type lhs
+    samples = 100
+    seed = 42
+    variance_based_decomp
+
+variables
+  uniform_uncertain = 3
+    descriptors   'desired_speed'  'door_width'  'sim_seed'
+    lower_bounds   0.8             0.8           1
+    upper_bounds   1.6             2.4           10000
+
+interface
+  fork
+    analysis_drivers = 'python3 driver.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py'
+  asynchronous evaluation_concurrency = 10
+
+responses
+  response_functions = 2
+    descriptors 'evacuation_time' 'door_flow'
+  no_gradients
+  no_hessians

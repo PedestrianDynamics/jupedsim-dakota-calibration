@@ -1,0 +1,865 @@
+Dakota version 6.24 released May 15 2026.
+Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
+Running MPI Dakota executable in serial mode.
+Start time: Sat Sep  5 10:44:33 2026
+
+------------------
+Begin Dakota input
+------------------
+# Calibration with a Gaussian-process surrogate (EGO): derivative-free, suited
+# to noisy/chaotic simulators. The driver runs every experiment in
+# experiments.dat, averages JPS_N_SEEDS replicates, and returns residuals.
+# Run:  JPS_N_SEEDS=5 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'calib_history.dat'
+
+method
+  efficient_global
+    seed = 7
+    max_iterations = 40
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 2
+    descriptors    'desired_speed'  'radius'
+    initial_point   1.4             0.13
+    lower_bounds    0.8             0.12
+    upper_bounds    1.6             0.20
+
+interface
+  fork
+    analysis_drivers = 'python3 driver_calib.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py' '../driver_calib.py' 'experiments.dat'
+  asynchronous evaluation_concurrency = 2
+
+responses
+  calibration_terms = 6
+    descriptors 't_0.9m' 't_1.2m' 't_1.8m' 'flow_0.9m' 'flow_1.2m' 'flow_1.8m'
+    # weights = 1/sigma^2 from 10-seed noise at the truth: sigma_t = 1.08 s, sigma_flow = 0.05 1/s
+    weights = 0.86 0.86 0.86 400 400 400
+  no_gradients
+  no_hessians
+
+----------------
+End Dakota input
+----------------
+
+Using Dakota parser: standard
+Writing new restart file 'dakota.rst'.
+
+>>>>> Executing environment.
+
+>>>>> Running efficient_global iterator.
+
+>>>>> Building global_kriging approximations.
+
+NonD lhs Samples = 6 Seed (user-specified) = 7
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      1.1706558394e+00 desired_speed
+                      1.6410683689e-01 radius
+
+(Asynchronous job 1 added to queue)
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      1.5970963861e+00 desired_speed
+                      1.9018494454e-01 radius
+
+(Asynchronous job 2 added to queue)
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      9.6364520999e-01 desired_speed
+                      1.8051327829e-01 radius
+
+(Asynchronous job 3 added to queue)
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      1.3917878966e+00 desired_speed
+                      1.2964620240e-01 radius
+
+(Asynchronous job 4 added to queue)
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                      8.1017443882e-01 desired_speed
+                      1.3940779877e-01 radius
+
+(Asynchronous job 5 added to queue)
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                      1.2425296304e+00 desired_speed
+                      1.5970652688e-01 radius
+
+(Asynchronous job 6 added to queue)
+
+Blocking synchronize of 6 asynchronous evaluations
+First pass: initiating 2 local asynchronous jobs
+Initiating evaluation 1
+nonblocking fork: python3 driver_calib.py params.in results.out
+Initiating evaluation 2
+nonblocking fork: python3 driver_calib.py params.in results.out
+Second pass: scheduling 4 remaining local asynchronous jobs
+Waiting on completed jobs
+Evaluation 2 has completed
+Initiating evaluation 3
+nonblocking fork: python3 driver_calib.py params.in results.out
+Waiting on completed jobs
+Evaluation 1 has completed
+Initiating evaluation 4
+nonblocking fork: python3 driver_calib.py params.in results.out
+Waiting on completed jobs
+Evaluation 4 has completed
+Initiating evaluation 5
+nonblocking fork: python3 driver_calib.py params.in results.out
+Waiting on completed jobs
+Evaluation 3 has completed
+Initiating evaluation 6
+nonblocking fork: python3 driver_calib.py params.in results.out
+Waiting on completed jobs
+Evaluation 5 has completed
+Waiting on completed jobs
+Evaluation 6 has completed
+
+Active response data for evaluation 1:
+Active set vector = { 1 1 1 1 1 1 }
+                     -4.8960000000e+00 t_0.9m
+                     -3.0460000000e+00 t_1.2m
+                      8.2000000000e-02 t_1.8m
+                      1.5450000000e-01 flow_0.9m
+                      1.4760000000e-01 flow_1.2m
+                      8.0000000000e-03 flow_1.8m
+
+
+Active response data for evaluation 2:
+Active set vector = { 1 1 1 1 1 1 }
+                      4.9960000000e+00 t_0.9m
+                     -2.2540000000e+00 t_1.2m
+                     -2.3400000000e-01 t_1.8m
+                     -1.5790000000e-01 flow_0.9m
+                     -5.6900000000e-02 flow_1.2m
+                     -2.2500000000e-01 flow_1.8m
+
+
+Active response data for evaluation 3:
+Active set vector = { 1 1 1 1 1 1 }
+                      7.6500000000e+00 t_0.9m
+                      6.0180000000e+00 t_1.2m
+                      4.9660000000e+00 t_1.8m
+                     -1.3610000000e-01 flow_0.9m
+                     -1.9760000000e-01 flow_1.2m
+                     -3.5600000000e-01 flow_1.8m
+
+
+Active response data for evaluation 4:
+Active set vector = { 1 1 1 1 1 1 }
+                     -1.7440000000e+01 t_0.9m
+                     -1.1364000000e+01 t_1.2m
+                     -5.9980000000e+00 t_1.8m
+                      6.8540000000e-01 flow_0.9m
+                      7.9150000000e-01 flow_1.2m
+                      8.8200000000e-01 flow_1.8m
+
+
+Active response data for evaluation 5:
+Active set vector = { 1 1 1 1 1 1 }
+                     -4.1180000000e+00 t_0.9m
+                     -5.5400000000e-01 t_1.2m
+                      2.5260000000e+00 t_1.8m
+                      2.9050000000e-01 flow_0.9m
+                      2.9110000000e-01 flow_1.2m
+                      2.8180000000e-01 flow_1.8m
+
+
+Active response data for evaluation 6:
+Active set vector = { 1 1 1 1 1 1 }
+                     -7.3680000000e+00 t_0.9m
+                     -4.1640000000e+00 t_1.2m
+                     -1.6480000000e+00 t_1.8m
+                      2.1460000000e-01 flow_0.9m
+                      2.0620000000e-01 flow_1.2m
+                      1.7580000000e-01 flow_1.8m
+
+
+>>>>> Appending 6 points to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+Constructing global approximations with no anchor, 6 DACE samples, and 0 reused points.
+
+<<<<< global_kriging approximation builds completed.
+
+>>>>> Initiating global iteration 1 (acquisition batch 1)
+Beginning Approximate Fn Evaluations...
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.4668698877e+00 desired_speed
+                      1.7789971041e-01 radius
+Expected Improvement    =
+                      3.5522283589e+01
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                      1.4668698877e+00 desired_speed
+                      1.7789971041e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 7:
+Active set vector = { 1 1 1 1 1 1 }
+                     -1.8780000000e+00 t_0.9m
+                     -3.4720000000e+00 t_1.2m
+                     -8.4800000000e-01 t_1.8m
+                     -5.7000000000e-03 flow_0.9m
+                      7.4500000000e-02 flow_1.2m
+                     -8.0300000000e-02 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 2 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.3936967603e+00 desired_speed
+                      1.7729275686e-01 radius
+Expected Improvement    =
+                      4.1652778542e+00
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                      1.3936967603e+00 desired_speed
+                      1.7729275686e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 8:
+Active set vector = { 1 1 1 1 1 1 }
+                     -5.9400000000e-01 t_0.9m
+                     -2.7720000000e+00 t_1.2m
+                     -1.1480000000e+00 t_1.8m
+                     -2.8800000000e-02 flow_0.9m
+                      3.9500000000e-02 flow_1.2m
+                     -4.3500000000e-02 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 3 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2849328524e+00 desired_speed
+                      1.7488029715e-01 radius
+Expected Improvement    =
+                      3.0308542543e+00
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                      1.2849328524e+00 desired_speed
+                      1.7488029715e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 9:
+Active set vector = { 1 1 1 1 1 1 }
+                     -2.3280000000e+00 t_0.9m
+                     -1.3760000000e+00 t_1.2m
+                     -4.2000000000e-02 t_1.8m
+                      3.4300000000e-02 flow_0.9m
+                      2.2400000000e-02 flow_1.2m
+                     -1.0770000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 4 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.3565479517e+00 desired_speed
+                      1.7754339616e-01 radius
+Expected Improvement    =
+                      1.9950350716e+00
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                      1.3565479517e+00 desired_speed
+                      1.7754339616e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 10:
+Active set vector = { 1 1 1 1 1 1 }
+                     -3.5400000000e-01 t_0.9m
+                     -1.7500000000e+00 t_1.2m
+                     -9.8000000000e-02 t_1.8m
+                     -2.6100000000e-02 flow_0.9m
+                      1.4700000000e-02 flow_1.2m
+                     -1.5260000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 5 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2396913298e+00 desired_speed
+                      1.7621478207e-01 radius
+Expected Improvement    =
+                      4.5398732765e+00
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                      1.2396913298e+00 desired_speed
+                      1.7621478207e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 11:
+Active set vector = { 1 1 1 1 1 1 }
+                      8.7200000000e-01 t_0.9m
+                     -5.4800000000e-01 t_1.2m
+                      4.0800000000e-01 t_1.8m
+                     -4.0600000000e-02 flow_0.9m
+                     -1.5000000000e-02 flow_1.2m
+                     -1.2750000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 6 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2417370884e+00 desired_speed
+                      1.7442643680e-01 radius
+Expected Improvement    =
+                      3.3126261202e+00
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                      1.2417370884e+00 desired_speed
+                      1.7442643680e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 12:
+Active set vector = { 1 1 1 1 1 1 }
+                     -8.0400000000e-01 t_0.9m
+                     -7.5400000000e-01 t_1.2m
+                      6.4200000000e-01 t_1.8m
+                      3.6000000000e-03 flow_0.9m
+                     -1.5100000000e-02 flow_1.2m
+                     -1.3570000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 7 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2628645513e+00 desired_speed
+                      1.7631910221e-01 radius
+Expected Improvement    =
+                      2.4002328482e+00
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                      1.2628645513e+00 desired_speed
+                      1.7631910221e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 13:
+Active set vector = { 1 1 1 1 1 1 }
+                      3.0000000000e-02 t_0.9m
+                     -1.2840000000e+00 t_1.2m
+                      3.0000000000e-01 t_1.8m
+                     -2.6200000000e-02 flow_0.9m
+                      7.1000000000e-03 flow_1.2m
+                     -1.1040000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 8 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.2600826809e+00 desired_speed
+                      1.7596705310e-01 radius
+Expected Improvement    =
+                      1.1533610815e-01
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                      1.2600826809e+00 desired_speed
+                      1.7596705310e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 14:
+Active set vector = { 1 1 1 1 1 1 }
+                     -4.4600000000e-01 t_0.9m
+                     -4.9200000000e-01 t_1.2m
+                      4.8000000000e-02 t_1.8m
+                     -1.6000000000e-02 flow_0.9m
+                     -1.8600000000e-02 flow_1.2m
+                     -7.5800000000e-02 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 9 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2441034847e+00 desired_speed
+                      1.7539738184e-01 radius
+Expected Improvement    =
+                      1.0555330266e+00
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                      1.2441034847e+00 desired_speed
+                      1.7539738184e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 15:
+Active set vector = { 1 1 1 1 1 1 }
+                     -5.4000000000e-02 t_0.9m
+                     -2.4600000000e-01 t_1.2m
+                      6.0000000000e-01 t_1.8m
+                     -1.7300000000e-02 flow_0.9m
+                     -3.9200000000e-02 flow_1.2m
+                     -1.4810000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 10 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2582506807e+00 desired_speed
+                      1.7537856507e-01 radius
+Expected Improvement    =
+                      1.8597434512e+00
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                      1.2582506807e+00 desired_speed
+                      1.7537856507e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 16:
+Active set vector = { 1 1 1 1 1 1 }
+                      2.3000000000e-01 t_0.9m
+                     -6.6000000000e-01 t_1.2m
+                     -4.0200000000e-01 t_1.8m
+                     -3.0200000000e-02 flow_0.9m
+                     -2.3900000000e-02 flow_1.2m
+                     -1.0310000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 11 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2680108109e+00 desired_speed
+                      1.7584110623e-01 radius
+Expected Improvement    =
+                      3.6844102095e-01
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                      1.2680108109e+00 desired_speed
+                      1.7584110623e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 17:
+Active set vector = { 1 1 1 1 1 1 }
+                     -1.3260000000e+00 t_0.9m
+                     -1.0600000000e+00 t_1.2m
+                     -7.0000000000e-02 t_1.8m
+                      1.1800000000e-02 flow_0.9m
+                     -1.0500000000e-02 flow_1.2m
+                     -9.8200000000e-02 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 12 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.2117767855e+00 desired_speed
+                      1.7551399560e-01 radius
+Expected Improvement    =
+                      5.1525517114e-01
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                      1.2117767855e+00 desired_speed
+                      1.7551399560e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 18:
+Active set vector = { 1 1 1 1 1 1 }
+                      6.6200000000e-01 t_0.9m
+                     -3.3600000000e-01 t_1.2m
+                      6.4400000000e-01 t_1.8m
+                     -3.4000000000e-02 flow_0.9m
+                     -2.8400000000e-02 flow_1.2m
+                     -1.3050000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 13 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.2636744248e+00 desired_speed
+                      1.7589273943e-01 radius
+Expected Improvement    =
+                      5.1652618601e-02
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                      1.2636744248e+00 desired_speed
+                      1.7589273943e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 19:
+Active set vector = { 1 1 1 1 1 1 }
+                     -3.9200000000e-01 t_0.9m
+                     -8.6200000000e-01 t_1.2m
+                      2.7200000000e-01 t_1.8m
+                     -1.7200000000e-02 flow_0.9m
+                      7.0000000000e-04 flow_1.2m
+                     -1.3470000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 14 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2306637990e+00 desired_speed
+                      1.7454731569e-01 radius
+Expected Improvement    =
+                      3.3566706855e-01
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                      1.2306637990e+00 desired_speed
+                      1.7454731569e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 20:
+Active set vector = { 1 1 1 1 1 1 }
+                     -1.6840000000e+00 t_0.9m
+                     -1.0420000000e+00 t_1.2m
+                      4.0000000000e-01 t_1.8m
+                      2.4800000000e-02 flow_0.9m
+                     -1.1000000000e-02 flow_1.2m
+                     -1.4080000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 15 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.2345681521e+00 desired_speed
+                      1.7467667468e-01 radius
+Expected Improvement    =
+                      6.1087858495e-03
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                      1.2345681521e+00 desired_speed
+                      1.7467667468e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 21:
+Active set vector = { 1 1 1 1 1 1 }
+                     -2.0980000000e+00 t_0.9m
+                     -1.6800000000e-01 t_1.2m
+                      4.4000000000e-01 t_1.8m
+                      3.7800000000e-02 flow_0.9m
+                     -3.3800000000e-02 flow_1.2m
+                     -1.0660000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 16 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2414982409e+00 desired_speed
+                      1.7582249017e-01 radius
+Expected Improvement    =
+                      2.9511771534e-01
+
+---------------------
+Begin Evaluation   22
+---------------------
+Parameters for evaluation 22:
+                      1.2414982409e+00 desired_speed
+                      1.7582249017e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 22:
+Active set vector = { 1 1 1 1 1 1 }
+                      1.0300000000e+00 t_0.9m
+                     -4.2400000000e-01 t_1.2m
+                      4.3000000000e-01 t_1.8m
+                     -4.4700000000e-02 flow_0.9m
+                     -2.4000000000e-02 flow_1.2m
+                     -1.1640000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 17 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.2444446953e+00 desired_speed
+                      1.7540370427e-01 radius
+Expected Improvement    =
+                      7.8369921978e-03
+
+---------------------
+Begin Evaluation   23
+---------------------
+Parameters for evaluation 23:
+                      1.2444446953e+00 desired_speed
+                      1.7540370427e-01 radius
+
+blocking fork: python3 driver_calib.py params.in results.out
+
+Active response data for evaluation 23:
+Active set vector = { 1 1 1 1 1 1 }
+                     -6.0000000000e-01 t_0.9m
+                     -2.9000000000e-01 t_1.2m
+                      7.7200000000e-01 t_1.8m
+                     -1.0800000000e-02 flow_0.9m
+                     -2.5300000000e-02 flow_1.2m
+                     -1.5960000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 18 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.2444446953e+00 desired_speed
+                      1.7540370427e-01 radius
+Expected Improvement    =
+                      8.2227181023e-03
+
+---------------------
+Begin Evaluation   24
+---------------------
+Parameters for evaluation 24:
+                      1.2444446953e+00 desired_speed
+                      1.7540370427e-01 radius
+
+Duplication detected: analysis_drivers not invoked.
+
+Active response data retrieved from database:
+Active set vector = { 1 1 1 1 1 1 }
+                     -6.0000000000e-01 t_0.9m
+                     -2.9000000000e-01 t_1.2m
+                      7.7200000000e-01 t_1.8m
+                     -1.0800000000e-02 flow_0.9m
+                     -2.5300000000e-02 flow_1.2m
+                     -1.5960000000e-01 flow_1.8m
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+Stopping criteria met:     distConvergenceCntr (1) >= distConvergenceLimit (1)
+Stopping criteria not met: eifConvergenceCntr (0) < eifConvergenceLimit (2)
+Stopping criteria not met: globalIterCount (18) < maxIterations (40)
+<<<<< Function evaluation summary: 24 total (23 new, 1 duplicate)
+<<<<< Best parameters          =
+                      1.2600826809e+00 desired_speed
+                      1.7596705310e-01 radius
+<<<<< Best residual terms =
+                     -4.4600000000e-01
+                     -4.9200000000e-01
+                      4.8000000000e-02
+                     -1.6000000000e-02
+                     -1.8600000000e-02
+                     -7.5800000000e-02
+<<<<< Best residual norm =  6.7054574788e-01; 0.5 * norm^2 =  2.2481580000e-01
+<<<<< Best evaluation ID: 14
+
+
+<<<<< Iterator efficient_global completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =    20.2333 [parent =    20.2333, child =     -7e-06]
+  Total wall clock =    107.498

@@ -1,0 +1,37 @@
+# LHS over desired speed and door width; response = evacuation time.
+# Run with:  dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'lhs_results.dat'
+
+method
+  sampling
+    sample_type lhs
+    samples = 20
+    seed = 42
+
+variables
+  continuous_design = 2
+    descriptors   'desired_speed'  'door_width'
+    lower_bounds   0.8             0.8
+    upper_bounds   1.6             2.4
+  discrete_design_range = 1
+    descriptors   'sim_seed'
+    lower_bounds   1
+    upper_bounds   10000
+
+interface
+  fork
+    analysis_drivers = 'python3 driver.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag directory_save
+    link_files = 'driver.py'
+  asynchronous evaluation_concurrency = 4
+
+responses
+  response_functions = 2
+    descriptors 'evacuation_time' 'door_flow'
+  no_gradients
+  no_hessians

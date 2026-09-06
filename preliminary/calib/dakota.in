@@ -1,0 +1,44 @@
+# Calibration: recover desired_speed and agent radius from measured
+# evacuation times at three door widths (experiments.dat: door_width  t_evac).
+# door_width is a configuration (state) variable set per experiment by Dakota.
+# Run:  dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'calib_history.dat'
+
+method
+  nl2sol
+    convergence_tolerance = 1.e-4
+    max_iterations = 30
+
+variables
+  continuous_design = 2
+    descriptors    'desired_speed'  'radius'
+    initial_point   1.4             0.13
+    lower_bounds    0.8             0.12
+    upper_bounds    1.6             0.20
+  continuous_state = 1
+    descriptors    'door_width'
+    initial_state   1.2
+
+interface
+  fork
+    analysis_drivers = 'python3 driver.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py'
+  asynchronous evaluation_concurrency = 10
+
+responses
+  calibration_terms = 1
+    descriptors 'evacuation_time'
+    calibration_data_file = 'experiments.dat' freeform
+      num_experiments = 3
+      num_config_variables = 1
+  numerical_gradients
+    method_source dakota
+    interval_type central
+    fd_step_size = 0.02
+  no_hessians

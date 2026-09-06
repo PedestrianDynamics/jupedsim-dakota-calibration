@@ -1,0 +1,34 @@
+# Grid parameter study of the calibration misfit: 7 x 7 points over
+# desired_speed x radius. Shows the trade-off valley between the two.
+# Run:  JPS_N_SEEDS=5 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'grid.dat'
+
+method
+  multidim_parameter_study
+    partitions = 6 6
+
+variables
+  continuous_design = 2
+    descriptors    'desired_speed'  'radius'
+    lower_bounds    0.8             0.12
+    upper_bounds    1.6             0.20
+
+interface
+  fork
+    analysis_drivers = 'python3 driver_calib.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py' '../driver_calib.py' 'experiments.dat'
+  asynchronous evaluation_concurrency = 2
+
+responses
+  calibration_terms = 6
+    descriptors 't_0.9m' 't_1.2m' 't_1.8m' 'flow_0.9m' 'flow_1.2m' 'flow_1.8m'
+    # weights = 1/sigma^2 from 10-seed noise at the truth: sigma_t = 1.08 s, sigma_flow = 0.05 1/s
+    weights = 0.86 0.86 0.86 400 400 400
+  no_gradients
+  no_hessians

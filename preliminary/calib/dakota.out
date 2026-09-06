@@ -1,0 +1,1710 @@
+Dakota version 6.24 released May 15 2026.
+Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
+Running MPI Dakota executable in serial mode.
+Start time: Sat Sep  5 09:59:26 2026
+
+------------------
+Begin Dakota input
+------------------
+# Calibration: recover desired_speed and agent radius from measured
+# evacuation times at three door widths (experiments.dat: door_width  t_evac).
+# door_width is a configuration (state) variable set per experiment by Dakota.
+# Run:  dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'calib_history.dat'
+
+method
+  nl2sol
+    convergence_tolerance = 1.e-4
+    max_iterations = 30
+
+variables
+  continuous_design = 2
+    descriptors    'desired_speed'  'radius'
+    initial_point   1.4             0.13
+    lower_bounds    0.8             0.12
+    upper_bounds    1.6             0.20
+  continuous_state = 1
+    descriptors    'door_width'
+    initial_state   1.2
+
+interface
+  fork
+    analysis_drivers = 'python3 driver.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py'
+  asynchronous evaluation_concurrency = 10
+
+responses
+  calibration_terms = 1
+    descriptors 'evacuation_time'
+    calibration_data_file = 'experiments.dat' freeform
+      num_experiments = 3
+      num_config_variables = 1
+  numerical_gradients
+    method_source dakota
+    interval_type central
+    fd_step_size = 0.02
+  no_hessians
+
+----------------
+End Dakota input
+----------------
+
+Using Dakota parser: standard
+Writing new restart file 'dakota.rst'.
+
+Reading scalar experimental data from file experiments.dat:
+  3 experiment(s) for
+  1 scalar responses
+
+>>>>> Executing environment.
+
+>>>>> Running nl2sol iterator.
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      1.4000000000e+00 desired_speed
+                      1.3000000000e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 1 added to queue)
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      1.4000000000e+00 desired_speed
+                      1.3000000000e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 2 added to queue)
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      1.4000000000e+00 desired_speed
+                      1.3000000000e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 3 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 1
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 2
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 3
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 3 has completed
+Waiting on completed jobs
+Evaluation 2 has completed
+Waiting on completed jobs
+Evaluation 1 has completed
+
+Active response data for evaluation 1:
+Active set vector = { 1 }
+                      3.4140000000e+01 evacuation_time
+
+
+Active response data for evaluation 2:
+Active set vector = { 1 }
+                      2.9190000000e+01 evacuation_time
+
+
+Active response data for evaluation 3:
+Active set vector = { 1 }
+                      2.3910000000e+01 evacuation_time
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      1.4280000000e+00 desired_speed
+                      1.3000000000e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 4 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[1] - h:
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                      1.3720000000e+00 desired_speed
+                      1.3000000000e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 5 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                      1.4000000000e+00 desired_speed
+                      1.3260000000e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 6 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] - h:
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                      1.4000000000e+00 desired_speed
+                      1.2740000000e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 7 added to queue)
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                      1.4280000000e+00 desired_speed
+                      1.3000000000e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 8 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[1] - h:
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                      1.3720000000e+00 desired_speed
+                      1.3000000000e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 9 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                      1.4000000000e+00 desired_speed
+                      1.3260000000e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 10 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] - h:
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                      1.4000000000e+00 desired_speed
+                      1.2740000000e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 11 added to queue)
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                      1.4280000000e+00 desired_speed
+                      1.3000000000e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 12 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[1] - h:
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                      1.3720000000e+00 desired_speed
+                      1.3000000000e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 13 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                      1.4000000000e+00 desired_speed
+                      1.3260000000e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 14 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] - h:
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                      1.4000000000e+00 desired_speed
+                      1.2740000000e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 15 added to queue)
+
+
+
+Blocking synchronize of 12 asynchronous evaluations
+First pass: initiating 10 local asynchronous jobs
+Initiating evaluation 4
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 5
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 6
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 7
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 8
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 9
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 10
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 11
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 12
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 13
+nonblocking fork: python3 driver.py params.in results.out
+Second pass: scheduling 2 remaining local asynchronous jobs
+Waiting on completed jobs
+Evaluation 12 has completed
+Initiating evaluation 14
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 13 has completed
+Initiating evaluation 15
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 11 has completed
+Waiting on completed jobs
+Evaluation 8 has completed
+Evaluation 9 has completed
+Waiting on completed jobs
+Evaluation 10 has completed
+Waiting on completed jobs
+Evaluation 7 has completed
+Waiting on completed jobs
+Evaluation 4 has completed
+Waiting on completed jobs
+Evaluation 5 has completed
+Waiting on completed jobs
+Evaluation 6 has completed
+Waiting on completed jobs
+Evaluation 15 has completed
+Waiting on completed jobs
+Evaluation 14 has completed
+
+Active response data for evaluation 4:
+Active set vector = { 1 }
+                      3.5700000000e+01 evacuation_time
+
+
+Active response data for evaluation 5:
+Active set vector = { 1 }
+                      3.6620000000e+01 evacuation_time
+
+
+Active response data for evaluation 6:
+Active set vector = { 1 }
+                      3.6320000000e+01 evacuation_time
+
+
+Active response data for evaluation 7:
+Active set vector = { 1 }
+                      3.3000000000e+01 evacuation_time
+
+
+Active response data for evaluation 8:
+Active set vector = { 1 }
+                      3.0250000000e+01 evacuation_time
+
+
+Active response data for evaluation 9:
+Active set vector = { 1 }
+                      2.8080000000e+01 evacuation_time
+
+
+Active response data for evaluation 10:
+Active set vector = { 1 }
+                      2.9770000000e+01 evacuation_time
+
+
+Active response data for evaluation 11:
+Active set vector = { 1 }
+                      2.8360000000e+01 evacuation_time
+
+
+Active response data for evaluation 12:
+Active set vector = { 1 }
+                      2.3310000000e+01 evacuation_time
+
+
+Active response data for evaluation 13:
+Active set vector = { 1 }
+                      2.4790000000e+01 evacuation_time
+
+
+Active response data for evaluation 14:
+Active set vector = { 1 }
+                      2.3610000000e+01 evacuation_time
+
+
+Active response data for evaluation 15:
+Active set vector = { 1 }
+                      2.3340000000e+01 evacuation_time
+
+-----------------------------------------
+Raw asynchronous response data captured.
+Merging data to estimate derivatives:
+----------------------------------------
+
+Merging asynchronous responses 4 through 7
+>>>>> Gradients returned to iterator:
+
+Active set vector = { 2 } Deriv vars vector = { 1 2 }
+ [ -1.6428571429e+01  6.3846153846e+02 ] evacuation_time gradient
+
+
+Merging asynchronous responses 8 through 11
+>>>>> Gradients returned to iterator:
+
+Active set vector = { 2 } Deriv vars vector = { 1 2 }
+ [  3.8750000000e+01  2.7115384615e+02 ] evacuation_time gradient
+
+
+Merging asynchronous responses 12 through 15
+>>>>> Gradients returned to iterator:
+
+Active set vector = { 2 } Deriv vars vector = { 1 2 }
+ [ -2.6428571429e+01  5.1923076923e+01 ] evacuation_time gradient
+
+
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                      1.3996037460e+00 desired_speed
+                      1.3142599338e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 16 added to queue)
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                      1.3996037460e+00 desired_speed
+                      1.3142599338e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 17 added to queue)
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                      1.3996037460e+00 desired_speed
+                      1.3142599338e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 18 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 16
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 17
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 18
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 18 has completed
+Waiting on completed jobs
+Evaluation 17 has completed
+Waiting on completed jobs
+Evaluation 16 has completed
+
+Active response data for evaluation 16:
+Active set vector = { 1 }
+                      3.8920000000e+01 evacuation_time
+
+
+Active response data for evaluation 17:
+Active set vector = { 1 }
+                      3.0160000000e+01 evacuation_time
+
+
+Active response data for evaluation 18:
+Active set vector = { 1 }
+                      2.4870000000e+01 evacuation_time
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                      1.4275958209e+00 desired_speed
+                      1.3142599338e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 19 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[1] - h:
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                      1.3716116711e+00 desired_speed
+                      1.3142599338e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 20 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                      1.3996037460e+00 desired_speed
+                      1.3405451325e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 21 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] - h:
+
+---------------------
+Begin Evaluation   22
+---------------------
+Parameters for evaluation 22:
+                      1.3996037460e+00 desired_speed
+                      1.2879747352e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 22 added to queue)
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   23
+---------------------
+Parameters for evaluation 23:
+                      1.4275958209e+00 desired_speed
+                      1.3142599338e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 23 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[1] - h:
+
+---------------------
+Begin Evaluation   24
+---------------------
+Parameters for evaluation 24:
+                      1.3716116711e+00 desired_speed
+                      1.3142599338e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 24 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   25
+---------------------
+Parameters for evaluation 25:
+                      1.3996037460e+00 desired_speed
+                      1.3405451325e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 25 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] - h:
+
+---------------------
+Begin Evaluation   26
+---------------------
+Parameters for evaluation 26:
+                      1.3996037460e+00 desired_speed
+                      1.2879747352e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 26 added to queue)
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   27
+---------------------
+Parameters for evaluation 27:
+                      1.4275958209e+00 desired_speed
+                      1.3142599338e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 27 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[1] - h:
+
+---------------------
+Begin Evaluation   28
+---------------------
+Parameters for evaluation 28:
+                      1.3716116711e+00 desired_speed
+                      1.3142599338e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 28 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   29
+---------------------
+Parameters for evaluation 29:
+                      1.3996037460e+00 desired_speed
+                      1.3405451325e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 29 added to queue)
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] - h:
+
+---------------------
+Begin Evaluation   30
+---------------------
+Parameters for evaluation 30:
+                      1.3996037460e+00 desired_speed
+                      1.2879747352e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 30 added to queue)
+
+
+
+Blocking synchronize of 12 asynchronous evaluations
+First pass: initiating 10 local asynchronous jobs
+Initiating evaluation 19
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 20
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 21
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 22
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 23
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 24
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 25
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 26
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 27
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 28
+nonblocking fork: python3 driver.py params.in results.out
+Second pass: scheduling 2 remaining local asynchronous jobs
+Waiting on completed jobs
+Evaluation 27 has completed
+Initiating evaluation 29
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 26 has completed
+Evaluation 28 has completed
+Initiating evaluation 30
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 25 has completed
+Waiting on completed jobs
+Evaluation 23 has completed
+Waiting on completed jobs
+Evaluation 24 has completed
+Waiting on completed jobs
+Evaluation 21 has completed
+Waiting on completed jobs
+Evaluation 22 has completed
+Waiting on completed jobs
+Evaluation 20 has completed
+Waiting on completed jobs
+Evaluation 19 has completed
+Waiting on completed jobs
+Evaluation 29 has completed
+Waiting on completed jobs
+Evaluation 30 has completed
+
+Active response data for evaluation 19:
+Active set vector = { 1 }
+                      3.7020000000e+01 evacuation_time
+
+
+Active response data for evaluation 20:
+Active set vector = { 1 }
+                      3.7550000000e+01 evacuation_time
+
+
+Active response data for evaluation 21:
+Active set vector = { 1 }
+                      3.5870000000e+01 evacuation_time
+
+
+Active response data for evaluation 22:
+Active set vector = { 1 }
+                      3.4880000000e+01 evacuation_time
+
+
+Active response data for evaluation 23:
+Active set vector = { 1 }
+                      2.8880000000e+01 evacuation_time
+
+
+Active response data for evaluation 24:
+Active set vector = { 1 }
+                      3.1050000000e+01 evacuation_time
+
+
+Active response data for evaluation 25:
+Active set vector = { 1 }
+                      2.8590000000e+01 evacuation_time
+
+
+Active response data for evaluation 26:
+Active set vector = { 1 }
+                      2.8160000000e+01 evacuation_time
+
+
+Active response data for evaluation 27:
+Active set vector = { 1 }
+                      2.4050000000e+01 evacuation_time
+
+
+Active response data for evaluation 28:
+Active set vector = { 1 }
+                      2.5310000000e+01 evacuation_time
+
+
+Active response data for evaluation 29:
+Active set vector = { 1 }
+                      2.4340000000e+01 evacuation_time
+
+
+Active response data for evaluation 30:
+Active set vector = { 1 }
+                      2.4350000000e+01 evacuation_time
+
+-----------------------------------------
+Raw asynchronous response data captured.
+Merging data to estimate derivatives:
+----------------------------------------
+
+Merging asynchronous responses 19 through 22
+>>>>> Gradients returned to iterator:
+
+Active set vector = { 2 } Deriv vars vector = { 1 2 }
+ [ -9.4669652307e+00  1.8831891137e+02 ] evacuation_time gradient
+
+
+Merging asynchronous responses 23 through 26
+>>>>> Gradients returned to iterator:
+
+Active set vector = { 2 } Deriv vars vector = { 1 2 }
+ [ -3.8760970850e+01  8.1795082716e+01 ] evacuation_time gradient
+
+
+Merging asynchronous responses 27 through 30
+>>>>> Gradients returned to iterator:
+
+Active set vector = { 2 } Deriv vars vector = { 1 2 }
+ [ -2.2506370171e+01 -1.9022112260e+00 ] evacuation_time gradient
+
+
+
+---------------------
+Begin Evaluation   31
+---------------------
+Parameters for evaluation 31:
+                      1.3113895977e+00 desired_speed
+                      1.3343684389e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 31 added to queue)
+
+---------------------
+Begin Evaluation   32
+---------------------
+Parameters for evaluation 32:
+                      1.3113895977e+00 desired_speed
+                      1.3343684389e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 32 added to queue)
+
+---------------------
+Begin Evaluation   33
+---------------------
+Parameters for evaluation 33:
+                      1.3113895977e+00 desired_speed
+                      1.3343684389e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 33 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 31
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 32
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 33
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 33 has completed
+Waiting on completed jobs
+Evaluation 32 has completed
+Waiting on completed jobs
+Evaluation 31 has completed
+
+Active response data for evaluation 31:
+Active set vector = { 1 }
+                      3.3580000000e+01 evacuation_time
+
+
+Active response data for evaluation 32:
+Active set vector = { 1 }
+                      3.1320000000e+01 evacuation_time
+
+
+Active response data for evaluation 33:
+Active set vector = { 1 }
+                      2.5430000000e+01 evacuation_time
+
+
+---------------------
+Begin Evaluation   34
+---------------------
+Parameters for evaluation 34:
+                      1.3454089045e+00 desired_speed
+                      1.3547248026e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 34 added to queue)
+
+---------------------
+Begin Evaluation   35
+---------------------
+Parameters for evaluation 35:
+                      1.3454089045e+00 desired_speed
+                      1.3547248026e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 35 added to queue)
+
+---------------------
+Begin Evaluation   36
+---------------------
+Parameters for evaluation 36:
+                      1.3454089045e+00 desired_speed
+                      1.3547248026e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 36 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 34
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 35
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 36
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 36 has completed
+Waiting on completed jobs
+Evaluation 35 has completed
+Waiting on completed jobs
+Evaluation 34 has completed
+
+Active response data for evaluation 34:
+Active set vector = { 1 }
+                      3.6430000000e+01 evacuation_time
+
+
+Active response data for evaluation 35:
+Active set vector = { 1 }
+                      3.2440000000e+01 evacuation_time
+
+
+Active response data for evaluation 36:
+Active set vector = { 1 }
+                      2.5210000000e+01 evacuation_time
+
+
+---------------------
+Begin Evaluation   37
+---------------------
+Parameters for evaluation 37:
+                      1.3760207140e+00 desired_speed
+                      1.3291206011e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 37 added to queue)
+
+---------------------
+Begin Evaluation   38
+---------------------
+Parameters for evaluation 38:
+                      1.3760207140e+00 desired_speed
+                      1.3291206011e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 38 added to queue)
+
+---------------------
+Begin Evaluation   39
+---------------------
+Parameters for evaluation 39:
+                      1.3760207140e+00 desired_speed
+                      1.3291206011e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 39 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 37
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 38
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 39
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 39 has completed
+Waiting on completed jobs
+Evaluation 38 has completed
+Waiting on completed jobs
+Evaluation 37 has completed
+
+Active response data for evaluation 37:
+Active set vector = { 1 }
+                      3.7140000000e+01 evacuation_time
+
+
+Active response data for evaluation 38:
+Active set vector = { 1 }
+                      3.0090000000e+01 evacuation_time
+
+
+Active response data for evaluation 39:
+Active set vector = { 1 }
+                      2.5260000000e+01 evacuation_time
+
+
+---------------------
+Begin Evaluation   40
+---------------------
+Parameters for evaluation 40:
+                      1.3927523926e+00 desired_speed
+                      1.3169456996e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 40 added to queue)
+
+---------------------
+Begin Evaluation   41
+---------------------
+Parameters for evaluation 41:
+                      1.3927523926e+00 desired_speed
+                      1.3169456996e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 41 added to queue)
+
+---------------------
+Begin Evaluation   42
+---------------------
+Parameters for evaluation 42:
+                      1.3927523926e+00 desired_speed
+                      1.3169456996e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 42 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 40
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 41
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 42
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 42 has completed
+Waiting on completed jobs
+Evaluation 41 has completed
+Waiting on completed jobs
+Evaluation 40 has completed
+
+Active response data for evaluation 40:
+Active set vector = { 1 }
+                      3.5890000000e+01 evacuation_time
+
+
+Active response data for evaluation 41:
+Active set vector = { 1 }
+                      3.0690000000e+01 evacuation_time
+
+
+Active response data for evaluation 42:
+Active set vector = { 1 }
+                      2.4080000000e+01 evacuation_time
+
+
+---------------------
+Begin Evaluation   43
+---------------------
+Parameters for evaluation 43:
+                      1.3987951780e+00 desired_speed
+                      1.3144355047e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 43 added to queue)
+
+---------------------
+Begin Evaluation   44
+---------------------
+Parameters for evaluation 44:
+                      1.3987951780e+00 desired_speed
+                      1.3144355047e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 44 added to queue)
+
+---------------------
+Begin Evaluation   45
+---------------------
+Parameters for evaluation 45:
+                      1.3987951780e+00 desired_speed
+                      1.3144355047e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 45 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 43
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 44
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 45
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 45 has completed
+Waiting on completed jobs
+Evaluation 44 has completed
+Waiting on completed jobs
+Evaluation 43 has completed
+
+Active response data for evaluation 43:
+Active set vector = { 1 }
+                      3.3950000000e+01 evacuation_time
+
+
+Active response data for evaluation 44:
+Active set vector = { 1 }
+                      3.0010000000e+01 evacuation_time
+
+
+Active response data for evaluation 45:
+Active set vector = { 1 }
+                      2.2880000000e+01 evacuation_time
+
+
+---------------------
+Begin Evaluation   46
+---------------------
+Parameters for evaluation 46:
+                      1.3995218159e+00 desired_speed
+                      1.3142758433e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 46 added to queue)
+
+---------------------
+Begin Evaluation   47
+---------------------
+Parameters for evaluation 47:
+                      1.3995218159e+00 desired_speed
+                      1.3142758433e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 47 added to queue)
+
+---------------------
+Begin Evaluation   48
+---------------------
+Parameters for evaluation 48:
+                      1.3995218159e+00 desired_speed
+                      1.3142758433e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 48 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 46
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 47
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 48
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 48 has completed
+Waiting on completed jobs
+Evaluation 47 has completed
+Waiting on completed jobs
+Evaluation 46 has completed
+
+Active response data for evaluation 46:
+Active set vector = { 1 }
+                      3.6000000000e+01 evacuation_time
+
+
+Active response data for evaluation 47:
+Active set vector = { 1 }
+                      2.8180000000e+01 evacuation_time
+
+
+Active response data for evaluation 48:
+Active set vector = { 1 }
+                      2.4430000000e+01 evacuation_time
+
+
+---------------------
+Begin Evaluation   49
+---------------------
+Parameters for evaluation 49:
+                      1.3995955438e+00 desired_speed
+                      1.3142615075e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 49 added to queue)
+
+---------------------
+Begin Evaluation   50
+---------------------
+Parameters for evaluation 50:
+                      1.3995955438e+00 desired_speed
+                      1.3142615075e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 50 added to queue)
+
+---------------------
+Begin Evaluation   51
+---------------------
+Parameters for evaluation 51:
+                      1.3995955438e+00 desired_speed
+                      1.3142615075e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 51 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 49
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 50
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 51
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 51 has completed
+Waiting on completed jobs
+Evaluation 50 has completed
+Waiting on completed jobs
+Evaluation 49 has completed
+
+Active response data for evaluation 49:
+Active set vector = { 1 }
+                      3.7540000000e+01 evacuation_time
+
+
+Active response data for evaluation 50:
+Active set vector = { 1 }
+                      2.8430000000e+01 evacuation_time
+
+
+Active response data for evaluation 51:
+Active set vector = { 1 }
+                      2.4140000000e+01 evacuation_time
+
+
+---------------------
+Begin Evaluation   52
+---------------------
+Parameters for evaluation 52:
+                      1.3996029257e+00 desired_speed
+                      1.3142600910e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 52 added to queue)
+
+---------------------
+Begin Evaluation   53
+---------------------
+Parameters for evaluation 53:
+                      1.3996029257e+00 desired_speed
+                      1.3142600910e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 53 added to queue)
+
+---------------------
+Begin Evaluation   54
+---------------------
+Parameters for evaluation 54:
+                      1.3996029257e+00 desired_speed
+                      1.3142600910e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 54 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 52
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 53
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 54
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 54 has completed
+Waiting on completed jobs
+Evaluation 53 has completed
+Waiting on completed jobs
+Evaluation 52 has completed
+
+Active response data for evaluation 52:
+Active set vector = { 1 }
+                      3.5140000000e+01 evacuation_time
+
+
+Active response data for evaluation 53:
+Active set vector = { 1 }
+                      3.0940000000e+01 evacuation_time
+
+
+Active response data for evaluation 54:
+Active set vector = { 1 }
+                      2.4760000000e+01 evacuation_time
+
+
+---------------------
+Begin Evaluation   55
+---------------------
+Parameters for evaluation 55:
+                      1.3996036640e+00 desired_speed
+                      1.3142599496e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 55 added to queue)
+
+---------------------
+Begin Evaluation   56
+---------------------
+Parameters for evaluation 56:
+                      1.3996036640e+00 desired_speed
+                      1.3142599496e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 56 added to queue)
+
+---------------------
+Begin Evaluation   57
+---------------------
+Parameters for evaluation 57:
+                      1.3996036640e+00 desired_speed
+                      1.3142599496e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 57 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 55
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 56
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 57
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 57 has completed
+Waiting on completed jobs
+Evaluation 56 has completed
+Waiting on completed jobs
+Evaluation 55 has completed
+
+Active response data for evaluation 55:
+Active set vector = { 1 }
+                      3.7530000000e+01 evacuation_time
+
+
+Active response data for evaluation 56:
+Active set vector = { 1 }
+                      3.1850000000e+01 evacuation_time
+
+
+Active response data for evaluation 57:
+Active set vector = { 1 }
+                      2.4110000000e+01 evacuation_time
+
+
+---------------------
+Begin Evaluation   58
+---------------------
+Parameters for evaluation 58:
+                      1.3996037378e+00 desired_speed
+                      1.3142599354e-01 radius
+                      9.0000000000e-01 door_width
+
+(Asynchronous job 58 added to queue)
+
+---------------------
+Begin Evaluation   59
+---------------------
+Parameters for evaluation 59:
+                      1.3996037378e+00 desired_speed
+                      1.3142599354e-01 radius
+                      1.2000000000e+00 door_width
+
+(Asynchronous job 59 added to queue)
+
+---------------------
+Begin Evaluation   60
+---------------------
+Parameters for evaluation 60:
+                      1.3996037378e+00 desired_speed
+                      1.3142599354e-01 radius
+                      1.8000000000e+00 door_width
+
+(Asynchronous job 60 added to queue)
+
+Blocking synchronize of 3 asynchronous evaluations
+First pass: initiating 3 local asynchronous jobs
+Initiating evaluation 58
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 59
+nonblocking fork: python3 driver.py params.in results.out
+Initiating evaluation 60
+nonblocking fork: python3 driver.py params.in results.out
+Waiting on completed jobs
+Evaluation 60 has completed
+Waiting on completed jobs
+Evaluation 59 has completed
+Waiting on completed jobs
+Evaluation 58 has completed
+
+Active response data for evaluation 58:
+Active set vector = { 1 }
+                      3.4740000000e+01 evacuation_time
+
+
+Active response data for evaluation 59:
+Active set vector = { 1 }
+                      3.0030000000e+01 evacuation_time
+
+
+Active response data for evaluation 60:
+Active set vector = { 1 }
+                      2.2980000000e+01 evacuation_time
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   61
+---------------------
+Parameters for evaluation 61:
+                      1.4275958209e+00 desired_speed
+                      1.3142599338e-01 radius
+                      9.0000000000e-01 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+>>>>> Dakota finite difference gradient evaluation for x[1] - h:
+
+---------------------
+Begin Evaluation   62
+---------------------
+Parameters for evaluation 62:
+                      1.3716116711e+00 desired_speed
+                      1.3142599338e-01 radius
+                      9.0000000000e-01 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   63
+---------------------
+Parameters for evaluation 63:
+                      1.3996037460e+00 desired_speed
+                      1.3405451325e-01 radius
+                      9.0000000000e-01 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] - h:
+
+---------------------
+Begin Evaluation   64
+---------------------
+Parameters for evaluation 64:
+                      1.3996037460e+00 desired_speed
+                      1.2879747352e-01 radius
+                      9.0000000000e-01 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   65
+---------------------
+Parameters for evaluation 65:
+                      1.4275958209e+00 desired_speed
+                      1.3142599338e-01 radius
+                      1.2000000000e+00 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+>>>>> Dakota finite difference gradient evaluation for x[1] - h:
+
+---------------------
+Begin Evaluation   66
+---------------------
+Parameters for evaluation 66:
+                      1.3716116711e+00 desired_speed
+                      1.3142599338e-01 radius
+                      1.2000000000e+00 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   67
+---------------------
+Parameters for evaluation 67:
+                      1.3996037460e+00 desired_speed
+                      1.3405451325e-01 radius
+                      1.2000000000e+00 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] - h:
+
+---------------------
+Begin Evaluation   68
+---------------------
+Parameters for evaluation 68:
+                      1.3996037460e+00 desired_speed
+                      1.2879747352e-01 radius
+                      1.2000000000e+00 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+
+------------------------------------------
+Begin Dakota derivative estimation routine
+------------------------------------------
+
+>>>>> Dakota finite difference gradient evaluation for x[1] + h:
+
+---------------------
+Begin Evaluation   69
+---------------------
+Parameters for evaluation 69:
+                      1.4275958209e+00 desired_speed
+                      1.3142599338e-01 radius
+                      1.8000000000e+00 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+>>>>> Dakota finite difference gradient evaluation for x[1] - h:
+
+---------------------
+Begin Evaluation   70
+---------------------
+Parameters for evaluation 70:
+                      1.3716116711e+00 desired_speed
+                      1.3142599338e-01 radius
+                      1.8000000000e+00 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] + h:
+
+---------------------
+Begin Evaluation   71
+---------------------
+Parameters for evaluation 71:
+                      1.3996037460e+00 desired_speed
+                      1.3405451325e-01 radius
+                      1.8000000000e+00 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+>>>>> Dakota finite difference gradient evaluation for x[2] - h:
+
+---------------------
+Begin Evaluation   72
+---------------------
+Parameters for evaluation 72:
+                      1.3996037460e+00 desired_speed
+                      1.2879747352e-01 radius
+                      1.8000000000e+00 door_width
+
+Duplication detected: analysis_drivers not invoked.
+
+
+
+Active response data for evaluation 61:
+Active set vector = { 1 }
+                      3.7020000000e+01 evacuation_time
+
+
+Active response data for evaluation 62:
+Active set vector = { 1 }
+                      3.7550000000e+01 evacuation_time
+
+
+Active response data for evaluation 63:
+Active set vector = { 1 }
+                      3.5870000000e+01 evacuation_time
+
+
+Active response data for evaluation 64:
+Active set vector = { 1 }
+                      3.4880000000e+01 evacuation_time
+
+
+Active response data for evaluation 65:
+Active set vector = { 1 }
+                      2.8880000000e+01 evacuation_time
+
+
+Active response data for evaluation 66:
+Active set vector = { 1 }
+                      3.1050000000e+01 evacuation_time
+
+
+Active response data for evaluation 67:
+Active set vector = { 1 }
+                      2.8590000000e+01 evacuation_time
+
+
+Active response data for evaluation 68:
+Active set vector = { 1 }
+                      2.8160000000e+01 evacuation_time
+
+
+Active response data for evaluation 69:
+Active set vector = { 1 }
+                      2.4050000000e+01 evacuation_time
+
+
+Active response data for evaluation 70:
+Active set vector = { 1 }
+                      2.5310000000e+01 evacuation_time
+
+
+Active response data for evaluation 71:
+Active set vector = { 1 }
+                      2.4340000000e+01 evacuation_time
+
+
+Active response data for evaluation 72:
+Active set vector = { 1 }
+                      2.4350000000e+01 evacuation_time
+
+-----------------------------------------
+Raw asynchronous response data captured.
+Merging data to estimate derivatives:
+----------------------------------------
+
+Merging asynchronous responses 61 through 64
+>>>>> Gradients returned to iterator:
+
+Active set vector = { 2 } Deriv vars vector = { 1 2 }
+ [ -9.4669652307e+00  1.8831891137e+02 ] evacuation_time gradient
+
+
+Merging asynchronous responses 65 through 68
+>>>>> Gradients returned to iterator:
+
+Active set vector = { 2 } Deriv vars vector = { 1 2 }
+ [ -3.8760970850e+01  8.1795082716e+01 ] evacuation_time gradient
+
+
+Merging asynchronous responses 69 through 72
+>>>>> Gradients returned to iterator:
+
+Active set vector = { 2 } Deriv vars vector = { 1 2 }
+ [ -2.2506370171e+01 -1.9022112260e+00 ] evacuation_time gradient
+
+
+<<<<< Function evaluation summary: 72 total (60 new, 12 duplicate)
+<<<<< Best parameters (experiment config variables omitted) =
+                      1.3996037460e+00 desired_speed
+                      1.3142599338e-01 radius
+Original (as-posed) response:
+<<<<< Best model response 
+<<<<< Best configuration variables (experiment 1) =
+                      9.0000000000e-01 door_width
+<<<<< Best model response (experiment 1) =
+                      3.8920000000e+01 evacuation_time
+<<<<< Best evaluation ID: 16
+
+<<<<< Best configuration variables (experiment 2) =
+                      1.2000000000e+00 door_width
+<<<<< Best model response (experiment 2) =
+                      3.0160000000e+01 evacuation_time
+<<<<< Best evaluation ID: 17
+
+<<<<< Best configuration variables (experiment 3) =
+                      1.8000000000e+00 door_width
+<<<<< Best model response (experiment 3) =
+                      2.4870000000e+01 evacuation_time
+<<<<< Best evaluation ID: 18
+
+Original (as-posed) residuals:
+<<<<< Best residual terms =
+                     -1.4450000000e+01
+                     -1.1200000000e+01
+                     -5.6300000000e+00
+<<<<< Best residual norm =  1.9129542598e+01; 0.5 * norm^2 =  1.8296970000e+02
+<<<<< Best residual terms =
+                     -1.4450000000e+01
+                     -1.1200000000e+01
+                     -5.6300000000e+00
+<<<<< Best residual norm =  1.9129542598e+01; 0.5 * norm^2 =  1.8296970000e+02
+<<<<< Best evaluation ID (full match) not available
+(This warning may occur when the best iterate is comprised of multiple interface
+evaluations or arises from a composite, surrogate, or transformation model.)
+<<<<< Best evaluation ID (partial match): 17
+
+Warning: Confidence intervals may be inaccurate when num_experiments > 1
+Confidence Intervals on Calibrated Parameters:
+ desired_speed: [ -6.1011524782e+00, 8.9003599702e+00 ]
+        radius: [ -1.5420779847e+00, 1.8049299714e+00 ]
+
+<<<<< Iterator nl2sol completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =   0.163582 [parent =   0.163583, child =     -1e-06]
+  Total wall clock =    11.1151
