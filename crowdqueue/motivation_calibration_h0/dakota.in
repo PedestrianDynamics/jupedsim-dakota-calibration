@@ -1,6 +1,6 @@
 # Exploratory calibration on every usable baseline-motivation (h0) run.
-# This condition has 11 runs and 33 residuals. Desired speed is free only to
-# test whether a static parameter absorbs the motivation condition.
+# This condition has 11 runs and 33 residuals. All parameters are free to test
+# how a static parameter vector compensates for the motivation condition.
 # Reproduce: CQ_RESIDUALS=1 CQ_RUNS=030_c_56_h0,050_c_45_h0,070_c_23_h0,090_c_12_h0,110_c_12_h0,150_q_56_h0,170_q_12_h0,190_q_34_h0,230_q_23_h0,250_q_45_h0,270_c_34_h0 JPS_N_SEEDS=1 JPS_WORKERS=3 dakota -i dakota.in -o dakota.out
 
 environment
@@ -16,9 +16,9 @@ method
 variables
   continuous_design = 7
     descriptors    'desired_speed' 'radius' 'time_gap' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
-    initial_point  1.55 0.144 0.833 9.41 0.09 2.60 0.032
+    initial_point  1.55 0.12376 1.03779 9.00617 0.06248 2.95645 0.07242
     lower_bounds   0.80 0.10  0.10  1.0  0.02 0.50 0.01
-    upper_bounds   1.80 0.20  1.20 10.0  0.40 10.0 0.20
+    upper_bounds   1.80 0.20  2.00 10.0  0.40 10.0 0.20
 
 interface
   fork

@@ -17,23 +17,27 @@ import numpy as np
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import driver_cq  # noqa: E402
 import observables_cq as obs  # noqa: E402
+from parameter_io import best_parameters  # noqa: E402
 
 
-STATIC = {
-    "radius": 0.144,
-    "strength_neighbor": 9.41,
-    "range_neighbor": 0.09,
-    "strength_geometry": 2.60,
-    "range_geometry": 0.032,
-}
+ROOT = pathlib.Path(__file__).resolve().parent
+STATIC_NAMES = (
+    "radius", "strength_neighbor", "range_neighbor",
+    "strength_geometry", "range_geometry",
+)
 V0_GRID = np.linspace(0.8, 1.8, 7)
-T_GRID = np.linspace(0.1, 1.2, 7)
+T_GRID = np.linspace(0.1, 2.0, 7)
 SIGMA = {"flow": 0.06, "density": 0.10, "speed": 0.10}
 
 
+def static_parameters():
+    calibrated = best_parameters(ROOT / "calib_h0_s9" / "dakota.out")
+    return {name: calibrated[name] for name in STATIC_NAMES}
+
+
 def evaluate(job):
-    run_name, v0, time_gap, out_file = job
-    params = dict(STATIC, desired_speed=float(v0), time_gap=float(time_gap))
+    run_name, v0, time_gap, out_file, static = job
+    params = dict(static, desired_speed=float(v0), time_gap=float(time_gap))
     return driver_cq.one(run_name, 1, out_file, params)
 
 
@@ -56,12 +60,14 @@ def main():
     runs = [name for name, run in obs.runs().items()
             if run["motivation"] == args.motivation]
     expected = json.load(open("exp_observables_cq.json"))
+    static = static_parameters()
     jobs = []
     for i, v0 in enumerate(V0_GRID):
         for j, time_gap in enumerate(T_GRID):
             for run_name in runs:
                 jobs.append((run_name, v0, time_gap,
-                             str(out_dir / f"profile_{args.motivation}_{i}_{j}_{run_name}.sqlite")))
+                             str(out_dir / f"profile_{args.motivation}_{i}_{j}_{run_name}.sqlite"),
+                             static))
 
     with ProcessPoolExecutor(args.workers) as executor:
         records = list(executor.map(evaluate, jobs))
@@ -69,7 +75,7 @@ def main():
     grid = []
     for i, v0 in enumerate(V0_GRID):
         for j, time_gap in enumerate(T_GRID):
-            block = [r for (run, _, _, file), r in zip(jobs, records)
+            block = [r for (run, _, _, file, _), r in zip(jobs, records)
                      if file.endswith(f"_{i}_{j}_{run}.sqlite")]
             grid.append({
                 "desired_speed": float(v0),
@@ -83,7 +89,7 @@ def main():
     best = min(grid, key=lambda point: point["norm"])
     result = {
         "motivation": args.motivation,
-        "fixed_parameters": STATIC,
+        "fixed_parameters": static,
         "seed": 1,
         "v0_grid": V0_GRID.tolist(),
         "time_gap_grid": T_GRID.tolist(),
@@ -92,7 +98,7 @@ def main():
     }
     output = out_dir / f"motivation_profile_{args.motivation.replace('-', 'minus')}.json"
     json.dump(result, open(output, "w"), indent=1)
-    for _, _, _, filename in jobs:
+    for _, _, _, filename, _ in jobs:
         pathlib.Path(filename).unlink(missing_ok=True)
     print(f"wrote {output} (best norm {best['norm']:.3f})")
 

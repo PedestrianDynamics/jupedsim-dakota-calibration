@@ -15,12 +15,12 @@ method
 variables
   continuous_design = 1
     descriptors    'time_gap'
-    initial_point   9.5774435783e-01
+    initial_point   1.0377914952
     lower_bounds    0.10
     upper_bounds    2.00
   continuous_state = 6
     descriptors    'desired_speed' 'radius' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
-    initial_state   1.55  1.0063426620e-01  1.7034189944e+00  3.3636329892e-01  1.3929206245e+00  1.0470175840e-01
+    initial_state   1.55  0.12375857339  9.0061728395  0.062482853224  2.9564471879  0.072421124829
 
 interface
   fork

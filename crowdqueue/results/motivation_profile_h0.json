@@ -1,11 +1,11 @@
 {
  "motivation": "h0",
  "fixed_parameters": {
-  "radius": 0.144,
-  "strength_neighbor": 9.41,
-  "range_neighbor": 0.09,
-  "strength_geometry": 2.6,
-  "range_geometry": 0.032
+  "radius": 0.12375857339,
+  "strength_neighbor": 9.0061728395,
+  "range_neighbor": 0.062482853224,
+  "strength_geometry": 2.9564471879,
+  "range_geometry": 0.072421124829
  },
  "seed": 1,
  "v0_grid": [
@@ -19,53 +19,34 @@
  ],
  "time_gap_grid": [
   0.1,
-  0.2833333333333333,
-  0.4666666666666667,
-  0.6499999999999999,
-  0.8333333333333333,
-  1.0166666666666666,
-  1.2
+  0.41666666666666663,
+  0.7333333333333333,
+  1.05,
+  1.3666666666666667,
+  1.6833333333333333,
+  2.0
  ],
  "best": {
-  "desired_speed": 1.3,
-  "time_gap": 0.8333333333333333,
-  "norm": 7.559216295560611,
+  "desired_speed": 1.1333333333333333,
+  "time_gap": 0.7333333333333333,
+  "norm": 9.34927373632801,
   "status_counts": {
-   "emptied": 10,
-   "not emptied": 1
+   "emptied": 11
   }
  },
  "grid": [
   {
    "desired_speed": 0.8,
    "time_gap": 0.1,
-   "norm": 31.271509439234286,
-   "status_counts": {
-    "emptied": 9,
-    "stalled": 2
-   }
-  },
-  {
-   "desired_speed": 0.8,
-   "time_gap": 0.2833333333333333,
-   "norm": 21.57314304821453,
-   "status_counts": {
-    "emptied": 10,
-    "stalled": 1
-   }
-  },
-  {
-   "desired_speed": 0.8,
-   "time_gap": 0.4666666666666667,
-   "norm": 8.822527167486344,
+   "norm": 52.401584916537566,
    "status_counts": {
     "emptied": 11
    }
   },
   {
    "desired_speed": 0.8,
-   "time_gap": 0.6499999999999999,
-   "norm": 11.308485935549617,
+   "time_gap": 0.41666666666666663,
+   "norm": 13.007827123349271,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -73,8 +54,8 @@
   },
   {
    "desired_speed": 0.8,
-   "time_gap": 0.8333333333333333,
-   "norm": 15.676243616090986,
+   "time_gap": 0.7333333333333333,
+   "norm": 13.912907898396405,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -82,8 +63,8 @@
   },
   {
    "desired_speed": 0.8,
-   "time_gap": 1.0166666666666666,
-   "norm": 20.189507261678,
+   "time_gap": 1.05,
+   "norm": 20.111996681135437,
    "status_counts": {
     "emptied": 9,
     "not emptied": 2
@@ -91,8 +72,26 @@
   },
   {
    "desired_speed": 0.8,
-   "time_gap": 1.2,
-   "norm": 22.484207075464113,
+   "time_gap": 1.3666666666666667,
+   "norm": 23.99466704362037,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 0.8,
+   "time_gap": 1.6833333333333333,
+   "norm": 26.828233611871113,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 0.8,
+   "time_gap": 2.0,
+   "norm": 28.54710832269759,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -101,32 +100,39 @@
   {
    "desired_speed": 0.9666666666666667,
    "time_gap": 0.1,
-   "norm": 49.391148206693686,
-   "status_counts": {
-    "emptied": 9,
-    "stalled": 2
-   }
-  },
-  {
-   "desired_speed": 0.9666666666666667,
-   "time_gap": 0.2833333333333333,
-   "norm": 25.787271220005337,
+   "norm": 68.61138606780878,
    "status_counts": {
     "emptied": 11
    }
   },
   {
    "desired_speed": 0.9666666666666667,
-   "time_gap": 0.4666666666666667,
-   "norm": 11.50850422827971,
+   "time_gap": 0.41666666666666663,
+   "norm": 17.87121995727019,
    "status_counts": {
     "emptied": 11
    }
   },
   {
    "desired_speed": 0.9666666666666667,
-   "time_gap": 0.6499999999999999,
-   "norm": 7.907822658723935,
+   "time_gap": 0.7333333333333333,
+   "norm": 10.585051982393656,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 0.9666666666666667,
+   "time_gap": 1.05,
+   "norm": 15.404211424250528,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 0.9666666666666667,
+   "time_gap": 1.3666666666666667,
+   "norm": 19.088827176690195,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -134,8 +140,8 @@
   },
   {
    "desired_speed": 0.9666666666666667,
-   "time_gap": 0.8333333333333333,
-   "norm": 11.863483230076787,
+   "time_gap": 1.6833333333333333,
+   "norm": 21.853591366502354,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -143,17 +149,8 @@
   },
   {
    "desired_speed": 0.9666666666666667,
-   "time_gap": 1.0166666666666666,
-   "norm": 15.436613390828676,
-   "status_counts": {
-    "emptied": 10,
-    "not emptied": 1
-   }
-  },
-  {
-   "desired_speed": 0.9666666666666667,
-   "time_gap": 1.2,
-   "norm": 17.99247081298501,
+   "time_gap": 2.0,
+   "norm": 23.613917382534265,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -162,40 +159,39 @@
   {
    "desired_speed": 1.1333333333333333,
    "time_gap": 0.1,
-   "norm": 57.10549276890749,
-   "status_counts": {
-    "emptied": 9,
-    "stalled": 2
-   }
-  },
-  {
-   "desired_speed": 1.1333333333333333,
-   "time_gap": 0.2833333333333333,
-   "norm": 32.764968280346544,
+   "norm": 85.17696860651787,
    "status_counts": {
     "emptied": 11
    }
   },
   {
    "desired_speed": 1.1333333333333333,
-   "time_gap": 0.4666666666666667,
-   "norm": 15.549458602962268,
+   "time_gap": 0.41666666666666663,
+   "norm": 22.86283538543684,
    "status_counts": {
     "emptied": 11
    }
   },
   {
    "desired_speed": 1.1333333333333333,
-   "time_gap": 0.6499999999999999,
-   "norm": 8.254102655433625,
+   "time_gap": 0.7333333333333333,
+   "norm": 9.34927373632801,
    "status_counts": {
     "emptied": 11
    }
   },
   {
    "desired_speed": 1.1333333333333333,
-   "time_gap": 0.8333333333333333,
-   "norm": 8.648060919705143,
+   "time_gap": 1.05,
+   "norm": 11.74209247453361,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.1333333333333333,
+   "time_gap": 1.3666666666666667,
+   "norm": 15.283511326695583,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -203,8 +199,8 @@
   },
   {
    "desired_speed": 1.1333333333333333,
-   "time_gap": 1.0166666666666666,
-   "norm": 11.167512534520325,
+   "time_gap": 1.6833333333333333,
+   "norm": 17.78136810602314,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -212,8 +208,8 @@
   },
   {
    "desired_speed": 1.1333333333333333,
-   "time_gap": 1.2,
-   "norm": 13.017572684979376,
+   "time_gap": 2.0,
+   "norm": 19.184807854586474,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -222,118 +218,167 @@
   {
    "desired_speed": 1.3,
    "time_gap": 0.1,
-   "norm": 72.63366674943143,
+   "norm": 99.18902064042734,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 0.41666666666666663,
+   "norm": 27.757438254500983,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 0.7333333333333333,
+   "norm": 10.898923854182582,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 1.05,
+   "norm": 10.162253736381144,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 1.3666666666666667,
+   "norm": 12.854538764088753,
    "status_counts": {
     "emptied": 10,
-    "stalled": 1
+    "not emptied": 1
    }
   },
   {
    "desired_speed": 1.3,
-   "time_gap": 0.2833333333333333,
-   "norm": 40.263355385985435,
+   "time_gap": 1.6833333333333333,
+   "norm": 14.441385613642643,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.3,
+   "time_gap": 2.0,
+   "norm": 16.28046748350188,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 0.1,
+   "norm": 114.72700978158481,
    "status_counts": {
     "emptied": 11
    }
   },
   {
-   "desired_speed": 1.3,
-   "time_gap": 0.4666666666666667,
-   "norm": 19.593722832907698,
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 0.41666666666666663,
+   "norm": 32.554323925562656,
    "status_counts": {
     "emptied": 11
    }
   },
   {
-   "desired_speed": 1.3,
-   "time_gap": 0.6499999999999999,
-   "norm": 9.60059765973216,
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 0.7333333333333333,
+   "norm": 14.913413896754557,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 1.05,
+   "norm": 11.003365531917186,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 1.3666666666666667,
+   "norm": 12.01721937305314,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 1.6833333333333333,
+   "norm": 13.950354068718756,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.4666666666666668,
+   "time_gap": 2.0,
+   "norm": 15.62394376167431,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 0.1,
+   "norm": 128.34912377083074,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 0.41666666666666663,
+   "norm": 37.73523377518293,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 0.7333333333333333,
+   "norm": 18.983827108773063,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 1.05,
+   "norm": 13.961735155536985,
+   "status_counts": {
+    "emptied": 11
+   }
+  },
+  {
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 1.3666666666666667,
+   "norm": 12.558379641990461,
    "status_counts": {
     "emptied": 9,
     "not emptied": 2
    }
   },
   {
-   "desired_speed": 1.3,
-   "time_gap": 0.8333333333333333,
-   "norm": 7.559216295560611,
-   "status_counts": {
-    "emptied": 10,
-    "not emptied": 1
-   }
-  },
-  {
-   "desired_speed": 1.3,
-   "time_gap": 1.0166666666666666,
-   "norm": 7.875800585185391,
-   "status_counts": {
-    "emptied": 10,
-    "not emptied": 1
-   }
-  },
-  {
-   "desired_speed": 1.3,
-   "time_gap": 1.2,
-   "norm": 10.151240870969577,
-   "status_counts": {
-    "emptied": 10,
-    "not emptied": 1
-   }
-  },
-  {
-   "desired_speed": 1.4666666666666668,
-   "time_gap": 0.1,
-   "norm": 86.05500219737422,
-   "status_counts": {
-    "emptied": 11
-   }
-  },
-  {
-   "desired_speed": 1.4666666666666668,
-   "time_gap": 0.2833333333333333,
-   "norm": 45.88105345446335,
-   "status_counts": {
-    "emptied": 11
-   }
-  },
-  {
-   "desired_speed": 1.4666666666666668,
-   "time_gap": 0.4666666666666667,
-   "norm": 23.7669875754897,
-   "status_counts": {
-    "emptied": 11
-   }
-  },
-  {
-   "desired_speed": 1.4666666666666668,
-   "time_gap": 0.6499999999999999,
-   "norm": 12.54859509962143,
-   "status_counts": {
-    "emptied": 10,
-    "not emptied": 1
-   }
-  },
-  {
-   "desired_speed": 1.4666666666666668,
-   "time_gap": 0.8333333333333333,
-   "norm": 8.83772869133698,
-   "status_counts": {
-    "emptied": 9,
-    "not emptied": 2
-   }
-  },
-  {
-   "desired_speed": 1.4666666666666668,
-   "time_gap": 1.0166666666666666,
-   "norm": 8.827802903255582,
-   "status_counts": {
-    "emptied": 11
-   }
-  },
-  {
-   "desired_speed": 1.4666666666666668,
-   "time_gap": 1.2,
-   "norm": 11.31232887238001,
+   "desired_speed": 1.6333333333333333,
+   "time_gap": 1.6833333333333333,
+   "norm": 14.759613708906654,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -341,60 +386,8 @@
   },
   {
    "desired_speed": 1.6333333333333333,
-   "time_gap": 0.1,
-   "norm": 99.84314777285634,
-   "status_counts": {
-    "emptied": 11
-   }
-  },
-  {
-   "desired_speed": 1.6333333333333333,
-   "time_gap": 0.2833333333333333,
-   "norm": 51.075717863242815,
-   "status_counts": {
-    "emptied": 11
-   }
-  },
-  {
-   "desired_speed": 1.6333333333333333,
-   "time_gap": 0.4666666666666667,
-   "norm": 28.124878732605783,
-   "status_counts": {
-    "emptied": 11
-   }
-  },
-  {
-   "desired_speed": 1.6333333333333333,
-   "time_gap": 0.6499999999999999,
-   "norm": 17.91216346050944,
-   "status_counts": {
-    "emptied": 10,
-    "not emptied": 1
-   }
-  },
-  {
-   "desired_speed": 1.6333333333333333,
-   "time_gap": 0.8333333333333333,
-   "norm": 21.281232109522513,
-   "status_counts": {
-    "emptied": 9,
-    "not emptied": 1,
-    "stalled": 1
-   }
-  },
-  {
-   "desired_speed": 1.6333333333333333,
-   "time_gap": 1.0166666666666666,
-   "norm": 12.122446114135611,
-   "status_counts": {
-    "emptied": 10,
-    "not emptied": 1
-   }
-  },
-  {
-   "desired_speed": 1.6333333333333333,
-   "time_gap": 1.2,
-   "norm": 12.667678784214743,
+   "time_gap": 2.0,
+   "norm": 16.037111447745108,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -403,39 +396,31 @@
   {
    "desired_speed": 1.8,
    "time_gap": 0.1,
-   "norm": 107.09030407117075,
+   "norm": 140.3435912470077,
    "status_counts": {
     "emptied": 11
    }
   },
   {
    "desired_speed": 1.8,
-   "time_gap": 0.2833333333333333,
-   "norm": 57.29089388430376,
+   "time_gap": 0.41666666666666663,
+   "norm": 43.03671560236729,
    "status_counts": {
     "emptied": 11
    }
   },
   {
    "desired_speed": 1.8,
-   "time_gap": 0.4666666666666667,
-   "norm": 31.750105679272195,
+   "time_gap": 0.7333333333333333,
+   "norm": 23.59028175563598,
    "status_counts": {
     "emptied": 11
    }
   },
   {
    "desired_speed": 1.8,
-   "time_gap": 0.6499999999999999,
-   "norm": 22.959778572459932,
-   "status_counts": {
-    "emptied": 11
-   }
-  },
-  {
-   "desired_speed": 1.8,
-   "time_gap": 0.8333333333333333,
-   "norm": 18.779908678080353,
+   "time_gap": 1.05,
+   "norm": 18.16190082641576,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -443,8 +428,8 @@
   },
   {
    "desired_speed": 1.8,
-   "time_gap": 1.0166666666666666,
-   "norm": 15.615694976994318,
+   "time_gap": 1.3666666666666667,
+   "norm": 17.28799425612514,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1
@@ -452,8 +437,17 @@
   },
   {
    "desired_speed": 1.8,
-   "time_gap": 1.2,
-   "norm": 14.965614024212972,
+   "time_gap": 1.6833333333333333,
+   "norm": 17.582875676033535,
+   "status_counts": {
+    "emptied": 10,
+    "not emptied": 1
+   }
+  },
+  {
+   "desired_speed": 1.8,
+   "time_gap": 2.0,
+   "norm": 18.326495948599483,
    "status_counts": {
     "emptied": 10,
     "not emptied": 1

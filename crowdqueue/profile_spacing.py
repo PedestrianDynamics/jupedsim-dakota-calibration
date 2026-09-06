@@ -18,23 +18,30 @@ import numpy as np
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import driver_cq  # noqa: E402
 import observables_cq as obs  # noqa: E402
+from parameter_io import best_parameters  # noqa: E402
 
 
-FIXED = {
-    "desired_speed": 1.2463189078,
-    "time_gap": 0.78837528531,
-    "strength_neighbor": 9.41,
-    "strength_geometry": 2.60,
-    "range_geometry": 0.032,
-}
+ROOT = pathlib.Path(__file__).resolve().parent
 RADIUS_GRID = np.linspace(0.10, 0.20, 7)
 RANGE_NEIGHBOR_GRID = np.linspace(0.02, 0.40, 7)
 SIGMA = {"flow": 0.06, "density": 0.10, "speed": 0.10}
 
 
+def fixed_parameters():
+    calibrated = best_parameters(ROOT / "calib_h0_s9" / "dakota.out")
+    profile = best_parameters(ROOT / "motivation_profile_h0" / "dakota.out")
+    return {
+        "desired_speed": profile["desired_speed"],
+        "time_gap": profile["time_gap"],
+        "strength_neighbor": calibrated["strength_neighbor"],
+        "strength_geometry": calibrated["strength_geometry"],
+        "range_geometry": calibrated["range_geometry"],
+    }
+
+
 def evaluate(job):
-    run_name, radius, neighbor_range, out_file = job
-    params = dict(FIXED, radius=float(radius), range_neighbor=float(neighbor_range))
+    run_name, radius, neighbor_range, out_file, fixed = job
+    params = dict(fixed, radius=float(radius), range_neighbor=float(neighbor_range))
     return driver_cq.one(run_name, 1, out_file, params)
 
 
@@ -55,10 +62,11 @@ def main():
     out_dir.mkdir(exist_ok=True)
     runs = [name for name, run in obs.runs().items() if run["motivation"] == "h-"]
     expected = json.load(open("exp_observables_cq.json"))
+    fixed = fixed_parameters()
     points = list(product(enumerate(RADIUS_GRID), enumerate(RANGE_NEIGHBOR_GRID)))
     jobs = [
         (run_name, radius, neighbor_range,
-         str(out_dir / f"spacing_hminus_{i}_{j}_{run_name}.sqlite"))
+         str(out_dir / f"spacing_hminus_{i}_{j}_{run_name}.sqlite"), fixed)
         for (i, radius), (j, neighbor_range) in points for run_name in runs
     ]
 
@@ -67,7 +75,7 @@ def main():
 
     grid = []
     for (i, radius), (j, neighbor_range) in points:
-        block = [record for (run, _, _, file), record in zip(jobs, records)
+        block = [record for (run, _, _, file, _), record in zip(jobs, records)
                  if file.endswith(f"_{i}_{j}_{run}.sqlite")]
         grid.append({
             "radius": float(radius),
@@ -81,7 +89,7 @@ def main():
     best = min(grid, key=lambda point: point["norm"])
     result = {
         "motivation": "h-",
-        "fixed_parameters": FIXED,
+        "fixed_parameters": fixed,
         "seed": 1,
         "radius_grid": RADIUS_GRID.tolist(),
         "range_neighbor_grid": RANGE_NEIGHBOR_GRID.tolist(),
@@ -90,7 +98,7 @@ def main():
     }
     output = out_dir / "motivation_profile_spacing_hminus.json"
     json.dump(result, open(output, "w"), indent=1)
-    for _, _, _, filename in jobs:
+    for _, _, _, filename, _ in jobs:
         pathlib.Path(filename).unlink(missing_ok=True)
     print(f"wrote {output} (best norm {best['norm']:.3f})")
 

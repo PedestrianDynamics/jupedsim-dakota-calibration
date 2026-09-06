@@ -45,6 +45,7 @@ be interpreted as a physical zero flow without checking the sidecar.
     cd hermes/morris_r20 && HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
     cd hermes/calib_v0fixed && HERMES_RESIDUALS=1 JPS_N_SEEDS=2 HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
     ./run_all_fixed.sh                                   # CrowdQueue chain + Hermes validations + semicircle (about 1 h)
+    ./run_motivation_diagnostics.sh                      # v0/T and spacing profiles + front-occupancy diagnostic
 
 ## Final parameter sets
 
@@ -53,12 +54,12 @@ C/D are two optimizer starts on the same data.
 
 | parameter | default | Hermes A | Hermes B | CrowdQueue C | CrowdQueue D | joint |
 |---|---|---|---|---|---|---|
-| radius [m] | 0.20 | 0.127 | 0.148 | 0.144 | 0.101 | 0.115 |
-| time_gap [s] | 1.0 | 0.811 | 0.553 | 0.833 | 0.958 | 1.024 |
-| strength_neighbor | 8 | 2.09 | 9.44 | 9.41 | 1.70 | 4.01 |
-| range_neighbor [m] | 0.10 | 0.248 | 0.102 | 0.090 | 0.336 | 0.190 |
-| strength_geometry | 5 | 5 (fixed) | 5 (fixed) | 2.60 | 1.39 | 2.60 |
-| range_geometry [m] | 0.02 | 0.02 (fixed) | 0.02 (fixed) | 0.032 | 0.105 | 0.045 |
+| radius [m] | 0.20 | 0.127 | 0.148 | 0.124 | 0.101 | 0.115 |
+| time_gap [s] | 1.0 | 0.811 | 0.553 | 1.038 | 0.958 | 0.962 |
+| strength_neighbor | 8 | 2.09 | 9.44 | 9.01 | 1.70 | 8.62 |
+| range_neighbor [m] | 0.10 | 0.248 | 0.102 | 0.062 | 0.336 | 0.189 |
+| strength_geometry | 5 | 5 (fixed) | 5 (fixed) | 2.96 | 1.39 | 4.69 |
+| range_geometry [m] | 0.02 | 0.02 (fixed) | 0.02 (fixed) | 0.072 | 0.105 | 0.031 |
 
 ## Final findings (short)
 
@@ -69,36 +70,38 @@ C/D are two optimizer starts on the same data.
 - Sobol: the group of influential parameters is stable across 40/80/160 base
   samples and three replicate seeds; magnitudes and within-group order are not.
 - CrowdQueue: Hermes set A stalls in 46 of 63 seeds, set B empties 59 but is
-  20–40 % too fast. Set C (best of two starts) empties 58 of 63 seeds (the other
-  five had 1–4 late entrants that could not be placed) with baseline flows +10 %
-  on average (−1 % to +37 %). The model does not reproduce the difference between
-  motivation conditions in either direction. Identical seeds reproduce identical
-  simulations.
-- Motivation diagnostic: the seven-parameter fits are a negative control. The
-  h− point scores 9.8 on h0, better than the h0 search's own 14.1, so the latter
-  was not an optimum despite meeting Dakota's stopping test. With the five
-  interaction parameters fixed at set C, the v0/T profile fits h0 as a shallow
-  valley (three-seed norm 7.4, 1.29 sigma per residual) but has no interior h−
-  minimum. It runs to T = 1.2 s and is flat in v0 there (one-seed norm 11.8;
-  three-seed norm 11.9); allowing T to reach 1.9 s previously gave 11.7, so
-  widening the bound buys nothing. A radius/neighbor-range profile at the h0
-  valley also fails: its one-seed minimum
-  is 14.6 and its three-seed check is 17.6 with two stalls. Motivation is not a
-  speed knob, and this test does not support a static spacing pair either. The
-  h+ condition has only one usable run and is not calibrated separately.
-- Joint: Hermes norm 7.9 vs 2.4–2.7 for the specialists, CrowdQueue norm 12.0 vs
-  9.7, 61 of 63 seeds emptied. No set found meets the tolerances in both.
-- Semicircle: Hermes A and the joint set drain the crowd at 1.3 and 1.7 /s where
-  the experiment gave 0.6 /s, with a regular, too-shallow density profile.
+  20–40 % too fast. Set C also empties 59 of 63 seeds; its baseline flows are
+  +12 % on average (−2 % to +30 %). Set D, the other optimizer start, stalls in
+  14 seeds and fails once. Identical seeds reproduce identical simulations.
+- Motivation diagnostic: with the five interaction parameters fixed at set C,
+  the extended v0/T profiles select approximately (1.17 m/s, 0.79 s) for h0 and
+  (1.50 m/s, 1.73 s) for h−. Three-seed norms are 9.19 and 11.74, or 1.60 and
+  2.26 assumed standard deviations per residual. The h− timing fit reproduces
+  much of the front-area head-count contrast but remains 24–53 % too slow in
+  seven runs. A radius/neighbor-range slice is worse (three-seed norm 14.41) and
+  develops a stall cliff: at neighbor ranges of 0.337 m or more all nine runs
+  stall or fail at every sampled radius. Seven-parameter own/swap norms are
+  8.26/15.65 for h0 and 10.64/16.41 for h−; several coordinates move, so the
+  fits distinguish conditions but do not identify a mechanism. The h+ condition
+  has only one usable run and is not calibrated separately.
+- Joint: Hermes norm 6.2 versus 2.4–2.7 for the specialists; CrowdQueue norm
+  13.6 versus 11.3 for set C; 57 of 63 seeds emptied. No set found meets the
+  tolerances in both experiments.
+- Semicircle: Hermes A and the joint set drain the crowd at about 1.3 and
+  1.4 /s where the experiment gave 0.57 /s, with a regular, too-shallow density
+  profile.
 
 ## Pipeline corrections and safeguards (2026-09-06)
 
-Three errors were found by review and fixed; everything downstream was
+Five errors were found by review and fixed; everything downstream was
 recomputed: (1) participants entering the tracked corridor after the first frame
 are injected at their first observation (`crowdqueue/observables_cq.arrivals`);
 (2) the JuPedSim trajectory writer is closed so no frames are lost
 (`writer.close()`); (3) the CrowdQueue walkable area is clipped to the corridor
-and the exit placed at the gate outlet. `hermes/truncation_check.py` shows the
+and the exit placed at the gate outlet; (4) mean speed excludes frames in which
+the measurement area is empty; and (5) motivation reruns now resolve set C from
+the seed-9 Dakota output instead of a copied constant or the other optimizer
+start. `hermes/truncation_check.py` shows the
 retained Hermes analyses are insensitive to (2): at most two crossings and 0.4 %
 in any observable. The drivers now retain explicit audit records for failed and
 incomplete evaluations, and the Hermes launcher resolves its repository root
@@ -112,8 +115,10 @@ The motivation diagnostic includes `profile_motivation.py`, which keeps the five
 static set-C parameters fixed and profiles desired speed and time gap,
 `profile_spacing.py`, which fixes the h0 valley and profiles radius and neighbor
 range on h−, and `plot_motivation_profile.py` for the three-panel surface. The
-profiles avoid
-interpreting a Gaussian-process surrogate across the clipped residuals produced
-by the historical zero-observable failure fallback. For a production Dakota
+profile figure marks stalled and failed grid points instead of interpreting its
+yellow stall cliff as an ordinary residual landscape. `evaluate_front_occupancy.py`
+derives the number of people in the upstream measurement area over time for the
+paired 1.2 m runs, both at common set C and at the condition-specific profile
+points. For a production Dakota
 calibration, capture failures separately and use a declared recovery value or a
 smooth, documented penalty; a finite fallback is not a physical zero.

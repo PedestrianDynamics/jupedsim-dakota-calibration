@@ -1,7 +1,7 @@
 """Figure 6: CrowdQueue, experiment vs simulation per run, individual seeds.
 Marker: filled = run emptied within 120 s; open = clogged (not everyone passed,
 flow = passed / run time); x = JuPedSim aborted (agent pushed through a wall).
-Usage: python3 plot_cq.py results/transfer_hermes.json results/calib_h0.json results/joint.json"""
+Usage: python3 plot_cq.py results/transfer_hermes_B.json results/calib_h0_s9.json results/joint.json"""
 import json, pathlib, sys
 import matplotlib
 matplotlib.use("Agg")

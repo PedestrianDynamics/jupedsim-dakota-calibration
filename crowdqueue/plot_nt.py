@@ -1,6 +1,6 @@
 """Figure 10: N(t) at the gate for three CrowdQueue runs, experiment vs simulation seeds,
 to show the difference between active passage, slow discharge and a stall.
-Usage: python3 plot_nt.py results/calib_h0.json"""
+Usage: python3 plot_nt.py results/calib_h0_s9.json"""
 import json, pathlib, sys
 import matplotlib
 matplotlib.use("Agg")

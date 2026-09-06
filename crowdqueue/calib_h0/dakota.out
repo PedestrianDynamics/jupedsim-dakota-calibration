@@ -1,7 +1,7 @@
 Dakota version 6.24 released May 15 2026.
 Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
 Running MPI Dakota executable in serial mode.
-Start time: Sun Sep  6 10:56:52 2026
+Start time: Sun Sep  6 18:09:23 2026
 
 ------------------
 Begin Dakota input
@@ -79,16 +79,16 @@ Active response data for evaluation 1:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.4308880000e+01 least_sq_term_1
                       6.3192000000e+00 least_sq_term_2
-                     -4.9563900000e+00 least_sq_term_3
+                     -5.5519900000e+00 least_sq_term_3
                      -1.0297230000e+01 least_sq_term_4
                       3.6147200000e+00 least_sq_term_5
                      -6.1944900000e+00 least_sq_term_6
                      -1.3967470000e+01 least_sq_term_7
                       4.7252000000e+00 least_sq_term_8
-                     -5.6394800000e+00 least_sq_term_9
+                     -5.8416200000e+00 least_sq_term_9
                      -1.4713610000e+01 least_sq_term_10
                      -5.7985000000e-01 least_sq_term_11
-                     -5.9290700000e+00 least_sq_term_12
+                     -6.2020500000e+00 least_sq_term_12
                      -1.4533440000e+01 least_sq_term_13
                       1.1230190000e+01 least_sq_term_14
                      -6.7278700000e+00 least_sq_term_15
@@ -119,16 +119,16 @@ Active response data for evaluation 2:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                       5.6126800000e+00 least_sq_term_1
                       6.7670000000e-02 least_sq_term_2
-                      4.3101100000e+00 least_sq_term_3
+                      3.1267000000e+00 least_sq_term_3
                      -5.5910900000e+00 least_sq_term_4
                      -2.1260800000e+00 least_sq_term_5
                       5.5573200000e+00 least_sq_term_6
                       7.5953400000e+00 least_sq_term_7
                      -5.0189000000e-01 least_sq_term_8
-                      3.5556900000e+00 least_sq_term_9
+                      3.4227600000e+00 least_sq_term_9
                      -1.5768360000e+01 least_sq_term_10
                       8.1237000000e+00 least_sq_term_11
-                      1.2586150000e+01 least_sq_term_12
+                      1.1071630000e+01 least_sq_term_12
                      -1.5527660000e+01 least_sq_term_13
                       5.3554200000e+00 least_sq_term_14
                       4.8028000000e+00 least_sq_term_15
@@ -159,16 +159,16 @@ Active response data for evaluation 3:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.4219160000e+01 least_sq_term_1
                      -1.1638300000e+00 least_sq_term_2
-                      5.4591500000e+00 least_sq_term_3
+                      3.6335700000e+00 least_sq_term_3
                      -1.0283090000e+01 least_sq_term_4
                      -5.3777100000e+00 least_sq_term_5
                       1.0476310000e+01 least_sq_term_6
                      -1.3890560000e+01 least_sq_term_7
                      -3.0424300000e+00 least_sq_term_8
-                      7.2164500000e+00 least_sq_term_9
+                      6.4183300000e+00 least_sq_term_9
                      -1.4533900000e+01 least_sq_term_10
                       1.5801200000e+00 least_sq_term_11
-                      7.6949500000e+00 least_sq_term_12
+                      6.5084100000e+00 least_sq_term_12
                      -1.5767450000e+01 least_sq_term_13
                       1.5781600000e+00 least_sq_term_14
                       1.7030700000e+00 least_sq_term_15
@@ -199,16 +199,16 @@ Active response data for evaluation 4:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.5969600000e+01 least_sq_term_1
                       1.5622540000e+01 least_sq_term_2
-                     -9.1466500000e+00 least_sq_term_3
+                     -9.2474200000e+00 least_sq_term_3
                      -1.4367550000e+01 least_sq_term_4
                       1.2209500000e+01 least_sq_term_5
                      -8.8344500000e+00 least_sq_term_6
                      -1.5731690000e+01 least_sq_term_7
                       1.5309190000e+01 least_sq_term_8
-                     -9.3522100000e+00 least_sq_term_9
+                     -9.3822400000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      3.0851220000e+01 least_sq_term_12
+                      2.8111920000e+01 least_sq_term_12
                      -1.6173150000e+01 least_sq_term_13
                       1.5841800000e+01 least_sq_term_14
                      -7.7295700000e+00 least_sq_term_15
@@ -239,16 +239,16 @@ Active response data for evaluation 5:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6186490000e+01 least_sq_term_1
                       8.9593000000e+00 least_sq_term_2
-                     -5.5411000000e+00 least_sq_term_3
+                     -6.0676500000e+00 least_sq_term_3
                      -1.4532520000e+01 least_sq_term_4
                       1.7388800000e+00 least_sq_term_5
                      -5.7253600000e+00 least_sq_term_6
                      -1.6006660000e+01 least_sq_term_7
                       9.2386200000e+00 least_sq_term_8
-                     -6.3503500000e+00 least_sq_term_9
+                     -6.5195400000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      3.8175440000e+01 least_sq_term_12
+                      3.4945020000e+01 least_sq_term_12
                      -1.5874860000e+01 least_sq_term_13
                       6.0193000000e+00 least_sq_term_14
                      -4.5390400000e+00 least_sq_term_15
@@ -279,16 +279,16 @@ Active response data for evaluation 6:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
                       4.8754200000e+00 least_sq_term_2
-                     -4.3044000000e-01 least_sq_term_3
+                     -1.5605100000e+00 least_sq_term_3
                      -1.5188270000e+01 least_sq_term_4
                       3.9896400000e+00 least_sq_term_5
                      -9.4110200000e+00 least_sq_term_6
                      -1.6510310000e+01 least_sq_term_7
                       1.4981620000e+01 least_sq_term_8
-                     -9.3316700000e+00 least_sq_term_9
+                     -9.3626600000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      2.0406370000e+01 least_sq_term_12
+                      1.8367460000e+01 least_sq_term_12
                      -1.6530980000e+01 least_sq_term_13
                       1.0254070000e+01 least_sq_term_14
                      -7.4843300000e+00 least_sq_term_15
@@ -319,16 +319,16 @@ Active response data for evaluation 7:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.5385070000e+01 least_sq_term_1
                       2.3367700000e+00 least_sq_term_2
-                      6.2782600000e+00 least_sq_term_3
+                      4.3559500000e+00 least_sq_term_3
                       2.9552900000e+00 least_sq_term_4
                      -3.5881000000e-01 least_sq_term_5
                       1.2863000000e+00 least_sq_term_6
                       7.0604300000e+00 least_sq_term_7
                      -1.1002400000e+00 least_sq_term_8
-                      3.4845600000e+00 least_sq_term_9
+                      3.5845300000e+00 least_sq_term_9
                       4.2508300000e+00 least_sq_term_10
                      -2.4706100000e+00 least_sq_term_11
-                      3.4609800000e+00 least_sq_term_12
+                      4.1637500000e+00 least_sq_term_12
                       6.0125700000e+00 least_sq_term_13
                       2.1390000000e-01 least_sq_term_14
                      -7.9273000000e-01 least_sq_term_15
@@ -368,7 +368,7 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.0000000000e+01 least_sq_term_9
                      -1.5768660000e+01 least_sq_term_10
                       2.1609300000e+00 least_sq_term_11
-                      8.1886700000e+00 least_sq_term_12
+                      6.9690200000e+00 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
@@ -399,16 +399,16 @@ Active response data for evaluation 9:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6284750000e+01 least_sq_term_1
                       1.7149400000e+01 least_sq_term_2
-                     -7.2191600000e+00 least_sq_term_3
+                     -7.5475500000e+00 least_sq_term_3
                      -1.1771140000e+01 least_sq_term_4
                       8.3082900000e+00 least_sq_term_5
                      -7.1726900000e+00 least_sq_term_6
                      -1.6108510000e+01 least_sq_term_7
                       1.7938150000e+01 least_sq_term_8
-                     -7.9167100000e+00 least_sq_term_9
+                     -8.0132900000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      2.8183600000e+01 least_sq_term_12
+                      2.5623180000e+01 least_sq_term_12
                      -1.4382960000e+01 least_sq_term_13
                       1.3081310000e+01 least_sq_term_14
                      -7.8584800000e+00 least_sq_term_15
@@ -439,16 +439,16 @@ Active response data for evaluation 10:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.4684020000e+01 least_sq_term_1
                       2.7533400000e+00 least_sq_term_2
-                     -2.7970900000e+00 least_sq_term_3
+                     -3.6476800000e+00 least_sq_term_3
                      -1.4887880000e+01 least_sq_term_4
                      -2.2858700000e+00 least_sq_term_5
                      -1.2453100000e+00 least_sq_term_6
                      -1.4383840000e+01 least_sq_term_7
                       2.6659700000e+00 least_sq_term_8
-                     -3.5927800000e+00 least_sq_term_9
+                     -3.8898000000e+00 least_sq_term_9
                      -1.6266550000e+01 least_sq_term_10
                       1.0953740000e+01 least_sq_term_11
-                     -5.1071800000e+00 least_sq_term_12
+                     -5.4352700000e+00 least_sq_term_12
                      -1.0890390000e+01 least_sq_term_13
                       1.9152400000e+00 least_sq_term_14
                      -3.7562700000e+00 least_sq_term_15
@@ -479,16 +479,16 @@ Active response data for evaluation 11:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6550140000e+01 least_sq_term_1
                       1.5697700000e+00 least_sq_term_2
-                      1.3035730000e+01 least_sq_term_3
+                      1.0315430000e+01 least_sq_term_3
                      -1.5778560000e+01 least_sq_term_4
                      -5.4729000000e-01 least_sq_term_5
                      -4.6969500000e+00 least_sq_term_6
                      -1.5783360000e+01 least_sq_term_7
                       2.2058100000e+00 least_sq_term_8
-                     -6.0924000000e-01 least_sq_term_9
+                     -1.0445800000e+00 least_sq_term_9
                      -1.4533900000e+01 least_sq_term_10
                      -2.8430000000e-01 least_sq_term_11
-                      1.3661210000e+01 least_sq_term_12
+                      1.2074600000e+01 least_sq_term_12
                      -1.2770070000e+01 least_sq_term_13
                      -1.9815600000e+00 least_sq_term_14
                       5.0664800000e+00 least_sq_term_15
@@ -519,16 +519,16 @@ Active response data for evaluation 12:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.5615270000e+01 least_sq_term_1
                       4.9807700000e+00 least_sq_term_2
-                      1.4626900000e+00 least_sq_term_3
+                      1.0905000000e-01 least_sq_term_3
                      -1.1378270000e+01 least_sq_term_4
                      -4.7533000000e-01 least_sq_term_5
                       8.8007600000e+00 least_sq_term_6
                      -1.5460810000e+01 least_sq_term_7
                       5.4641500000e+00 least_sq_term_8
-                      4.3102000000e-01 least_sq_term_9
+                     -5.2530000000e-02 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      5.8375100000e+01 least_sq_term_12
+                      5.3790180000e+01 least_sq_term_12
                      -1.3489450000e+01 least_sq_term_13
                       2.8398400000e+00 least_sq_term_14
                      -1.0037900000e+00 least_sq_term_15
@@ -559,16 +559,16 @@ Active response data for evaluation 13:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.4562110000e+01 least_sq_term_1
                       3.7625800000e+00 least_sq_term_2
-                     -3.0432500000e+00 least_sq_term_3
+                     -3.8647800000e+00 least_sq_term_3
                      -1.0311000000e+01 least_sq_term_4
                       2.2862700000e+00 least_sq_term_5
                      -4.6299900000e+00 least_sq_term_6
                      -1.4247240000e+01 least_sq_term_7
                       3.9714900000e+00 least_sq_term_8
-                     -4.2371500000e+00 least_sq_term_9
+                     -4.5043000000e+00 least_sq_term_9
                      -1.5639380000e+01 least_sq_term_10
                       6.5237800000e+00 least_sq_term_11
-                     -1.6044300000e+00 least_sq_term_12
+                     -2.1674000000e+00 least_sq_term_12
                      -1.0161780000e+01 least_sq_term_13
                       3.7579000000e+00 least_sq_term_14
                      -4.5859900000e+00 least_sq_term_15
@@ -599,16 +599,16 @@ Active response data for evaluation 14:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.3980670000e+01 least_sq_term_1
                       1.1322600000e+00 least_sq_term_2
-                      4.1145500000e+00 least_sq_term_3
+                      2.4477600000e+00 least_sq_term_3
                      -1.0282050000e+01 least_sq_term_4
                      -2.3520000000e+00 least_sq_term_5
                       4.0891100000e+00 least_sq_term_6
                      -1.4574780000e+01 least_sq_term_7
                       2.1974100000e+00 least_sq_term_8
-                      2.5035000000e-01 least_sq_term_9
+                     -2.2483000000e-01 least_sq_term_9
                      -1.4294700000e+01 least_sq_term_10
                       1.0491700000e+00 least_sq_term_11
-                     -1.9347600000e+00 least_sq_term_12
+                     -2.2934900000e+00 least_sq_term_12
                      -1.1564280000e+01 least_sq_term_13
                       4.1493600000e+00 least_sq_term_14
                      -3.4024100000e+00 least_sq_term_15
@@ -639,16 +639,16 @@ Active response data for evaluation 15:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.5246460000e+01 least_sq_term_1
                       1.0208110000e+01 least_sq_term_2
-                     -2.5506700000e+00 least_sq_term_3
+                     -3.4303600000e+00 least_sq_term_3
                      -1.1030950000e+01 least_sq_term_4
                       6.3592700000e+00 least_sq_term_5
                      -7.6900000000e-02 least_sq_term_6
                      -1.5122160000e+01 least_sq_term_7
                       1.1298890000e+01 least_sq_term_8
-                     -3.5341800000e+00 least_sq_term_9
+                     -3.8339200000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      5.9627180000e+01 least_sq_term_12
+                      5.4958310000e+01 least_sq_term_12
                      -1.2137150000e+01 least_sq_term_13
                       6.3780200000e+00 least_sq_term_14
                      -6.4297000000e+00 least_sq_term_15
@@ -679,16 +679,16 @@ Active response data for evaluation 16:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6317140000e+01 least_sq_term_1
                       2.9278900000e+00 least_sq_term_2
-                      4.4365700000e+00 least_sq_term_3
+                      2.7317500000e+00 least_sq_term_3
                       1.2473900000e+00 least_sq_term_4
                      -2.3156300000e+00 least_sq_term_5
                       2.5577500000e+00 least_sq_term_6
                       5.2964000000e+00 least_sq_term_7
                      -1.5154500000e+00 least_sq_term_8
-                      4.3992400000e+00 least_sq_term_9
+                      4.0586800000e+00 least_sq_term_9
                       1.9769100000e+00 least_sq_term_10
                      -4.0003000000e-01 least_sq_term_11
-                      1.2633100000e+00 least_sq_term_12
+                      1.4673200000e+00 least_sq_term_12
                      -5.5355300000e+00 least_sq_term_13
                       2.8835600000e+00 least_sq_term_14
                      -1.4185600000e+00 least_sq_term_15
@@ -728,7 +728,7 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.0000000000e+01 least_sq_term_9
                       1.3492910000e+01 least_sq_term_10
                      -1.9095800000e+00 least_sq_term_11
-                      1.0255780000e+01 least_sq_term_12
+                      1.1058770000e+01 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
@@ -759,16 +759,16 @@ Active response data for evaluation 18:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.5209820000e+01 least_sq_term_1
                       2.7979600000e+00 least_sq_term_2
-                      1.1290640000e+01 least_sq_term_3
+                      8.7764200000e+00 least_sq_term_3
                      -1.6555650000e+01 least_sq_term_4
                      -2.6299800000e+00 least_sq_term_5
                       3.4741210000e+01 least_sq_term_6
                      -1.3890560000e+01 least_sq_term_7
                       6.4253000000e-01 least_sq_term_8
-                      6.4649900000e+00 least_sq_term_9
+                      5.7017100000e+00 least_sq_term_9
                      -1.4646150000e+01 least_sq_term_10
                       5.6987000000e-01 least_sq_term_11
-                      1.2671870000e+01 least_sq_term_12
+                      1.1151600000e+01 least_sq_term_12
                      -1.2290490000e+01 least_sq_term_13
                      -3.4700000000e-02 least_sq_term_14
                       5.3636800000e+00 least_sq_term_15
@@ -799,16 +799,16 @@ Active response data for evaluation 19:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.4802210000e+01 least_sq_term_1
                       1.0459100000e+00 least_sq_term_2
-                     -4.0090000000e-02 least_sq_term_3
+                     -1.2162600000e+00 least_sq_term_3
                      -1.5223500000e+01 least_sq_term_4
                      -7.2653000000e-01 least_sq_term_5
                      -4.6667200000e+00 least_sq_term_6
                      -1.4647680000e+01 least_sq_term_7
                       1.0858300000e+00 least_sq_term_8
-                     -1.4462000000e-01 least_sq_term_9
+                     -6.0149000000e-01 least_sq_term_9
                      -1.4533900000e+01 least_sq_term_10
                       1.0733800000e+00 least_sq_term_11
-                      1.2190390000e+01 least_sq_term_12
+                      1.0702400000e+01 least_sq_term_12
                      -1.2770070000e+01 least_sq_term_13
                      -5.3991000000e-01 least_sq_term_14
                       6.8250300000e+00 least_sq_term_15
@@ -839,16 +839,16 @@ Active response data for evaluation 20:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.4685350000e+01 least_sq_term_1
                       3.0612700000e+00 least_sq_term_2
-                      6.8382900000e+00 least_sq_term_3
+                      4.8498500000e+00 least_sq_term_3
                      -1.0448610000e+01 least_sq_term_4
                      -2.6411000000e-01 least_sq_term_5
                       7.6064900000e+00 least_sq_term_6
                      -1.4393020000e+01 least_sq_term_7
                       2.8337000000e+00 least_sq_term_8
-                      5.2288600000e+00 least_sq_term_9
+                      4.5228900000e+00 least_sq_term_9
                      -1.6102390000e+01 least_sq_term_10
                       9.8672400000e+00 least_sq_term_11
-                      1.4862200000e+00 least_sq_term_12
+                      7.1600000000e-01 least_sq_term_12
                      -1.0671910000e+01 least_sq_term_13
                       1.1390100000e+00 least_sq_term_14
                       1.8236600000e+00 least_sq_term_15
@@ -879,16 +879,16 @@ Active response data for evaluation 21:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                       3.5694900000e+00 least_sq_term_1
                      -8.1402000000e-01 least_sq_term_2
-                      3.1467600000e+00 least_sq_term_3
+                      2.3842200000e+00 least_sq_term_3
                       1.7575100000e+00 least_sq_term_4
                      -5.0083000000e-01 least_sq_term_5
                       6.9864000000e-01 least_sq_term_6
                      -4.3894600000e+00 least_sq_term_7
                      -2.2618000000e-01 least_sq_term_8
-                      3.2564400000e+00 least_sq_term_9
+                      2.9986900000e+00 least_sq_term_9
                       2.7210900000e+00 least_sq_term_10
                      -2.4303200000e+00 least_sq_term_11
-                      2.9609600000e+00 least_sq_term_12
+                      3.6424000000e+00 least_sq_term_12
                       5.4796500000e+00 least_sq_term_13
                      -6.6146000000e-01 least_sq_term_14
                      -1.5564900000e+00 least_sq_term_15
@@ -919,16 +919,16 @@ Active response data for evaluation 22:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6200470000e+01 least_sq_term_1
                       4.0490000000e+00 least_sq_term_2
-                      1.1155580000e+01 least_sq_term_3
+                      8.6573000000e+00 least_sq_term_3
                      -1.6000560000e+01 least_sq_term_4
                      -2.7218100000e+00 least_sq_term_5
                       1.5948580000e+01 least_sq_term_6
                       1.3956640000e+01 least_sq_term_7
                       4.5789000000e-01 least_sq_term_8
-                      4.6185200000e+00 least_sq_term_9
+                      4.5906300000e+00 least_sq_term_9
                      -1.6217660000e+01 least_sq_term_10
                       9.9758900000e+00 least_sq_term_11
-                      3.8037540000e+01 least_sq_term_12
+                      3.4816360000e+01 least_sq_term_12
                      -1.3909080000e+01 least_sq_term_13
                       5.7911600000e+00 least_sq_term_14
                       1.4686500000e+00 least_sq_term_15
@@ -959,16 +959,16 @@ Active response data for evaluation 23:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.4907850000e+01 least_sq_term_1
                       5.9832500000e+00 least_sq_term_2
-                     -3.1112000000e+00 least_sq_term_3
+                     -3.9247000000e+00 least_sq_term_3
                      -1.0618080000e+01 least_sq_term_4
                       2.2376800000e+00 least_sq_term_5
                      -2.2683800000e+00 least_sq_term_6
                      -1.4626500000e+01 least_sq_term_7
                       6.4966600000e+00 least_sq_term_8
-                     -4.3671700000e+00 least_sq_term_9
+                     -4.6282900000e+00 least_sq_term_9
                      -1.6527550000e+01 least_sq_term_10
                       1.2629590000e+01 least_sq_term_11
-                     -4.4585600000e+00 least_sq_term_12
+                     -4.8301400000e+00 least_sq_term_12
                      -1.5584440000e+01 least_sq_term_13
                       6.5602700000e+00 least_sq_term_14
                       6.1175000000e-01 least_sq_term_15
@@ -999,16 +999,16 @@ Active response data for evaluation 24:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                       1.7643000000e+00 least_sq_term_1
                      -8.9307000000e-01 least_sq_term_2
-                      4.2264000000e+00 least_sq_term_3
+                      2.8315500000e+00 least_sq_term_3
                       6.1365000000e-01 least_sq_term_4
                      -1.5410900000e+00 least_sq_term_5
                       1.4038700000e+00 least_sq_term_6
                       3.5032300000e+00 least_sq_term_7
                      -2.1065500000e+00 least_sq_term_8
-                      4.5442300000e+00 least_sq_term_9
+                      4.0765500000e+00 least_sq_term_9
                       1.4577500000e+00 least_sq_term_10
                      -1.4214700000e+00 least_sq_term_11
-                      2.8878500000e+00 least_sq_term_12
+                      3.2614700000e+00 least_sq_term_12
                      -1.4808290000e+01 least_sq_term_13
                       5.0419400000e+00 least_sq_term_14
                       6.8672000000e-01 least_sq_term_15
@@ -1039,16 +1039,16 @@ Active response data for evaluation 25:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
                       4.8754200000e+00 least_sq_term_2
-                      4.4042200000e+00 least_sq_term_3
+                      2.7032200000e+00 least_sq_term_3
                      -1.2888410000e+01 least_sq_term_4
                       2.1391100000e+00 least_sq_term_5
                      -6.0955500000e+00 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       3.3235300000e+00 least_sq_term_8
-                      1.0125520000e+01 least_sq_term_9
+                      9.1925500000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       7.7804000000e+00 least_sq_term_11
-                      3.2460620000e+01 least_sq_term_12
+                      2.9613410000e+01 least_sq_term_12
                      -1.6541720000e+01 least_sq_term_13
                       4.5413800000e+00 least_sq_term_14
                      -5.1494500000e+00 least_sq_term_15
@@ -1079,16 +1079,16 @@ Active response data for evaluation 26:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.4335710000e+01 least_sq_term_1
                      -7.2057000000e-01 least_sq_term_2
-                      4.6679400000e+00 least_sq_term_3
+                      2.9358000000e+00 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                      -1.0000000000e+01 least_sq_term_5
                      -1.0000000000e+01 least_sq_term_6
                      -1.4016750000e+01 least_sq_term_7
                      -9.1773000000e-01 least_sq_term_8
-                      2.5171800000e+00 least_sq_term_9
+                      1.9369100000e+00 least_sq_term_9
                      -1.5207400000e+01 least_sq_term_10
                       1.4321200000e+00 least_sq_term_11
-                      9.6873500000e+00 least_sq_term_12
+                      8.3672000000e+00 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
@@ -1119,16 +1119,16 @@ Active response data for evaluation 27:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.5734440000e+01 least_sq_term_1
                       3.8251700000e+00 least_sq_term_2
-                     -4.8543700000e+00 least_sq_term_3
+                     -5.4620200000e+00 least_sq_term_3
                      -1.4945870000e+01 least_sq_term_4
                      -4.5086000000e-01 least_sq_term_5
                      -3.9059100000e+00 least_sq_term_6
                      -1.5530990000e+01 least_sq_term_7
                       3.7658300000e+00 least_sq_term_8
-                     -6.0301900000e+00 least_sq_term_9
+                     -6.2142200000e+00 least_sq_term_9
                      -1.4814520000e+01 least_sq_term_10
                       3.4255400000e+00 least_sq_term_11
-                      8.0529000000e+00 least_sq_term_12
+                      6.8423500000e+00 least_sq_term_12
                      -1.2350440000e+01 least_sq_term_13
                       1.5670400000e+00 least_sq_term_14
                      -1.7396200000e+00 least_sq_term_15
@@ -1159,16 +1159,16 @@ Active response data for evaluation 28:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.4219160000e+01 least_sq_term_1
                       1.1687000000e-01 least_sq_term_2
-                      5.1306700000e+00 least_sq_term_3
+                      3.3438800000e+00 least_sq_term_3
                      -1.0061070000e+01 least_sq_term_4
                      -2.8889500000e+00 least_sq_term_5
                       5.0054800000e+00 least_sq_term_6
                      -1.3890560000e+01 least_sq_term_7
                      -8.5440000000e-02 least_sq_term_8
-                      3.6511800000e+00 least_sq_term_9
+                      3.0183400000e+00 least_sq_term_9
                      -1.4533900000e+01 least_sq_term_10
                       8.4430000000e-02 least_sq_term_11
-                      1.1332170000e+01 least_sq_term_12
+                      9.9017400000e+00 least_sq_term_12
                      -8.9933800000e+00 least_sq_term_13
                      -2.4422800000e+00 least_sq_term_14
                       4.5742500000e+00 least_sq_term_15
@@ -1190,58 +1190,58 @@ Constructing global approximations with no anchor, 28 DACE samples, and 0 reused
 
 >>>>> Initiating global iteration 1 (acquisition batch 1)
 Beginning Approximate Fn Evaluations...
-NCSU DIRECT succeeded with code 1
-(maximum function evaluations exceeded)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
 
 Results of EGO iteration:
 Final point =
-                      1.4000000000e-01 radius
-                      6.5000000000e-01 time_gap
-                      5.5000000000e+00 strength_neighbor
-                      2.1000000000e-01 range_neighbor
-                      5.2500000000e+00 strength_geometry
-                      1.0500000000e-01 range_geometry
+                      1.1058984911e-01 radius
+                      3.1803840878e-01 time_gap
+                      2.6604938272e+00 strength_neighbor
+                      2.7307270233e-01 range_neighbor
+                      1.7575445816e+00 strength_geometry
+                      1.3653635117e-01 range_geometry
                       1.5500000000e+00 desired_speed
 Expected Improvement    =
-                      0.0000000000e+00
+                      4.2483499687e-54
 
 ---------------------
 Begin Evaluation   29
 ---------------------
 Parameters for evaluation 29:
-                      1.4000000000e-01 radius
-                      6.5000000000e-01 time_gap
-                      5.5000000000e+00 strength_neighbor
-                      2.1000000000e-01 range_neighbor
-                      5.2500000000e+00 strength_geometry
-                      1.0500000000e-01 range_geometry
+                      1.1058984911e-01 radius
+                      3.1803840878e-01 time_gap
+                      2.6604938272e+00 strength_neighbor
+                      2.7307270233e-01 range_neighbor
+                      1.7575445816e+00 strength_geometry
+                      1.3653635117e-01 range_geometry
                       1.5500000000e+00 desired_speed
 
 blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 29:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4219160000e+01 least_sq_term_1
-                      1.3451700000e+00 least_sq_term_2
-                      3.2419200000e+00 least_sq_term_3
-                     -1.2448350000e+01 least_sq_term_4
-                     -1.6642200000e+00 least_sq_term_5
-                      4.1436800000e+00 least_sq_term_6
-                     -1.3890560000e+01 least_sq_term_7
-                      4.1547000000e-01 least_sq_term_8
-                      3.1735800000e+00 least_sq_term_9
-                     -1.5092520000e+01 least_sq_term_10
-                      4.0249400000e+00 least_sq_term_11
-                      5.2810800000e+00 least_sq_term_12
-                     -1.2770070000e+01 least_sq_term_13
-                      2.3383700000e+00 least_sq_term_14
-                      2.8139200000e+00 least_sq_term_15
-                     -1.2451470000e+01 least_sq_term_16
-                      2.9035400000e+00 least_sq_term_17
-                      8.2573900000e+00 least_sq_term_18
-                     -9.8424700000e+00 least_sq_term_19
-                      1.0767400000e+00 least_sq_term_20
-                      4.0334800000e+00 least_sq_term_21
+                     -1.3986060000e+01 least_sq_term_1
+                      1.2673800000e+00 least_sq_term_2
+                      6.7868200000e+00 least_sq_term_3
+                     -1.6666670000e+01 least_sq_term_4
+                     -1.0000000000e+01 least_sq_term_5
+                     -1.0000000000e+01 least_sq_term_6
+                     -1.3638190000e+01 least_sq_term_7
+                      1.2051300000e+00 least_sq_term_8
+                      5.3912600000e+00 least_sq_term_9
+                     -1.4309390000e+01 least_sq_term_10
+                     -1.0402400000e+00 least_sq_term_11
+                      9.1514600000e+00 least_sq_term_12
+                     -8.7535900000e+00 least_sq_term_13
+                     -4.0600000000e-03 least_sq_term_14
+                      2.1362100000e+00 least_sq_term_15
+                     -8.1207900000e+00 least_sq_term_16
+                     -1.9068000000e-01 least_sq_term_17
+                      5.7926500000e+00 least_sq_term_18
+                     -8.8675800000e+00 least_sq_term_19
+                     -2.3405000000e-01 least_sq_term_20
+                      7.0076700000e+00 least_sq_term_21
 
 
 
@@ -1255,53 +1255,53 @@ NCSU DIRECT succeeded with code 4
 
 Results of EGO iteration:
 Final point =
-                      1.1113854595e-01 radius
-                      9.3367626886e-01 time_gap
-                      1.8209876543e+00 strength_neighbor
-                      1.7507544582e-01 range_neighbor
-                      1.7575445816e+00 strength_geometry
-                      1.0291495199e-01 range_geometry
+                      1.1135802469e-01 radius
+                      8.3257887517e-01 time_gap
+                      1.4876543210e+00 strength_neighbor
+                      1.2242798354e-01 range_neighbor
+                      1.7184499314e+00 strength_geometry
+                      8.9883401920e-02 range_geometry
                       1.5500000000e+00 desired_speed
 Expected Improvement    =
-                      1.9761015526e-34
+                      2.9055431811e-06
 
 ---------------------
 Begin Evaluation   30
 ---------------------
 Parameters for evaluation 30:
-                      1.1113854595e-01 radius
-                      9.3367626886e-01 time_gap
-                      1.8209876543e+00 strength_neighbor
-                      1.7507544582e-01 range_neighbor
-                      1.7575445816e+00 strength_geometry
-                      1.0291495199e-01 range_geometry
+                      1.1135802469e-01 radius
+                      8.3257887517e-01 time_gap
+                      1.4876543210e+00 strength_neighbor
+                      1.2242798354e-01 range_neighbor
+                      1.7184499314e+00 strength_geometry
+                      8.9883401920e-02 range_geometry
                       1.5500000000e+00 desired_speed
 
 blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 30:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                      3.4447800000e+00 least_sq_term_1
-                     -5.0628000000e-01 least_sq_term_2
-                      2.8067200000e+00 least_sq_term_3
-                      2.9685300000e+00 least_sq_term_4
-                     -8.9556000000e-01 least_sq_term_5
-                      1.2349600000e+00 least_sq_term_6
-                      5.2008200000e+00 least_sq_term_7
-                     -8.5550000000e-01 least_sq_term_8
-                      1.6138600000e+00 least_sq_term_9
-                      2.7213100000e+00 least_sq_term_10
-                     -2.7177900000e+00 least_sq_term_11
-                      8.5820000000e-02 least_sq_term_12
-                      4.2219800000e+00 least_sq_term_13
-                     -3.7647000000e-01 least_sq_term_14
-                     -3.5441800000e+00 least_sq_term_15
-                     -4.2359100000e+00 least_sq_term_16
-                      1.8073500000e+00 least_sq_term_17
-                     -2.5590400000e+00 least_sq_term_18
-                     -1.0609310000e+01 least_sq_term_19
-                      7.7025000000e-01 least_sq_term_20
-                     -1.8058800000e+00 least_sq_term_21
+                     -1.5909100000e+01 least_sq_term_1
+                      2.9597000000e+00 least_sq_term_2
+                      5.1707400000e+00 least_sq_term_3
+                     -1.6000560000e+01 least_sq_term_4
+                     -2.5926000000e+00 least_sq_term_5
+                      8.7848000000e+00 least_sq_term_6
+                     -5.6489700000e+00 least_sq_term_7
+                      6.9765000000e-01 least_sq_term_8
+                      2.5505600000e+00 least_sq_term_9
+                      1.7487500000e+00 least_sq_term_10
+                     -2.7319500000e+00 least_sq_term_11
+                     -7.2630000000e-01 least_sq_term_12
+                      4.1313500000e+00 least_sq_term_13
+                     -5.6640000000e-01 least_sq_term_14
+                     -4.3517300000e+00 least_sq_term_15
+                     -1.0141770000e+01 least_sq_term_16
+                      2.0033000000e+00 least_sq_term_17
+                     -3.6993700000e+00 least_sq_term_18
+                     -2.7833800000e+00 least_sq_term_19
+                      1.8104300000e+00 least_sq_term_20
+                     -4.2332000000e-01 least_sq_term_21
 
 
 
@@ -1324,16 +1324,16 @@ Stopping criteria not met: globalIterCount (2) < maxIterations (80)
 <<<<< Best residual terms =
                       3.5694900000e+00
                      -8.1402000000e-01
-                      3.1467600000e+00
+                      2.3842200000e+00
                       1.7575100000e+00
                      -5.0083000000e-01
                       6.9864000000e-01
                      -4.3894600000e+00
                      -2.2618000000e-01
-                      3.2564400000e+00
+                      2.9986900000e+00
                       2.7210900000e+00
                      -2.4303200000e+00
-                      2.9609600000e+00
+                      3.6424000000e+00
                       5.4796500000e+00
                      -6.6146000000e-01
                      -1.5564900000e+00
@@ -1343,12 +1343,12 @@ Stopping criteria not met: globalIterCount (2) < maxIterations (80)
                      -4.1907000000e-01
                      -6.8977000000e-01
                       2.3316100000e+00
-<<<<< Best residual norm =  1.2059419857e+01; 0.5 * norm^2 =  7.2714803638e+01
+<<<<< Best residual norm =  1.2004147103e+01; 0.5 * norm^2 =  7.2049773834e+01
 <<<<< Best evaluation ID: 21
 
 
 <<<<< Iterator efficient_global completed.
 <<<<< Environment execution completed.
 DAKOTA execution time in seconds:
-  Total CPU        =    4.42117 [parent =    4.42117, child =     -3e-06]
-  Total wall clock =    240.878
+  Total CPU        =    1.88359 [parent =    1.88367, child =   -7.6e-05]
+  Total wall clock =    368.106

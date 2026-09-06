@@ -63,6 +63,20 @@ def area(width):
     return pedpy.MeasurementArea([(-hw, 0.5), (hw, 0.5), (hw, 2.5), (-hw, 2.5)])
 
 
+def front_occupancy(traj, width):
+    """Return time and pedestrian count in the front measurement area."""
+    hw = width / 2 - 0.05
+    data = traj.data
+    inside = data[
+        data["x"].between(-hw, hw)
+        & data["y"].between(0.5, 2.5)
+    ]
+    frames = np.arange(data["frame"].min(), data["frame"].max() + 1)
+    count = inside.groupby("frame")["id"].nunique().reindex(frames, fill_value=0)
+    time = (frames - frames[0]) / traj.frame_rate
+    return time, count.to_numpy()
+
+
 def compute(traj, width):
     line = pedpy.MeasurementLine([(-0.25, -0.6), (0.25, -0.6)])
     nt, _ = pedpy.compute_n_t(traj_data=traj, measurement_line=line)
@@ -88,8 +102,14 @@ def compute(traj, width):
     speed_ind = pedpy.compute_individual_speed(traj_data=traj, frame_step=5, speed_calculation=pedpy.SpeedCalculation.BORDER_SINGLE_SIDED)
     speed = pedpy.compute_mean_speed_per_frame(traj_data=traj, individual_speed=speed_ind, measurement_area=ma)
     f_lo, f_hi = nt.index[lo], nt.index[hi]
+    density_window = density.loc[f_lo:f_hi, "density"]
+    speed_window = speed.loc[f_lo:f_hi]
+    # PedPy reports zero mean speed when nobody is in the area. Those frames
+    # belong in time-averaged density, but not in speed conditional on occupancy.
+    occupied = density_window > 0
+    mean_speed = float(speed_window.loc[occupied].mean()) if occupied.any() else 0.0
     return {"flow": float(flow), "flow_active": float(flow_active), "flow_total": float(flow_total),
             "emptied": bool(emptied), "max_gap": max_gap, "n_agents": n_agents,
-            "density": float(density.loc[f_lo:f_hi, "density"].mean()),
-            "speed": float(speed.loc[f_lo:f_hi].mean()), "n_total": n_tot, "t": t, "n": n,
+            "density": float(density_window.mean()), "speed": mean_speed,
+            "n_total": n_tot, "t": t, "n": n,
             "window": (float(t[lo]), float(t[hi]))}

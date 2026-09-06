@@ -11,6 +11,8 @@ best() { python3 -c "
 import re,sys; t=open('$1').read(); m=re.search(r'Best parameters\s*=\s*\n((?:\s*\S+\s+\S+\n)+)', t)
 d={l.split()[1]: l.split()[0] for l in m.group(1).strip().splitlines()}
 print(' '.join(d[k] for k in sys.argv[1:]))" $2 $3 $4 $5 $6 $7; }
+builtin cd $C
+python3 build_exp_observables.py
 for d in calib_h0 calib_h0_s9; do
   builtin cd $C/$d; rm -rf runs dakota.rst LHS_* fort.*
   CQ_RESIDUALS=1 JPS_N_SEEDS=2 CQ_RUNS=$H0 dakota -i dakota.in -o dakota.out > console.log 2>&1
@@ -29,8 +31,8 @@ python3 evaluate_cq.py calib_h0 1.55 ${=P5} --seeds 3 > results/calib_h0.txt 2>&
 python3 evaluate_cq.py calib_h0_s9 1.55 ${=P9} --seeds 3 > results/calib_h0_s9.txt 2>&1
 python3 evaluate_cq.py joint 1.55 ${=PJ} --seeds 3 > results/joint.txt 2>&1
 echo "evaluations done $(date +%H:%M)" >> $LOG
-# motivation probes with the new h0 parameters
-set -- ${=P5}
+# motivation probes with set C (the seed-9 h0 calibration)
+set -- ${=P9}
 sed -e "s/@TIME_GAP@/$2/" -e "s/@RADIUS@/$1/" -e "s/@STRENGTH_N@/$3/" -e "s/@RANGE_N@/$4/" -e "s/@STRENGTH_G@/$5/" -e "s/@RANGE_G@/$6/" probe_hminus/dakota.in.template > probe_hminus/dakota.in
 builtin cd probe_hminus; rm -rf runs dakota.rst LHS_* fort.*
 CQ_RESIDUALS=1 JPS_N_SEEDS=2 CQ_RUNS=$HM dakota -i dakota.in -o dakota.out > console.log 2>&1

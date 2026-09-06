@@ -1,11 +1,11 @@
 {
  "motivation": "h-",
  "fixed_parameters": {
-  "desired_speed": 1.2463189078,
-  "time_gap": 0.78837528531,
-  "strength_neighbor": 9.41,
-  "strength_geometry": 2.6,
-  "range_geometry": 0.032
+  "desired_speed": 1.1720823823,
+  "time_gap": 0.79348165334,
+  "strength_neighbor": 9.0061728395,
+  "strength_geometry": 2.9564471879,
+  "range_geometry": 0.072421124829
  },
  "seed": 1,
  "radius_grid": [
@@ -27,9 +27,9 @@
   0.4
  ],
  "best": {
-  "radius": 0.16666666666666669,
-  "range_neighbor": 0.14666666666666667,
-  "norm": 14.627896368217515,
+  "radius": 0.15000000000000002,
+  "range_neighbor": 0.08333333333333334,
+  "norm": 14.658784545626292,
   "status_counts": {
    "emptied": 9
   }
@@ -38,7 +38,7 @@
   {
    "radius": 0.1,
    "range_neighbor": 0.02,
-   "norm": 23.869423608890695,
+   "norm": 21.29110836035023,
    "status_counts": {
     "emptied": 9
    }
@@ -46,7 +46,7 @@
   {
    "radius": 0.1,
    "range_neighbor": 0.08333333333333334,
-   "norm": 22.314410880114195,
+   "norm": 17.359115784626752,
    "status_counts": {
     "emptied": 9
    }
@@ -54,309 +54,307 @@
   {
    "radius": 0.1,
    "range_neighbor": 0.14666666666666667,
-   "norm": 32.333949921646905,
+   "norm": 17.657115917935872,
    "status_counts": {
-    "emptied": 6,
-    "not emptied": 1,
-    "stalled": 2
+    "emptied": 9
    }
   },
   {
    "radius": 0.1,
    "range_neighbor": 0.21,
-   "norm": 38.24064642514399,
+   "norm": 18.231292954206495,
    "status_counts": {
-    "stalled": 9
+    "emptied": 9
    }
   },
   {
    "radius": 0.1,
    "range_neighbor": 0.2733333333333334,
-   "norm": 41.084833931672875,
+   "norm": 35.102184375440444,
    "status_counts": {
-    "stalled": 9
+    "emptied": 5,
+    "stalled": 4
    }
   },
   {
    "radius": 0.1,
    "range_neighbor": 0.3366666666666667,
-   "norm": 42.42280253277758,
+   "norm": 46.783171860933194,
    "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.1,
-   "range_neighbor": 0.4,
-   "norm": 49.29272729895966,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.11666666666666667,
-   "range_neighbor": 0.02,
-   "norm": 20.833872389655827,
-   "status_counts": {
-    "emptied": 9
-   }
-  },
-  {
-   "radius": 0.11666666666666667,
-   "range_neighbor": 0.08333333333333334,
-   "norm": 17.180136894202047,
-   "status_counts": {
-    "emptied": 8,
-    "not emptied": 1
-   }
-  },
-  {
-   "radius": 0.11666666666666667,
-   "range_neighbor": 0.14666666666666667,
-   "norm": 18.42306282495382,
-   "status_counts": {
-    "emptied": 8,
-    "not emptied": 1
-   }
-  },
-  {
-   "radius": 0.11666666666666667,
-   "range_neighbor": 0.21,
-   "norm": 38.685547735321904,
-   "status_counts": {
-    "emptied": 1,
+    "failed": 1,
     "stalled": 8
    }
   },
   {
-   "radius": 0.11666666666666667,
-   "range_neighbor": 0.2733333333333334,
-   "norm": 41.12912256322434,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.11666666666666667,
-   "range_neighbor": 0.3366666666666667,
-   "norm": 43.89234938397885,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.11666666666666667,
+   "radius": 0.1,
    "range_neighbor": 0.4,
-   "norm": 49.80063631704887,
+   "norm": 50.870903290330894,
    "status_counts": {
-    "stalled": 9
+    "failed": 2,
+    "stalled": 7
    }
   },
   {
-   "radius": 0.13333333333333333,
+   "radius": 0.11666666666666667,
    "range_neighbor": 0.02,
-   "norm": 18.700077167387732,
-   "status_counts": {
-    "emptied": 9
-   }
-  },
-  {
-   "radius": 0.13333333333333333,
-   "range_neighbor": 0.08333333333333334,
-   "norm": 16.69104536972551,
-   "status_counts": {
-    "emptied": 9
-   }
-  },
-  {
-   "radius": 0.13333333333333333,
-   "range_neighbor": 0.14666666666666667,
-   "norm": 17.318222761584714,
-   "status_counts": {
-    "emptied": 9
-   }
-  },
-  {
-   "radius": 0.13333333333333333,
-   "range_neighbor": 0.21,
-   "norm": 34.8718798230091,
-   "status_counts": {
-    "emptied": 5,
-    "stalled": 4
-   }
-  },
-  {
-   "radius": 0.13333333333333333,
-   "range_neighbor": 0.2733333333333334,
-   "norm": 40.3874024903734,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.13333333333333333,
-   "range_neighbor": 0.3366666666666667,
-   "norm": 44.76220382856705,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.13333333333333333,
-   "range_neighbor": 0.4,
-   "norm": 47.700199638081116,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.15000000000000002,
-   "range_neighbor": 0.02,
-   "norm": 18.989362705875386,
-   "status_counts": {
-    "emptied": 9
-   }
-  },
-  {
-   "radius": 0.15000000000000002,
-   "range_neighbor": 0.08333333333333334,
-   "norm": 15.45730884184422,
-   "status_counts": {
-    "emptied": 9
-   }
-  },
-  {
-   "radius": 0.15000000000000002,
-   "range_neighbor": 0.14666666666666667,
-   "norm": 23.232747667836865,
+   "norm": 19.354911849138666,
    "status_counts": {
     "emptied": 8,
-    "stalled": 1
+    "not emptied": 1
    }
   },
   {
-   "radius": 0.15000000000000002,
-   "range_neighbor": 0.21,
-   "norm": 37.28163140294939,
-   "status_counts": {
-    "emptied": 5,
-    "stalled": 4
-   }
-  },
-  {
-   "radius": 0.15000000000000002,
-   "range_neighbor": 0.2733333333333334,
-   "norm": 45.6417884710035,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.15000000000000002,
-   "range_neighbor": 0.3366666666666667,
-   "norm": 45.284057808202135,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.15000000000000002,
-   "range_neighbor": 0.4,
-   "norm": 47.626438382322874,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.16666666666666669,
-   "range_neighbor": 0.02,
-   "norm": 24.82457702940963,
-   "status_counts": {
-    "emptied": 7,
-    "not emptied": 2
-   }
-  },
-  {
-   "radius": 0.16666666666666669,
+   "radius": 0.11666666666666667,
    "range_neighbor": 0.08333333333333334,
-   "norm": 21.10216207560632,
-   "status_counts": {
-    "emptied": 8,
-    "stalled": 1
-   }
-  },
-  {
-   "radius": 0.16666666666666669,
-   "range_neighbor": 0.14666666666666667,
-   "norm": 14.627896368217515,
+   "norm": 15.433887304667577,
    "status_counts": {
     "emptied": 9
    }
   },
   {
-   "radius": 0.16666666666666669,
+   "radius": 0.11666666666666667,
+   "range_neighbor": 0.14666666666666667,
+   "norm": 16.945102521812146,
+   "status_counts": {
+    "emptied": 9
+   }
+  },
+  {
+   "radius": 0.11666666666666667,
    "range_neighbor": 0.21,
-   "norm": 37.469495600457904,
-   "status_counts": {
-    "emptied": 4,
-    "stalled": 5
-   }
-  },
-  {
-   "radius": 0.16666666666666669,
-   "range_neighbor": 0.2733333333333334,
-   "norm": 44.33544023275501,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.16666666666666669,
-   "range_neighbor": 0.3366666666666667,
-   "norm": 44.658989484368206,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.16666666666666669,
-   "range_neighbor": 0.4,
-   "norm": 46.131710767555234,
-   "status_counts": {
-    "stalled": 9
-   }
-  },
-  {
-   "radius": 0.18333333333333335,
-   "range_neighbor": 0.02,
-   "norm": 38.62036024176851,
-   "status_counts": {
-    "emptied": 7,
-    "stalled": 2
-   }
-  },
-  {
-   "radius": 0.18333333333333335,
-   "range_neighbor": 0.08333333333333334,
-   "norm": 31.349788035077065,
+   "norm": 28.17158598968634,
    "status_counts": {
     "emptied": 6,
     "stalled": 3
    }
   },
   {
-   "radius": 0.18333333333333335,
+   "radius": 0.11666666666666667,
+   "range_neighbor": 0.2733333333333334,
+   "norm": 40.70363593770906,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.11666666666666667,
+   "range_neighbor": 0.3366666666666667,
+   "norm": 41.516392627905475,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.11666666666666667,
+   "range_neighbor": 0.4,
+   "norm": 49.477409416107186,
+   "status_counts": {
+    "failed": 1,
+    "stalled": 8
+   }
+  },
+  {
+   "radius": 0.13333333333333333,
+   "range_neighbor": 0.02,
+   "norm": 18.937875801248573,
+   "status_counts": {
+    "emptied": 9
+   }
+  },
+  {
+   "radius": 0.13333333333333333,
+   "range_neighbor": 0.08333333333333334,
+   "norm": 15.267483384831046,
+   "status_counts": {
+    "emptied": 9
+   }
+  },
+  {
+   "radius": 0.13333333333333333,
    "range_neighbor": 0.14666666666666667,
-   "norm": 36.35871548824588,
+   "norm": 16.47916689086154,
+   "status_counts": {
+    "emptied": 8,
+    "not emptied": 1
+   }
+  },
+  {
+   "radius": 0.13333333333333333,
+   "range_neighbor": 0.21,
+   "norm": 31.44020097296938,
    "status_counts": {
     "emptied": 4,
     "stalled": 5
    }
   },
   {
+   "radius": 0.13333333333333333,
+   "range_neighbor": 0.2733333333333334,
+   "norm": 40.92579638751831,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.13333333333333333,
+   "range_neighbor": 0.3366666666666667,
+   "norm": 42.5767161539428,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.13333333333333333,
+   "range_neighbor": 0.4,
+   "norm": 47.826401962849495,
+   "status_counts": {
+    "failed": 1,
+    "stalled": 8
+   }
+  },
+  {
+   "radius": 0.15000000000000002,
+   "range_neighbor": 0.02,
+   "norm": 24.477970371351066,
+   "status_counts": {
+    "emptied": 9
+   }
+  },
+  {
+   "radius": 0.15000000000000002,
+   "range_neighbor": 0.08333333333333334,
+   "norm": 14.658784545626292,
+   "status_counts": {
+    "emptied": 9
+   }
+  },
+  {
+   "radius": 0.15000000000000002,
+   "range_neighbor": 0.14666666666666667,
+   "norm": 26.960869039121064,
+   "status_counts": {
+    "emptied": 6,
+    "stalled": 3
+   }
+  },
+  {
+   "radius": 0.15000000000000002,
+   "range_neighbor": 0.21,
+   "norm": 41.75113776930245,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.15000000000000002,
+   "range_neighbor": 0.2733333333333334,
+   "norm": 44.32848407331487,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.15000000000000002,
+   "range_neighbor": 0.3366666666666667,
+   "norm": 44.08811506457197,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.15000000000000002,
+   "range_neighbor": 0.4,
+   "norm": 45.28648237258309,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.16666666666666669,
+   "range_neighbor": 0.02,
+   "norm": 41.993653132878066,
+   "status_counts": {
+    "not emptied": 5,
+    "stalled": 4
+   }
+  },
+  {
+   "radius": 0.16666666666666669,
+   "range_neighbor": 0.08333333333333334,
+   "norm": 35.72501251203999,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.16666666666666669,
+   "range_neighbor": 0.14666666666666667,
+   "norm": 35.42094325381463,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.16666666666666669,
+   "range_neighbor": 0.21,
+   "norm": 42.05514253651963,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.16666666666666669,
+   "range_neighbor": 0.2733333333333334,
+   "norm": 46.014737483942746,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.16666666666666669,
+   "range_neighbor": 0.3366666666666667,
+   "norm": 45.094568450583104,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.16666666666666669,
+   "range_neighbor": 0.4,
+   "norm": 46.168684165504025,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.18333333333333335,
+   "range_neighbor": 0.02,
+   "norm": 57.0978719707558,
+   "status_counts": {
+    "not emptied": 1,
+    "stalled": 8
+   }
+  },
+  {
+   "radius": 0.18333333333333335,
+   "range_neighbor": 0.08333333333333334,
+   "norm": 35.20906573871905,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
+   "radius": 0.18333333333333335,
+   "range_neighbor": 0.14666666666666667,
+   "norm": 37.879707904077094,
+   "status_counts": {
+    "stalled": 9
+   }
+  },
+  {
    "radius": 0.18333333333333335,
    "range_neighbor": 0.21,
-   "norm": 42.06162584965409,
+   "norm": 39.24454129127739,
    "status_counts": {
     "stalled": 9
    }
@@ -364,7 +362,7 @@
   {
    "radius": 0.18333333333333335,
    "range_neighbor": 0.2733333333333334,
-   "norm": 45.68399242148637,
+   "norm": 40.062542758430716,
    "status_counts": {
     "stalled": 9
    }
@@ -372,7 +370,7 @@
   {
    "radius": 0.18333333333333335,
    "range_neighbor": 0.3366666666666667,
-   "norm": 44.95072881164038,
+   "norm": 45.37263543451233,
    "status_counts": {
     "stalled": 9
    }
@@ -380,7 +378,7 @@
   {
    "radius": 0.18333333333333335,
    "range_neighbor": 0.4,
-   "norm": 46.93479080735694,
+   "norm": 46.04403746927616,
    "status_counts": {
     "stalled": 9
    }
@@ -388,36 +386,31 @@
   {
    "radius": 0.2,
    "range_neighbor": 0.02,
-   "norm": 49.06389632738896,
+   "norm": 63.91807360741078,
    "status_counts": {
-    "emptied": 3,
-    "not emptied": 1,
-    "stalled": 5
+    "stalled": 9
    }
   },
   {
    "radius": 0.2,
    "range_neighbor": 0.08333333333333334,
-   "norm": 24.723543206269383,
+   "norm": 44.02793070542352,
    "status_counts": {
-    "emptied": 6,
-    "not emptied": 1,
-    "stalled": 2
+    "stalled": 9
    }
   },
   {
    "radius": 0.2,
    "range_neighbor": 0.14666666666666667,
-   "norm": 33.6983603424386,
+   "norm": 38.074688644862036,
    "status_counts": {
-    "emptied": 5,
-    "stalled": 4
+    "stalled": 9
    }
   },
   {
    "radius": 0.2,
    "range_neighbor": 0.21,
-   "norm": 39.34455972510288,
+   "norm": 39.48306886596125,
    "status_counts": {
     "stalled": 9
    }
@@ -425,7 +418,7 @@
   {
    "radius": 0.2,
    "range_neighbor": 0.2733333333333334,
-   "norm": 43.07863664826845,
+   "norm": 41.04123897023718,
    "status_counts": {
     "stalled": 9
    }
@@ -433,7 +426,7 @@
   {
    "radius": 0.2,
    "range_neighbor": 0.3366666666666667,
-   "norm": 48.0994408214227,
+   "norm": 44.73786027576453,
    "status_counts": {
     "stalled": 9
    }
@@ -441,7 +434,7 @@
   {
    "radius": 0.2,
    "range_neighbor": 0.4,
-   "norm": 45.515365122626044,
+   "norm": 47.073729617937836,
    "status_counts": {
     "stalled": 9
    }

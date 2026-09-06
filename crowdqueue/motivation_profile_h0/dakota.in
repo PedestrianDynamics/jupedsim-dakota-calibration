@@ -14,9 +14,9 @@ method
 variables
   continuous_design = 2
     descriptors  'desired_speed' 'time_gap'
-    initial_point  1.55 0.833
+    initial_point  1.55 1.038
     lower_bounds   0.80 0.10
-    upper_bounds   1.80 1.20
+    upper_bounds   1.80 2.00
 
 interface
   fork
@@ -24,7 +24,7 @@ interface
     parameters_file = 'params.in'
     results_file = 'results.out'
     work_directory named 'runs/run' directory_tag
-    link_files = '../driver_cq.py' '../driver_cq_set_c.py' '../observables_cq.py' '../scenario_cq.py' '../exp_observables_cq.json'
+    link_files = '../driver_cq.py' '../driver_cq_set_c.py' '../parameter_io.py' '../observables_cq.py' '../scenario_cq.py' '../exp_observables_cq.json'
   asynchronous evaluation_concurrency = 1
 
 responses

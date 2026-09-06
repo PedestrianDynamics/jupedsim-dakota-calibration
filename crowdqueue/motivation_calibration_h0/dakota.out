@@ -1,7 +1,7 @@
 Dakota version 6.24 released May 15 2026.
 Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
 Running MPI Dakota executable in serial mode.
-Start time: Sun Sep  6 14:07:29 2026
+Start time: Sun Sep  6 19:17:44 2026
 
 ------------------
 Begin Dakota input
@@ -9,6 +9,7 @@ Begin Dakota input
 # Exploratory calibration on every usable baseline-motivation (h0) run.
 # This condition has 11 runs and 33 residuals. Desired speed is free only to
 # test whether a static parameter absorbs the motivation condition.
+# Reproduce: CQ_RESIDUALS=1 CQ_RUNS=030_c_56_h0,050_c_45_h0,070_c_23_h0,090_c_12_h0,110_c_12_h0,150_q_56_h0,170_q_12_h0,190_q_34_h0,230_q_23_h0,250_q_45_h0,270_c_34_h0 JPS_N_SEEDS=1 JPS_WORKERS=3 dakota -i dakota.in -o dakota.out
 
 environment
   tabular_data
@@ -23,9 +24,9 @@ method
 variables
   continuous_design = 7
     descriptors    'desired_speed' 'radius' 'time_gap' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
-    initial_point  1.55 0.144 0.833 9.41 0.09 2.60 0.032
+    initial_point  1.55 0.12376 1.03779 9.00617 0.06248 2.95645 0.07242
     lower_bounds   0.80 0.10  0.10  1.0  0.02 0.50 0.01
-    upper_bounds   1.80 0.20  1.20 10.0  0.40 10.0 0.20
+    upper_bounds   1.80 0.20  2.00 10.0  0.40 10.0 0.20
 
 interface
   fork
@@ -62,7 +63,7 @@ Begin Evaluation    1
 Parameters for evaluation 1:
                       8.0616647698e-01 desired_speed
                       1.9323107640e-01 radius
-                      1.1789466087e+00 time_gap
+                      1.9636350514e+00 time_gap
                       2.3188360232e+00 strength_neighbor
                       1.2509162418e-01 range_neighbor
                       3.6589473511e+00 strength_geometry
@@ -73,38 +74,38 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 1:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6202550000e+01 least_sq_term_1
-                      3.3215300000e+00 least_sq_term_2
-                     -1.2559100000e+00 least_sq_term_3
-                     -1.5912170000e+01 least_sq_term_4
-                      7.0756200000e+00 least_sq_term_5
-                     -3.7193000000e-01 least_sq_term_6
-                     -1.4825210000e+01 least_sq_term_7
-                      1.0036600000e+00 least_sq_term_8
-                     -4.9530700000e+00 least_sq_term_9
+                      2.6130700000e+00 least_sq_term_2
+                     -3.7759500000e+00 least_sq_term_3
+                     -1.5909610000e+01 least_sq_term_4
+                      5.5400800000e+00 least_sq_term_5
+                     -3.1369300000e+00 least_sq_term_6
+                     -1.6052020000e+01 least_sq_term_7
+                      9.3166100000e+00 least_sq_term_8
+                     -6.1388500000e+00 least_sq_term_9
                      -1.3977060000e+01 least_sq_term_10
-                     -8.9856000000e-01 least_sq_term_11
-                     -1.2728600000e+00 least_sq_term_12
-                     -1.1543550000e+01 least_sq_term_13
-                     -5.3409500000e+00 least_sq_term_14
-                      1.4644400000e+00 least_sq_term_15
-                     -1.6245040000e+01 least_sq_term_16
-                      3.3273400000e+00 least_sq_term_17
-                      5.8072000000e-01 least_sq_term_18
-                     -1.3611580000e+01 least_sq_term_19
-                     -1.2974800000e+00 least_sq_term_20
-                     -2.2636800000e+00 least_sq_term_21
-                     -1.6211570000e+01 least_sq_term_22
-                      1.1626830000e+01 least_sq_term_23
-                      3.9997000000e-01 least_sq_term_24
-                     -1.5526150000e+01 least_sq_term_25
-                      9.6609000000e-01 least_sq_term_26
-                     -3.2070500000e+00 least_sq_term_27
-                     -1.6559390000e+01 least_sq_term_28
+                     -2.3658600000e+00 least_sq_term_11
+                     -2.0109000000e+00 least_sq_term_12
+                     -1.1877670000e+01 least_sq_term_13
+                     -6.3657700000e+00 least_sq_term_14
+                      7.4357000000e-01 least_sq_term_15
+                     -1.6243180000e+01 least_sq_term_16
+                      2.6934400000e+00 least_sq_term_17
+                     -2.6400500000e+00 least_sq_term_18
+                     -1.3600180000e+01 least_sq_term_19
+                     -3.0691900000e+00 least_sq_term_20
+                     -1.7419900000e+00 least_sq_term_21
+                     -1.6207830000e+01 least_sq_term_22
+                      1.0989770000e+01 least_sq_term_23
+                     -3.3113400000e+00 least_sq_term_24
+                     -1.6458030000e+01 least_sq_term_25
+                     -9.1831000000e-01 least_sq_term_26
+                     -2.5357000000e+00 least_sq_term_27
+                     -1.6558880000e+01 least_sq_term_28
                       7.6286600000e+00 least_sq_term_29
-                      8.8802000000e-01 least_sq_term_30
-                     -1.6546080000e+01 least_sq_term_31
-                      1.9447100000e+00 least_sq_term_32
-                     -3.4422900000e+00 least_sq_term_33
+                     -2.8708600000e+00 least_sq_term_30
+                     -1.6545800000e+01 least_sq_term_31
+                      2.4640400000e+00 least_sq_term_32
+                     -5.2369500000e+00 least_sq_term_33
 
 
 
@@ -114,7 +115,7 @@ Begin Evaluation    2
 Parameters for evaluation 2:
                       1.0524950287e+00 desired_speed
                       1.6665552476e-01 radius
-                      5.0332616512e-01 time_gap
+                      7.9665428521e-01 time_gap
                       9.9612638077e+00 strength_neighbor
                       2.8899841423e-01 range_neighbor
                       7.8856420752e+00 strength_geometry
@@ -125,38 +126,38 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 2:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6550870000e+01 least_sq_term_1
-                     -5.0850000000e-02 least_sq_term_2
-                      1.4642020000e+01 least_sq_term_3
+                      3.8172000000e-01 least_sq_term_2
+                      1.5982190000e+01 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                       5.4005600000e+00 least_sq_term_5
-                      3.7867910000e+01 least_sq_term_6
+                      3.2573070000e+01 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       8.3072100000e+00 least_sq_term_8
-                      1.6528230000e+01 least_sq_term_9
+                      1.0720090000e+01 least_sq_term_9
                      -1.6549880000e+01 least_sq_term_10
                       3.2225900000e+00 least_sq_term_11
-                      2.0243700000e+00 least_sq_term_12
+                     -2.1925200000e+00 least_sq_term_12
                      -1.2997540000e+01 least_sq_term_13
-                     -1.9535600000e+00 least_sq_term_14
-                      1.8563200000e+00 least_sq_term_15
+                     -1.6997600000e+00 least_sq_term_14
+                     -1.7066100000e+00 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                       1.0549400000e+00 least_sq_term_17
-                      4.4211660000e+01 least_sq_term_18
-                     -1.6539030000e+01 least_sq_term_19
+                      3.4004880000e+01 least_sq_term_18
+                     -1.6538370000e+01 least_sq_term_19
                      -7.3500000000e-03 least_sq_term_20
-                     -6.0673900000e+00 least_sq_term_21
+                     -5.9609800000e+00 least_sq_term_21
                      -1.6666670000e+01 least_sq_term_22
                       7.7804000000e+00 least_sq_term_23
-                      3.7418970000e+01 least_sq_term_24
-                     -1.6563190000e+01 least_sq_term_25
-                     -1.2700000000e-03 least_sq_term_26
-                     -1.4328100000e+00 least_sq_term_27
+                      2.9916100000e+01 least_sq_term_24
+                     -1.6562840000e+01 least_sq_term_25
+                      7.6786000000e-01 least_sq_term_26
+                     -1.3001200000e+00 least_sq_term_27
                      -1.6666670000e+01 least_sq_term_28
                       8.4681200000e+00 least_sq_term_29
-                      3.2293470000e+01 least_sq_term_30
-                     -1.6546370000e+01 least_sq_term_31
+                      2.6419770000e+01 least_sq_term_30
+                     -1.6546170000e+01 least_sq_term_31
                      -1.3263000000e-01 least_sq_term_32
-                     -5.7946000000e-01 least_sq_term_33
+                      3.1680000000e-02 least_sq_term_33
 
 
 
@@ -166,7 +167,7 @@ Begin Evaluation    3
 Parameters for evaluation 3:
                       1.3577983686e+00 desired_speed
                       1.2848218945e-01 radius
-                      4.3007629377e-01 time_gap
+                      6.7013178015e-01 time_gap
                       5.2316706552e+00 strength_neighbor
                       1.1118815330e-01 range_neighbor
                       4.1998255029e+00 strength_geometry
@@ -176,39 +177,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 3:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5164360000e+01 least_sq_term_1
-                      8.6066800000e+00 least_sq_term_2
-                      9.2011200000e+00 least_sq_term_3
-                     -1.4674250000e+01 least_sq_term_4
-                      5.7098900000e+00 least_sq_term_5
-                      4.0620700000e+00 least_sq_term_6
-                      4.5123700000e+00 least_sq_term_7
-                     -1.3876500000e+00 least_sq_term_8
-                      1.8316500000e+00 least_sq_term_9
-                      6.4685300000e+00 least_sq_term_10
-                      9.0900000000e-03 least_sq_term_11
-                      2.1648500000e+00 least_sq_term_12
-                     -1.5222710000e+01 least_sq_term_13
-                     -6.1108000000e-01 least_sq_term_14
-                      1.0284050000e+01 least_sq_term_15
-                     -1.4994310000e+01 least_sq_term_16
-                      7.9167700000e+00 least_sq_term_17
-                      9.3784800000e+00 least_sq_term_18
-                      9.2210800000e+00 least_sq_term_19
-                     -2.7542000000e-01 least_sq_term_20
-                      1.9214700000e+00 least_sq_term_21
-                      6.6939900000e+00 least_sq_term_22
-                     -2.7031100000e+00 least_sq_term_23
-                      3.3327600000e+00 least_sq_term_24
-                     -1.5435830000e+01 least_sq_term_25
-                      5.9092200000e+00 least_sq_term_26
-                      1.1899730000e+01 least_sq_term_27
-                     -1.5497760000e+01 least_sq_term_28
-                      1.0161900000e+01 least_sq_term_29
-                      4.3565600000e+00 least_sq_term_30
-                     -1.6066590000e+01 least_sq_term_31
-                      6.0201700000e+00 least_sq_term_32
-                      1.5753250000e+01 least_sq_term_33
+                     -1.5626610000e+01 least_sq_term_1
+                      6.8641200000e+00 least_sq_term_2
+                      1.1728590000e+01 least_sq_term_3
+                     -1.5794980000e+01 least_sq_term_4
+                      7.6006400000e+00 least_sq_term_5
+                      1.4127420000e+01 least_sq_term_6
+                      6.5476000000e-01 least_sq_term_7
+                     -6.7700000000e-01 least_sq_term_8
+                     -3.4148000000e-01 least_sq_term_9
+                      2.0244800000e+00 least_sq_term_10
+                     -4.2293000000e-01 least_sq_term_11
+                      7.7123000000e-01 least_sq_term_12
+                      2.2822000000e+00 least_sq_term_13
+                      1.3305000000e-01 least_sq_term_14
+                     -3.7370000000e-01 least_sq_term_15
+                     -1.4715590000e+01 least_sq_term_16
+                      7.2819800000e+00 least_sq_term_17
+                      4.9706100000e+00 least_sq_term_18
+                      4.7958200000e+00 least_sq_term_19
+                     -6.6501000000e-01 least_sq_term_20
+                      1.5381400000e+00 least_sq_term_21
+                      2.6553700000e+00 least_sq_term_22
+                     -2.0108400000e+00 least_sq_term_23
+                      3.0366500000e+00 least_sq_term_24
+                      9.9241000000e-01 least_sq_term_25
+                     -4.0063000000e-01 least_sq_term_26
+                      4.5470000000e-02 least_sq_term_27
+                      1.6345600000e+00 least_sq_term_28
+                      4.8570000000e-02 least_sq_term_29
+                      5.9121000000e-01 least_sq_term_30
+                     -1.4866430000e+01 least_sq_term_31
+                      7.1832200000e+00 least_sq_term_32
+                      1.8730500000e+00 least_sq_term_33
 
 
 
@@ -218,7 +219,7 @@ Begin Evaluation    4
 Parameters for evaluation 4:
                       1.6086361324e+00 desired_speed
                       1.3285153959e-01 radius
-                      5.8895654547e-01 time_gap
+                      9.4456130580e-01 time_gap
                       1.5628112786e+00 strength_neighbor
                       2.5587474158e-01 range_neighbor
                       2.3076336193e+00 strength_geometry
@@ -228,39 +229,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 4:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -9.7375800000e+00 least_sq_term_1
-                      2.3736500000e+00 least_sq_term_2
-                     -1.2535600000e+00 least_sq_term_3
-                      7.8333300000e+00 least_sq_term_4
-                     -1.5290300000e+00 least_sq_term_5
-                      2.9166000000e+00 least_sq_term_6
-                      3.1292500000e+00 least_sq_term_7
-                     -1.1515200000e+00 least_sq_term_8
-                      1.1674400000e+00 least_sq_term_9
-                      6.4685300000e+00 least_sq_term_10
-                     -1.9710000000e-02 least_sq_term_11
-                      3.9692000000e+00 least_sq_term_12
-                      1.7573100000e+00 least_sq_term_13
-                      1.3982000000e+00 least_sq_term_14
-                     -1.3402300000e+00 least_sq_term_15
-                      1.0839330000e+01 least_sq_term_16
-                     -7.8358000000e-01 least_sq_term_17
-                      1.1133200000e+00 least_sq_term_18
-                      8.4444400000e+00 least_sq_term_19
-                     -4.1126000000e-01 least_sq_term_20
-                      2.7716200000e+00 least_sq_term_21
-                     -1.5768960000e+01 least_sq_term_22
-                      5.8554100000e+00 least_sq_term_23
-                      1.6179410000e+01 least_sq_term_24
-                     -1.4719800000e+01 least_sq_term_25
-                      3.5627000000e+00 least_sq_term_26
-                      6.2292000000e+00 least_sq_term_27
-                      4.2752200000e+00 least_sq_term_28
-                     -4.2680000000e-01 least_sq_term_29
-                      7.1955000000e-01 least_sq_term_30
-                     -9.5952300000e+00 least_sq_term_31
-                      2.0039800000e+00 least_sq_term_32
-                     -1.8449800000e+00 least_sq_term_33
+                     -8.9291800000e+00 least_sq_term_1
+                      1.3020300000e+00 least_sq_term_2
+                     -1.5095700000e+00 least_sq_term_3
+                      4.6006900000e+00 least_sq_term_4
+                     -1.4297300000e+00 least_sq_term_5
+                      9.3786000000e-01 least_sq_term_6
+                     -1.5752110000e+01 least_sq_term_7
+                      5.5869100000e+00 least_sq_term_8
+                      3.1609000000e+00 least_sq_term_9
+                     -3.2454400000e+00 least_sq_term_10
+                      3.5524000000e-01 least_sq_term_11
+                     -6.0218000000e-01 least_sq_term_12
+                     -1.6333670000e+01 least_sq_term_13
+                     -2.6072300000e+00 least_sq_term_14
+                      9.3123400000e+00 least_sq_term_15
+                     -1.5970550000e+01 least_sq_term_16
+                      3.9645400000e+00 least_sq_term_17
+                      2.0189480000e+01 least_sq_term_18
+                     -1.5026790000e+01 least_sq_term_19
+                     -2.9123000000e-01 least_sq_term_20
+                      4.6944100000e+00 least_sq_term_21
+                      2.2702100000e+00 least_sq_term_22
+                     -2.2873100000e+00 least_sq_term_23
+                      3.8312900000e+00 least_sq_term_24
+                      8.0878000000e-01 least_sq_term_25
+                     -1.3080000000e+00 least_sq_term_26
+                      1.9252000000e-01 least_sq_term_27
+                      1.6025600000e+00 least_sq_term_28
+                     -4.5975000000e-01 least_sq_term_29
+                     -6.8562000000e-01 least_sq_term_30
+                     -1.0314360000e+01 least_sq_term_31
+                      2.9127700000e+00 least_sq_term_32
+                     -3.1492800000e+00 least_sq_term_33
 
 
 
@@ -270,7 +271,7 @@ Begin Evaluation    5
 Parameters for evaluation 5:
                       1.5266197185e+00 desired_speed
                       1.7077056034e-01 radius
-                      5.5597290476e-01 time_gap
+                      8.8758956277e-01 time_gap
                       6.9210581884e+00 strength_neighbor
                       3.7349977377e-02 range_neighbor
                       2.5562859039e+00 strength_geometry
@@ -280,39 +281,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 5:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.2096930000e+01 least_sq_term_1
-                      7.9625200000e+00 least_sq_term_2
-                     -6.6039900000e+00 least_sq_term_3
-                     -1.2736480000e+01 least_sq_term_4
-                      2.6455700000e+00 least_sq_term_5
-                     -5.0713000000e+00 least_sq_term_6
-                     -1.5629990000e+01 least_sq_term_7
-                      9.1546000000e+00 least_sq_term_8
-                     -6.3253800000e+00 least_sq_term_9
-                     -1.4667280000e+01 least_sq_term_10
-                      5.3116100000e+00 least_sq_term_11
-                     -5.6867900000e+00 least_sq_term_12
-                     -1.1944690000e+01 least_sq_term_13
-                      5.5320000000e-02 least_sq_term_14
-                     -5.4208100000e+00 least_sq_term_15
-                     -1.4241380000e+01 least_sq_term_16
-                      9.6095400000e+00 least_sq_term_17
-                     -6.4118300000e+00 least_sq_term_18
-                     -1.4355830000e+01 least_sq_term_19
-                      5.8411100000e+00 least_sq_term_20
-                     -7.0859000000e+00 least_sq_term_21
-                     -1.5519970000e+01 least_sq_term_22
-                      8.7445600000e+00 least_sq_term_23
-                     -4.2481100000e+00 least_sq_term_24
-                     -1.4991820000e+01 least_sq_term_25
-                      7.0237000000e+00 least_sq_term_26
-                     -5.0298500000e+00 least_sq_term_27
-                     -1.3293240000e+01 least_sq_term_28
-                      5.2081700000e+00 least_sq_term_29
-                     -6.6032600000e+00 least_sq_term_30
-                     -1.1552150000e+01 least_sq_term_31
-                      7.2684100000e+00 least_sq_term_32
-                     -7.7029100000e+00 least_sq_term_33
+                     -1.5720930000e+01 least_sq_term_1
+                      9.1921100000e+00 least_sq_term_2
+                     -5.5062800000e+00 least_sq_term_3
+                     -1.4099500000e+01 least_sq_term_4
+                      4.4969600000e+00 least_sq_term_5
+                     -7.8612600000e+00 least_sq_term_6
+                     -1.5616340000e+01 least_sq_term_7
+                      8.5740500000e+00 least_sq_term_8
+                     -8.0333600000e+00 least_sq_term_9
+                     -1.4656420000e+01 least_sq_term_10
+                      5.4719700000e+00 least_sq_term_11
+                     -7.5456800000e+00 least_sq_term_12
+                     -1.2020930000e+01 least_sq_term_13
+                      1.1998100000e+00 least_sq_term_14
+                     -7.4892100000e+00 least_sq_term_15
+                     -1.0587130000e+01 least_sq_term_16
+                      3.6832400000e+00 least_sq_term_17
+                     -7.1028400000e+00 least_sq_term_18
+                     -1.4327930000e+01 least_sq_term_19
+                      5.7954100000e+00 least_sq_term_20
+                     -8.1392900000e+00 least_sq_term_21
+                     -1.5387810000e+01 least_sq_term_22
+                      4.8621500000e+00 least_sq_term_23
+                     -7.7244400000e+00 least_sq_term_24
+                     -1.3377700000e+01 least_sq_term_25
+                      3.6628000000e+00 least_sq_term_26
+                     -7.5070000000e+00 least_sq_term_27
+                     -1.5892690000e+01 least_sq_term_28
+                      1.4479540000e+01 least_sq_term_29
+                     -6.7459700000e+00 least_sq_term_30
+                     -1.1617150000e+01 least_sq_term_31
+                      8.2429400000e+00 least_sq_term_32
+                     -8.5221200000e+00 least_sq_term_33
 
 
 
@@ -322,7 +323,7 @@ Begin Evaluation    6
 Parameters for evaluation 6:
                       1.2997450259e+00 desired_speed
                       1.6163448514e-01 radius
-                      2.8106132876e-01 time_gap
+                      4.1274229513e-01 time_gap
                       9.4589535416e+00 strength_neighbor
                       2.5216344085e-01 range_neighbor
                       5.3585595661e+00 strength_geometry
@@ -333,38 +334,38 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 6:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -8.6902000000e+00 least_sq_term_1
-                     -2.4299900000e+00 least_sq_term_2
-                      9.8365200000e+00 least_sq_term_3
+                     -2.2110300000e+00 least_sq_term_2
+                      9.1328800000e+00 least_sq_term_3
                      -1.2173180000e+01 least_sq_term_4
-                     -1.4427800000e+00 least_sq_term_5
-                      1.1566190000e+01 least_sq_term_6
-                     -1.5241630000e+01 least_sq_term_7
-                      2.4196800000e+00 least_sq_term_8
-                      6.7876600000e+00 least_sq_term_9
+                     -1.3922400000e+00 least_sq_term_5
+                      1.0833430000e+01 least_sq_term_6
+                     -1.5241150000e+01 least_sq_term_7
+                      2.4438400000e+00 least_sq_term_8
+                      4.7670200000e+00 least_sq_term_9
                      -1.4334140000e+01 least_sq_term_10
-                     -1.8285000000e-01 least_sq_term_11
-                      5.1907100000e+00 least_sq_term_12
-                     -1.0113300000e+01 least_sq_term_13
-                     -2.6478500000e+00 least_sq_term_14
-                      7.1357300000e+00 least_sq_term_15
+                      4.4980000000e-02 least_sq_term_11
+                      2.8366400000e+00 least_sq_term_12
+                     -1.0224380000e+01 least_sq_term_13
+                     -2.7388100000e+00 least_sq_term_14
+                      5.9373600000e+00 least_sq_term_15
                      -9.5567800000e+00 least_sq_term_16
-                     -1.8062400000e+00 least_sq_term_17
-                      1.0780760000e+01 least_sq_term_18
-                     -1.4014080000e+01 least_sq_term_19
-                     -4.1917000000e-01 least_sq_term_20
-                      2.7336600000e+00 least_sq_term_21
+                     -1.6902200000e+00 least_sq_term_17
+                      1.0451230000e+01 least_sq_term_18
+                     -1.4140400000e+01 least_sq_term_19
+                      3.6471000000e-01 least_sq_term_20
+                      2.1490900000e+00 least_sq_term_21
                      -1.5094100000e+01 least_sq_term_22
-                      2.7548600000e+00 least_sq_term_23
-                      8.1948900000e+00 least_sq_term_24
+                      2.7200500000e+00 least_sq_term_23
+                      7.0496100000e+00 least_sq_term_24
                      -1.2971670000e+01 least_sq_term_25
-                     -2.3594900000e+00 least_sq_term_26
-                      8.6346300000e+00 least_sq_term_27
+                     -2.0430800000e+00 least_sq_term_26
+                      6.4845400000e+00 least_sq_term_27
                      -1.2839880000e+01 least_sq_term_28
-                     -2.0053000000e-01 least_sq_term_29
-                      8.6242800000e+00 least_sq_term_30
+                     -1.8454000000e-01 least_sq_term_29
+                      8.6391600000e+00 least_sq_term_30
                      -9.4632900000e+00 least_sq_term_31
-                     -2.2539900000e+00 least_sq_term_32
-                      4.6713100000e+00 least_sq_term_33
+                     -2.0451500000e+00 least_sq_term_32
+                      3.6870800000e+00 least_sq_term_33
 
 
 
@@ -374,7 +375,7 @@ Begin Evaluation    7
 Parameters for evaluation 7:
                       1.7966084187e+00 desired_speed
                       1.0716621614e-01 radius
-                      1.0786672976e+00 time_gap
+                      1.7904253323e+00 time_gap
                       9.5471669327e+00 strength_neighbor
                       2.4001530239e-01 range_neighbor
                       9.8876027236e+00 strength_geometry
@@ -385,38 +386,38 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 7:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -8.2419200000e+00 least_sq_term_1
-                     -1.2036300000e+00 least_sq_term_2
-                      7.0820900000e+00 least_sq_term_3
-                     -1.1685630000e+01 least_sq_term_4
-                     -5.2353000000e-01 least_sq_term_5
-                      1.0060410000e+01 least_sq_term_6
+                     -1.2209600000e+00 least_sq_term_2
+                      4.9025300000e+00 least_sq_term_3
+                     -1.1683950000e+01 least_sq_term_4
+                     -3.8906000000e-01 least_sq_term_5
+                      7.0750500000e+00 least_sq_term_6
                      -1.4939750000e+01 least_sq_term_7
-                      1.7194400000e+00 least_sq_term_8
-                      4.3207700000e+00 least_sq_term_9
+                      1.6140400000e+00 least_sq_term_8
+                      1.5767000000e+00 least_sq_term_9
                      -1.4220790000e+01 least_sq_term_10
-                     -1.0556800000e+00 least_sq_term_11
-                      8.6241700000e+00 least_sq_term_12
+                     -3.1505500000e+00 least_sq_term_11
+                      6.0745000000e+00 least_sq_term_12
                      -1.0008910000e+01 least_sq_term_13
-                     -4.0301500000e+00 least_sq_term_14
-                      8.1167400000e+00 least_sq_term_15
+                     -6.1568700000e+00 least_sq_term_14
+                      1.0738130000e+01 least_sq_term_15
                      -9.0119800000e+00 least_sq_term_16
-                     -9.9214000000e-01 least_sq_term_17
-                      7.6978900000e+00 least_sq_term_18
+                     -8.0375000000e-01 least_sq_term_17
+                      5.7544200000e+00 least_sq_term_18
                      -1.3892420000e+01 least_sq_term_19
-                     -2.5350400000e+00 least_sq_term_20
-                      8.9358700000e+00 least_sq_term_21
+                     -3.6537500000e+00 least_sq_term_20
+                      4.5954100000e+00 least_sq_term_21
                      -1.4423150000e+01 least_sq_term_22
-                      1.6642900000e+00 least_sq_term_23
-                      1.1036820000e+01 least_sq_term_24
+                      1.8273100000e+00 least_sq_term_23
+                      8.3513100000e+00 least_sq_term_24
                      -1.2673150000e+01 least_sq_term_25
-                     -1.5738500000e+00 least_sq_term_26
-                      5.4043600000e+00 least_sq_term_27
+                     -2.6144700000e+00 least_sq_term_26
+                      3.9900700000e+00 least_sq_term_27
                      -1.2423230000e+01 least_sq_term_28
-                      5.6758000000e-01 least_sq_term_29
-                      6.4759300000e+00 least_sq_term_30
+                      1.0061000000e+00 least_sq_term_29
+                      4.6945300000e+00 least_sq_term_30
                      -8.8813200000e+00 least_sq_term_31
-                     -1.1570800000e+00 least_sq_term_32
-                      2.5145700000e+00 least_sq_term_33
+                     -1.2049300000e+00 least_sq_term_32
+                      8.0593000000e-01 least_sq_term_33
 
 
 
@@ -426,7 +427,7 @@ Begin Evaluation    8
 Parameters for evaluation 8:
                       9.9218363623e-01 desired_speed
                       1.1277758111e-01 radius
-                      3.9701709808e-01 time_gap
+                      6.1302953305e-01 time_gap
                       2.6579415128e+00 strength_neighbor
                       3.9284013341e-01 range_neighbor
                       2.9927393381e+00 strength_geometry
@@ -436,39 +437,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 8:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                      5.6695500000e+00 least_sq_term_1
-                     -1.7162700000e+00 least_sq_term_2
-                      8.0556400000e+00 least_sq_term_3
-                     -1.6417030000e+01 least_sq_term_4
-                      3.4593100000e+00 least_sq_term_5
-                      2.7067110000e+01 least_sq_term_6
-                     -2.2599000000e-01 least_sq_term_7
-                     -1.2113000000e+00 least_sq_term_8
-                      4.7359100000e+00 least_sq_term_9
-                     -1.5945300000e+00 least_sq_term_10
-                      1.1152400000e+00 least_sq_term_11
-                      4.1920000000e-01 least_sq_term_12
-                     -4.7154000000e-01 least_sq_term_13
-                      4.2450000000e-01 least_sq_term_14
-                     -4.5990000000e-01 least_sq_term_15
-                      9.7011500000e+00 least_sq_term_16
-                     -1.8397500000e+00 least_sq_term_17
-                      9.0532300000e+00 least_sq_term_18
-                      2.6992300000e+00 least_sq_term_19
-                      9.0870000000e-02 least_sq_term_20
-                      8.0168000000e-01 least_sq_term_21
-                      1.7799400000e+00 least_sq_term_22
-                     -1.5582200000e+00 least_sq_term_23
-                      7.7270500000e+00 least_sq_term_24
-                      3.1045800000e+00 least_sq_term_25
-                     -2.0272100000e+00 least_sq_term_26
-                      5.9370600000e+00 least_sq_term_27
-                      3.1250000000e+00 least_sq_term_28
-                     -6.1360000000e-01 least_sq_term_29
-                      6.9314200000e+00 least_sq_term_30
-                      6.0659600000e+00 least_sq_term_31
-                     -1.8959300000e+00 least_sq_term_32
-                      2.7111100000e+00 least_sq_term_33
+                      1.2254900000e+00 least_sq_term_1
+                     -1.6573800000e+00 least_sq_term_2
+                      4.7880100000e+00 least_sq_term_3
+                     -1.5044020000e+01 least_sq_term_4
+                      3.9604400000e+00 least_sq_term_5
+                     -7.6453000000e-01 least_sq_term_6
+                     -3.1191800000e+00 least_sq_term_7
+                     -7.8520000000e-01 least_sq_term_8
+                      1.9411300000e+00 least_sq_term_9
+                     -1.5498840000e+01 least_sq_term_10
+                      5.1769400000e+00 least_sq_term_11
+                     -3.5188500000e+00 least_sq_term_12
+                     -2.6464000000e+00 least_sq_term_13
+                      2.8002000000e-01 least_sq_term_14
+                     -1.2364900000e+00 least_sq_term_15
+                     -1.2058420000e+01 least_sq_term_16
+                      1.9883200000e+00 least_sq_term_17
+                      6.7193000000e-01 least_sq_term_18
+                     -1.5274890000e+01 least_sq_term_19
+                      4.4593200000e+00 least_sq_term_20
+                     -3.6177300000e+00 least_sq_term_21
+                     -1.4493000000e-01 least_sq_term_22
+                     -1.0210400000e+00 least_sq_term_23
+                      6.9365300000e+00 least_sq_term_24
+                     -1.0577900000e+00 least_sq_term_25
+                     -2.0792400000e+00 least_sq_term_26
+                      1.5282300000e+00 least_sq_term_27
+                     -4.6512000000e-01 least_sq_term_28
+                     -4.5667000000e-01 least_sq_term_29
+                      4.8717000000e+00 least_sq_term_30
+                      1.9447100000e+00 least_sq_term_31
+                     -1.6881400000e+00 least_sq_term_32
+                      1.0614300000e+00 least_sq_term_33
 
 
 
@@ -478,7 +479,7 @@ Begin Evaluation    9
 Parameters for evaluation 9:
                       1.7199748711e+00 desired_speed
                       1.8895259192e-01 radius
-                      2.4177151907e-01 time_gap
+                      3.4487807839e-01 time_gap
                       5.9340786605e+00 strength_neighbor
                       3.6169929989e-01 range_neighbor
                       7.9489790150e-01 strength_geometry
@@ -488,39 +489,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 9:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.3780510000e+01 least_sq_term_1
-                     -6.9416000000e-01 least_sq_term_2
-                      6.8895800000e+00 least_sq_term_3
-                     -1.2680500000e+01 least_sq_term_4
-                     -1.4983300000e+00 least_sq_term_5
-                      1.1836530000e+01 least_sq_term_6
-                     -1.5142400000e+01 least_sq_term_7
-                      5.8634000000e-01 least_sq_term_8
-                      8.3867800000e+00 least_sq_term_9
-                     -1.6550200000e+01 least_sq_term_10
-                      3.2225900000e+00 least_sq_term_11
-                      1.3250650000e+01 least_sq_term_12
+                     -8.3545400000e+00 least_sq_term_1
+                     -3.4335000000e+00 least_sq_term_2
+                      1.1067900000e+01 least_sq_term_3
+                     -1.1806890000e+01 least_sq_term_4
+                     -2.7795500000e+00 least_sq_term_5
+                      1.8283960000e+01 least_sq_term_6
+                     -1.5040790000e+01 least_sq_term_7
+                      3.7409000000e-01 least_sq_term_8
+                      6.2430400000e+00 least_sq_term_9
+                     -1.6433730000e+01 least_sq_term_10
+                      1.7687200000e+00 least_sq_term_11
+                     -6.3826600000e+00 least_sq_term_12
                      -1.5335120000e+01 least_sq_term_13
-                     -1.5015600000e+00 least_sq_term_14
-                     -4.0293800000e+00 least_sq_term_15
-                     -1.5274910000e+01 least_sq_term_16
-                      8.9701000000e-01 least_sq_term_17
-                      7.1447200000e+00 least_sq_term_18
+                     -1.4155200000e+00 least_sq_term_14
+                     -4.5982500000e+00 least_sq_term_15
+                     -1.1099620000e+01 least_sq_term_16
+                     -1.8001500000e+00 least_sq_term_17
+                      5.4979100000e+00 least_sq_term_18
                      -1.6540520000e+01 least_sq_term_19
-                      1.6580900000e+00 least_sq_term_20
-                      2.0590660000e+01 least_sq_term_21
+                     -7.3500000000e-03 least_sq_term_20
+                      1.3263550000e+01 least_sq_term_21
                      -1.5881170000e+01 least_sq_term_22
-                      3.0022500000e+00 least_sq_term_23
-                     -1.2575900000e+00 least_sq_term_24
-                     -1.2876670000e+01 least_sq_term_25
-                     -3.3096000000e+00 least_sq_term_26
-                      1.2279900000e+01 least_sq_term_27
-                     -1.2527930000e+01 least_sq_term_28
-                     -1.7929200000e+00 least_sq_term_29
-                      1.2931780000e+01 least_sq_term_30
-                     -1.0436300000e+01 least_sq_term_31
-                     -2.8368200000e+00 least_sq_term_32
-                      6.4448200000e+00 least_sq_term_33
+                      3.0729900000e+00 least_sq_term_23
+                      3.4735900000e+00 least_sq_term_24
+                     -1.2671810000e+01 least_sq_term_25
+                     -3.2355400000e+00 least_sq_term_26
+                      7.5943600000e+00 least_sq_term_27
+                     -1.3270780000e+01 least_sq_term_28
+                     -3.7054000000e-01 least_sq_term_29
+                      8.1421000000e+00 least_sq_term_30
+                     -1.3671300000e+01 least_sq_term_31
+                     -1.2632900000e+00 least_sq_term_32
+                     -6.6608400000e+00 least_sq_term_33
 
 
 
@@ -530,7 +531,7 @@ Begin Evaluation   10
 Parameters for evaluation 10:
                       1.1546085517e+00 desired_speed
                       1.5433704755e-01 radius
-                      7.4363771075e-01 time_gap
+                      1.2117378640e+00 time_gap
                       4.1588390507e+00 strength_neighbor
                       1.3850284361e-01 range_neighbor
                       5.5788933997e+00 strength_geometry
@@ -540,39 +541,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 10:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5972360000e+01 least_sq_term_1
-                      5.7439800000e+00 least_sq_term_2
-                      1.0449030000e+01 least_sq_term_3
-                     -1.5170350000e+01 least_sq_term_4
-                      7.6546700000e+00 least_sq_term_5
-                      2.9350500000e+00 least_sq_term_6
-                     -2.3598800000e+00 least_sq_term_7
-                      1.2819000000e-01 least_sq_term_8
-                     -9.3854000000e-01 least_sq_term_9
-                     -1.5733350000e+01 least_sq_term_10
-                      3.9430500000e+00 least_sq_term_11
-                      2.2997800000e+00 least_sq_term_12
-                     -1.6555560000e+01 least_sq_term_13
-                     -2.6299800000e+00 least_sq_term_14
-                      4.4540300000e+00 least_sq_term_15
-                     -1.6108650000e+01 least_sq_term_16
-                      5.5606600000e+00 least_sq_term_17
-                      1.4188350000e+01 least_sq_term_18
-                      1.3126500000e+00 least_sq_term_19
-                     -4.5940000000e-01 least_sq_term_20
-                      4.3080000000e-02 least_sq_term_21
-                     -1.0929000000e+00 least_sq_term_22
-                     -1.3410300000e+00 least_sq_term_23
-                      1.5746600000e+00 least_sq_term_24
-                     -1.6358540000e+01 least_sq_term_25
-                     -7.8788000000e-01 least_sq_term_26
-                      1.4791260000e+01 least_sq_term_27
-                     -1.6347450000e+01 least_sq_term_28
-                      8.9561800000e+00 least_sq_term_29
-                      1.2542480000e+01 least_sq_term_30
-                     -1.6426390000e+01 least_sq_term_31
-                      1.8974900000e+00 least_sq_term_32
-                      7.6393200000e+00 least_sq_term_33
+                     -1.6435230000e+01 least_sq_term_1
+                      1.8777000000e+00 least_sq_term_2
+                      8.7661200000e+00 least_sq_term_3
+                     -1.6043200000e+01 least_sq_term_4
+                      5.5105600000e+00 least_sq_term_5
+                      7.7276100000e+00 least_sq_term_6
+                     -4.4500400000e+00 least_sq_term_7
+                      5.9770000000e-02 least_sq_term_8
+                     -1.9487200000e+00 least_sq_term_9
+                     -2.4372800000e+00 least_sq_term_10
+                     -3.4198000000e-01 least_sq_term_11
+                     -7.4101000000e-01 least_sq_term_12
+                     -1.4222220000e+01 least_sq_term_13
+                     -2.6817600000e+00 least_sq_term_14
+                      1.9408000000e+00 least_sq_term_15
+                     -1.5411140000e+01 least_sq_term_16
+                      6.1254300000e+00 least_sq_term_17
+                      3.8176200000e+00 least_sq_term_18
+                     -1.0373400000e+00 least_sq_term_19
+                     -2.3244900000e+00 least_sq_term_20
+                      1.4600200000e+00 least_sq_term_21
+                     -3.1914900000e+00 least_sq_term_22
+                     -8.9632000000e-01 least_sq_term_23
+                      7.3610000000e-01 least_sq_term_24
+                     -1.5742300000e+01 least_sq_term_25
+                     -7.0490000000e-02 least_sq_term_26
+                      3.1121800000e+00 least_sq_term_27
+                     -1.5815410000e+01 least_sq_term_28
+                      8.8608500000e+00 least_sq_term_29
+                      2.4381900000e+00 least_sq_term_30
+                     -1.6065980000e+01 least_sq_term_31
+                      2.0811000000e+00 least_sq_term_32
+                      3.9397000000e-01 least_sq_term_33
 
 
 
@@ -582,7 +583,7 @@ Begin Evaluation   11
 Parameters for evaluation 11:
                       9.0642577333e-01 desired_speed
                       1.7690254335e-01 radius
-                      6.3702652994e-01 time_gap
+                      1.0275912790e+00 time_gap
                       9.0127857008e+00 strength_neighbor
                       9.7254716985e-02 range_neighbor
                       9.5672177881e+00 strength_geometry
@@ -592,39 +593,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 11:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6422870000e+01 least_sq_term_1
-                      1.0245100000e+01 least_sq_term_2
-                     -7.5837500000e+00 least_sq_term_3
+                     -1.6410940000e+01 least_sq_term_1
+                      1.0003470000e+01 least_sq_term_2
+                     -8.6099500000e+00 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                       5.4005600000e+00 least_sq_term_5
-                      2.3847630000e+01 least_sq_term_6
+                      1.6130250000e+01 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       8.3072100000e+00 least_sq_term_8
-                      7.6000800000e+00 least_sq_term_9
+                      4.9767000000e-01 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       4.8754200000e+00 least_sq_term_11
-                      2.7528300000e+00 least_sq_term_12
-                     -1.6305400000e+01 least_sq_term_13
-                      1.7597500000e+00 least_sq_term_14
-                     -7.9287500000e+00 least_sq_term_15
+                     -2.4869700000e+00 least_sq_term_12
+                     -1.6405350000e+01 least_sq_term_13
+                      2.1953100000e+00 least_sq_term_14
+                     -8.2324000000e+00 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                       1.0549400000e+00 least_sq_term_17
-                      2.9330600000e+01 least_sq_term_18
+                      1.8875230000e+01 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
                       3.3235300000e+00 least_sq_term_20
-                      2.7432700000e+00 least_sq_term_21
+                     -1.1527200000e+00 least_sq_term_21
                      -1.6666670000e+01 least_sq_term_22
                       7.7804000000e+00 least_sq_term_23
-                      2.2866430000e+01 least_sq_term_24
+                      1.4283470000e+01 least_sq_term_24
                      -1.6666670000e+01 least_sq_term_25
                      -7.7040000000e-01 least_sq_term_26
-                      1.8334570000e+01 least_sq_term_27
+                      1.0501040000e+01 least_sq_term_27
                      -1.6666670000e+01 least_sq_term_28
                       8.4681200000e+00 least_sq_term_29
-                      1.9534930000e+01 least_sq_term_30
-                     -1.6284550000e+01 least_sq_term_31
-                      7.7405600000e+00 least_sq_term_32
-                     -8.2397500000e+00 least_sq_term_33
+                      1.2597750000e+01 least_sq_term_30
+                     -1.6021530000e+01 least_sq_term_31
+                      7.6907900000e+00 least_sq_term_32
+                     -8.6772600000e+00 least_sq_term_33
 
 
 
@@ -634,7 +635,7 @@ Begin Evaluation   12
 Parameters for evaluation 12:
                       8.7974256399e-01 desired_speed
                       1.1740505312e-01 radius
-                      1.1368929852e+00 time_gap
+                      1.8909969744e+00 time_gap
                       8.7892577779e+00 strength_neighbor
                       2.7439762122e-01 range_neighbor
                       7.2686709685e-01 strength_geometry
@@ -686,7 +687,7 @@ Begin Evaluation   13
 Parameters for evaluation 13:
                       1.3052144785e+00 desired_speed
                       1.8549865162e-01 radius
-                      1.0509362032e+00 time_gap
+                      1.7425261692e+00 time_gap
                       7.3560514274e+00 strength_neighbor
                       3.1283359556e-01 range_neighbor
                       6.8475733313e+00 strength_geometry
@@ -697,38 +698,38 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 13:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -8.3406000000e+00 least_sq_term_1
-                     -3.2005600000e+00 least_sq_term_2
-                      6.4682700000e+00 least_sq_term_3
-                     -1.1797080000e+01 least_sq_term_4
-                     -2.5369800000e+00 least_sq_term_5
-                      9.2740800000e+00 least_sq_term_6
-                     -1.4935690000e+01 least_sq_term_7
-                      3.7114000000e-01 least_sq_term_8
-                      1.8428500000e+00 least_sq_term_9
+                     -3.1947100000e+00 least_sq_term_2
+                      2.9100000000e+00 least_sq_term_3
+                     -1.6541430000e+01 least_sq_term_4
+                      1.7337600000e+00 least_sq_term_5
+                      1.7649500000e+00 least_sq_term_6
+                     -1.4935110000e+01 least_sq_term_7
+                      2.8865000000e-01 least_sq_term_8
+                     -2.0036000000e+00 least_sq_term_9
                      -1.5150530000e+01 least_sq_term_10
-                     -3.5241000000e-01 least_sq_term_11
-                      4.2026000000e-01 least_sq_term_12
-                     -1.6111300000e+01 least_sq_term_13
-                     -3.2599000000e+00 least_sq_term_14
-                     -1.3850500000e+00 least_sq_term_15
+                     -1.0023000000e+00 least_sq_term_11
+                     -2.6656300000e+00 least_sq_term_12
+                     -1.1224040000e+01 least_sq_term_13
+                     -5.5621400000e+00 least_sq_term_14
+                      1.0085000000e-01 least_sq_term_15
                      -9.1385500000e+00 least_sq_term_16
-                     -2.7210100000e+00 least_sq_term_17
-                      7.5821200000e+00 least_sq_term_18
+                     -2.7552900000e+00 least_sq_term_17
+                      4.8178200000e+00 least_sq_term_18
                      -1.4898280000e+01 least_sq_term_19
-                     -7.7769000000e-01 least_sq_term_20
-                     -5.4915000000e-01 least_sq_term_21
-                     -1.5543400000e+01 least_sq_term_22
-                      3.2845800000e+00 least_sq_term_23
-                      3.9014100000e+00 least_sq_term_24
+                     -1.6960300000e+00 least_sq_term_20
+                     -2.6529000000e+00 least_sq_term_21
+                     -1.4532470000e+01 least_sq_term_22
+                      6.1546000000e-01 least_sq_term_23
+                      5.3903700000e+00 least_sq_term_24
                      -1.2663760000e+01 least_sq_term_25
-                     -3.6336500000e+00 least_sq_term_26
-                      2.8247100000e+00 least_sq_term_27
+                     -3.7114500000e+00 least_sq_term_26
+                      2.9252000000e-01 least_sq_term_27
                      -1.2520980000e+01 least_sq_term_28
-                     -1.4154500000e+00 least_sq_term_29
-                      7.1653900000e+00 least_sq_term_30
-                     -1.6186600000e+01 least_sq_term_31
-                      4.2920000000e-02 least_sq_term_32
-                     -1.6111000000e+00 least_sq_term_33
+                     -1.3317500000e+00 least_sq_term_29
+                      3.6963500000e+00 least_sq_term_30
+                     -8.9856500000e+00 least_sq_term_31
+                     -3.4381300000e+00 least_sq_term_32
+                     -1.4289700000e+00 least_sq_term_33
 
 
 
@@ -738,7 +739,7 @@ Begin Evaluation   14
 Parameters for evaluation 14:
                       1.2526889027e+00 desired_speed
                       1.4988337083e-01 radius
-                      9.7910943057e-01 time_gap
+                      1.6184617437e+00 time_gap
                       7.5088772585e+00 strength_neighbor
                       1.9884847868e-01 range_neighbor
                       6.2411472780e+00 strength_geometry
@@ -748,39 +749,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 14:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -2.6059400000e+00 least_sq_term_1
-                     -2.8418000000e-01 least_sq_term_2
-                      2.5298900000e+00 least_sq_term_3
-                     -1.7945000000e-01 least_sq_term_4
-                     -3.0467000000e-01 least_sq_term_5
-                      6.5842800000e+00 least_sq_term_6
-                     -2.9661000000e+00 least_sq_term_7
-                      1.1648200000e+00 least_sq_term_8
-                      2.3784100000e+00 least_sq_term_9
-                     -1.4217520000e+01 least_sq_term_10
-                      1.6797200000e+00 least_sq_term_11
-                     -1.0408800000e+00 least_sq_term_12
-                     -1.0113300000e+01 least_sq_term_13
-                     -1.2594700000e+00 least_sq_term_14
-                     -3.8848100000e+00 least_sq_term_15
-                      1.3001300000e+00 least_sq_term_16
-                     -1.8498000000e-01 least_sq_term_17
-                      5.0887900000e+00 least_sq_term_18
-                     -1.3886840000e+01 least_sq_term_19
-                     -5.8488000000e-01 least_sq_term_20
-                      1.6005500000e+00 least_sq_term_21
-                     -2.4875600000e+00 least_sq_term_22
-                      2.6394000000e-01 least_sq_term_23
-                      8.3781900000e+00 least_sq_term_24
-                     -3.0405400000e+00 least_sq_term_25
-                     -1.1762500000e+00 least_sq_term_26
-                      1.8233700000e+00 least_sq_term_27
-                     -2.2925300000e+00 least_sq_term_28
-                      1.0075300000e+00 least_sq_term_29
-                      4.6097100000e+00 least_sq_term_30
-                     -1.5706220000e+01 least_sq_term_31
-                      3.8433500000e+00 least_sq_term_32
-                     -9.4555000000e-01 least_sq_term_33
+                     -1.5510270000e+01 least_sq_term_1
+                      4.0585800000e+00 least_sq_term_2
+                      1.7534200000e+00 least_sq_term_3
+                     -1.8540900000e+00 least_sq_term_4
+                     -3.4232000000e-01 least_sq_term_5
+                      3.5371800000e+00 least_sq_term_6
+                     -4.4191900000e+00 least_sq_term_7
+                      1.3117300000e+00 least_sq_term_8
+                      2.2203000000e-01 least_sq_term_9
+                     -6.9362700000e+00 least_sq_term_10
+                     -6.0002000000e-01 least_sq_term_11
+                     -2.1268300000e+00 least_sq_term_12
+                     -1.0335450000e+01 least_sq_term_13
+                     -1.5117900000e+00 least_sq_term_14
+                     -5.3511100000e+00 least_sq_term_15
+                     -4.7982000000e-01 least_sq_term_16
+                     -2.6614000000e-01 least_sq_term_17
+                      1.6654900000e+00 least_sq_term_18
+                     -1.5698100000e+00 least_sq_term_19
+                     -3.9677700000e+00 least_sq_term_20
+                      4.6548100000e+00 least_sq_term_21
+                     -3.5026900000e+00 least_sq_term_22
+                      4.7308000000e-01 least_sq_term_23
+                      5.4900200000e+00 least_sq_term_24
+                     -4.3361800000e+00 least_sq_term_25
+                     -1.8212300000e+00 least_sq_term_26
+                     -2.8027000000e-01 least_sq_term_27
+                     -4.5155000000e+00 least_sq_term_28
+                      1.4131500000e+00 least_sq_term_29
+                      1.7042800000e+00 least_sq_term_30
+                     -1.5826270000e+01 least_sq_term_31
+                      1.8846500000e+00 least_sq_term_32
+                     -1.2106900000e+00 least_sq_term_33
 
 
 
@@ -790,7 +791,7 @@ Begin Evaluation   15
 Parameters for evaluation 15:
                       1.4316233415e+00 desired_speed
                       1.3424323317e-01 radius
-                      8.7432443863e-01 time_gap
+                      1.4374694849e+00 time_gap
                       1.3685791421e+00 strength_neighbor
                       2.3857820870e-02 range_neighbor
                       8.0082771949e+00 strength_geometry
@@ -802,37 +803,37 @@ Active response data for evaluation 15:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
                       1.2468700000e+00 least_sq_term_2
-                      1.5860270000e+01 least_sq_term_3
+                      5.9841300000e+00 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                       5.4005600000e+00 least_sq_term_5
-                      2.9290330000e+01 least_sq_term_6
+                      1.5946040000e+01 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       8.3072100000e+00 least_sq_term_8
-                      1.0669920000e+01 least_sq_term_9
+                      1.9963600000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       4.8754200000e+00 least_sq_term_11
-                      5.3172200000e+00 least_sq_term_12
+                     -1.1162300000e+00 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -9.9220000000e-01 least_sq_term_14
-                      4.0645700000e+00 least_sq_term_15
+                     -9.9544000000e-01 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                       1.0549400000e+00 least_sq_term_17
-                      3.3112750000e+01 least_sq_term_18
+                      1.7240500000e+01 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
                       3.3235300000e+00 least_sq_term_20
-                     -1.2831600000e+00 least_sq_term_21
+                     -4.5440300000e+00 least_sq_term_21
                      -1.6666670000e+01 least_sq_term_22
                       7.7804000000e+00 least_sq_term_23
-                      2.2599950000e+01 least_sq_term_24
+                      8.9805800000e+00 least_sq_term_24
                      -1.6666670000e+01 least_sq_term_25
                      -7.7040000000e-01 least_sq_term_26
-                      1.6338950000e+01 least_sq_term_27
+                      6.7171700000e+00 least_sq_term_27
                      -1.6666670000e+01 least_sq_term_28
                       8.4681200000e+00 least_sq_term_29
-                      1.6984480000e+01 least_sq_term_30
+                      7.0912200000e+00 least_sq_term_30
                      -1.6666670000e+01 least_sq_term_31
                       1.4253700000e+00 least_sq_term_32
-                      1.2010570000e+01 least_sq_term_33
+                      4.6194000000e+00 least_sq_term_33
 
 
 
@@ -842,7 +843,7 @@ Begin Evaluation   16
 Parameters for evaluation 16:
                       1.4616520221e+00 desired_speed
                       1.7279043207e-01 radius
-                      7.4110043370e-01 time_gap
+                      1.2073552946e+00 time_gap
                       7.8915878438e+00 strength_neighbor
                       1.8817738882e-01 range_neighbor
                       1.3865835074e+00 strength_geometry
@@ -856,32 +857,32 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
                      -1.0000000000e+01 least_sq_term_2
                      -1.0000000000e+01 least_sq_term_3
                      -1.1672220000e+01 least_sq_term_4
-                      2.3510000000e-01 least_sq_term_5
-                      7.8053400000e+00 least_sq_term_6
+                      3.7195000000e-01 least_sq_term_5
+                      4.1506800000e+00 least_sq_term_6
                      -1.4936270000e+01 least_sq_term_7
-                      2.7886100000e+00 least_sq_term_8
-                      3.9107000000e+00 least_sq_term_9
+                      2.5355100000e+00 least_sq_term_8
+                      3.9389000000e-01 least_sq_term_9
                      -1.4102610000e+01 least_sq_term_10
-                      1.6707000000e-01 least_sq_term_11
-                      3.6331200000e+00 least_sq_term_12
+                     -7.7103000000e-01 least_sq_term_11
+                      1.8649100000e+00 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
                      -9.0042900000e+00 least_sq_term_16
-                      1.2830000000e-02 least_sq_term_17
-                      6.1085000000e+00 least_sq_term_18
+                      1.1540000000e-02 least_sq_term_17
+                      3.5059600000e+00 least_sq_term_18
                      -1.3763400000e+01 least_sq_term_19
-                     -3.7375000000e-01 least_sq_term_20
-                      2.6470900000e+00 least_sq_term_21
+                     -2.6329700000e+00 least_sq_term_20
+                      3.8582600000e+00 least_sq_term_21
                      -1.4420890000e+01 least_sq_term_22
-                      2.1455200000e+00 least_sq_term_23
-                      8.8841000000e+00 least_sq_term_24
-                     -1.6666670000e+01 least_sq_term_25
-                     -1.0000000000e+01 least_sq_term_26
-                     -1.0000000000e+01 least_sq_term_27
+                      2.3377800000e+00 least_sq_term_23
+                      5.5747300000e+00 least_sq_term_24
+                     -1.2667790000e+01 least_sq_term_25
+                     -1.3833200000e+00 least_sq_term_26
+                      1.1953300000e+00 least_sq_term_27
                      -1.2417530000e+01 least_sq_term_28
-                      1.7220800000e+00 least_sq_term_29
-                      4.7466200000e+00 least_sq_term_30
+                      1.8138100000e+00 least_sq_term_29
+                      2.0395700000e+00 least_sq_term_30
                      -1.6666670000e+01 least_sq_term_31
                      -1.0000000000e+01 least_sq_term_32
                      -1.0000000000e+01 least_sq_term_33
@@ -894,7 +895,7 @@ Begin Evaluation   17
 Parameters for evaluation 17:
                       1.5011816780e+00 desired_speed
                       1.1948494653e-01 radius
-                      8.5819738122e-01 time_gap
+                      1.4096136585e+00 time_gap
                       1.0278634529e+00 strength_neighbor
                       8.7049891008e-02 range_neighbor
                       8.6021652694e+00 strength_geometry
@@ -906,37 +907,37 @@ Active response data for evaluation 17:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
                       1.2468700000e+00 least_sq_term_2
-                      2.0414190000e+01 least_sq_term_3
+                      9.2852400000e+00 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                       5.4005600000e+00 least_sq_term_5
-                      3.1826600000e+01 least_sq_term_6
+                      1.7292180000e+01 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       8.3072100000e+00 least_sq_term_8
-                      1.1874610000e+01 least_sq_term_9
+                      2.3524500000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       4.8754200000e+00 least_sq_term_11
-                      5.1456000000e+00 least_sq_term_12
+                     -9.4042000000e-01 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -9.9220000000e-01 least_sq_term_14
-                      6.8433100000e+00 least_sq_term_15
+                      4.9334000000e-01 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                       1.0549400000e+00 least_sq_term_17
-                      3.9607800000e+01 least_sq_term_18
+                      2.2744910000e+01 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
                       3.3235300000e+00 least_sq_term_20
-                      9.1174000000e-01 least_sq_term_21
+                     -2.3143800000e+00 least_sq_term_21
                      -1.6666670000e+01 least_sq_term_22
                       7.7804000000e+00 least_sq_term_23
-                      2.9440040000e+01 least_sq_term_24
+                      1.4365530000e+01 least_sq_term_24
                      -1.6666670000e+01 least_sq_term_25
                      -7.7040000000e-01 least_sq_term_26
-                      1.4505960000e+01 least_sq_term_27
+                      4.6270900000e+00 least_sq_term_27
                      -1.6666670000e+01 least_sq_term_28
                       8.4681200000e+00 least_sq_term_29
-                      2.0071430000e+01 least_sq_term_30
+                      8.8045200000e+00 least_sq_term_30
                      -1.6666670000e+01 least_sq_term_31
                       1.4253700000e+00 least_sq_term_32
-                      1.1702410000e+01 least_sq_term_33
+                      3.6431100000e+00 least_sq_term_33
 
 
 
@@ -946,7 +947,7 @@ Begin Evaluation   18
 Parameters for evaluation 18:
                       9.1685330983e-01 desired_speed
                       1.2301301634e-01 radius
-                      5.7962031740e-01 time_gap
+                      9.2843509369e-01 time_gap
                       3.2041650493e+00 strength_neighbor
                       2.0034277531e-01 range_neighbor
                       6.5170365147e+00 strength_geometry
@@ -958,37 +959,37 @@ Active response data for evaluation 18:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
                       1.2468700000e+00 least_sq_term_2
-                      3.1585560000e+01 least_sq_term_3
+                      2.3990430000e+01 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                       5.4005600000e+00 least_sq_term_5
-                      3.6903440000e+01 least_sq_term_6
+                      2.7225980000e+01 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       8.3072100000e+00 least_sq_term_8
-                      1.5572590000e+01 least_sq_term_9
+                      7.8751700000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       4.8754200000e+00 least_sq_term_11
-                      9.7062200000e+00 least_sq_term_12
-                     -1.3956940000e+01 least_sq_term_13
-                      8.4327500000e+00 least_sq_term_14
-                     -6.1094800000e+00 least_sq_term_15
+                      2.8501800000e+00 least_sq_term_12
+                     -1.6300490000e+01 least_sq_term_13
+                      4.9421100000e+00 least_sq_term_14
+                     -6.8565100000e+00 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                       1.0549400000e+00 least_sq_term_17
-                      4.0470720000e+01 least_sq_term_18
+                      3.3105510000e+01 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
                       3.3235300000e+00 least_sq_term_20
-                      9.3438500000e+00 least_sq_term_21
+                      3.9196300000e+00 least_sq_term_21
                      -1.6666670000e+01 least_sq_term_22
                       7.7804000000e+00 least_sq_term_23
-                      3.0378230000e+01 least_sq_term_24
+                      2.2884810000e+01 least_sq_term_24
                      -1.6666670000e+01 least_sq_term_25
                      -7.7040000000e-01 least_sq_term_26
-                      2.8800540000e+01 least_sq_term_27
+                      1.8776270000e+01 least_sq_term_27
                      -1.6666670000e+01 least_sq_term_28
                       8.4681200000e+00 least_sq_term_29
-                      2.8185600000e+01 least_sq_term_30
-                     -1.6536750000e+01 least_sq_term_31
-                      1.1812070000e+01 least_sq_term_32
-                     -6.2779500000e+00 least_sq_term_33
+                      2.1209630000e+01 least_sq_term_30
+                     -1.6538790000e+01 least_sq_term_31
+                      1.1292740000e+01 least_sq_term_32
+                     -6.3341500000e+00 least_sq_term_33
 
 
 
@@ -998,7 +999,7 @@ Begin Evaluation   19
 Parameters for evaluation 19:
                       1.2032893886e+00 desired_speed
                       1.0423243135e-01 radius
-                      2.1660512360e-01 time_gap
+                      3.0140884986e-01 time_gap
                       4.8255004908e+00 strength_neighbor
                       3.2094263394e-01 range_neighbor
                       9.0320682614e+00 strength_geometry
@@ -1010,37 +1011,37 @@ Active response data for evaluation 19:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
                       1.2468700000e+00 least_sq_term_2
-                      6.3209030000e+01 least_sq_term_3
+                      6.1710110000e+01 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                       5.4005600000e+00 least_sq_term_5
-                      5.4553190000e+01 least_sq_term_6
+                      5.3797880000e+01 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       8.3072100000e+00 least_sq_term_8
-                      2.9255470000e+01 least_sq_term_9
+                      2.3905180000e+01 least_sq_term_9
                      -1.6431920000e+01 least_sq_term_10
-                      6.2344000000e+00 least_sq_term_11
-                     -3.8803400000e+00 least_sq_term_12
-                     -1.2086590000e+01 least_sq_term_13
-                      6.1892000000e-01 least_sq_term_14
-                      4.2605700000e+00 least_sq_term_15
+                      6.4898000000e+00 least_sq_term_11
+                     -4.5267000000e+00 least_sq_term_12
+                     -1.2083500000e+01 least_sq_term_13
+                      8.2185000000e-01 least_sq_term_14
+                      3.5065400000e+00 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                       1.0549400000e+00 least_sq_term_17
-                      5.9694820000e+01 least_sq_term_18
+                      5.9711440000e+01 least_sq_term_18
                      -1.6282970000e+01 least_sq_term_19
-                      6.6971200000e+00 least_sq_term_20
-                     -4.8436300000e+00 least_sq_term_21
+                      6.5820000000e+00 least_sq_term_20
+                     -5.4449200000e+00 least_sq_term_21
                      -1.6666670000e+01 least_sq_term_22
                       7.7804000000e+00 least_sq_term_23
-                      4.5323500000e+01 least_sq_term_24
-                     -1.6563230000e+01 least_sq_term_25
+                      4.1619760000e+01 least_sq_term_24
+                     -1.6563190000e+01 least_sq_term_25
                       3.8444000000e+00 least_sq_term_26
-                      1.7580800000e+00 least_sq_term_27
+                      2.1466400000e+00 least_sq_term_27
                      -1.6666670000e+01 least_sq_term_28
                       8.4681200000e+00 least_sq_term_29
-                      4.8784630000e+01 least_sq_term_30
-                     -1.5704920000e+01 least_sq_term_31
-                      3.0302700000e+00 least_sq_term_32
-                     -9.1719500000e+00 least_sq_term_33
+                      4.8573660000e+01 least_sq_term_30
+                     -1.5343380000e+01 least_sq_term_31
+                      3.3595300000e+00 least_sq_term_32
+                     -4.5737100000e+00 least_sq_term_33
 
 
 
@@ -1050,7 +1051,7 @@ Begin Evaluation   20
 Parameters for evaluation 20:
                       1.7003954174e+00 desired_speed
                       1.9604906351e-01 radius
-                      4.9326476112e-01 time_gap
+                      7.7927549649e-01 time_gap
                       2.2412288244e+00 strength_neighbor
                       3.4681164372e-01 range_neighbor
                       8.3084555330e+00 strength_geometry
@@ -1062,37 +1063,37 @@ Active response data for evaluation 20:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6666670000e+01 least_sq_term_1
                       1.2468700000e+00 least_sq_term_2
-                      2.8889310000e+01 least_sq_term_3
+                      2.2068730000e+01 least_sq_term_3
                      -1.6666670000e+01 least_sq_term_4
                       6.1339200000e+00 least_sq_term_5
-                      3.2091120000e+01 least_sq_term_6
+                      2.4105270000e+01 least_sq_term_6
                      -1.6666670000e+01 least_sq_term_7
                       8.3072100000e+00 least_sq_term_8
-                      9.9006700000e+00 least_sq_term_9
+                      1.9491900000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                       4.8754200000e+00 least_sq_term_11
-                     -2.1160300000e+00 least_sq_term_12
-                     -1.6547630000e+01 least_sq_term_13
+                     -4.9032500000e+00 least_sq_term_12
+                     -1.6543290000e+01 least_sq_term_13
                      -9.9220000000e-01 least_sq_term_14
-                     -9.9988900000e+00 least_sq_term_15
+                     -9.9951000000e+00 least_sq_term_15
                      -1.6666670000e+01 least_sq_term_16
                       1.0549400000e+00 least_sq_term_17
-                      4.4577270000e+01 least_sq_term_18
+                      3.1073240000e+01 least_sq_term_18
                      -1.6666670000e+01 least_sq_term_19
                       3.3235300000e+00 least_sq_term_20
-                     -5.7761000000e-01 least_sq_term_21
+                     -3.5639300000e+00 least_sq_term_21
                      -1.6666670000e+01 least_sq_term_22
                       7.7804000000e+00 least_sq_term_23
-                      3.8195520000e+01 least_sq_term_24
+                      2.8970330000e+01 least_sq_term_24
                      -1.6666670000e+01 least_sq_term_25
                      -7.7040000000e-01 least_sq_term_26
-                      1.6448090000e+01 least_sq_term_27
+                      7.6685200000e+00 least_sq_term_27
                      -1.6666670000e+01 least_sq_term_28
                       7.6286600000e+00 least_sq_term_29
-                      2.7907690000e+01 least_sq_term_30
+                      1.9001970000e+01 least_sq_term_30
                      -1.6666670000e+01 least_sq_term_31
                       1.4253700000e+00 least_sq_term_32
-                      1.0881860000e+01 least_sq_term_33
+                      6.2839900000e+00 least_sq_term_33
 
 
 
@@ -1102,7 +1103,7 @@ Begin Evaluation   21
 Parameters for evaluation 21:
                       1.4013738578e+00 desired_speed
                       1.7972178781e-01 radius
-                      3.1344963455e-01 time_gap
+                      4.6868573240e-01 time_gap
                       4.3459756528e+00 strength_neighbor
                       7.4643181360e-02 range_neighbor
                       6.0377444317e+00 strength_geometry
@@ -1112,39 +1113,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 21:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6550950000e+01 least_sq_term_1
-                      4.2748700000e+00 least_sq_term_2
-                      2.1038330000e+01 least_sq_term_3
-                     -1.1921940000e+01 least_sq_term_4
-                      2.3496100000e+00 least_sq_term_5
-                     -3.6381000000e-01 least_sq_term_6
-                     -1.5036410000e+01 least_sq_term_7
-                      2.3184500000e+00 least_sq_term_8
-                      4.1591000000e-01 least_sq_term_9
-                     -1.4100030000e+01 least_sq_term_10
-                      1.8796700000e+00 least_sq_term_11
-                      2.6740600000e+00 least_sq_term_12
-                     -1.0986690000e+01 least_sq_term_13
-                     -3.1142000000e+00 least_sq_term_14
-                      5.6173900000e+00 least_sq_term_15
-                     -1.4848860000e+01 least_sq_term_16
-                      1.0101670000e+01 least_sq_term_17
-                      3.0517700000e+00 least_sq_term_18
-                     -1.3753640000e+01 least_sq_term_19
-                      1.9046200000e+00 least_sq_term_20
-                      5.9098000000e-01 least_sq_term_21
-                     -1.4635270000e+01 least_sq_term_22
-                      7.7992000000e-01 least_sq_term_23
-                      3.4954900000e+00 least_sq_term_24
-                     -1.6048970000e+01 least_sq_term_25
-                      5.1918300000e+00 least_sq_term_26
-                      3.5173200000e+00 least_sq_term_27
-                     -1.5707720000e+01 least_sq_term_28
-                      1.2261830000e+01 least_sq_term_29
-                      1.4143600000e+00 least_sq_term_30
-                     -1.6546490000e+01 least_sq_term_31
-                      3.5027100000e+00 least_sq_term_32
-                      1.0251540000e+01 least_sq_term_33
+                     -1.6550750000e+01 least_sq_term_1
+                      3.8423000000e+00 least_sq_term_2
+                      1.1200100000e+01 least_sq_term_3
+                     -1.5165810000e+01 least_sq_term_4
+                      9.1184400000e+00 least_sq_term_5
+                     -2.3604000000e-01 least_sq_term_6
+                     -1.5034220000e+01 least_sq_term_7
+                      3.0196000000e+00 least_sq_term_8
+                     -3.4955800000e+00 least_sq_term_9
+                     -1.4098310000e+01 least_sq_term_10
+                      1.5301000000e+00 least_sq_term_11
+                     -1.1140500000e+00 least_sq_term_12
+                     -1.1203940000e+01 least_sq_term_13
+                     -3.4805500000e+00 least_sq_term_14
+                      2.4175000000e+00 least_sq_term_15
+                     -1.6246180000e+01 least_sq_term_16
+                      7.1236400000e+00 least_sq_term_17
+                      7.1949100000e+00 least_sq_term_18
+                     -1.3747750000e+01 least_sq_term_19
+                      1.5911400000e+00 least_sq_term_20
+                     -1.9414200000e+00 least_sq_term_21
+                     -1.4629780000e+01 least_sq_term_22
+                      8.8624000000e-01 least_sq_term_23
+                     -2.5462000000e-01 least_sq_term_24
+                     -1.5943820000e+01 least_sq_term_25
+                      3.0811300000e+00 least_sq_term_26
+                      2.5214500000e+00 least_sq_term_27
+                     -1.6559940000e+01 least_sq_term_28
+                      1.0147040000e+01 least_sq_term_29
+                      1.3633890000e+01 least_sq_term_30
+                     -1.5943660000e+01 least_sq_term_31
+                      5.1983200000e+00 least_sq_term_32
+                     -3.3965000000e-01 least_sq_term_33
 
 
 
@@ -1154,7 +1155,7 @@ Begin Evaluation   22
 Parameters for evaluation 22:
                       1.6022204732e+00 desired_speed
                       1.3928934526e-01 radius
-                      6.6434547808e-01 time_gap
+                      1.0747785530e+00 time_gap
                       6.2062026787e+00 strength_neighbor
                       3.7901945489e-01 range_neighbor
                       7.4113760790e+00 strength_geometry
@@ -1164,39 +1165,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 22:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -8.3517600000e+00 least_sq_term_1
-                     -3.2727300000e+00 least_sq_term_2
-                      1.1119980000e+01 least_sq_term_3
+                     -1.5396330000e+01 least_sq_term_1
+                      2.2870000000e-01 least_sq_term_2
+                      6.2754000000e-01 least_sq_term_3
                      -1.1805260000e+01 least_sq_term_4
-                     -2.5530100000e+00 least_sq_term_5
-                      1.5013990000e+01 least_sq_term_6
+                     -2.3826700000e+00 least_sq_term_5
+                      1.3333240000e+01 least_sq_term_6
                      -1.4938590000e+01 least_sq_term_7
-                      1.2239000000e-01 least_sq_term_8
-                      7.3914900000e+00 least_sq_term_9
+                     -4.6630000000e-02 least_sq_term_8
+                      3.3472100000e+00 least_sq_term_9
                      -1.6550160000e+01 least_sq_term_10
                       3.2225900000e+00 least_sq_term_11
-                      4.6476000000e+00 least_sq_term_12
-                     -1.6222670000e+01 least_sq_term_13
-                     -2.7123000000e-01 least_sq_term_14
-                     -6.4037200000e+00 least_sq_term_15
+                     -1.0222300000e+00 least_sq_term_12
+                     -1.6111670000e+01 least_sq_term_13
+                     -8.8766000000e-01 least_sq_term_14
+                     -5.4483500000e+00 least_sq_term_15
                      -9.1486400000e+00 least_sq_term_16
-                     -2.7103900000e+00 least_sq_term_17
-                      1.2235580000e+01 least_sq_term_18
-                     -1.6288110000e+01 least_sq_term_19
-                      1.3315300000e+00 least_sq_term_20
-                      4.6726000000e+00 least_sq_term_21
+                     -2.7206600000e+00 least_sq_term_17
+                      1.0932360000e+01 least_sq_term_18
+                     -1.4269120000e+01 least_sq_term_19
+                     -1.4070300000e+00 least_sq_term_20
+                      1.3768400000e+00 least_sq_term_21
                      -1.4534610000e+01 least_sq_term_22
-                      1.5531000000e-01 least_sq_term_23
-                      1.2483520000e+01 least_sq_term_24
+                      9.4440000000e-02 least_sq_term_23
+                      1.0240790000e+01 least_sq_term_24
                      -1.2669130000e+01 least_sq_term_25
-                     -3.4965400000e+00 least_sq_term_26
-                      7.9313100000e+00 least_sq_term_27
+                     -3.5080600000e+00 least_sq_term_26
+                      4.4367700000e+00 least_sq_term_27
                      -1.2526540000e+01 least_sq_term_28
-                     -1.3685900000e+00 least_sq_term_29
-                      1.2597990000e+01 least_sq_term_30
+                     -1.3644400000e+00 least_sq_term_29
+                      1.0869920000e+01 least_sq_term_30
                      -8.9959500000e+00 least_sq_term_31
-                     -3.5019800000e+00 least_sq_term_32
-                      5.3975300000e+00 least_sq_term_33
+                     -3.4844300000e+00 least_sq_term_32
+                      3.3986800000e+00 least_sq_term_33
 
 
 
@@ -1206,7 +1207,7 @@ Begin Evaluation   23
 Parameters for evaluation 23:
                       1.2301843888e+00 desired_speed
                       1.2525934176e-01 radius
-                      6.9826926495e-01 time_gap
+                      1.1333741849e+00 time_gap
                       7.0902621041e+00 strength_neighbor
                       4.3689736960e-02 range_neighbor
                       5.0002061352e+00 strength_geometry
@@ -1216,39 +1217,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 23:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                      1.5084900000e+00 least_sq_term_1
-                     -9.8094000000e-01 least_sq_term_2
-                     -3.3628400000e+00 least_sq_term_3
-                      3.6484200000e+00 least_sq_term_4
-                     -2.9748000000e+00 least_sq_term_5
-                     -3.2492100000e+00 least_sq_term_6
-                     -5.7080000000e-02 least_sq_term_7
-                     -1.7523800000e+00 least_sq_term_8
-                     -3.0340300000e+00 least_sq_term_9
-                      2.4566500000e+00 least_sq_term_10
-                     -2.5929000000e-01 least_sq_term_11
-                      6.5195000000e-01 least_sq_term_12
-                      1.3376700000e+00 least_sq_term_13
-                      3.2530000000e-02 least_sq_term_14
-                     -6.8021000000e-01 least_sq_term_15
-                      5.9031900000e+00 least_sq_term_16
-                     -1.7153200000e+00 least_sq_term_17
-                     -3.0503600000e+00 least_sq_term_18
-                      4.2592600000e+00 least_sq_term_19
-                     -5.4251000000e-01 least_sq_term_20
-                     -2.0157000000e-01 least_sq_term_21
-                      1.4862000000e+00 least_sq_term_22
-                     -2.9288900000e+00 least_sq_term_23
-                     -2.4758200000e+00 least_sq_term_24
-                     -1.2014300000e+00 least_sq_term_25
-                     -2.5960600000e+00 least_sq_term_26
-                     -2.3838200000e+00 least_sq_term_27
-                      6.0606000000e-01 least_sq_term_28
-                     -1.9434000000e+00 least_sq_term_29
-                     -3.9767400000e+00 least_sq_term_30
-                      2.4422400000e+00 least_sq_term_31
-                     -8.4357000000e-01 least_sq_term_32
-                     -4.2816900000e+00 least_sq_term_33
+                     -1.1851300000e+00 least_sq_term_1
+                     -3.5983000000e-01 least_sq_term_2
+                     -5.1944000000e+00 least_sq_term_3
+                      3.2362000000e-01 least_sq_term_4
+                     -1.8660000000e+00 least_sq_term_5
+                     -3.4035900000e+00 least_sq_term_6
+                     -2.7298900000e+00 least_sq_term_7
+                     -2.7987000000e-01 least_sq_term_8
+                     -3.0285400000e+00 least_sq_term_9
+                     -5.2846000000e-01 least_sq_term_10
+                     -5.5759000000e-01 least_sq_term_11
+                      7.4590000000e-02 least_sq_term_12
+                     -1.3140700000e+00 least_sq_term_13
+                     -1.4887300000e+00 least_sq_term_14
+                     -7.6974000000e-01 least_sq_term_15
+                      1.5050700000e+00 least_sq_term_16
+                     -1.2998800000e+00 least_sq_term_17
+                     -4.8422000000e+00 least_sq_term_18
+                      6.1162000000e-01 least_sq_term_19
+                     -1.1278100000e+00 least_sq_term_20
+                      4.1909000000e-01 least_sq_term_21
+                     -1.6270900000e+00 least_sq_term_22
+                     -1.1565900000e+00 least_sq_term_23
+                     -3.0229600000e+00 least_sq_term_24
+                     -3.2757900000e+00 least_sq_term_25
+                     -1.5477000000e+00 least_sq_term_26
+                     -3.2993500000e+00 least_sq_term_27
+                     -2.3907100000e+00 least_sq_term_28
+                     -9.0222000000e-01 least_sq_term_29
+                     -4.6872500000e+00 least_sq_term_30
+                     -5.0251000000e-01 least_sq_term_31
+                     -5.0377000000e-01 least_sq_term_32
+                     -5.4249500000e+00 least_sq_term_33
 
 
 
@@ -1258,7 +1259,7 @@ Begin Evaluation   24
 Parameters for evaluation 24:
                       1.6409468463e+00 desired_speed
                       1.8289826462e-01 radius
-                      8.0819363167e-01 time_gap
+                      1.3232435456e+00 time_gap
                       4.7029755987e+00 strength_neighbor
                       7.0614812220e-02 range_neighbor
                       4.5866094475e+00 strength_geometry
@@ -1268,39 +1269,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 24:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6548770000e+01 least_sq_term_1
-                      5.1400100000e+00 least_sq_term_2
-                     -1.1021000000e-01 least_sq_term_3
-                     -1.4489840000e+01 least_sq_term_4
-                      7.6534500000e+00 least_sq_term_5
-                     -7.2791000000e+00 least_sq_term_6
-                     -1.6245810000e+01 least_sq_term_7
-                      1.3424360000e+01 least_sq_term_8
-                     -7.6685200000e+00 least_sq_term_9
-                     -1.6427490000e+01 least_sq_term_10
-                      7.2221100000e+00 least_sq_term_11
-                     -7.3210300000e+00 least_sq_term_12
-                     -1.6326500000e+01 least_sq_term_13
-                     -1.2849900000e+00 least_sq_term_14
-                     -6.7796400000e+00 least_sq_term_15
-                     -1.4353070000e+01 least_sq_term_16
-                      1.0790050000e+01 least_sq_term_17
-                     -7.9133000000e+00 least_sq_term_18
-                     -1.6407170000e+01 least_sq_term_19
-                      6.6430000000e+00 least_sq_term_20
-                     -7.5167100000e+00 least_sq_term_21
-                     -1.6185960000e+01 least_sq_term_22
-                      1.1218750000e+01 least_sq_term_23
-                     -6.8211100000e+00 least_sq_term_24
-                     -1.6135820000e+01 least_sq_term_25
-                      7.3550300000e+00 least_sq_term_26
-                     -6.5295000000e+00 least_sq_term_27
-                     -1.4251880000e+01 least_sq_term_28
-                      7.9735500000e+00 least_sq_term_29
-                     -7.3328800000e+00 least_sq_term_30
-                     -1.5798270000e+01 least_sq_term_31
-                      8.4369400000e+00 least_sq_term_32
-                     -7.2623700000e+00 least_sq_term_33
+                     -1.6188550000e+01 least_sq_term_1
+                      9.9443600000e+00 least_sq_term_2
+                     -6.7494200000e+00 least_sq_term_3
+                     -1.4845090000e+01 least_sq_term_4
+                      9.0489000000e+00 least_sq_term_5
+                     -8.1200000000e+00 least_sq_term_6
+                     -1.6235630000e+01 least_sq_term_7
+                      1.3241070000e+01 least_sq_term_8
+                     -8.3307200000e+00 least_sq_term_9
+                     -1.6422970000e+01 least_sq_term_10
+                      7.0893800000e+00 least_sq_term_11
+                     -8.4407500000e+00 least_sq_term_12
+                     -1.6206040000e+01 least_sq_term_13
+                     -1.3839400000e+00 least_sq_term_14
+                     -8.1506500000e+00 least_sq_term_15
+                     -1.4737880000e+01 least_sq_term_16
+                      1.0596090000e+01 least_sq_term_17
+                     -8.6366100000e+00 least_sq_term_18
+                     -1.6402250000e+01 least_sq_term_19
+                      6.6235100000e+00 least_sq_term_20
+                     -8.5251000000e+00 least_sq_term_21
+                     -1.6426740000e+01 least_sq_term_22
+                      1.3377930000e+01 least_sq_term_23
+                     -7.1032700000e+00 least_sq_term_24
+                     -1.6339870000e+01 least_sq_term_25
+                      5.7389100000e+00 least_sq_term_26
+                     -7.3983600000e+00 least_sq_term_27
+                     -1.4870610000e+01 least_sq_term_28
+                      9.9271200000e+00 least_sq_term_29
+                     -8.3292600000e+00 least_sq_term_30
+                     -1.6412190000e+01 least_sq_term_31
+                      5.7598200000e+00 least_sq_term_32
+                     -7.2643900000e+00 least_sq_term_33
 
 
 
@@ -1310,7 +1311,7 @@ Begin Evaluation   25
 Parameters for evaluation 25:
                       1.1709482790e+00 desired_speed
                       1.6673418489e-01 radius
-                      1.7686166298e-01 time_gap
+                      2.3276105423e-01 time_gap
                       8.6990356813e+00 strength_neighbor
                       5.3083652322e-02 range_neighbor
                       2.7469447409e+00 strength_geometry
@@ -1320,39 +1321,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 25:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.5967670000e+01 least_sq_term_1
-                      1.2338180000e+01 least_sq_term_2
-                     -5.3997900000e+00 least_sq_term_3
-                     -1.5909090000e+01 least_sq_term_4
-                      1.2706830000e+01 least_sq_term_5
-                     -8.2954100000e+00 least_sq_term_6
-                     -1.6563950000e+01 least_sq_term_7
+                     -1.2815670000e+01 least_sq_term_1
+                      9.1190700000e+00 least_sq_term_2
+                     -4.6776100000e+00 least_sq_term_3
+                     -1.6413540000e+01 least_sq_term_4
+                      1.3200840000e+01 least_sq_term_5
+                      1.3139000000e-01 least_sq_term_6
+                     -1.6563770000e+01 least_sq_term_7
                       1.5630090000e+01 least_sq_term_8
-                      3.5146200000e+00 least_sq_term_9
-                     -1.5482160000e+01 least_sq_term_10
-                      1.2640360000e+01 least_sq_term_11
-                     -1.7964000000e+00 least_sq_term_12
-                     -1.6666670000e+01 least_sq_term_13
-                     -1.0000000000e+01 least_sq_term_14
-                     -1.0000000000e+01 least_sq_term_15
-                     -1.5537370000e+01 least_sq_term_16
-                      1.2552470000e+01 least_sq_term_17
-                     -3.9121200000e+00 least_sq_term_18
-                     -1.5117660000e+01 least_sq_term_19
-                      1.2293720000e+01 least_sq_term_20
-                     -3.8053300000e+00 least_sq_term_21
+                      2.5380000000e+00 least_sq_term_9
+                     -1.5478520000e+01 least_sq_term_10
+                      1.2664690000e+01 least_sq_term_11
+                     -3.8856500000e+00 least_sq_term_12
+                     -1.1445470000e+01 least_sq_term_13
+                      4.6109600000e+00 least_sq_term_14
+                     -2.1067100000e+00 least_sq_term_15
+                     -1.6243760000e+01 least_sq_term_16
+                      1.2063030000e+01 least_sq_term_17
+                      7.0132000000e+00 least_sq_term_18
+                     -1.5111260000e+01 least_sq_term_19
+                      1.1592150000e+01 least_sq_term_20
+                     -5.9126000000e+00 least_sq_term_21
                      -1.6666670000e+01 least_sq_term_22
                       7.7804000000e+00 least_sq_term_23
-                      4.0859970000e+01 least_sq_term_24
-                     -1.4595810000e+01 least_sq_term_25
-                      8.3381800000e+00 least_sq_term_26
-                     -2.8072400000e+00 least_sq_term_27
-                     -1.6558810000e+01 least_sq_term_28
+                      3.5952460000e+01 least_sq_term_24
+                     -1.4697350000e+01 least_sq_term_25
+                      7.6512000000e+00 least_sq_term_26
+                     -4.2118400000e+00 least_sq_term_27
+                     -1.6558480000e+01 least_sq_term_28
                       1.6862720000e+01 least_sq_term_29
-                     -1.0091400000e+00 least_sq_term_30
-                     -1.3035710000e+01 least_sq_term_31
-                      9.1952800000e+00 least_sq_term_32
-                     -5.6358800000e+00 least_sq_term_33
+                      8.3799000000e-01 least_sq_term_30
+                     -1.4849340000e+01 least_sq_term_31
+                      1.0286010000e+01 least_sq_term_32
+                     -7.5644100000e+00 least_sq_term_33
 
 
 
@@ -1362,7 +1363,7 @@ Begin Evaluation   26
 Parameters for evaluation 26:
                       1.6667820764e+00 desired_speed
                       1.0174663308e-01 radius
-                      1.0314840052e+00 time_gap
+                      1.7089269181e+00 time_gap
                       8.1365895884e+00 strength_neighbor
                       1.6662393163e-01 range_neighbor
                       1.0570986702e+00 strength_geometry
@@ -1378,9 +1379,9 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
                      -1.6666670000e+01 least_sq_term_4
                      -1.0000000000e+01 least_sq_term_5
                      -1.0000000000e+01 least_sq_term_6
-                      1.1642200000e+00 least_sq_term_7
-                     -1.4500000000e-03 least_sq_term_8
-                      3.0639000000e+00 least_sq_term_9
+                     -5.5371000000e-01 least_sq_term_7
+                     -1.0683000000e-01 least_sq_term_8
+                      1.6449300000e+00 least_sq_term_9
                      -1.6666670000e+01 least_sq_term_10
                      -1.0000000000e+01 least_sq_term_11
                      -1.0000000000e+01 least_sq_term_12
@@ -1393,9 +1394,9 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
                      -1.6666670000e+01 least_sq_term_19
                      -1.0000000000e+01 least_sq_term_20
                      -1.0000000000e+01 least_sq_term_21
-                      2.4608500000e+00 least_sq_term_22
-                     -6.5840000000e-01 least_sq_term_23
-                      6.2326300000e+00 least_sq_term_24
+                      1.1458300000e+00 least_sq_term_22
+                     -6.0877000000e-01 least_sq_term_23
+                      5.0101800000e+00 least_sq_term_24
                      -1.6666670000e+01 least_sq_term_25
                      -1.0000000000e+01 least_sq_term_26
                      -1.0000000000e+01 least_sq_term_27
@@ -1414,7 +1415,7 @@ Begin Evaluation   27
 Parameters for evaluation 27:
                       1.0947706628e+00 desired_speed
                       1.3842636874e-01 radius
-                      1.0005017742e-01 time_gap
+                      1.0008667009e-01 time_gap
                       2.8064970956e+00 strength_neighbor
                       2.6650096649e-01 range_neighbor
                       1.6817839146e+00 strength_geometry
@@ -1424,39 +1425,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 27:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.4583750000e+01 least_sq_term_1
-                      5.6421000000e+00 least_sq_term_2
-                      1.1570260000e+01 least_sq_term_3
-                     -1.1803630000e+01 least_sq_term_4
-                     -8.2315000000e-01 least_sq_term_5
-                      1.1284330000e+01 least_sq_term_6
-                     -1.4933940000e+01 least_sq_term_7
-                      1.3934300000e+00 least_sq_term_8
-                      6.1508000000e+00 least_sq_term_9
+                     -1.4120880000e+01 least_sq_term_1
+                      5.6503100000e+00 least_sq_term_2
+                      8.4028200000e+00 least_sq_term_3
+                      1.8134470000e+01 least_sq_term_4
+                     -1.5881700000e+00 least_sq_term_5
+                      1.2560860000e+01 least_sq_term_6
+                     -1.5953190000e+01 least_sq_term_7
+                      7.7056900000e+00 least_sq_term_8
+                      7.2888700000e+00 least_sq_term_9
                      -1.5382920000e+01 least_sq_term_10
-                      6.1233000000e+00 least_sq_term_11
-                      1.4934000000e-01 least_sq_term_12
+                      6.1544900000e+00 least_sq_term_11
+                     -1.0940100000e+00 least_sq_term_12
                      -1.6555520000e+01 least_sq_term_13
                      -1.8110900000e+00 least_sq_term_14
-                      3.8937300000e+01 least_sq_term_15
-                     -1.4992070000e+01 least_sq_term_16
-                      6.0744800000e+00 least_sq_term_17
-                      1.5982410000e+01 least_sq_term_18
+                      3.8937270000e+01 least_sq_term_15
+                     -1.1782420000e+01 least_sq_term_16
+                      3.2426000000e+00 least_sq_term_17
+                      8.4549000000e+00 least_sq_term_18
                      -1.5022940000e+01 least_sq_term_19
-                      5.6422300000e+00 least_sq_term_20
-                     -4.1673000000e-01 least_sq_term_21
+                      5.6382100000e+00 least_sq_term_20
+                     -1.2242400000e+00 least_sq_term_21
                      -1.4530320000e+01 least_sq_term_22
-                      3.2604000000e-01 least_sq_term_23
-                      1.3014310000e+01 least_sq_term_24
-                      1.3077680000e+01 least_sq_term_25
-                     -1.8630200000e+00 least_sq_term_26
-                      1.0211140000e+01 least_sq_term_27
-                      1.3276030000e+01 least_sq_term_28
-                     -2.5267000000e-01 least_sq_term_29
-                      1.0294910000e+01 least_sq_term_30
+                      1.1899000000e-01 least_sq_term_23
+                      1.1173760000e+01 least_sq_term_24
+                     -1.2659720000e+01 least_sq_term_25
+                     -1.2925700000e+00 least_sq_term_26
+                      8.7597900000e+00 least_sq_term_27
+                     -1.2515410000e+01 least_sq_term_28
+                      5.3070000000e-01 least_sq_term_29
+                      8.8571100000e+00 least_sq_term_30
                      -1.6546450000e+01 least_sq_term_31
                       3.5027100000e+00 least_sq_term_32
-                      2.1987270000e+01 least_sq_term_33
+                      2.1944080000e+01 least_sq_term_33
 
 
 
@@ -1466,7 +1467,7 @@ Begin Evaluation   28
 Parameters for evaluation 28:
                       8.2931055891e-01 desired_speed
                       1.4490448015e-01 radius
-                      3.5236131538e-01 time_gap
+                      5.3589681748e-01 time_gap
                       8.3037448055e+00 strength_neighbor
                       1.3076382557e-01 range_neighbor
                       4.0653271790e+00 strength_geometry
@@ -1476,39 +1477,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 28:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.0285070000e+01 least_sq_term_1
-                      3.8912800000e+00 least_sq_term_2
-                     -6.8068000000e-01 least_sq_term_3
-                     -1.3778350000e+01 least_sq_term_4
-                      5.4883300000e+00 least_sq_term_5
-                      9.6727000000e-01 least_sq_term_6
-                     -1.5744070000e+01 least_sq_term_7
-                      8.4365500000e+00 least_sq_term_8
-                     -6.2196000000e-01 least_sq_term_9
+                     -1.0282920000e+01 least_sq_term_1
+                      4.2144900000e+00 least_sq_term_2
+                     -1.1663300000e+00 least_sq_term_3
+                     -1.3774430000e+01 least_sq_term_4
+                      5.5618600000e+00 least_sq_term_5
+                      2.7072000000e-01 least_sq_term_6
+                     -1.5738100000e+01 least_sq_term_7
+                      8.7323500000e+00 least_sq_term_8
+                     -2.5065300000e+00 least_sq_term_9
                      -1.4561050000e+01 least_sq_term_10
-                      4.7050200000e+00 least_sq_term_11
-                      1.0708000000e-01 least_sq_term_12
-                     -1.0309930000e+01 least_sq_term_13
-                      2.2813300000e+00 least_sq_term_14
-                     -6.0463000000e-01 least_sq_term_15
-                     -1.1333320000e+01 least_sq_term_16
-                      4.3232400000e+00 least_sq_term_17
-                      1.9682000000e-01 least_sq_term_18
-                     -1.4245600000e+01 least_sq_term_19
-                      4.9109000000e+00 least_sq_term_20
-                     -1.5705900000e+00 least_sq_term_21
-                     -1.5637810000e+01 least_sq_term_22
-                      6.5877100000e+00 least_sq_term_23
-                     -6.0012100000e+00 least_sq_term_24
-                     -1.3466590000e+01 least_sq_term_25
-                      3.4104800000e+00 least_sq_term_26
-                     -1.7113500000e+00 least_sq_term_27
-                     -1.4201080000e+01 least_sq_term_28
-                      7.9743200000e+00 least_sq_term_29
-                     -4.3606000000e-01 least_sq_term_30
-                     -1.0157390000e+01 least_sq_term_31
-                      3.2030900000e+00 least_sq_term_32
-                     -2.5562300000e+00 least_sq_term_33
+                      4.2739600000e+00 least_sq_term_11
+                     -2.1664500000e+00 least_sq_term_12
+                     -1.0419350000e+01 least_sq_term_13
+                      2.0415900000e+00 least_sq_term_14
+                     -2.6163000000e+00 least_sq_term_15
+                     -1.1468410000e+01 least_sq_term_16
+                      4.7803100000e+00 least_sq_term_17
+                     -5.0569000000e-01 least_sq_term_18
+                     -1.4248060000e+01 least_sq_term_19
+                      4.4100700000e+00 least_sq_term_20
+                     -2.9245600000e+00 least_sq_term_21
+                     -1.5979590000e+01 least_sq_term_22
+                      9.4638000000e+00 least_sq_term_23
+                     -3.3228100000e+00 least_sq_term_24
+                     -1.3461180000e+01 least_sq_term_25
+                      3.1510700000e+00 least_sq_term_26
+                     -2.1809000000e+00 least_sq_term_27
+                     -1.4195230000e+01 least_sq_term_28
+                      7.9147500000e+00 least_sq_term_29
+                     -1.6091200000e+00 least_sq_term_30
+                     -1.0510710000e+01 least_sq_term_31
+                      3.9660100000e+00 least_sq_term_32
+                     -3.7155800000e+00 least_sq_term_33
 
 
 
@@ -1518,7 +1519,7 @@ Begin Evaluation   29
 Parameters for evaluation 29:
                       9.4899269154e-01 desired_speed
                       1.8782256898e-01 radius
-                      9.9208395697e-01 time_gap
+                      1.6408722893e+00 time_gap
                       3.4857633834e+00 strength_neighbor
                       3.4759332922e-01 range_neighbor
                       7.2946178521e+00 strength_geometry
@@ -1529,38 +1530,38 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 29:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.6434920000e+01 least_sq_term_1
-                      2.0380200000e+00 least_sq_term_2
-                      3.3582700000e+00 least_sq_term_3
-                     -1.6540060000e+01 least_sq_term_4
+                      2.2277700000e+00 least_sq_term_2
+                     -1.6368300000e+00 least_sq_term_3
+                     -1.6538620000e+01 least_sq_term_4
                       2.4671200000e+00 least_sq_term_5
-                     -2.6288600000e+00 least_sq_term_6
-                     -1.6562030000e+01 least_sq_term_7
-                      4.6457700000e+00 least_sq_term_8
-                     -6.0926700000e+00 least_sq_term_9
+                     -3.8957900000e+00 least_sq_term_6
+                     -1.6560750000e+01 least_sq_term_7
+                      6.4764900000e+00 least_sq_term_8
+                     -6.7936500000e+00 least_sq_term_9
                      -1.6549810000e+01 least_sq_term_10
                       3.2225900000e+00 least_sq_term_11
-                     -4.7250500000e+00 least_sq_term_12
-                     -1.2551420000e+01 least_sq_term_13
-                     -3.0515700000e+00 least_sq_term_14
-                     -6.0022100000e+00 least_sq_term_15
-                     -1.5680210000e+01 least_sq_term_16
-                      3.0344100000e+00 least_sq_term_17
-                     -7.5411100000e+00 least_sq_term_18
-                     -1.5258810000e+01 least_sq_term_19
-                      3.2092000000e+00 least_sq_term_20
-                     -7.3095200000e+00 least_sq_term_21
+                     -6.9656500000e+00 least_sq_term_12
+                     -1.3441210000e+01 least_sq_term_13
+                     -3.0470500000e+00 least_sq_term_14
+                     -7.4593400000e+00 least_sq_term_15
+                     -1.5673480000e+01 least_sq_term_16
+                      2.8271800000e+00 least_sq_term_17
+                     -6.0583400000e+00 least_sq_term_18
+                     -1.5248690000e+01 least_sq_term_19
+                      3.1550300000e+00 least_sq_term_20
+                     -8.3513400000e+00 least_sq_term_21
                      -1.6666670000e+01 least_sq_term_22
                       7.7804000000e+00 least_sq_term_23
-                      2.6409620000e+01 least_sq_term_24
-                     -1.4896240000e+01 least_sq_term_25
-                      7.6438000000e-01 least_sq_term_26
-                     -5.5761900000e+00 least_sq_term_27
-                     -1.6558920000e+01 least_sq_term_28
-                      5.9497400000e+00 least_sq_term_29
-                     -1.6951700000e+00 least_sq_term_30
-                     -1.6303450000e+01 least_sq_term_31
-                      2.1380800000e+00 least_sq_term_32
-                     -4.6444000000e+00 least_sq_term_33
+                      2.0811670000e+01 least_sq_term_24
+                     -1.4879180000e+01 least_sq_term_25
+                      7.4752000000e-01 least_sq_term_26
+                     -7.0347200000e+00 least_sq_term_27
+                     -1.6449400000e+01 least_sq_term_28
+                      5.3484000000e+00 least_sq_term_29
+                     -6.9948700000e+00 least_sq_term_30
+                     -1.6057800000e+01 least_sq_term_31
+                      2.1335500000e+00 least_sq_term_32
+                     -6.9549600000e+00 least_sq_term_33
 
 
 
@@ -1570,7 +1571,7 @@ Begin Evaluation   30
 Parameters for evaluation 30:
                       1.4789252562e+00 desired_speed
                       1.0970037777e-01 radius
-                      1.1415327293e+00 time_gap
+                      1.8990110779e+00 time_gap
                       5.7281566913e+00 strength_neighbor
                       2.2912016868e-01 range_neighbor
                       2.0035328983e+00 strength_geometry
@@ -1581,35 +1582,35 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 30:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -8.2334500000e+00 least_sq_term_1
-                     -2.0462000000e-01 least_sq_term_2
-                      2.8298500000e+00 least_sq_term_3
-                     -1.1678930000e+01 least_sq_term_4
-                     -5.9160000000e-02 least_sq_term_5
-                      5.3989200000e+00 least_sq_term_6
+                     -7.6600000000e-03 least_sq_term_2
+                      8.3222000000e-01 least_sq_term_3
+                     -1.1668860000e+01 least_sq_term_4
+                      8.0570000000e-02 least_sq_term_5
+                      3.2701500000e+00 least_sq_term_6
                      -1.4734640000e+01 least_sq_term_7
-                      9.5659000000e-01 least_sq_term_8
-                      2.9652900000e+00 least_sq_term_9
+                      6.9765000000e-01 least_sq_term_8
+                      6.7074000000e-01 least_sq_term_9
                      -1.4102610000e+01 least_sq_term_10
-                      1.2392000000e+00 least_sq_term_11
-                      2.6916800000e+00 least_sq_term_12
+                     -7.4967000000e-01 least_sq_term_11
+                      2.2382800000e+00 least_sq_term_12
                      -1.6666670000e+01 least_sq_term_13
                      -1.0000000000e+01 least_sq_term_14
                      -1.0000000000e+01 least_sq_term_15
                      -9.0068500000e+00 least_sq_term_16
-                      3.9530000000e-02 least_sq_term_17
-                      4.2454300000e+00 least_sq_term_18
+                      2.1213000000e-01 least_sq_term_17
+                      1.7793200000e+00 least_sq_term_18
                      -1.3764380000e+01 least_sq_term_19
-                     -1.6972000000e-01 least_sq_term_20
-                      1.7543500000e+00 least_sq_term_21
+                     -3.0833200000e+00 least_sq_term_20
+                      5.2405200000e+00 least_sq_term_21
                      -1.4421640000e+01 least_sq_term_22
-                      1.1723200000e+00 least_sq_term_23
-                      7.5266800000e+00 least_sq_term_24
+                      1.3734900000e+00 least_sq_term_23
+                      3.7856300000e+00 least_sq_term_24
                      -1.2462710000e+01 least_sq_term_25
-                     -5.6753000000e-01 least_sq_term_26
-                      2.3679600000e+00 least_sq_term_27
+                     -9.8708000000e-01 least_sq_term_26
+                      3.4490000000e-02 least_sq_term_27
                      -1.2417530000e+01 least_sq_term_28
-                      1.6270500000e+00 least_sq_term_29
-                      2.3224700000e+00 least_sq_term_30
+                      1.6205900000e+00 least_sq_term_29
+                      1.9486200000e+00 least_sq_term_30
                      -1.6666670000e+01 least_sq_term_31
                      -1.0000000000e+01 least_sq_term_32
                      -1.0000000000e+01 least_sq_term_33
@@ -1622,7 +1623,7 @@ Begin Evaluation   31
 Parameters for evaluation 31:
                       1.3502300468e+00 desired_speed
                       1.1592186416e-01 radius
-                      1.5166734210e-01 time_gap
+                      1.8924359090e-01 time_gap
                       6.5235506831e+00 strength_neighbor
                       1.5282583061e-01 range_neighbor
                       8.8141825080e+00 strength_geometry
@@ -1632,39 +1633,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 31:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -9.3862400000e+00 least_sq_term_1
-                      2.3417000000e+00 least_sq_term_2
-                      4.0991400000e+00 least_sq_term_3
-                     -1.3421370000e+01 least_sq_term_4
-                      3.8957400000e+00 least_sq_term_5
-                      5.0561800000e+00 least_sq_term_6
+                     -9.7329300000e+00 least_sq_term_1
+                      3.2944300000e+00 least_sq_term_2
+                      2.8640100000e+00 least_sq_term_3
+                     -1.3296550000e+01 least_sq_term_4
+                      3.2671500000e+00 least_sq_term_5
+                      4.0689900000e+00 least_sq_term_6
                      -1.5647420000e+01 least_sq_term_7
-                      7.7986800000e+00 least_sq_term_8
-                      3.1000600000e+00 least_sq_term_9
-                     -1.4566690000e+01 least_sq_term_10
-                      4.1013100000e+00 least_sq_term_11
-                      7.0379200000e+00 least_sq_term_12
-                     -1.0324840000e+01 least_sq_term_13
-                     -4.3107000000e-01 least_sq_term_14
-                      9.9450400000e+00 least_sq_term_15
+                      7.6570500000e+00 least_sq_term_8
+                      1.6958500000e+00 least_sq_term_9
+                     -1.4565990000e+01 least_sq_term_10
+                      4.2828900000e+00 least_sq_term_11
+                      4.9430200000e+00 least_sq_term_12
+                     -1.0322720000e+01 least_sq_term_13
+                      3.4271000000e-01 least_sq_term_14
+                      7.3674800000e+00 least_sq_term_15
                      -1.0801630000e+01 least_sq_term_16
-                      3.0207900000e+00 least_sq_term_17
-                      3.4822800000e+00 least_sq_term_18
+                      3.0726200000e+00 least_sq_term_17
+                      3.9226000000e+00 least_sq_term_18
                      -1.4261060000e+01 least_sq_term_19
-                      4.4011700000e+00 least_sq_term_20
-                      4.1203100000e+00 least_sq_term_21
+                      4.1959000000e+00 least_sq_term_20
+                      3.6834700000e+00 least_sq_term_21
                      -1.5420220000e+01 least_sq_term_22
-                      5.0350800000e+00 least_sq_term_23
-                      3.8079500000e+00 least_sq_term_24
+                      4.9872600000e+00 least_sq_term_23
+                      2.8890100000e+00 least_sq_term_24
                      -1.3380020000e+01 least_sq_term_25
-                      2.9379200000e+00 least_sq_term_26
-                      3.9124300000e+00 least_sq_term_27
-                     -1.3476610000e+01 least_sq_term_28
-                      4.3907400000e+00 least_sq_term_29
-                      2.2255700000e+00 least_sq_term_30
+                      3.0723200000e+00 least_sq_term_26
+                      2.8518500000e+00 least_sq_term_27
+                     -1.3901950000e+01 least_sq_term_28
+                      5.8051300000e+00 least_sq_term_29
+                      3.0493500000e+00 least_sq_term_30
                      -9.9457800000e+00 least_sq_term_31
-                      2.8082900000e+00 least_sq_term_32
-                      1.1808100000e+00 least_sq_term_33
+                      3.0399500000e+00 least_sq_term_32
+                      8.2912000000e-01 least_sq_term_33
 
 
 
@@ -1674,7 +1675,7 @@ Begin Evaluation   32
 Parameters for evaluation 32:
                       1.7526688870e+00 desired_speed
                       1.5858485748e-01 radius
-                      3.1406412686e-01 time_gap
+                      4.6974712821e-01 time_gap
                       3.6415204999e+00 strength_neighbor
                       1.7769260425e-01 range_neighbor
                       3.2567437321e+00 strength_geometry
@@ -1684,39 +1685,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 32:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.0310740000e+01 least_sq_term_1
-                      3.8243000000e+00 least_sq_term_2
-                      1.6070700000e+00 least_sq_term_3
-                     -1.3797760000e+01 least_sq_term_4
-                      5.5247100000e+00 least_sq_term_5
-                      4.2627500000e+00 least_sq_term_6
-                     -1.5749030000e+01 least_sq_term_7
-                      4.3738800000e+00 least_sq_term_8
-                     -5.8941500000e+00 least_sq_term_9
-                     -1.5733030000e+01 least_sq_term_10
-                      5.5296600000e+00 least_sq_term_11
-                      7.6599200000e+00 least_sq_term_12
-                     -1.0436100000e+01 least_sq_term_13
-                      3.6782000000e-01 least_sq_term_14
-                      3.8975500000e+00 least_sq_term_15
-                     -1.1501580000e+01 least_sq_term_16
-                      4.4838900000e+00 least_sq_term_17
-                      2.3107900000e+00 least_sq_term_18
-                     -1.5526400000e+01 least_sq_term_19
-                      5.0464000000e+00 least_sq_term_20
-                      5.0339000000e+00 least_sq_term_21
-                     -1.5987930000e+01 least_sq_term_22
-                      9.5706000000e+00 least_sq_term_23
-                      2.4838700000e+00 least_sq_term_24
-                     -1.3480580000e+01 least_sq_term_25
-                      3.1981300000e+00 least_sq_term_26
-                      1.6468700000e+00 least_sq_term_27
-                     -1.4218490000e+01 least_sq_term_28
-                      7.6286600000e+00 least_sq_term_29
-                      1.0738800000e+00 least_sq_term_30
-                     -1.5706860000e+01 least_sq_term_31
-                      6.2249400000e+00 least_sq_term_32
-                      7.0999600000e+00 least_sq_term_33
+                     -1.0072990000e+01 least_sq_term_1
+                      3.6568300000e+00 least_sq_term_2
+                     -8.4390000000e-02 least_sq_term_3
+                     -1.3795830000e+01 least_sq_term_4
+                      5.5997700000e+00 least_sq_term_5
+                      9.9228000000e-01 least_sq_term_6
+                     -1.5747180000e+01 least_sq_term_7
+                      8.2191000000e+00 least_sq_term_8
+                     -1.8314900000e+00 least_sq_term_9
+                     -1.4681360000e+01 least_sq_term_10
+                      3.3817500000e+00 least_sq_term_11
+                      1.2156000000e-01 least_sq_term_12
+                     -1.0654590000e+01 least_sq_term_13
+                     -4.4256000000e-01 least_sq_term_14
+                      1.3531600000e+00 least_sq_term_15
+                     -1.1492900000e+01 least_sq_term_16
+                      4.6979500000e+00 least_sq_term_17
+                      1.1248000000e-01 least_sq_term_18
+                     -1.4380760000e+01 least_sq_term_19
+                      3.4458200000e+00 least_sq_term_20
+                     -7.2424000000e-01 least_sq_term_21
+                     -1.5984940000e+01 least_sq_term_22
+                      9.5869600000e+00 least_sq_term_23
+                     -1.0390800000e+00 least_sq_term_24
+                     -1.5842230000e+01 least_sq_term_25
+                      3.9649300000e+00 least_sq_term_26
+                      5.2228600000e+00 least_sq_term_27
+                     -1.4213540000e+01 least_sq_term_28
+                      7.9307700000e+00 least_sq_term_29
+                     -6.0133000000e-01 least_sq_term_30
+                     -1.0537620000e+01 least_sq_term_31
+                      4.0227900000e+00 least_sq_term_32
+                     -3.2215400000e+00 least_sq_term_33
 
 
 
@@ -1726,7 +1727,7 @@ Begin Evaluation   33
 Parameters for evaluation 33:
                       1.5712325723e+00 desired_speed
                       1.9824489500e-01 radius
-                      9.1114172628e-01 time_gap
+                      1.5010629818e+00 time_gap
                       6.4818255143e+00 strength_neighbor
                       2.9849154011e-01 range_neighbor
                       6.7350338633e+00 strength_geometry
@@ -1737,38 +1738,38 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 33:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -1.2278240000e+01 least_sq_term_1
-                     -8.8445000000e-01 least_sq_term_2
-                     -8.8557000000e-01 least_sq_term_3
-                     -1.5292270000e+01 least_sq_term_4
-                      7.1958000000e-01 least_sq_term_5
-                     -2.7117100000e+00 least_sq_term_6
-                     -1.6361300000e+01 least_sq_term_7
-                      4.9006800000e+00 least_sq_term_8
-                     -2.4026800000e+00 least_sq_term_9
+                     -8.9053000000e-01 least_sq_term_2
+                     -3.7260700000e+00 least_sq_term_3
+                     -1.5289950000e+01 least_sq_term_4
+                      8.6020000000e-01 least_sq_term_5
+                     -4.5063600000e+00 least_sq_term_6
+                     -1.6360890000e+01 least_sq_term_7
+                      4.7910600000e+00 least_sq_term_8
+                     -5.0345700000e+00 least_sq_term_9
                      -1.4686010000e+01 least_sq_term_10
-                     -7.8248000000e-01 least_sq_term_11
-                     -2.4452000000e-01 least_sq_term_12
-                     -1.1116680000e+01 least_sq_term_13
-                     -5.0224500000e+00 least_sq_term_14
-                      2.4555400000e+00 least_sq_term_15
+                     -9.0813000000e-01 least_sq_term_11
+                     -3.9524300000e+00 least_sq_term_12
+                     -1.1449680000e+01 least_sq_term_13
+                     -5.3107200000e+00 least_sq_term_14
+                     -1.1844200000e+00 least_sq_term_15
                      -1.3881280000e+01 least_sq_term_16
-                      2.9356000000e-01 least_sq_term_17
-                     -9.7098000000e-01 least_sq_term_18
+                      3.2579000000e-01 least_sq_term_17
+                     -3.3163000000e+00 least_sq_term_18
                      -1.4395310000e+01 least_sq_term_19
-                     -8.3472000000e-01 least_sq_term_20
-                     -1.7173400000e+00 least_sq_term_21
-                     -1.6553080000e+01 least_sq_term_22
-                      4.5476000000e+00 least_sq_term_23
-                      7.2476000000e-01 least_sq_term_24
-                     -1.4197530000e+01 least_sq_term_25
-                     -1.8861500000e+00 least_sq_term_26
-                     -1.9181000000e+00 least_sq_term_27
-                     -1.5605100000e+01 least_sq_term_28
-                      2.7447400000e+00 least_sq_term_29
-                     -2.6441300000e+00 least_sq_term_30
+                     -1.0022900000e+00 least_sq_term_20
+                     -4.4717700000e+00 least_sq_term_21
+                     -1.6551960000e+01 least_sq_term_22
+                      6.1640000000e+00 least_sq_term_23
+                     -1.7860100000e+00 least_sq_term_24
+                     -1.4188350000e+01 least_sq_term_25
+                     -1.7153400000e+00 least_sq_term_26
+                     -4.5909200000e+00 least_sq_term_27
+                     -1.5498150000e+01 least_sq_term_28
+                      2.3483300000e+00 least_sq_term_29
+                     -5.3839000000e+00 least_sq_term_30
                      -1.6067190000e+01 least_sq_term_31
-                      3.0961000000e-01 least_sq_term_32
-                     -2.7303700000e+00 least_sq_term_33
+                      3.5188000000e-01 least_sq_term_32
+                     -4.5996500000e+00 least_sq_term_33
 
 
 
@@ -1778,7 +1779,7 @@ Begin Evaluation   34
 Parameters for evaluation 34:
                       1.0216512499e+00 desired_speed
                       1.4414558616e-01 radius
-                      4.5649347345e-01 time_gap
+                      7.1576145415e-01 time_gap
                       3.8443186590e+00 strength_neighbor
                       3.3004595100e-01 range_neighbor
                       9.2656718732e+00 strength_geometry
@@ -1788,39 +1789,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 34:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6203490000e+01 least_sq_term_1
-                      3.4497800000e+00 least_sq_term_2
-                      8.4434000000e+00 least_sq_term_3
-                     -1.6541600000e+01 least_sq_term_4
-                      4.6672000000e+00 least_sq_term_5
-                      1.6503590000e+01 least_sq_term_6
+                     -1.5277120000e+01 least_sq_term_1
+                      3.7423000000e+00 least_sq_term_2
+                     -1.3584100000e+00 least_sq_term_3
+                     -1.6416440000e+01 least_sq_term_4
+                      5.0338800000e+00 least_sq_term_5
+                      1.2057930000e+01 least_sq_term_6
                      -1.4932780000e+01 least_sq_term_7
-                      1.3668600000e+00 least_sq_term_8
-                      4.1855900000e+00 least_sq_term_9
+                      1.7234400000e+00 least_sq_term_8
+                      8.9612000000e-01 least_sq_term_9
                      -1.4098310000e+01 least_sq_term_10
-                      7.1009000000e-01 least_sq_term_11
-                      1.5999400000e+00 least_sq_term_12
-                     -1.6221920000e+01 least_sq_term_13
-                     -2.4773000000e+00 least_sq_term_14
-                      9.0818700000e+00 least_sq_term_15
-                     -9.1259100000e+00 least_sq_term_16
-                     -1.3774300000e+00 least_sq_term_17
-                      7.5769800000e+00 least_sq_term_18
+                      7.1047000000e-01 least_sq_term_11
+                     -7.0150000000e-01 least_sq_term_12
+                     -1.4220580000e+01 least_sq_term_13
+                     -1.8989800000e+00 least_sq_term_14
+                      2.0720700000e+00 least_sq_term_15
+                     -1.6387380000e+01 least_sq_term_16
+                      2.6901500000e+00 least_sq_term_17
+                      2.1517280000e+01 least_sq_term_18
                      -1.3756580000e+01 least_sq_term_19
-                      8.6945000000e-01 least_sq_term_20
-                      7.5330000000e-02 least_sq_term_21
+                      3.7344000000e-01 least_sq_term_20
+                     -8.0864000000e-01 least_sq_term_21
                      -1.4529600000e+01 least_sq_term_22
-                      1.1763900000e+00 least_sq_term_23
-                      9.0896700000e+00 least_sq_term_24
-                     -1.5638210000e+01 least_sq_term_25
-                      1.0330800000e+00 least_sq_term_26
-                      5.2481300000e+00 least_sq_term_27
-                     -1.2512610000e+01 least_sq_term_28
-                      1.2093000000e-01 least_sq_term_29
-                      6.1435800000e+00 least_sq_term_30
-                     -1.2817110000e+01 least_sq_term_31
-                      9.2588000000e-01 least_sq_term_32
-                     -1.4774600000e+00 least_sq_term_33
+                      1.3665200000e+00 least_sq_term_23
+                      6.3668500000e+00 least_sq_term_24
+                     -1.5843900000e+01 least_sq_term_25
+                      6.0908000000e-01 least_sq_term_26
+                      4.5929900000e+00 least_sq_term_27
+                     -1.5281980000e+01 least_sq_term_28
+                      5.6800500000e+00 least_sq_term_29
+                     -1.5129600000e+00 least_sq_term_30
+                     -1.6305770000e+01 least_sq_term_31
+                      2.4871200000e+00 least_sq_term_32
+                      3.8030900000e+00 least_sq_term_33
 
 
 
@@ -1830,7 +1831,7 @@ Begin Evaluation   35
 Parameters for evaluation 35:
                       1.1165760168e+00 desired_speed
                       1.5822285201e-01 radius
-                      7.8441220241e-01 time_gap
+                      1.2821665314e+00 time_gap
                       5.2987827457e+00 strength_neighbor
                       3.6994477734e-01 range_neighbor
                       3.8779034993e+00 strength_geometry
@@ -1841,38 +1842,38 @@ blocking fork: python3 driver_cq.py params.in results.out
 Active response data for evaluation 35:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
                      -8.5664500000e+00 least_sq_term_1
-                     -2.8240600000e+00 least_sq_term_2
-                      5.9150300000e+00 least_sq_term_3
-                     -1.2417100000e+01 least_sq_term_4
-                     -1.6517400000e+00 least_sq_term_5
-                      7.2971900000e+00 least_sq_term_6
+                     -2.8341700000e+00 least_sq_term_2
+                      3.7796800000e+00 least_sq_term_3
+                     -1.2040580000e+01 least_sq_term_4
+                     -1.9551200000e+00 least_sq_term_5
+                      6.3593800000e+00 least_sq_term_6
                      -1.5035870000e+01 least_sq_term_7
-                      9.6812000000e-01 least_sq_term_8
-                      3.0710800000e+00 least_sq_term_9
+                      7.4633000000e-01 least_sq_term_8
+                     -1.0338000000e-01 least_sq_term_9
                      -1.4215880000e+01 least_sq_term_10
-                     -5.9689000000e-01 least_sq_term_11
-                      1.4102300000e+00 least_sq_term_12
-                     -1.4888290000e+01 least_sq_term_13
-                     -6.8790000000e-01 least_sq_term_14
-                     -3.9800400000e+00 least_sq_term_15
+                     -1.1993000000e+00 least_sq_term_11
+                      6.1360000000e-02 least_sq_term_12
+                     -1.3665660000e+01 least_sq_term_13
+                     -2.0056700000e+00 least_sq_term_14
+                     -3.2063400000e+00 least_sq_term_15
                      -9.4100700000e+00 least_sq_term_16
-                     -2.4436300000e+00 least_sq_term_17
-                      7.8916000000e+00 least_sq_term_18
+                     -2.4143900000e+00 least_sq_term_17
+                      5.7737700000e+00 least_sq_term_18
                      -1.3885910000e+01 least_sq_term_19
-                     -1.0487800000e+00 least_sq_term_20
-                      7.8269000000e-01 least_sq_term_21
+                     -2.3359600000e+00 least_sq_term_20
+                      9.8462000000e-01 least_sq_term_21
                      -1.4755200000e+01 least_sq_term_22
-                      1.5266000000e-01 least_sq_term_23
-                      5.8536200000e+00 least_sq_term_24
+                      5.1909000000e-01 least_sq_term_23
+                      3.7884200000e+00 least_sq_term_24
                      -1.2762460000e+01 least_sq_term_25
-                     -2.7589200000e+00 least_sq_term_26
-                      3.8735800000e+00 least_sq_term_27
+                     -2.8828200000e+00 least_sq_term_26
+                      1.3536000000e+00 least_sq_term_27
                      -1.2728290000e+01 least_sq_term_28
-                     -1.0631100000e+00 least_sq_term_29
-                      6.8271500000e+00 least_sq_term_30
-                     -9.2156700000e+00 least_sq_term_31
-                     -3.0256900000e+00 least_sq_term_32
-                      1.3112300000e+00 least_sq_term_33
+                     -8.1543000000e-01 least_sq_term_29
+                      3.6595100000e+00 least_sq_term_30
+                     -9.0954900000e+00 least_sq_term_31
+                     -3.1059700000e+00 least_sq_term_32
+                     -3.4050000000e-01 least_sq_term_33
 
 
 
@@ -1882,7 +1883,7 @@ Begin Evaluation   36
 Parameters for evaluation 36:
                       1.0357891997e+00 desired_speed
                       1.5267758480e-01 radius
-                      9.4359924562e-01 time_gap
+                      1.5571259697e+00 time_gap
                       1.7655528886e+00 strength_neighbor
                       2.1117897558e-01 range_neighbor
                       4.8733299216e+00 strength_geometry
@@ -1892,39 +1893,39 @@ blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 36:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -1.6194770000e+01 least_sq_term_1
-                      9.7190600000e+00 least_sq_term_2
-                     -1.4635400000e+00 least_sq_term_3
-                     -1.6538930000e+01 least_sq_term_4
-                      9.8007200000e+00 least_sq_term_5
-                      3.1716900000e+00 least_sq_term_6
-                     -1.6450690000e+01 least_sq_term_7
-                      1.3793270000e+01 least_sq_term_8
-                     -9.0161800000e+00 least_sq_term_9
-                     -1.6543920000e+01 least_sq_term_10
+                     -1.6068810000e+01 least_sq_term_1
+                      9.7234800000e+00 least_sq_term_2
+                     -5.3829700000e+00 least_sq_term_3
+                     -1.6536960000e+01 least_sq_term_4
+                      9.0673600000e+00 least_sq_term_5
+                     -1.7507700000e+00 least_sq_term_6
+                     -1.6440290000e+01 least_sq_term_7
+                      1.3839670000e+01 least_sq_term_8
+                     -9.0975400000e+00 least_sq_term_9
+                     -1.6539800000e+01 least_sq_term_10
                       9.8338900000e+00 least_sq_term_11
-                     -7.7834900000e+00 least_sq_term_12
-                     -1.6428760000e+01 least_sq_term_13
-                      1.8334300000e+00 least_sq_term_14
-                     -8.9796600000e+00 least_sq_term_15
-                     -1.5666650000e+01 least_sq_term_16
-                      1.0519490000e+01 least_sq_term_17
-                     -5.2767500000e+00 least_sq_term_18
-                     -1.6526800000e+01 least_sq_term_19
+                     -8.7452300000e+00 least_sq_term_12
+                     -1.6530270000e+01 least_sq_term_13
+                      2.2833700000e+00 least_sq_term_14
+                     -9.3863800000e+00 least_sq_term_15
+                     -1.5940640000e+01 least_sq_term_16
+                      1.0621460000e+01 least_sq_term_17
+                     -6.8147900000e+00 least_sq_term_18
+                     -1.6517610000e+01 least_sq_term_19
                       9.9852900000e+00 least_sq_term_20
-                     -9.5138400000e+00 least_sq_term_21
+                     -9.6965200000e+00 least_sq_term_21
                      -1.6666670000e+01 least_sq_term_22
                       7.7804000000e+00 least_sq_term_23
-                      2.5810230000e+01 least_sq_term_24
-                     -1.6448410000e+01 least_sq_term_25
-                      8.2345800000e+00 least_sq_term_26
-                     -7.7749100000e+00 least_sq_term_27
-                     -1.6119750000e+01 least_sq_term_28
-                      1.3557730000e+01 least_sq_term_29
-                     -5.8643900000e+00 least_sq_term_30
-                     -1.6420940000e+01 least_sq_term_31
-                      6.5652600000e+00 least_sq_term_32
-                     -3.6268300000e+00 least_sq_term_33
+                      1.8231240000e+01 least_sq_term_24
+                     -1.6438640000e+01 least_sq_term_25
+                      8.0365900000e+00 least_sq_term_26
+                     -8.6469200000e+00 least_sq_term_27
+                     -1.5991230000e+01 least_sq_term_28
+                      1.3341120000e+01 least_sq_term_29
+                     -7.6513500000e+00 least_sq_term_30
+                     -1.6416640000e+01 least_sq_term_31
+                      6.4715800000e+00 least_sq_term_32
+                     -6.1139700000e+00 least_sq_term_33
 
 
 
@@ -1937,70 +1938,70 @@ Constructing global approximations with no anchor, 36 DACE samples, and 0 reused
 
 >>>>> Initiating global iteration 1 (acquisition batch 1)
 Beginning Approximate Fn Evaluations...
-NCSU DIRECT succeeded with code 1
-(maximum function evaluations exceeded)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
 
 Results of EGO iteration:
 Final point =
-                      1.3000000000e+00 desired_speed
-                      1.5000000000e-01 radius
-                      6.5000000000e-01 time_gap
-                      5.5000000000e+00 strength_neighbor
-                      2.1000000000e-01 range_neighbor
-                      5.2500000000e+00 strength_geometry
-                      1.0500000000e-01 range_geometry
+                      1.3205761317e+00 desired_speed
+                      1.2215363512e-01 radius
+                      9.8744855967e-01 time_gap
+                      5.9814814815e+00 strength_neighbor
+                      4.7366255144e-02 range_neighbor
+                      4.7026748971e+00 strength_geometry
+                      1.7427983539e-02 range_geometry
 Expected Improvement    =
-                      0.0000000000e+00
+                      5.5752671709e+01
 
 ---------------------
 Begin Evaluation   37
 ---------------------
 Parameters for evaluation 37:
-                      1.3000000000e+00 desired_speed
-                      1.5000000000e-01 radius
-                      6.5000000000e-01 time_gap
-                      5.5000000000e+00 strength_neighbor
-                      2.1000000000e-01 range_neighbor
-                      5.2500000000e+00 strength_geometry
-                      1.0500000000e-01 range_geometry
+                      1.3205761317e+00 desired_speed
+                      1.2215363512e-01 radius
+                      9.8744855967e-01 time_gap
+                      5.9814814815e+00 strength_neighbor
+                      4.7366255144e-02 range_neighbor
+                      4.7026748971e+00 strength_geometry
+                      1.7427983539e-02 range_geometry
 
 blocking fork: python3 driver_cq.py params.in results.out
 
 Active response data for evaluation 37:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -9.2682000000e+00 least_sq_term_1
-                      1.0047600000e+00 least_sq_term_2
-                      1.8473600000e+00 least_sq_term_3
-                     -1.2797270000e+01 least_sq_term_4
-                      2.0273900000e+00 least_sq_term_5
-                      3.2524400000e+00 least_sq_term_6
-                     -1.5445210000e+01 least_sq_term_7
-                      6.0263100000e+00 least_sq_term_8
-                      2.3694800000e+00 least_sq_term_9
-                     -1.4334140000e+01 least_sq_term_10
-                      1.9033600000e+00 least_sq_term_11
-                      1.4679000000e+00 least_sq_term_12
-                     -1.1779410000e+01 least_sq_term_13
-                     -6.9453000000e-01 least_sq_term_14
-                      1.3750200000e+00 least_sq_term_15
-                     -1.0253830000e+01 least_sq_term_16
-                      1.7173500000e+00 least_sq_term_17
-                      2.5074100000e+00 least_sq_term_18
-                     -1.4014080000e+01 least_sq_term_19
-                      1.0886100000e+00 least_sq_term_20
-                      8.8799000000e-01 least_sq_term_21
-                     -1.5313770000e+01 least_sq_term_22
-                      5.8310000000e+00 least_sq_term_23
-                      3.4117100000e+00 least_sq_term_24
-                     -1.6049590000e+01 least_sq_term_25
-                      2.0821100000e+00 least_sq_term_26
-                      8.9681300000e+00 least_sq_term_27
-                     -1.3371380000e+01 least_sq_term_28
-                      3.8273000000e+00 least_sq_term_29
-                      1.6963400000e+00 least_sq_term_30
-                     -1.4025430000e+01 least_sq_term_31
-                      4.5846600000e+00 least_sq_term_32
-                     -2.5882500000e+00 least_sq_term_33
+                      5.4077000000e-01 least_sq_term_1
+                     -5.9597000000e-01 least_sq_term_2
+                     -4.6686700000e+00 least_sq_term_3
+                      1.8378700000e+00 least_sq_term_4
+                     -2.4153100000e+00 least_sq_term_5
+                     -3.5578900000e+00 least_sq_term_6
+                     -1.2698400000e+00 least_sq_term_7
+                     -4.3506000000e-01 least_sq_term_8
+                     -2.3113300000e+00 least_sq_term_9
+                      1.3624000000e+00 least_sq_term_10
+                     -2.9864000000e-01 least_sq_term_11
+                      4.9809000000e-01 least_sq_term_12
+                      4.5754000000e-01 least_sq_term_13
+                     -1.5028200000e+00 least_sq_term_14
+                      5.2855000000e-01 least_sq_term_15
+                      4.4334100000e+00 least_sq_term_16
+                     -1.3230300000e+00 least_sq_term_17
+                     -4.1428000000e+00 least_sq_term_18
+                      2.5510200000e+00 least_sq_term_19
+                     -1.8958000000e-01 least_sq_term_20
+                      1.3873000000e-01 least_sq_term_21
+                      2.9762000000e-01 least_sq_term_22
+                     -1.6877700000e+00 least_sq_term_23
+                     -1.7802700000e+00 least_sq_term_24
+                     -1.3888900000e+00 least_sq_term_25
+                     -1.7187300000e+00 least_sq_term_26
+                     -2.5122500000e+00 least_sq_term_27
+                     -5.4012000000e-01 least_sq_term_28
+                     -1.2587500000e+00 least_sq_term_29
+                     -4.4426300000e+00 least_sq_term_30
+                      7.5211000000e-01 least_sq_term_31
+                     -7.8262000000e-01 least_sq_term_32
+                     -4.9715000000e+00 least_sq_term_33
 
 
 
@@ -2009,70 +2010,70 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 <<<<< global_kriging approximation updates completed.
 
 >>>>> Initiating global iteration 2 (acquisition batch 1)
-NCSU DIRECT succeeded with code 1
-(maximum function evaluations exceeded)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
 
 Results of EGO iteration:
 Final point =
-                      1.3000000000e+00 desired_speed
-                      1.5000000000e-01 radius
-                      6.5000000000e-01 time_gap
-                      5.5000000000e+00 strength_neighbor
-                      2.1000000000e-01 range_neighbor
-                      5.2500000000e+00 strength_geometry
-                      1.0500000000e-01 range_geometry
+                      1.2931412894e+00 desired_speed
+                      1.2489711934e-01 radius
+                      8.8580246914e-01 time_gap
+                      5.3518518519e+00 strength_neighbor
+                      5.6748971193e-02 range_neighbor
+                      4.7026748971e+00 strength_geometry
+                      2.1337448560e-02 range_geometry
 Expected Improvement    =
-                      0.0000000000e+00
+                      9.5495974454e+01
 
 ---------------------
 Begin Evaluation   38
 ---------------------
 Parameters for evaluation 38:
-                      1.3000000000e+00 desired_speed
-                      1.5000000000e-01 radius
-                      6.5000000000e-01 time_gap
-                      5.5000000000e+00 strength_neighbor
-                      2.1000000000e-01 range_neighbor
-                      5.2500000000e+00 strength_geometry
-                      1.0500000000e-01 range_geometry
+                      1.2931412894e+00 desired_speed
+                      1.2489711934e-01 radius
+                      8.8580246914e-01 time_gap
+                      5.3518518519e+00 strength_neighbor
+                      5.6748971193e-02 range_neighbor
+                      4.7026748971e+00 strength_geometry
+                      2.1337448560e-02 range_geometry
 
-Duplication detected: analysis_drivers not invoked.
+blocking fork: python3 driver_cq.py params.in results.out
 
-Active response data retrieved from database:
+Active response data for evaluation 38:
 Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
-                     -9.2682000000e+00 least_sq_term_1
-                      1.0047600000e+00 least_sq_term_2
-                      1.8473600000e+00 least_sq_term_3
-                     -1.2797270000e+01 least_sq_term_4
-                      2.0273900000e+00 least_sq_term_5
-                      3.2524400000e+00 least_sq_term_6
-                     -1.5445210000e+01 least_sq_term_7
-                      6.0263100000e+00 least_sq_term_8
-                      2.3694800000e+00 least_sq_term_9
-                     -1.4334140000e+01 least_sq_term_10
-                      1.9033600000e+00 least_sq_term_11
-                      1.4679000000e+00 least_sq_term_12
-                     -1.1779410000e+01 least_sq_term_13
-                     -6.9453000000e-01 least_sq_term_14
-                      1.3750200000e+00 least_sq_term_15
-                     -1.0253830000e+01 least_sq_term_16
-                      1.7173500000e+00 least_sq_term_17
-                      2.5074100000e+00 least_sq_term_18
-                     -1.4014080000e+01 least_sq_term_19
-                      1.0886100000e+00 least_sq_term_20
-                      8.8799000000e-01 least_sq_term_21
-                     -1.5313770000e+01 least_sq_term_22
-                      5.8310000000e+00 least_sq_term_23
-                      3.4117100000e+00 least_sq_term_24
-                     -1.6049590000e+01 least_sq_term_25
-                      2.0821100000e+00 least_sq_term_26
-                      8.9681300000e+00 least_sq_term_27
-                     -1.3371380000e+01 least_sq_term_28
-                      3.8273000000e+00 least_sq_term_29
-                      1.6963400000e+00 least_sq_term_30
-                     -1.4025430000e+01 least_sq_term_31
-                      4.5846600000e+00 least_sq_term_32
-                     -2.5882500000e+00 least_sq_term_33
+                      8.1713000000e-01 least_sq_term_1
+                     -6.1129000000e-01 least_sq_term_2
+                     -4.1168800000e+00 least_sq_term_3
+                      2.2668700000e+00 least_sq_term_4
+                     -2.5498300000e+00 least_sq_term_5
+                     -2.3257700000e+00 least_sq_term_6
+                     -1.0718100000e+00 least_sq_term_7
+                     -7.5838000000e-01 least_sq_term_8
+                     -1.9612400000e+00 least_sq_term_9
+                      1.5610700000e+00 least_sq_term_10
+                     -4.4177000000e-01 least_sq_term_11
+                      7.4278000000e-01 least_sq_term_12
+                      5.8905000000e-01 least_sq_term_13
+                     -7.6515000000e-01 least_sq_term_14
+                     -1.2972000000e-01 least_sq_term_15
+                      4.6213800000e+00 least_sq_term_16
+                     -1.5261900000e+00 least_sq_term_17
+                     -3.4688500000e+00 least_sq_term_18
+                      2.8497400000e+00 least_sq_term_19
+                     -7.6046000000e-01 least_sq_term_20
+                      8.4805000000e-01 least_sq_term_21
+                      6.0606000000e-01 least_sq_term_22
+                     -2.2305400000e+00 least_sq_term_23
+                     -1.1356000000e+00 least_sq_term_24
+                     -8.8680000000e-01 least_sq_term_25
+                     -1.7798900000e+00 least_sq_term_26
+                     -2.1287500000e+00 least_sq_term_27
+                     -1.0229500000e+00 least_sq_term_28
+                     -1.3807900000e+00 least_sq_term_29
+                     -3.5960600000e+00 least_sq_term_30
+                      1.3538700000e+00 least_sq_term_31
+                     -3.4483000000e-01 least_sq_term_32
+                     -4.6905200000e+00 least_sq_term_33
 
 
 
@@ -2080,58 +2081,706 @@ Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 
 <<<<< global_kriging approximation updates completed.
 
-Stopping criteria met:     distConvergenceCntr (1) >= distConvergenceLimit (1)
+>>>>> Initiating global iteration 3 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3164609053e+00 desired_speed
+                      1.3024691358e-01 radius
+                      8.7798353909e-01 time_gap
+                      6.0185185185e+00 strength_neighbor
+                      6.6131687243e-02 range_neighbor
+                      4.4681069959e+00 strength_geometry
+                      2.3943758573e-02 range_geometry
+Expected Improvement    =
+                      7.3108913733e+01
+
+---------------------
+Begin Evaluation   39
+---------------------
+Parameters for evaluation 39:
+                      1.3164609053e+00 desired_speed
+                      1.3024691358e-01 radius
+                      8.7798353909e-01 time_gap
+                      6.0185185185e+00 strength_neighbor
+                      6.6131687243e-02 range_neighbor
+                      4.4681069959e+00 strength_geometry
+                      2.3943758573e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 39:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      5.9822000000e-01 least_sq_term_1
+                     -3.7771000000e-01 least_sq_term_2
+                     -3.2840700000e+00 least_sq_term_3
+                      2.1794900000e+00 least_sq_term_4
+                     -1.8981200000e+00 least_sq_term_5
+                     -2.0604800000e+00 least_sq_term_6
+                     -1.0718100000e+00 least_sq_term_7
+                     -6.2342000000e-01 least_sq_term_8
+                     -1.5335300000e+00 least_sq_term_9
+                      7.4561000000e-01 least_sq_term_10
+                     -8.9862000000e-01 least_sq_term_11
+                      1.0975400000e+00 least_sq_term_12
+                      1.2178000000e-01 least_sq_term_13
+                     -1.0124600000e+00 least_sq_term_14
+                     -2.1184000000e-01 least_sq_term_15
+                      4.6213800000e+00 least_sq_term_16
+                     -1.0552200000e+00 least_sq_term_17
+                     -2.6428600000e+00 least_sq_term_18
+                      1.9802000000e+00 least_sq_term_19
+                     -4.5147000000e-01 least_sq_term_20
+                      5.0759000000e-01 least_sq_term_21
+                      3.9920000000e-01 least_sq_term_22
+                     -1.7732500000e+00 least_sq_term_23
+                     -3.5163000000e-01 least_sq_term_24
+                     -1.3657100000e+00 least_sq_term_25
+                     -1.5337100000e+00 least_sq_term_26
+                     -1.7829000000e+00 least_sq_term_27
+                     -1.0696500000e+00 least_sq_term_28
+                     -6.9338000000e-01 least_sq_term_29
+                     -3.2036800000e+00 least_sq_term_30
+                      1.6098500000e+00 least_sq_term_31
+                     -7.6620000000e-02 least_sq_term_32
+                     -3.8903300000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 4 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3534979424e+00 desired_speed
+                      1.3312757202e-01 radius
+                      9.4574759945e-01 time_gap
+                      6.3518518519e+00 strength_neighbor
+                      7.8641975309e-02 range_neighbor
+                      4.1553497942e+00 strength_geometry
+                      2.8374485597e-02 range_geometry
+Expected Improvement    =
+                      4.6993037297e+01
+
+---------------------
+Begin Evaluation   40
+---------------------
+Parameters for evaluation 40:
+                      1.3534979424e+00 desired_speed
+                      1.3312757202e-01 radius
+                      9.4574759945e-01 time_gap
+                      6.3518518519e+00 strength_neighbor
+                      7.8641975309e-02 range_neighbor
+                      4.1553497942e+00 strength_geometry
+                      2.8374485597e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 40:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.4905000000e-01 least_sq_term_1
+                     -5.5070000000e-02 least_sq_term_2
+                     -2.5714300000e+00 least_sq_term_3
+                      1.8378700000e+00 least_sq_term_4
+                     -1.4529800000e+00 least_sq_term_5
+                     -1.0591200000e+00 least_sq_term_6
+                     -1.3669800000e+00 least_sq_term_7
+                     -1.0651600000e+00 least_sq_term_8
+                     -1.3823200000e+00 least_sq_term_9
+                     -4.8900000000e-01 least_sq_term_10
+                     -4.5393000000e-01 least_sq_term_11
+                     -2.4804000000e-01 least_sq_term_12
+                     -1.8440000000e-01 least_sq_term_13
+                     -6.7890000000e-01 least_sq_term_14
+                     -6.6209000000e-01 least_sq_term_15
+                      3.8227900000e+00 least_sq_term_16
+                     -5.2518000000e-01 least_sq_term_17
+                     -2.1301800000e+00 least_sq_term_18
+                      2.5021200000e+00 least_sq_term_19
+                     -1.2458700000e+00 least_sq_term_20
+                      1.4763700000e+00 least_sq_term_21
+                     -1.4493000000e-01 least_sq_term_22
+                     -1.4368200000e+00 least_sq_term_23
+                     -3.5640000000e-01 least_sq_term_24
+                     -1.9249500000e+00 least_sq_term_25
+                     -1.2251500000e+00 least_sq_term_26
+                     -1.2035600000e+00 least_sq_term_27
+                     -4.6512000000e-01 least_sq_term_28
+                      2.4635000000e-01 least_sq_term_29
+                     -2.6051300000e+00 least_sq_term_30
+                      1.2868200000e+00 least_sq_term_31
+                      4.7165000000e-01 least_sq_term_32
+                     -3.8293700000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 5 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3576131687e+00 desired_speed
+                      1.3230452675e-01 radius
+                      9.4574759945e-01 time_gap
+                      8.0185185185e+00 strength_neighbor
+                      8.0205761317e-02 range_neighbor
+                      4.7417695473e+00 strength_geometry
+                      3.9320987654e-02 range_geometry
+Expected Improvement    =
+                      1.0557406924e-24
+
+---------------------
+Begin Evaluation   41
+---------------------
+Parameters for evaluation 41:
+                      1.3576131687e+00 desired_speed
+                      1.3230452675e-01 radius
+                      9.4574759945e-01 time_gap
+                      8.0185185185e+00 strength_neighbor
+                      8.0205761317e-02 range_neighbor
+                      4.7417695473e+00 strength_geometry
+                      3.9320987654e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 41:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      4.1288000000e-01 least_sq_term_1
+                      6.2406000000e-01 least_sq_term_2
+                     -1.9994800000e+00 least_sq_term_3
+                      1.8658600000e+00 least_sq_term_4
+                     -1.1321100000e+00 least_sq_term_5
+                     -4.2127000000e-01 least_sq_term_6
+                     -1.5576300000e+00 least_sq_term_7
+                     -3.9156000000e-01 least_sq_term_8
+                     -1.1348800000e+00 least_sq_term_9
+                     -7.9936000000e-01 least_sq_term_10
+                     -4.4684000000e-01 least_sq_term_11
+                      5.6950000000e-02 least_sq_term_12
+                     -8.4176000000e-01 least_sq_term_13
+                      2.4060000000e-02 least_sq_term_14
+                     -1.7030200000e+00 least_sq_term_15
+                      4.2030600000e+00 least_sq_term_16
+                     -6.2610000000e-02 least_sq_term_17
+                     -1.3475600000e+00 least_sq_term_18
+                      1.7073200000e+00 least_sq_term_19
+                     -1.2392100000e+00 least_sq_term_20
+                      6.3319000000e-01 least_sq_term_21
+                     -7.0028000000e-01 least_sq_term_22
+                     -1.4168300000e+00 least_sq_term_23
+                      5.7567000000e-01 least_sq_term_24
+                     -1.3888900000e+00 least_sq_term_25
+                     -6.8313000000e-01 least_sq_term_26
+                     -1.3108500000e+00 least_sq_term_27
+                     -1.0463400000e+00 least_sq_term_28
+                      3.4666000000e-01 least_sq_term_29
+                     -1.9957100000e+00 least_sq_term_30
+                      5.9630000000e-01 least_sq_term_31
+                      1.5019500000e+00 least_sq_term_32
+                     -3.8232100000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 6 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.4275720165e+00 desired_speed
+                      1.2901234568e-01 radius
+                      8.6234567901e-01 time_gap
+                      8.3271604938e+00 strength_neighbor
+                      7.3950617284e-02 range_neighbor
+                      5.0936213992e+00 strength_geometry
+                      4.4794238683e-02 range_geometry
+Expected Improvement    =
+                      2.2995578022e+01
+
+---------------------
+Begin Evaluation   42
+---------------------
+Parameters for evaluation 42:
+                      1.4275720165e+00 desired_speed
+                      1.2901234568e-01 radius
+                      8.6234567901e-01 time_gap
+                      8.3271604938e+00 strength_neighbor
+                      7.3950617284e-02 range_neighbor
+                      5.0936213992e+00 strength_geometry
+                      4.4794238683e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 42:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.9837700000e+00 least_sq_term_1
+                      3.7315000000e-01 least_sq_term_2
+                     -2.0347700000e+00 least_sq_term_3
+                      3.3496700000e+00 least_sq_term_4
+                     -9.9391000000e-01 least_sq_term_5
+                     -6.3402000000e-01 least_sq_term_6
+                     -3.3057900000e+00 least_sq_term_7
+                     -2.9316000000e-01 least_sq_term_8
+                     -2.1490200000e+00 least_sq_term_9
+                      2.4015400000e+00 least_sq_term_10
+                     -1.2086900000e+00 least_sq_term_11
+                      2.6608100000e+00 least_sq_term_12
+                      9.1808000000e-01 least_sq_term_13
+                     -5.5372000000e-01 least_sq_term_14
+                      1.1841000000e-01 least_sq_term_15
+                      5.2812900000e+00 least_sq_term_16
+                     -2.3945000000e-01 least_sq_term_17
+                     -1.3564700000e+00 least_sq_term_18
+                      3.5299400000e+00 least_sq_term_19
+                     -1.1339700000e+00 least_sq_term_20
+                      1.8534900000e+00 least_sq_term_21
+                      7.6453000000e-01 least_sq_term_22
+                     -1.4399800000e+00 least_sq_term_23
+                      3.2864000000e-01 least_sq_term_24
+                     -3.7695000000e-01 least_sq_term_25
+                     -7.5676000000e-01 least_sq_term_26
+                     -9.9356000000e-01 least_sq_term_27
+                      3.5288000000e-01 least_sq_term_28
+                      2.7281000000e-01 least_sq_term_29
+                     -1.7258300000e+00 least_sq_term_30
+                      1.8554100000e+00 least_sq_term_31
+                      1.2326700000e+00 least_sq_term_32
+                     -3.2260600000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 7 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.2465020576e+00 desired_speed
+                      1.2201646091e-01 radius
+                      5.2091906722e-01 time_gap
+                      4.8333333333e+00 strength_neighbor
+                      6.1440329218e-02 range_neighbor
+                      4.7808641975e+00 strength_geometry
+                      3.4629629630e-02 range_geometry
+Expected Improvement    =
+                      4.5255148624e+00
+
+---------------------
+Begin Evaluation   43
+---------------------
+Parameters for evaluation 43:
+                      1.2465020576e+00 desired_speed
+                      1.2201646091e-01 radius
+                      5.2091906722e-01 time_gap
+                      4.8333333333e+00 strength_neighbor
+                      6.1440329218e-02 range_neighbor
+                      4.7808641975e+00 strength_geometry
+                      3.4629629630e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 43:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.0769040000e+01 least_sq_term_1
+                      2.7429300000e+00 least_sq_term_2
+                     -3.0355500000e+00 least_sq_term_3
+                      6.5781200000e+00 least_sq_term_4
+                     -3.1497500000e+00 least_sq_term_5
+                     -9.7071000000e-01 least_sq_term_6
+                      2.0592000000e+00 least_sq_term_7
+                     -2.9798900000e+00 least_sq_term_8
+                     -5.0505000000e-01 least_sq_term_9
+                      4.4055200000e+00 least_sq_term_10
+                     -1.1272200000e+00 least_sq_term_11
+                      1.7691200000e+00 least_sq_term_12
+                      3.0952400000e+00 least_sq_term_13
+                      8.1598000000e-01 least_sq_term_14
+                     -7.2468000000e-01 least_sq_term_15
+                      7.1695800000e+00 least_sq_term_16
+                     -1.6248200000e+00 least_sq_term_17
+                     -2.6029800000e+00 least_sq_term_18
+                      5.6874400000e+00 least_sq_term_19
+                     -6.4298000000e-01 least_sq_term_20
+                      1.8068000000e-01 least_sq_term_21
+                      4.3665400000e+00 least_sq_term_22
+                     -3.8137100000e+00 least_sq_term_23
+                      7.1647000000e-01 least_sq_term_24
+                      2.5031700000e+00 least_sq_term_25
+                     -1.9671600000e+00 least_sq_term_26
+                     -9.7694000000e-01 least_sq_term_27
+                      3.0503100000e+00 least_sq_term_28
+                     -2.1950800000e+00 least_sq_term_29
+                     -2.5921800000e+00 least_sq_term_30
+                      4.9745200000e+00 least_sq_term_31
+                     -5.4039000000e-01 least_sq_term_32
+                     -3.6148100000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 8 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3493827160e+00 desired_speed
+                      1.3312757202e-01 radius
+                      8.5452674897e-01 time_gap
+                      8.3148148148e+00 strength_neighbor
+                      8.3333333333e-02 range_neighbor
+                      4.7287379973e+00 strength_geometry
+                      4.4012345679e-02 range_geometry
+Expected Improvement    =
+                      3.3029481124e+01
+
+---------------------
+Begin Evaluation   44
+---------------------
+Parameters for evaluation 44:
+                      1.3493827160e+00 desired_speed
+                      1.3312757202e-01 radius
+                      8.5452674897e-01 time_gap
+                      8.3148148148e+00 strength_neighbor
+                      8.3333333333e-02 range_neighbor
+                      4.7287379973e+00 strength_geometry
+                      4.4012345679e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 44:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      5.5509000000e-01 least_sq_term_1
+                      7.9990000000e-01 least_sq_term_2
+                     -1.8543900000e+00 least_sq_term_3
+                      2.2961800000e+00 least_sq_term_4
+                     -5.7514000000e-01 least_sq_term_5
+                      4.0105000000e-01 least_sq_term_6
+                     -9.7087000000e-01 least_sq_term_7
+                     -3.3261000000e-01 least_sq_term_8
+                     -5.6274000000e-01 least_sq_term_9
+                      8.8417000000e-01 least_sq_term_10
+                     -7.6955000000e-01 least_sq_term_11
+                      8.1114000000e-01 least_sq_term_12
+                      1.3700000000e-03 least_sq_term_13
+                     -1.2134000000e-01 least_sq_term_14
+                     -1.4533000000e+00 least_sq_term_15
+                      4.3406600000e+00 least_sq_term_16
+                     -1.4150000000e-02 least_sq_term_17
+                     -6.0544000000e-01 least_sq_term_18
+                      2.9513900000e+00 least_sq_term_19
+                     -1.5733000000e+00 least_sq_term_20
+                      2.2449700000e+00 least_sq_term_21
+                      5.0201000000e-01 least_sq_term_22
+                     -1.1559200000e+00 least_sq_term_23
+                      1.3365600000e+00 least_sq_term_24
+                     -1.4580200000e+00 least_sq_term_25
+                     -4.0900000000e-01 least_sq_term_26
+                     -7.5267000000e-01 least_sq_term_27
+                     -6.1444000000e-01 least_sq_term_28
+                      8.7564000000e-01 least_sq_term_29
+                     -1.1275600000e+00 least_sq_term_30
+                      1.3035400000e+00 least_sq_term_31
+                      1.2079700000e+00 least_sq_term_32
+                     -3.1327800000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 9 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.3987654321e+00 desired_speed
+                      1.2942386831e-01 radius
+                      9.6399176955e-01 time_gap
+                      8.5370370370e+00 strength_neighbor
+                      9.5843621399e-02 range_neighbor
+                      5.0805898491e+00 strength_geometry
+                      4.4794238683e-02 range_geometry
+Expected Improvement    =
+                      2.3758009729e+01
+
+---------------------
+Begin Evaluation   45
+---------------------
+Parameters for evaluation 45:
+                      1.3987654321e+00 desired_speed
+                      1.2942386831e-01 radius
+                      9.6399176955e-01 time_gap
+                      8.5370370370e+00 strength_neighbor
+                      9.5843621399e-02 range_neighbor
+                      5.0805898491e+00 strength_geometry
+                      4.4794238683e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 45:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      7.1429000000e-01 least_sq_term_1
+                      9.7301000000e-01 least_sq_term_2
+                     -9.1138000000e-01 least_sq_term_3
+                      2.0356200000e+00 least_sq_term_4
+                     -6.3625000000e-01 least_sq_term_5
+                      9.0430000000e-01 least_sq_term_6
+                     -1.1714600000e+00 least_sq_term_7
+                     -1.0011000000e-01 least_sq_term_8
+                     -5.7690000000e-01 least_sq_term_9
+                      4.7496000000e-01 least_sq_term_10
+                     -6.9379000000e-01 least_sq_term_11
+                      1.0067800000e+00 least_sq_term_12
+                     -3.3400000000e-02 least_sq_term_13
+                     -4.3971000000e-01 least_sq_term_14
+                     -8.1859000000e-01 least_sq_term_15
+                      4.2716300000e+00 least_sq_term_16
+                      1.6570000000e-02 least_sq_term_17
+                     -1.7780000000e-01 least_sq_term_18
+                      3.1058600000e+00 least_sq_term_19
+                     -1.7425500000e+00 least_sq_term_20
+                      3.3131500000e+00 least_sq_term_21
+                      5.5388000000e-01 least_sq_term_22
+                     -1.1292800000e+00 least_sq_term_23
+                      2.0002200000e+00 least_sq_term_24
+                     -9.6054000000e-01 least_sq_term_25
+                     -4.3428000000e-01 least_sq_term_26
+                     -4.5880000000e-01 least_sq_term_27
+                     -6.6360000000e-01 least_sq_term_28
+                      7.2814000000e-01 least_sq_term_29
+                     -8.2885000000e-01 least_sq_term_30
+                      1.5753000000e+00 least_sq_term_31
+                      1.2532400000e+00 least_sq_term_32
+                     -2.5446200000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 10 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.6045267490e+00 desired_speed
+                      1.1831275720e-01 radius
+                      1.2298353909e+00 time_gap
+                      8.9814814815e+00 strength_neighbor
+                      1.4692729767e-01 range_neighbor
+                      5.7973251029e+00 strength_geometry
+                      5.1831275720e-02 range_geometry
+Expected Improvement    =
+                      1.1122758464e-07
+
+---------------------
+Begin Evaluation   46
+---------------------
+Parameters for evaluation 46:
+                      1.6045267490e+00 desired_speed
+                      1.1831275720e-01 radius
+                      1.2298353909e+00 time_gap
+                      8.9814814815e+00 strength_neighbor
+                      1.4692729767e-01 range_neighbor
+                      5.7973251029e+00 strength_geometry
+                      5.1831275720e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 46:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.2049900000e+00 least_sq_term_1
+                      8.2139000000e-01 least_sq_term_2
+                      1.0756300000e+00 least_sq_term_3
+                      3.4153000000e+00 least_sq_term_4
+                     -2.9708000000e-01 least_sq_term_5
+                      4.3702400000e+00 least_sq_term_6
+                      5.7470000000e-02 least_sq_term_7
+                      6.7606000000e-01 least_sq_term_8
+                      1.5895700000e+00 least_sq_term_9
+                      3.0845800000e+00 least_sq_term_10
+                     -1.3915400000e+00 least_sq_term_11
+                      5.5860700000e+00 least_sq_term_12
+                      1.0873400000e+00 least_sq_term_13
+                     -2.2704000000e+00 least_sq_term_14
+                      2.3420900000e+00 least_sq_term_15
+                      5.7444300000e+00 least_sq_term_16
+                      4.8601000000e-01 least_sq_term_17
+                      1.5410000000e+00 least_sq_term_18
+                      4.3761600000e+00 least_sq_term_19
+                     -3.6073000000e+00 least_sq_term_20
+                      8.9469600000e+00 least_sq_term_21
+                      1.2016700000e+00 least_sq_term_22
+                     -6.8550000000e-01 least_sq_term_23
+                      5.2129200000e+00 least_sq_term_24
+                     -2.7500000000e-02 least_sq_term_25
+                     -7.1338000000e-01 least_sq_term_26
+                      1.8693500000e+00 least_sq_term_27
+                      2.7012000000e-01 least_sq_term_28
+                      1.2743000000e+00 least_sq_term_29
+                      1.2978300000e+00 least_sq_term_30
+                      3.0272100000e+00 least_sq_term_31
+                      9.4892000000e-01 least_sq_term_32
+                     -9.7318000000e-01 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 11 (acquisition batch 1)
+NCSU DIRECT succeeded with code 4
+(volume of best hyperrectangle is less than the prescribed percentage of the original)
+
+Results of EGO iteration:
+Final point =
+                      1.5263374486e+00 desired_speed
+                      1.1666666667e-01 radius
+                      1.5061042524e+00 time_gap
+                      8.6481481481e+00 strength_neighbor
+                      9.7407407407e-02 range_neighbor
+                      6.0318930041e+00 strength_geometry
+                      4.2448559671e-02 range_geometry
+Expected Improvement    =
+                      1.2885181386e-44
+
+---------------------
+Begin Evaluation   47
+---------------------
+Parameters for evaluation 47:
+                      1.5263374486e+00 desired_speed
+                      1.1666666667e-01 radius
+                      1.5061042524e+00 time_gap
+                      8.6481481481e+00 strength_neighbor
+                      9.7407407407e-02 range_neighbor
+                      6.0318930041e+00 strength_geometry
+                      4.2448559671e-02 range_geometry
+
+blocking fork: python3 driver_cq.py params.in results.out
+
+Active response data for evaluation 47:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      7.2890000000e-01 least_sq_term_1
+                      5.5075000000e-01 least_sq_term_2
+                     -2.2570300000e+00 least_sq_term_3
+                      2.1505400000e+00 least_sq_term_4
+                     -9.2861000000e-01 least_sq_term_5
+                     -1.5234000000e-01 least_sq_term_6
+                     -1.1217900000e+00 least_sq_term_7
+                     -4.1500000000e-03 least_sq_term_8
+                     -3.5328000000e-01 least_sq_term_9
+                     -7.2289000000e-01 least_sq_term_10
+                     -4.9229000000e-01 least_sq_term_11
+                      6.7619000000e-01 least_sq_term_12
+                     -2.1500000000e-01 least_sq_term_13
+                     -2.7674500000e+00 least_sq_term_14
+                      2.5565400000e+00 least_sq_term_15
+                      3.5840400000e+00 least_sq_term_16
+                     -5.2258000000e-01 least_sq_term_17
+                     -1.5573100000e+00 least_sq_term_18
+                      2.1666700000e+00 least_sq_term_19
+                     -2.3580800000e+00 least_sq_term_20
+                      4.3696300000e+00 least_sq_term_21
+                      3.9920000000e-01 least_sq_term_22
+                     -9.6746000000e-01 least_sq_term_23
+                      1.6434100000e+00 least_sq_term_24
+                     -9.6054000000e-01 least_sq_term_25
+                     -1.0838000000e+00 least_sq_term_26
+                     -4.3869000000e-01 least_sq_term_27
+                     -8.3333000000e-01 least_sq_term_28
+                      7.3518000000e-01 least_sq_term_29
+                     -1.5207100000e+00 least_sq_term_30
+                      1.2368600000e+00 least_sq_term_31
+                      3.6023000000e-01 least_sq_term_32
+                     -3.5741700000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+Stopping criteria not met: distConvergenceCntr (0) < distConvergenceLimit (1)
 Stopping criteria met:     eifConvergenceCntr (2) >= eifConvergenceLimit (2)
-Stopping criteria not met: globalIterCount (2) < maxIterations (60)
-<<<<< Function evaluation summary: 38 total (37 new, 1 duplicate)
+Stopping criteria not met: globalIterCount (11) < maxIterations (60)
+<<<<< Function evaluation summary: 47 total (47 new, 0 duplicate)
 <<<<< Best parameters          =
-                      1.2301843888e+00 desired_speed
-                      1.2525934176e-01 radius
-                      6.9826926495e-01 time_gap
-                      7.0902621041e+00 strength_neighbor
-                      4.3689736960e-02 range_neighbor
-                      5.0002061352e+00 strength_geometry
-                      1.4863316861e-02 range_geometry
+                      1.3576131687e+00 desired_speed
+                      1.3230452675e-01 radius
+                      9.4574759945e-01 time_gap
+                      8.0185185185e+00 strength_neighbor
+                      8.0205761317e-02 range_neighbor
+                      4.7417695473e+00 strength_geometry
+                      3.9320987654e-02 range_geometry
 <<<<< Best residual terms =
-                      1.5084900000e+00
-                     -9.8094000000e-01
-                     -3.3628400000e+00
-                      3.6484200000e+00
-                     -2.9748000000e+00
-                     -3.2492100000e+00
-                     -5.7080000000e-02
-                     -1.7523800000e+00
-                     -3.0340300000e+00
-                      2.4566500000e+00
-                     -2.5929000000e-01
-                      6.5195000000e-01
-                      1.3376700000e+00
-                      3.2530000000e-02
-                     -6.8021000000e-01
-                      5.9031900000e+00
-                     -1.7153200000e+00
-                     -3.0503600000e+00
-                      4.2592600000e+00
-                     -5.4251000000e-01
-                     -2.0157000000e-01
-                      1.4862000000e+00
-                     -2.9288900000e+00
-                     -2.4758200000e+00
-                     -1.2014300000e+00
-                     -2.5960600000e+00
-                     -2.3838200000e+00
-                      6.0606000000e-01
-                     -1.9434000000e+00
-                     -3.9767400000e+00
-                      2.4422400000e+00
-                     -8.4357000000e-01
-                     -4.2816900000e+00
-<<<<< Best residual norm =  1.4479126976e+01; 0.5 * norm^2 =  1.0482255899e+02
-<<<<< Best evaluation ID: 23
+                      4.1288000000e-01
+                      6.2406000000e-01
+                     -1.9994800000e+00
+                      1.8658600000e+00
+                     -1.1321100000e+00
+                     -4.2127000000e-01
+                     -1.5576300000e+00
+                     -3.9156000000e-01
+                     -1.1348800000e+00
+                     -7.9936000000e-01
+                     -4.4684000000e-01
+                      5.6950000000e-02
+                     -8.4176000000e-01
+                      2.4060000000e-02
+                     -1.7030200000e+00
+                      4.2030600000e+00
+                     -6.2610000000e-02
+                     -1.3475600000e+00
+                      1.7073200000e+00
+                     -1.2392100000e+00
+                      6.3319000000e-01
+                     -7.0028000000e-01
+                     -1.4168300000e+00
+                      5.7567000000e-01
+                     -1.3888900000e+00
+                     -6.8313000000e-01
+                     -1.3108500000e+00
+                     -1.0463400000e+00
+                      3.4666000000e-01
+                     -1.9957100000e+00
+                      5.9630000000e-01
+                      1.5019500000e+00
+                     -3.8232100000e+00
+<<<<< Best residual norm =  8.4571680135e+00; 0.5 * norm^2 =  3.5761845404e+01
+<<<<< Best evaluation ID: 41
 
 
 <<<<< Iterator efficient_global completed.
 <<<<< Environment execution completed.
 DAKOTA execution time in seconds:
-  Total CPU        =    14.6258 [parent =    14.6259, child =   -5.3e-05]
-  Total wall clock =    474.376
+  Total CPU        =    45.8941 [parent =    45.8941, child =     -5e-06]
+  Total wall clock =    698.635
