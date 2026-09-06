@@ -1,0 +1,1637 @@
+Dakota version 6.24 released May 15 2026.
+Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
+Running MPI Dakota executable in serial mode.
+Start time: Sun Sep  6 15:51:30 2026
+
+------------------
+Begin Dakota input
+------------------
+# Two-parameter profile/refit on h0 with the five static parameters fixed at set C.
+# Reproduce: CQ_RESIDUALS=1 CQ_RUNS=030_c_56_h0,050_c_45_h0,070_c_23_h0,090_c_12_h0,110_c_12_h0,150_q_56_h0,170_q_12_h0,190_q_34_h0,230_q_23_h0,250_q_45_h0,270_c_34_h0 JPS_N_SEEDS=1 JPS_WORKERS=3 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'motivation_profile_history.dat'
+
+method
+  efficient_global
+    seed = 11
+    max_iterations = 20
+    convergence_tolerance = 1.e-4
+
+variables
+  continuous_design = 2
+    descriptors  'desired_speed' 'time_gap'
+    initial_point  1.55 0.833
+    lower_bounds   0.80 0.10
+    upper_bounds   1.80 1.20
+
+interface
+  fork
+    analysis_drivers = 'python3 driver_cq_set_c.py'
+    parameters_file = 'params.in'
+    results_file = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver_cq.py' '../driver_cq_set_c.py' '../observables_cq.py' '../scenario_cq.py' '../exp_observables_cq.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  calibration_terms = 33
+  no_gradients
+  no_hessians
+
+----------------
+End Dakota input
+----------------
+
+Using Dakota parser: standard
+Writing new restart file 'dakota.rst'.
+
+>>>>> Executing environment.
+
+>>>>> Running efficient_global iterator.
+
+>>>>> Building global_kriging approximations.
+
+NonD lhs Samples = 6 Seed (user-specified) = 11
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      1.6656859370e+00 desired_speed
+                      4.5315187600e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 1:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      8.8368300000e+00 least_sq_term_1
+                      1.0252500000e+00 least_sq_term_2
+                      3.2647200000e+00 least_sq_term_3
+                      1.0616180000e+01 least_sq_term_4
+                     -6.5862000000e-01 least_sq_term_5
+                      7.0922400000e+00 least_sq_term_6
+                      5.3787900000e+00 least_sq_term_7
+                     -5.5646000000e-01 least_sq_term_8
+                      2.1679300000e+00 least_sq_term_9
+                      6.7137800000e+00 least_sq_term_10
+                      1.1973000000e+00 least_sq_term_11
+                      4.0151000000e+00 least_sq_term_12
+                      6.6733600000e+00 least_sq_term_13
+                      5.3882000000e-01 least_sq_term_14
+                      1.5513700000e+00 least_sq_term_15
+                      1.2698410000e+01 least_sq_term_16
+                      6.0138000000e-01 least_sq_term_17
+                      3.9785900000e+00 least_sq_term_18
+                      8.6129800000e+00 least_sq_term_19
+                      3.8812000000e-01 least_sq_term_20
+                      2.8139700000e+00 least_sq_term_21
+                      5.4263600000e+00 least_sq_term_22
+                     -1.8680700000e+00 least_sq_term_23
+                      4.6451300000e+00 least_sq_term_24
+                      5.3013800000e+00 least_sq_term_25
+                      3.2143000000e-01 least_sq_term_26
+                      3.7991300000e+00 least_sq_term_27
+                      6.3003700000e+00 least_sq_term_28
+                      6.7366000000e-01 least_sq_term_29
+                      4.0127100000e+00 least_sq_term_30
+                      8.8287100000e+00 least_sq_term_31
+                      1.4520900000e+00 least_sq_term_32
+                      3.7813000000e-01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      1.4107867197e+00 desired_speed
+                      6.6928211158e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 2:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.8643400000e+00 least_sq_term_1
+                      1.1664700000e+00 least_sq_term_2
+                      6.6517000000e-01 least_sq_term_3
+                      4.3093600000e+00 least_sq_term_4
+                     -6.0046000000e-01 least_sq_term_5
+                      2.8715600000e+00 least_sq_term_6
+                      5.7470000000e-02 least_sq_term_7
+                     -4.8780000000e-01 least_sq_term_8
+                     -2.9755000000e-01 least_sq_term_9
+                      2.9673600000e+00 least_sq_term_10
+                      7.9226000000e-01 least_sq_term_11
+                      2.7808400000e+00 least_sq_term_12
+                      1.2299200000e+00 least_sq_term_13
+                      3.6212000000e-01 least_sq_term_14
+                     -1.0396400000e+00 least_sq_term_15
+                      6.9633300000e+00 least_sq_term_16
+                      4.4282000000e-01 least_sq_term_17
+                      1.6031700000e+00 least_sq_term_18
+                      2.7993100000e+00 least_sq_term_19
+                     -5.8682000000e-01 least_sq_term_20
+                      4.3345000000e-01 least_sq_term_21
+                      2.1452100000e+00 least_sq_term_22
+                     -1.1523400000e+00 least_sq_term_23
+                      3.6909400000e+00 least_sq_term_24
+                     -4.5552000000e-01 least_sq_term_25
+                     -3.1114000000e-01 least_sq_term_26
+                      7.4135000000e-01 least_sq_term_27
+                      1.1054400000e+00 least_sq_term_28
+                      8.6025000000e-01 least_sq_term_29
+                      8.7875000000e-01 least_sq_term_30
+                      3.3126300000e+00 least_sq_term_31
+                      1.5848800000e+00 least_sq_term_32
+                     -1.7631200000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      1.1365792067e+00 desired_speed
+                      5.4370399407e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 3:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.4139000000e+00 least_sq_term_1
+                      9.6260000000e-01 least_sq_term_2
+                      7.9103000000e-01 least_sq_term_3
+                      3.7160300000e+00 least_sq_term_4
+                     -7.8671000000e-01 least_sq_term_5
+                      3.8788000000e+00 least_sq_term_6
+                     -1.0718100000e+00 least_sq_term_7
+                     -6.9383000000e-01 least_sq_term_8
+                     -8.4774000000e-01 least_sq_term_9
+                      6.0923000000e-01 least_sq_term_10
+                      1.2899900000e+00 least_sq_term_11
+                      3.5845000000e-01 least_sq_term_12
+                      1.2599000000e+00 least_sq_term_13
+                      1.0183700000e+00 least_sq_term_14
+                     -1.1915100000e+00 least_sq_term_15
+                      6.3377500000e+00 least_sq_term_16
+                      1.4942000000e-01 least_sq_term_17
+                      1.8382100000e+00 least_sq_term_18
+                      1.7073200000e+00 least_sq_term_19
+                      3.8976000000e-01 least_sq_term_20
+                     -9.4707000000e-01 least_sq_term_21
+                      1.6613100000e+00 least_sq_term_22
+                     -2.0941500000e+00 least_sq_term_23
+                      2.3159000000e+00 least_sq_term_24
+                      1.1093000000e-01 least_sq_term_25
+                      7.7940000000e-02 least_sq_term_26
+                      1.4127000000e+00 least_sq_term_27
+                      8.3752000000e-01 least_sq_term_28
+                      3.7814000000e-01 least_sq_term_29
+                      1.3464400000e+00 least_sq_term_30
+                      3.0473300000e+00 least_sq_term_31
+                      1.4587600000e+00 least_sq_term_32
+                     -1.0599500000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      9.7805114136e-01 desired_speed
+                      2.3290455297e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 4:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      9.7151400000e+00 least_sq_term_1
+                      7.3605000000e-01 least_sq_term_2
+                      3.6434600000e+00 least_sq_term_3
+                      1.0985700000e+01 least_sq_term_4
+                     -1.3698100000e+00 least_sq_term_5
+                      5.4261900000e+00 least_sq_term_6
+                      4.9851200000e+00 least_sq_term_7
+                     -1.5217300000e+00 least_sq_term_8
+                      7.5314000000e-01 least_sq_term_9
+                      8.1148600000e+00 least_sq_term_10
+                      1.1627300000e+00 least_sq_term_11
+                      4.5110400000e+00 least_sq_term_12
+                      8.2208900000e+00 least_sq_term_13
+                      8.2579000000e-01 least_sq_term_14
+                      2.4750600000e+00 least_sq_term_15
+                      1.4775220000e+01 least_sq_term_16
+                     -2.9834000000e-01 least_sq_term_17
+                      4.0159000000e+00 least_sq_term_18
+                      9.2210800000e+00 least_sq_term_19
+                      9.5655000000e-01 least_sq_term_20
+                      2.0363300000e+00 least_sq_term_21
+                      6.5040700000e+00 least_sq_term_22
+                     -2.4611600000e+00 least_sq_term_23
+                      4.3947200000e+00 least_sq_term_24
+                      6.1463000000e+00 least_sq_term_25
+                     -4.9880000000e-02 least_sq_term_26
+                      3.7380700000e+00 least_sq_term_27
+                      6.3509500000e+00 least_sq_term_28
+                     -3.6005000000e-01 least_sq_term_29
+                      2.9944500000e+00 least_sq_term_30
+                      1.0288640000e+01 least_sq_term_31
+                      1.1660700000e+00 least_sq_term_32
+                      7.1947000000e-01 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                      1.5438697548e+00 desired_speed
+                      1.0580473324e+00 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 5:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -2.6434000000e-01 least_sq_term_1
+                      9.6203000000e-01 least_sq_term_2
+                     -1.4348900000e+00 least_sq_term_3
+                      7.5865000000e-01 least_sq_term_4
+                     -7.7779000000e-01 least_sq_term_5
+                      9.8392000000e-01 least_sq_term_6
+                     -9.1991000000e-01 least_sq_term_7
+                      1.4302000000e-01 least_sq_term_8
+                      9.6634000000e-01 least_sq_term_9
+                      7.9156000000e-01 least_sq_term_10
+                     -3.0923000000e-01 least_sq_term_11
+                      2.1953800000e+00 least_sq_term_12
+                      3.5007000000e-01 least_sq_term_13
+                     -1.3062300000e+00 least_sq_term_14
+                      2.3268000000e-01 least_sq_term_15
+                      4.7166300000e+00 least_sq_term_16
+                      3.7497000000e-01 least_sq_term_17
+                      2.4308000000e-01 least_sq_term_18
+                      3.4759400000e+00 least_sq_term_19
+                     -2.5299400000e+00 least_sq_term_20
+                      6.4344600000e+00 least_sq_term_21
+                      0.0000000000e+00 least_sq_term_22
+                     -6.8332000000e-01 least_sq_term_23
+                      1.7802700000e+00 least_sq_term_24
+                     -1.3424500000e+00 least_sq_term_25
+                     -8.3226000000e-01 least_sq_term_26
+                      2.7990000000e-02 least_sq_term_27
+                     -5.1520000000e-01 least_sq_term_28
+                      1.2873700000e+00 least_sq_term_29
+                     -4.9210000000e-01 least_sq_term_30
+                      1.3370600000e+00 least_sq_term_31
+                      1.4045600000e+00 least_sq_term_32
+                     -3.0236200000e+00 least_sq_term_33
+
+
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                      8.3004494903e-01 desired_speed
+                      9.2232830179e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 6:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -4.0008200000e+00 least_sq_term_1
+                      1.1152900000e+00 least_sq_term_2
+                     -1.9927600000e+00 least_sq_term_3
+                     -3.1457000000e+00 least_sq_term_4
+                     -6.7008000000e-01 least_sq_term_5
+                     -5.6657000000e-01 least_sq_term_6
+                     -5.6439400000e+00 least_sq_term_7
+                     -5.8486000000e-01 least_sq_term_8
+                     -2.4702800000e+00 least_sq_term_9
+                     -4.5259900000e+00 least_sq_term_10
+                      1.0369900000e+00 least_sq_term_11
+                     -2.4677600000e+00 least_sq_term_12
+                     -5.1208900000e+00 least_sq_term_13
+                      7.6290000000e-01 least_sq_term_14
+                     -4.2197900000e+00 least_sq_term_15
+                     -1.5427200000e+00 least_sq_term_16
+                      1.8496000000e-01 least_sq_term_17
+                     -1.6977600000e+00 least_sq_term_18
+                     -3.7671200000e+00 least_sq_term_19
+                      1.6916000000e-01 least_sq_term_20
+                     -3.3238800000e+00 least_sq_term_21
+                     -4.3556500000e+00 least_sq_term_22
+                     -1.6846000000e+00 least_sq_term_23
+                     -8.6708000000e-01 least_sq_term_24
+                     -5.4380100000e+00 least_sq_term_25
+                      1.3562000000e-01 least_sq_term_26
+                     -1.9712300000e+00 least_sq_term_27
+                     -5.4301100000e+00 least_sq_term_28
+                      7.9757000000e-01 least_sq_term_29
+                     -2.1233200000e+00 least_sq_term_30
+                     -3.7483300000e+00 least_sq_term_31
+                      1.7255100000e+00 least_sq_term_32
+                     -3.8319700000e+00 least_sq_term_33
+
+
+
+>>>>> Appending 6 points to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+Constructing global approximations with no anchor, 6 DACE samples, and 0 reused points.
+
+<<<<< global_kriging approximation builds completed.
+
+>>>>> Initiating global iteration 1 (acquisition batch 1)
+Beginning Approximate Fn Evaluations...
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2511253366e+00 desired_speed
+                      7.6467764060e-01 time_gap
+Expected Improvement    =
+                      5.4173626422e+01
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                      1.2511253366e+00 desired_speed
+                      7.6467764060e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 7:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.4530000000e-01 least_sq_term_1
+                      9.2703000000e-01 least_sq_term_2
+                      6.1280000000e-02 least_sq_term_3
+                      1.3480400000e+00 least_sq_term_4
+                     -5.2770000000e-01 least_sq_term_5
+                      1.4572800000e+00 least_sq_term_6
+                     -1.6975300000e+00 least_sq_term_7
+                     -1.1411000000e-01 least_sq_term_8
+                     -7.9224000000e-01 least_sq_term_9
+                     -6.0680000000e-01 least_sq_term_10
+                      5.9728000000e-01 least_sq_term_11
+                     -1.4516000000e-01 least_sq_term_12
+                     -1.0393900000e+00 least_sq_term_13
+                      3.6188000000e-01 least_sq_term_14
+                     -1.9794100000e+00 least_sq_term_15
+                      4.1123200000e+00 least_sq_term_16
+                      4.1337000000e-01 least_sq_term_17
+                     -4.4200000000e-03 least_sq_term_18
+                      1.3126500000e+00 least_sq_term_19
+                     -3.8009000000e-01 least_sq_term_20
+                     -1.5588000000e-01 least_sq_term_21
+                     -6.1033000000e-01 least_sq_term_22
+                     -1.2369300000e+00 least_sq_term_23
+                      9.6428000000e-01 least_sq_term_24
+                     -1.3888900000e+00 least_sq_term_25
+                     -1.1740000000e-02 least_sq_term_26
+                      5.1075000000e-01 least_sq_term_27
+                     -1.1391800000e+00 least_sq_term_28
+                      7.1370000000e-01 least_sq_term_29
+                     -1.8070000000e-02 least_sq_term_30
+                      1.2202700000e+00 least_sq_term_31
+                      1.7239900000e+00 least_sq_term_32
+                     -2.4812300000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 2 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2705555273e+00 desired_speed
+                      8.2387932056e-01 time_gap
+Expected Improvement    =
+                      1.8880107891e+00
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                      1.2705555273e+00 desired_speed
+                      8.2387932056e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 8:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.5914000000e-01 least_sq_term_1
+                      9.9043000000e-01 least_sq_term_2
+                     -6.6694000000e-01 least_sq_term_3
+                      1.3480400000e+00 least_sq_term_4
+                     -3.1556000000e-01 least_sq_term_5
+                      1.5281400000e+00 least_sq_term_6
+                     -1.8348600000e+00 least_sq_term_7
+                     -7.0570000000e-02 least_sq_term_8
+                     -1.1702600000e+00 least_sq_term_9
+                     -1.4208900000e+00 least_sq_term_10
+                      2.3330000000e-02 least_sq_term_11
+                     -4.7067000000e-01 least_sq_term_12
+                     -1.4512700000e+00 least_sq_term_13
+                      2.3464000000e-01 least_sq_term_14
+                     -2.1308400000e+00 least_sq_term_15
+                      3.3717700000e+00 least_sq_term_16
+                      2.6141000000e-01 least_sq_term_17
+                      2.1047000000e-01 least_sq_term_18
+                      1.2272400000e+00 least_sq_term_19
+                     -9.0322000000e-01 least_sq_term_20
+                      5.8696000000e-01 least_sq_term_21
+                     -1.4493000000e-01 least_sq_term_22
+                     -1.2125800000e+00 least_sq_term_23
+                      1.9031200000e+00 least_sq_term_24
+                     -2.3640700000e+00 least_sq_term_25
+                      3.1902000000e-01 least_sq_term_26
+                      3.4660000000e-02 least_sq_term_27
+                     -1.2080900000e+00 least_sq_term_28
+                      1.0444200000e+00 least_sq_term_29
+                      1.3731000000e-01 least_sq_term_30
+                      6.5829000000e-01 least_sq_term_31
+                      1.5967700000e+00 least_sq_term_32
+                     -2.6857300000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 3 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2293900922e+00 desired_speed
+                      7.6645149697e-01 time_gap
+Expected Improvement    =
+                      5.9045402991e-01
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                      1.2293900922e+00 desired_speed
+                      7.6645149697e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 9:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.7300000000e-01 least_sq_term_1
+                      1.1718200000e+00 least_sq_term_2
+                     -8.4124000000e-01 least_sq_term_3
+                      1.0612600000e+00 least_sq_term_4
+                     -3.8684000000e-01 least_sq_term_5
+                      1.8565900000e+00 least_sq_term_6
+                     -1.6511900000e+00 least_sq_term_7
+                     -3.1526000000e-01 least_sq_term_8
+                     -1.1085500000e+00 least_sq_term_9
+                      1.2690000000e-01 least_sq_term_10
+                      6.8268000000e-01 least_sq_term_11
+                      6.6022000000e-01 least_sq_term_12
+                     -1.6206000000e+00 least_sq_term_13
+                      4.0203000000e-01 least_sq_term_14
+                     -2.2530200000e+00 least_sq_term_15
+                      3.6918700000e+00 least_sq_term_16
+                      5.3042000000e-01 least_sq_term_17
+                      5.2770000000e-02 least_sq_term_18
+                      1.4881000000e-01 least_sq_term_19
+                     -5.8970000000e-01 least_sq_term_20
+                     -9.8354000000e-01 least_sq_term_21
+                     -3.8095000000e-01 least_sq_term_22
+                     -9.4171000000e-01 least_sq_term_23
+                      2.5708200000e+00 least_sq_term_24
+                     -1.9464700000e+00 least_sq_term_25
+                     -7.3030000000e-02 least_sq_term_26
+                      7.2940000000e-02 least_sq_term_27
+                     -9.9950000000e-01 least_sq_term_28
+                      9.6576000000e-01 least_sq_term_29
+                     -1.3659000000e-01 least_sq_term_30
+                      6.4275000000e-01 least_sq_term_31
+                      1.5659100000e+00 least_sq_term_32
+                     -2.6130600000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 4 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2504027728e+00 desired_speed
+                      7.6931064157e-01 time_gap
+Expected Improvement    =
+                      1.3550480180e-01
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                      1.2504027728e+00 desired_speed
+                      7.6931064157e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 10:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      5.8382000000e-01 least_sq_term_1
+                      1.2594800000e+00 least_sq_term_2
+                     -7.8146000000e-01 least_sq_term_3
+                      1.4278700000e+00 least_sq_term_4
+                     -5.1932000000e-01 least_sq_term_5
+                      1.8615600000e+00 least_sq_term_6
+                     -1.7893700000e+00 least_sq_term_7
+                     -5.7000000000e-02 least_sq_term_8
+                     -1.0375500000e+00 least_sq_term_9
+                     -6.0680000000e-01 least_sq_term_10
+                      3.1714000000e-01 least_sq_term_11
+                     -1.8620000000e-02 least_sq_term_12
+                     -7.6442000000e-01 least_sq_term_13
+                      5.5042000000e-01 least_sq_term_14
+                     -2.2281400000e+00 least_sq_term_15
+                      3.8888900000e+00 least_sq_term_16
+                      3.9354000000e-01 least_sq_term_17
+                      7.2440000000e-01 least_sq_term_18
+                     -2.5418000000e-01 least_sq_term_19
+                     -1.9200000000e-01 least_sq_term_20
+                     -1.0311300000e+00 least_sq_term_21
+                     -7.4488000000e-01 least_sq_term_22
+                     -1.2201100000e+00 least_sq_term_23
+                      9.0325000000e-01 least_sq_term_24
+                     -1.7284000000e+00 least_sq_term_25
+                      1.8419000000e-01 least_sq_term_26
+                      1.7616000000e-01 least_sq_term_27
+                     -9.0498000000e-01 least_sq_term_28
+                      7.2714000000e-01 least_sq_term_29
+                     -4.8172000000e-01 least_sq_term_30
+                      8.4694000000e-01 least_sq_term_31
+                      1.6348900000e+00 least_sq_term_32
+                     -2.5948300000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 5 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.5881480102e+00 desired_speed
+                      1.1289177601e+00 time_gap
+Expected Improvement    =
+                      6.7239712522e-15
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                      1.5881480102e+00 desired_speed
+                      1.1289177601e+00 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 11:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      6.7058000000e-01 least_sq_term_1
+                      7.4872000000e-01 least_sq_term_2
+                     -1.0947600000e+00 least_sq_term_3
+                      7.3390000000e-01 least_sq_term_4
+                     -4.9190000000e-02 least_sq_term_5
+                      4.1140000000e-01 least_sq_term_6
+                     -1.8348600000e+00 least_sq_term_7
+                      2.9222000000e-01 least_sq_term_8
+                      1.4428000000e-01 least_sq_term_9
+                      1.1680100000e+00 least_sq_term_10
+                     -8.2505000000e-01 least_sq_term_11
+                      3.7264700000e+00 least_sq_term_12
+                     -1.0431400000e+00 least_sq_term_13
+                     -1.8552000000e+00 least_sq_term_14
+                      4.7790000000e-02 least_sq_term_15
+                      3.7571200000e+00 least_sq_term_16
+                      5.5823000000e-01 least_sq_term_17
+                     -2.6224000000e-01 least_sq_term_18
+                      3.4222200000e+00 least_sq_term_19
+                     -2.3150500000e+00 least_sq_term_20
+                      5.3579100000e+00 least_sq_term_21
+                     -2.4015000000e-01 least_sq_term_22
+                     -3.7127000000e-01 least_sq_term_23
+                      1.9971500000e+00 least_sq_term_24
+                     -2.1999000000e+00 least_sq_term_25
+                     -1.0558000000e+00 least_sq_term_26
+                     -2.7882000000e-01 least_sq_term_27
+                      2.4272000000e-01 least_sq_term_28
+                      1.0282500000e+00 least_sq_term_29
+                     -7.0705000000e-01 least_sq_term_30
+                      1.4895000000e+00 least_sq_term_31
+                      1.2955400000e+00 least_sq_term_32
+                     -3.0074000000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 6 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2507471196e+00 desired_speed
+                      7.8963996003e-01 time_gap
+Expected Improvement    =
+                      1.4743619687e+00
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                      1.2507471196e+00 desired_speed
+                      7.8963996003e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 12:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      4.8369000000e-01 least_sq_term_1
+                      1.1045900000e+00 least_sq_term_2
+                     -8.5037000000e-01 least_sq_term_3
+                      1.7267300000e+00 least_sq_term_4
+                     -5.2459000000e-01 least_sq_term_5
+                      1.1581600000e+00 least_sq_term_6
+                     -1.8800800000e+00 least_sq_term_7
+                     -2.2850000000e-02 least_sq_term_8
+                     -5.8367000000e-01 least_sq_term_9
+                     -1.5945300000e+00 least_sq_term_10
+                      4.1655000000e-01 least_sq_term_11
+                     -6.7420000000e-01 least_sq_term_12
+                     -8.7249000000e-01 least_sq_term_13
+                      1.2454000000e-01 least_sq_term_14
+                     -1.8073500000e+00 least_sq_term_15
+                      3.9776800000e+00 least_sq_term_16
+                      3.5789000000e-01 least_sq_term_17
+                      6.7790000000e-02 least_sq_term_18
+                      3.0030000000e-01 least_sq_term_19
+                     -4.1155000000e-01 least_sq_term_20
+                     -8.4453000000e-01 least_sq_term_21
+                     -3.3429000000e-01 least_sq_term_22
+                     -1.2760600000e+00 least_sq_term_23
+                      2.4159000000e+00 least_sq_term_24
+                     -1.7944900000e+00 least_sq_term_25
+                     -3.8650000000e-02 least_sq_term_26
+                      1.5802000000e-01 least_sq_term_27
+                     -1.1622200000e+00 least_sq_term_28
+                      7.8986000000e-01 least_sq_term_29
+                     -4.4973000000e-01 least_sq_term_30
+                      1.0723000000e+00 least_sq_term_31
+                      1.6232800000e+00 least_sq_term_32
+                     -2.8326900000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 7 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2757169658e+00 desired_speed
+                      8.2395245505e-01 time_gap
+Expected Improvement    =
+                      2.2737350255e+00
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                      1.2757169658e+00 desired_speed
+                      8.2395245505e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 13:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.7644000000e-01 least_sq_term_1
+                      1.1937200000e+00 least_sq_term_2
+                     -6.5273000000e-01 least_sq_term_3
+                      1.4278700000e+00 least_sq_term_4
+                     -3.5599000000e-01 least_sq_term_5
+                      1.9723100000e+00 least_sq_term_6
+                     -1.7435900000e+00 least_sq_term_7
+                     -3.2120000000e-02 least_sq_term_8
+                     -8.4397000000e-01 least_sq_term_9
+                     -1.1345900000e+00 least_sq_term_10
+                     -5.6400000000e-03 least_sq_term_11
+                     -3.3728000000e-01 least_sq_term_12
+                     -8.5714000000e-01 least_sq_term_13
+                      2.4489000000e-01 least_sq_term_14
+                     -1.7471000000e+00 least_sq_term_15
+                      3.3927900000e+00 least_sq_term_16
+                      5.3753000000e-01 least_sq_term_17
+                      9.6630000000e-02 least_sq_term_18
+                      1.4881000000e-01 least_sq_term_19
+                     -1.2605000000e-01 least_sq_term_20
+                     -6.5949000000e-01 least_sq_term_21
+                     -1.9268000000e-01 least_sq_term_22
+                     -1.0562300000e+00 least_sq_term_23
+                      1.1557700000e+00 least_sq_term_24
+                     -2.2824500000e+00 least_sq_term_25
+                      7.8710000000e-02 least_sq_term_26
+                     -1.4845000000e-01 least_sq_term_27
+                     -1.1160700000e+00 least_sq_term_28
+                      8.9926000000e-01 least_sq_term_29
+                     -3.8189000000e-01 least_sq_term_30
+                      8.1522000000e-01 least_sq_term_31
+                      1.5823500000e+00 least_sq_term_32
+                     -2.8324300000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 8 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2810653174e+00 desired_speed
+                      8.2901253385e-01 time_gap
+Expected Improvement    =
+                      3.1288761221e+00
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                      1.2810653174e+00 desired_speed
+                      8.2901253385e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 14:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.3539000000e-01 least_sq_term_1
+                      8.7504000000e-01 least_sq_term_2
+                     -5.9230000000e-01 least_sq_term_3
+                      6.6007000000e-01 least_sq_term_4
+                     -5.3779000000e-01 least_sq_term_5
+                      1.5248800000e+00 least_sq_term_6
+                     -1.4629000000e+00 least_sq_term_7
+                     -5.6900000000e-02 least_sq_term_8
+                     -1.9446000000e+00 least_sq_term_9
+                     -1.3147700000e+00 least_sq_term_10
+                     -1.9401000000e-01 least_sq_term_11
+                     -3.8279000000e-01 least_sq_term_12
+                     -1.0842900000e+00 least_sq_term_13
+                     -6.8300000000e-02 least_sq_term_14
+                     -1.7126900000e+00 least_sq_term_15
+                      3.7789700000e+00 least_sq_term_16
+                      3.6046000000e-01 least_sq_term_17
+                     -1.0443000000e-01 least_sq_term_18
+                      1.6181200000e+00 least_sq_term_19
+                     -6.0417000000e-01 least_sq_term_20
+                      6.4306000000e-01 least_sq_term_21
+                     -3.8095000000e-01 least_sq_term_22
+                     -1.3469700000e+00 least_sq_term_23
+                      1.0897700000e+00 least_sq_term_24
+                     -2.2619000000e+00 least_sq_term_25
+                      4.2620000000e-02 least_sq_term_26
+                     -1.1447000000e-01 least_sq_term_27
+                     -1.4556000000e+00 least_sq_term_28
+                      1.1655500000e+00 least_sq_term_29
+                     -4.5688000000e-01 least_sq_term_30
+                      6.5829000000e-01 least_sq_term_31
+                      1.7029700000e+00 least_sq_term_32
+                     -2.3584500000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 9 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2396928979e+00 desired_speed
+                      7.6164876879e-01 time_gap
+Expected Improvement    =
+                      8.8913851669e-01
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                      1.2396928979e+00 desired_speed
+                      7.6164876879e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 15:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 least_sq_term_1
+                      1.1162600000e+00 least_sq_term_2
+                     -6.7062000000e-01 least_sq_term_3
+                      1.4546400000e+00 least_sq_term_4
+                     -5.2915000000e-01 least_sq_term_5
+                      1.4557400000e+00 least_sq_term_6
+                     -1.3185700000e+00 least_sq_term_7
+                     -1.9380000000e-01 least_sq_term_8
+                     -1.8137100000e+00 least_sq_term_9
+                      4.3066000000e-01 least_sq_term_10
+                      7.2632000000e-01 least_sq_term_11
+                      6.1003000000e-01 least_sq_term_12
+                     -6.3908000000e-01 least_sq_term_13
+                      1.6602000000e-01 least_sq_term_14
+                     -1.6717800000e+00 least_sq_term_15
+                      3.7789700000e+00 least_sq_term_16
+                      5.2758000000e-01 least_sq_term_17
+                      3.7406000000e-01 least_sq_term_18
+                      8.9355000000e-01 least_sq_term_19
+                     -4.2952000000e-01 least_sq_term_20
+                      1.2960000000e-02 least_sq_term_21
+                      1.9724000000e-01 least_sq_term_22
+                     -1.0311300000e+00 least_sq_term_23
+                      2.7367400000e+00 least_sq_term_24
+                     -1.6169200000e+00 least_sq_term_25
+                      5.2600000000e-02 least_sq_term_26
+                     -2.5963000000e-01 least_sq_term_27
+                     -1.3665200000e+00 least_sq_term_28
+                      9.4980000000e-01 least_sq_term_29
+                      1.0023000000e-01 least_sq_term_30
+                      9.7502000000e-01 least_sq_term_31
+                      1.8749900000e+00 least_sq_term_32
+                     -2.9337100000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 10 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.2814817951e+00 desired_speed
+                      8.2513916565e-01 time_gap
+Expected Improvement    =
+                      1.1345169511e+00
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                      1.2814817951e+00 desired_speed
+                      8.2513916565e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 16:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.3539000000e-01 least_sq_term_1
+                      1.1654100000e+00 least_sq_term_2
+                     -8.6536000000e-01 least_sq_term_3
+                      1.3745700000e+00 least_sq_term_4
+                     -5.2672000000e-01 least_sq_term_5
+                      1.6052100000e+00 least_sq_term_6
+                     -1.6975300000e+00 least_sq_term_7
+                     -7.4680000000e-02 least_sq_term_8
+                     -1.1605700000e+00 least_sq_term_9
+                     -7.9936000000e-01 least_sq_term_10
+                     -2.1750000000e-01 least_sq_term_11
+                      1.2049000000e-01 least_sq_term_12
+                     -1.2820500000e+00 least_sq_term_13
+                      1.1482000000e-01 least_sq_term_14
+                     -1.9446100000e+00 least_sq_term_15
+                      2.7608400000e+00 least_sq_term_16
+                      3.6246000000e-01 least_sq_term_17
+                     -5.3020000000e-01 least_sq_term_18
+                      1.5738500000e+00 least_sq_term_19
+                     -6.9525000000e-01 least_sq_term_20
+                      5.4850000000e-01 least_sq_term_21
+                     -4.7348000000e-01 least_sq_term_22
+                     -1.2494600000e+00 least_sq_term_23
+                      1.7024700000e+00 least_sq_term_24
+                     -1.6617100000e+00 least_sq_term_25
+                     -1.0641000000e-01 least_sq_term_26
+                      4.8196000000e-01 least_sq_term_27
+                     -1.3665200000e+00 least_sq_term_28
+                      1.0038000000e+00 least_sq_term_29
+                     -7.2036000000e-01 least_sq_term_30
+                      8.3107000000e-01 least_sq_term_31
+                      1.5871900000e+00 least_sq_term_32
+                     -2.8173600000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 11 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2530270842e+00 desired_speed
+                      7.5822869644e-01 time_gap
+Expected Improvement    =
+                      2.3850247436e+00
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                      1.2530270842e+00 desired_speed
+                      7.5822869644e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 17:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.7068000000e-01 least_sq_term_1
+                      1.1543000000e+00 least_sq_term_2
+                     -3.2693000000e-01 least_sq_term_3
+                      1.6991500000e+00 least_sq_term_4
+                     -4.3339000000e-01 least_sq_term_5
+                      1.7539200000e+00 least_sq_term_6
+                     -1.9250300000e+00 least_sq_term_7
+                     -3.6375000000e-01 least_sq_term_8
+                     -1.8833900000e+00 least_sq_term_9
+                      1.6964000000e-01 least_sq_term_10
+                      6.1331000000e-01 least_sq_term_11
+                      1.0929800000e+00 least_sq_term_12
+                     -9.0218000000e-01 least_sq_term_13
+                      3.8143000000e-01 least_sq_term_14
+                     -2.0723100000e+00 least_sq_term_15
+                      3.5626100000e+00 least_sq_term_16
+                      4.2682000000e-01 least_sq_term_17
+                     -5.4350000000e-02 least_sq_term_18
+                     -3.6790000000e-02 least_sq_term_19
+                     -7.9972000000e-01 least_sq_term_20
+                     -4.7819000000e-01 least_sq_term_21
+                      2.9762000000e-01 least_sq_term_22
+                     -1.0930100000e+00 least_sq_term_23
+                      2.2325200000e+00 least_sq_term_24
+                     -1.9464700000e+00 least_sq_term_25
+                     -1.6945000000e-01 least_sq_term_26
+                      3.3647000000e-01 least_sq_term_27
+                     -1.0229500000e+00 least_sq_term_28
+                      8.0005000000e-01 least_sq_term_29
+                     -6.9525000000e-01 least_sq_term_30
+                      1.1377600000e+00 least_sq_term_31
+                      1.5536500000e+00 least_sq_term_32
+                     -2.0834500000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 12 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2657628975e+00 desired_speed
+                      7.6421123574e-01 time_gap
+Expected Improvement    =
+                      1.7315801417e+00
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                      1.2657628975e+00 desired_speed
+                      7.6421123574e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 18:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -1.2000000000e-01 least_sq_term_1
+                      9.8926000000e-01 least_sq_term_2
+                     -1.7912000000e-01 least_sq_term_3
+                      1.1385700000e+00 least_sq_term_4
+                     -5.1103000000e-01 least_sq_term_5
+                      1.8410600000e+00 least_sq_term_6
+                     -1.6511900000e+00 least_sq_term_7
+                     -1.6270000000e-01 least_sq_term_8
+                     -1.2167000000e+00 least_sq_term_9
+                      4.2090000000e-02 least_sq_term_10
+                      4.5817000000e-01 least_sq_term_11
+                      7.6241000000e-01 least_sq_term_12
+                     -9.1963000000e-01 least_sq_term_13
+                     -7.7110000000e-02 least_sq_term_14
+                     -1.5141300000e+00 least_sq_term_15
+                      4.1123200000e+00 least_sq_term_16
+                      1.7690000000e-01 least_sq_term_17
+                      5.9712000000e-01 least_sq_term_18
+                     -1.0989000000e-01 least_sq_term_19
+                     -5.2232000000e-01 least_sq_term_20
+                     -6.1172000000e-01 least_sq_term_21
+                      1.4749000000e-01 least_sq_term_22
+                     -1.0527500000e+00 least_sq_term_23
+                      1.0441200000e+00 least_sq_term_24
+                     -1.7284000000e+00 least_sq_term_25
+                      9.8850000000e-02 least_sq_term_26
+                     -4.5560000000e-02 least_sq_term_27
+                     -9.5238000000e-01 least_sq_term_28
+                      8.6508000000e-01 least_sq_term_29
+                      1.8433000000e-01 least_sq_term_30
+                      1.1049700000e+00 least_sq_term_31
+                      1.5940200000e+00 least_sq_term_32
+                     -2.5272100000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 13 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2215673361e+00 desired_speed
+                      7.7424307998e-01 time_gap
+Expected Improvement    =
+                      2.7461639551e+00
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                      1.2215673361e+00 desired_speed
+                      7.7424307998e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 19:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                     -3.6774000000e-01 least_sq_term_1
+                      8.9604000000e-01 least_sq_term_2
+                     -5.1818000000e-01 least_sq_term_3
+                      1.4011800000e+00 least_sq_term_4
+                     -5.0952000000e-01 least_sq_term_5
+                      1.1751200000e+00 least_sq_term_6
+                     -2.2749800000e+00 least_sq_term_7
+                     -9.8940000000e-02 least_sq_term_8
+                     -1.8276500000e+00 least_sq_term_9
+                     -8.3540000000e-02 least_sq_term_10
+                      5.4915000000e-01 least_sq_term_11
+                      2.6836000000e-01 least_sq_term_12
+                     -1.1585600000e+00 least_sq_term_13
+                      3.5312000000e-01 least_sq_term_14
+                     -2.0365900000e+00 least_sq_term_15
+                      3.5198900000e+00 least_sq_term_16
+                      4.8936000000e-01 least_sq_term_17
+                     -4.2280000000e-02 least_sq_term_18
+                     -7.3420000000e-02 least_sq_term_19
+                     -5.2346000000e-01 least_sq_term_20
+                     -9.5620000000e-01 least_sq_term_21
+                     -1.4493000000e-01 least_sq_term_22
+                     -1.2452800000e+00 least_sq_term_23
+                      1.6353600000e+00 least_sq_term_24
+                     -1.8600100000e+00 least_sq_term_25
+                      1.1489000000e-01 least_sq_term_26
+                      2.5090000000e-02 least_sq_term_27
+                     -1.4334300000e+00 least_sq_term_28
+                      1.1231500000e+00 least_sq_term_29
+                      4.1974000000e-01 least_sq_term_30
+                      5.5010000000e-01 least_sq_term_31
+                      1.4786000000e+00 least_sq_term_32
+                     -3.0557600000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 14 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2604013741e+00 desired_speed
+                      7.6800181017e-01 time_gap
+Expected Improvement    =
+                      7.0867857939e-01
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                      1.2604013741e+00 desired_speed
+                      7.6800181017e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 20:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      7.2890000000e-01 least_sq_term_1
+                      1.0862000000e+00 least_sq_term_2
+                     -5.1450000000e-02 least_sq_term_3
+                      1.2426900000e+00 least_sq_term_4
+                     -5.0593000000e-01 least_sq_term_5
+                      1.8371500000e+00 least_sq_term_6
+                     -1.8348600000e+00 least_sq_term_7
+                     -3.1057000000e-01 least_sq_term_8
+                     -1.2476700000e+00 least_sq_term_9
+                     -9.1270000000e-01 least_sq_term_10
+                      5.8828000000e-01 least_sq_term_11
+                      2.9777000000e-01 least_sq_term_12
+                     -6.8631000000e-01 least_sq_term_13
+                      1.4493000000e-01 least_sq_term_14
+                     -1.5636800000e+00 least_sq_term_15
+                      3.6918700000e+00 least_sq_term_16
+                      2.1817000000e-01 least_sq_term_17
+                      1.6280000000e-01 least_sq_term_18
+                      1.1006300000e+00 least_sq_term_19
+                     -5.8340000000e-01 least_sq_term_20
+                      1.3510000000e-01 least_sq_term_21
+                     -5.1936000000e-01 least_sq_term_22
+                     -1.2696200000e+00 least_sq_term_23
+                      1.4359700000e+00 least_sq_term_24
+                     -1.6840000000e+00 least_sq_term_25
+                     -8.5710000000e-02 least_sq_term_26
+                      2.3071000000e-01 least_sq_term_27
+                     -8.5729000000e-01 least_sq_term_28
+                      8.2421000000e-01 least_sq_term_29
+                     -1.8772000000e-01 least_sq_term_30
+                      1.3538700000e+00 least_sq_term_31
+                      1.6375600000e+00 least_sq_term_32
+                     -2.4728000000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 15 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2607212591e+00 desired_speed
+                      7.6391731788e-01 time_gap
+Expected Improvement    =
+                      4.4870183366e-01
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                      1.2607212591e+00 desired_speed
+                      7.6391731788e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 21:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      6.5606000000e-01 least_sq_term_1
+                      1.0814400000e+00 least_sq_term_2
+                     -2.5049000000e-01 least_sq_term_3
+                      1.1904800000e+00 least_sq_term_4
+                     -3.6278000000e-01 least_sq_term_5
+                      1.7777000000e+00 least_sq_term_6
+                     -1.2208100000e+00 least_sq_term_7
+                     -1.2573000000e-01 least_sq_term_8
+                     -1.0307700000e+00 least_sq_term_9
+                     -6.4568000000e-01 least_sq_term_10
+                      2.0040000000e-01 least_sq_term_11
+                      2.2369000000e-01 least_sq_term_12
+                     -7.7995000000e-01 least_sq_term_13
+                      1.2789000000e-01 least_sq_term_14
+                     -1.7530700000e+00 least_sq_term_15
+                      3.8888900000e+00 least_sq_term_16
+                      4.7666000000e-01 least_sq_term_17
+                      2.6348000000e-01 least_sq_term_18
+                     -3.6790000000e-02 least_sq_term_19
+                     -6.6766000000e-01 least_sq_term_20
+                     -9.9764000000e-01 least_sq_term_21
+                     -1.4493000000e-01 least_sq_term_22
+                     -1.3060100000e+00 least_sq_term_23
+                      1.3571200000e+00 least_sq_term_24
+                     -2.0319300000e+00 least_sq_term_25
+                     -1.4650000000e-02 least_sq_term_26
+                     -2.3190000000e-02 least_sq_term_27
+                     -1.3440900000e+00 least_sq_term_28
+                      9.4739000000e-01 least_sq_term_29
+                     -3.7998000000e-01 least_sq_term_30
+                      9.9116000000e-01 least_sq_term_31
+                      1.5763300000e+00 least_sq_term_32
+                     -2.7103400000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 16 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.2243170926e+00 desired_speed
+                      7.5637894580e-01 time_gap
+Expected Improvement    =
+                      6.8518322687e-01
+
+---------------------
+Begin Evaluation   22
+---------------------
+Parameters for evaluation 22:
+                      1.2243170926e+00 desired_speed
+                      7.5637894580e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 22:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      3.7068000000e-01 least_sq_term_1
+                      1.2949300000e+00 least_sq_term_2
+                     -8.8140000000e-01 least_sq_term_3
+                      1.4546400000e+00 least_sq_term_4
+                     -4.9124000000e-01 least_sq_term_5
+                      1.6960700000e+00 least_sq_term_6
+                     -1.4629000000e+00 least_sq_term_7
+                     -1.0839000000e-01 least_sq_term_8
+                     -6.8917000000e-01 least_sq_term_9
+                     -1.0244300000e+00 least_sq_term_10
+                      1.3524000000e-01 least_sq_term_11
+                     -4.0480000000e-02 least_sq_term_12
+                     -6.9873000000e-01 least_sq_term_13
+                      2.8819000000e-01 least_sq_term_14
+                     -1.5867100000e+00 least_sq_term_15
+                      3.8447800000e+00 least_sq_term_16
+                      5.8217000000e-01 least_sq_term_17
+                      7.7001000000e-01 least_sq_term_18
+                      1.5297900000e+00 least_sq_term_19
+                     -3.0432000000e-01 least_sq_term_20
+                     -4.0470000000e-02 least_sq_term_21
+                      1.4749000000e-01 least_sq_term_22
+                     -1.1906200000e+00 least_sq_term_23
+                      2.2630500000e+00 least_sq_term_24
+                     -2.0319300000e+00 least_sq_term_25
+                      5.4200000000e-03 least_sq_term_26
+                     -2.6130000000e-02 least_sq_term_27
+                     -1.2763900000e+00 least_sq_term_28
+                      1.0611200000e+00 least_sq_term_29
+                      3.6550000000e-01 least_sq_term_30
+                      8.7879000000e-01 least_sq_term_31
+                      1.5682900000e+00 least_sq_term_32
+                     -2.5178700000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 17 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2737637856e+00 desired_speed
+                      7.8137300284e-01 time_gap
+Expected Improvement    =
+                      2.3487165141e+00
+
+---------------------
+Begin Evaluation   23
+---------------------
+Parameters for evaluation 23:
+                      1.2737637856e+00 desired_speed
+                      7.8137300284e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 23:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      5.9822000000e-01 least_sq_term_1
+                      1.1029200000e+00 least_sq_term_2
+                     -7.3508000000e-01 least_sq_term_3
+                      1.6716600000e+00 least_sq_term_4
+                     -3.9288000000e-01 least_sq_term_5
+                      1.6630200000e+00 least_sq_term_6
+                     -1.9250300000e+00 least_sq_term_7
+                     -3.6440000000e-02 least_sq_term_8
+                     -2.7557000000e-01 least_sq_term_9
+                     -9.8736000000e-01 least_sq_term_10
+                      1.0720000000e-02 least_sq_term_11
+                     -1.8636000000e-01 least_sq_term_12
+                     -3.4415000000e-01 least_sq_term_13
+                      3.0371000000e-01 least_sq_term_14
+                     -1.4944100000e+00 least_sq_term_15
+                      3.8227900000e+00 least_sq_term_16
+                      2.4180000000e-01 least_sq_term_17
+                      1.7932000000e-01 least_sq_term_18
+                     -1.0989000000e-01 least_sq_term_19
+                     -2.1919000000e-01 least_sq_term_20
+                     -7.9309000000e-01 least_sq_term_21
+                     -4.8590000000e-02 least_sq_term_22
+                     -9.0305000000e-01 least_sq_term_23
+                      1.9271400000e+00 least_sq_term_24
+                     -1.3657100000e+00 least_sq_term_25
+                      1.2720000000e-02 least_sq_term_26
+                      4.5631000000e-01 least_sq_term_27
+                     -1.1622200000e+00 least_sq_term_28
+                      9.9382000000e-01 least_sq_term_29
+                      2.0990000000e-02 least_sq_term_30
+                      8.3107000000e-01 least_sq_term_31
+                      1.6756300000e+00 least_sq_term_32
+                     -2.6052700000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 18 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2463189078e+00 desired_speed
+                      7.8837528531e-01 time_gap
+Expected Improvement    =
+                      1.9636830382e-01
+
+---------------------
+Begin Evaluation   24
+---------------------
+Parameters for evaluation 24:
+                      1.2463189078e+00 desired_speed
+                      7.8837528531e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 24:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      1.2175000000e-01 least_sq_term_1
+                      1.3044000000e+00 least_sq_term_2
+                     -8.9019000000e-01 least_sq_term_3
+                      1.4011800000e+00 least_sq_term_4
+                     -4.0584000000e-01 least_sq_term_5
+                      1.5859400000e+00 least_sq_term_6
+                     -2.0141000000e+00 least_sq_term_7
+                     -4.1320000000e-02 least_sq_term_8
+                     -1.1008800000e+00 least_sq_term_9
+                     -6.4568000000e-01 least_sq_term_10
+                      3.9203000000e-01 least_sq_term_11
+                     -2.6875000000e-01 least_sq_term_12
+                     -1.4487100000e+00 least_sq_term_13
+                      3.1191000000e-01 least_sq_term_14
+                     -2.2916900000e+00 least_sq_term_15
+                      2.3548900000e+00 least_sq_term_16
+                     -2.5935000000e-01 least_sq_term_17
+                      3.0122000000e-01 least_sq_term_18
+                      4.9355000000e-01 least_sq_term_19
+                     -4.5778000000e-01 least_sq_term_20
+                     -1.5013000000e-01 least_sq_term_21
+                     -4.8590000000e-02 least_sq_term_22
+                     -1.6689600000e+00 least_sq_term_23
+                      9.2396000000e-01 least_sq_term_24
+                     -2.0319300000e+00 least_sq_term_25
+                     -9.7130000000e-02 least_sq_term_26
+                      3.0895000000e-01 least_sq_term_27
+                     -1.0229500000e+00 least_sq_term_28
+                      8.6404000000e-01 least_sq_term_29
+                     -2.2304000000e-01 least_sq_term_30
+                      9.7502000000e-01 least_sq_term_31
+                      1.6388000000e+00 least_sq_term_32
+                     -2.4705100000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 19 (acquisition batch 1)
+NCSU DIRECT succeeded with code 2
+(maximum iterations reached)
+
+Results of EGO iteration:
+Final point =
+                      1.2551276623e+00 desired_speed
+                      7.9229143028e-01 time_gap
+Expected Improvement    =
+                      2.0350604208e-01
+
+---------------------
+Begin Evaluation   25
+---------------------
+Parameters for evaluation 25:
+                      1.2551276623e+00 desired_speed
+                      7.9229143028e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 25:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      4.1288000000e-01 least_sq_term_1
+                      1.1580000000e+00 least_sq_term_2
+                     -3.8003000000e-01 least_sq_term_3
+                      1.4011800000e+00 least_sq_term_4
+                     -5.6245000000e-01 least_sq_term_5
+                      1.6182300000e+00 least_sq_term_6
+                     -1.8800800000e+00 least_sq_term_7
+                     -8.9620000000e-02 least_sq_term_8
+                     -1.4735900000e+00 least_sq_term_9
+                     -8.3732000000e-01 least_sq_term_10
+                      5.0470000000e-01 least_sq_term_11
+                     -2.6005000000e-01 least_sq_term_12
+                     -1.2027900000e+00 least_sq_term_13
+                      3.1196000000e-01 least_sq_term_14
+                     -2.0081100000e+00 least_sq_term_15
+                      3.3717700000e+00 least_sq_term_16
+                      4.0032000000e-01 least_sq_term_17
+                     -2.9700000000e-02 least_sq_term_18
+                      6.1162000000e-01 least_sq_term_19
+                     -3.9608000000e-01 least_sq_term_20
+                     -6.9390000000e-02 least_sq_term_21
+                     -9.6900000000e-02 least_sq_term_22
+                     -1.1543100000e+00 least_sq_term_23
+                      1.0628000000e+00 least_sq_term_24
+                     -1.8164000000e+00 least_sq_term_25
+                     -9.7410000000e-02 least_sq_term_26
+                      2.7440000000e-02 least_sq_term_27
+                     -1.1391800000e+00 least_sq_term_28
+                      1.0898400000e+00 least_sq_term_29
+                     -3.1788000000e-01 least_sq_term_30
+                      1.0397600000e+00 least_sq_term_31
+                      1.5686500000e+00 least_sq_term_32
+                     -2.5876800000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+>>>>> Initiating global iteration 20 (acquisition batch 1)
+NCSU DIRECT succeeded with code 1
+(maximum function evaluations exceeded)
+
+Results of EGO iteration:
+Final point =
+                      1.2664666445e+00 desired_speed
+                      7.9994157395e-01 time_gap
+Expected Improvement    =
+                      5.7275078453e-01
+
+---------------------
+Begin Evaluation   26
+---------------------
+Parameters for evaluation 26:
+                      1.2664666445e+00 desired_speed
+                      7.9994157395e-01 time_gap
+
+blocking fork: python3 driver_cq_set_c.py params.in results.out
+
+Active response data for evaluation 26:
+Active set vector = { 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 }
+                      2.8313000000e-01 least_sq_term_1
+                      1.1222400000e+00 least_sq_term_2
+                     -4.8908000000e-01 least_sq_term_3
+                      1.5084100000e+00 least_sq_term_4
+                     -5.1630000000e-01 least_sq_term_5
+                      7.7270000000e-01 least_sq_term_6
+                     -1.8348600000e+00 least_sq_term_7
+                     -2.5920000000e-02 least_sq_term_8
+                     -8.8770000000e-01 least_sq_term_9
+                     -8.3732000000e-01 least_sq_term_10
+                     -4.1600000000e-03 least_sq_term_11
+                      3.2163000000e-01 least_sq_term_12
+                     -1.5477100000e+00 least_sq_term_13
+                     -1.8091000000e-01 least_sq_term_14
+                     -1.9238900000e+00 least_sq_term_15
+                      3.7135700000e+00 least_sq_term_16
+                      3.2030000000e-01 least_sq_term_17
+                      5.2662000000e-01 least_sq_term_18
+                     -3.9597000000e-01 least_sq_term_19
+                     -5.8882000000e-01 least_sq_term_20
+                     -4.4568000000e-01 least_sq_term_21
+                      4.8880000000e-02 least_sq_term_22
+                     -1.1523400000e+00 least_sq_term_23
+                      1.3204000000e+00 least_sq_term_24
+                     -1.8164000000e+00 least_sq_term_25
+                      2.5880000000e-02 least_sq_term_26
+                     -1.1453000000e-01 least_sq_term_27
+                     -1.3440900000e+00 least_sq_term_28
+                      6.8314000000e-01 least_sq_term_29
+                     -2.1632000000e-01 least_sq_term_30
+                      1.0397600000e+00 least_sq_term_31
+                      1.6491000000e+00 least_sq_term_32
+                     -2.7921400000e+00 least_sq_term_33
+
+
+
+>>>>> Appending to global_kriging approximations.
+
+<<<<< global_kriging approximation updates completed.
+
+Stopping criteria not met: distConvergenceCntr (0) < distConvergenceLimit (1)
+Stopping criteria not met: eifConvergenceCntr (0) < eifConvergenceLimit (2)
+Stopping criteria met:     globalIterCount (20) >= maxIterations (20)
+<<<<< Function evaluation summary: 26 total (26 new, 0 duplicate)
+<<<<< Best parameters          =
+                      1.2463189078e+00 desired_speed
+                      7.8837528531e-01 time_gap
+<<<<< Best residual terms =
+                      1.2175000000e-01
+                      1.3044000000e+00
+                     -8.9019000000e-01
+                      1.4011800000e+00
+                     -4.0584000000e-01
+                      1.5859400000e+00
+                     -2.0141000000e+00
+                     -4.1320000000e-02
+                     -1.1008800000e+00
+                     -6.4568000000e-01
+                      3.9203000000e-01
+                     -2.6875000000e-01
+                     -1.4487100000e+00
+                      3.1191000000e-01
+                     -2.2916900000e+00
+                      2.3548900000e+00
+                     -2.5935000000e-01
+                      3.0122000000e-01
+                      4.9355000000e-01
+                     -4.5778000000e-01
+                     -1.5013000000e-01
+                     -4.8590000000e-02
+                     -1.6689600000e+00
+                      9.2396000000e-01
+                     -2.0319300000e+00
+                     -9.7130000000e-02
+                      3.0895000000e-01
+                     -1.0229500000e+00
+                      8.6404000000e-01
+                     -2.2304000000e-01
+                      9.7502000000e-01
+                      1.6388000000e+00
+                     -2.4705100000e+00
+<<<<< Best residual norm =  6.7933561097e+00; 0.5 * norm^2 =  2.3074843617e+01
+<<<<< Best evaluation ID: 24
+
+
+<<<<< Iterator efficient_global completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =    55.3027 [parent =    55.3027, child =     -5e-06]
+  Total wall clock =     197.27
