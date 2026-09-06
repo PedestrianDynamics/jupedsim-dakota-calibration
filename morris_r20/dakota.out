@@ -1,0 +1,4562 @@
+Dakota version 6.24 released May 15 2026.
+Repository revision 1ab1c9924 (2026-05-11) built May 11 2026 11:08:44.
+Running MPI Dakota executable in serial mode.
+Start time: Sun Sep  6 03:07:46 2026
+
+------------------
+Begin Dakota input
+------------------
+# Morris one-at-a-time screening of the 7 CFSM parameters on the Hermes
+# bottleneck observables (flow, density, speed at b = 2.4, 3.6, 5.0 m).
+# samples must be a multiple of (n_vars + 1) = 8.
+# Run:  HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'morris_samples.dat'
+
+method
+  psuade_moat
+    samples = 160
+    partitions = 3
+    seed = 12
+
+variables
+  continuous_design = 7
+    descriptors  'desired_speed' 'radius' 'time_gap' 'strength_neighbor' 'range_neighbor' 'strength_geometry' 'range_geometry'
+    lower_bounds  0.8   0.12  0.10   2.0   0.02   1.0   0.01
+    upper_bounds  1.8   0.25  1.20  15.0   0.50  10.0   0.20
+
+interface
+  fork
+    analysis_drivers = 'python3 driver.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py' '../observables.py' '../scenario.py' '../exp_observables.json'
+  asynchronous evaluation_concurrency = 1
+
+responses
+  response_functions = 9
+    descriptors 'flow_2.4' 'density_2.4' 'speed_2.4' 'flow_3.6' 'density_3.6' 'speed_3.6' 'flow_5.0' 'density_5.0' 'speed_5.0'
+  no_gradients
+  no_hessians
+
+----------------
+End Dakota input
+----------------
+
+Using Dakota parser: standard
+Writing new restart file 'dakota.rst'.
+
+>>>>> Executing environment.
+
+>>>>> Running psuade_moat iterator.
+
+PSUADE DACE method = 2568 Samples = 160 Seed (user-specified) = 12
+            Partitions = 3 (Levels = 4)
+
+---------------------
+Begin Evaluation    1
+---------------------
+Parameters for evaluation 1:
+                      1.4666666667e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 1:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    2
+---------------------
+Parameters for evaluation 2:
+                      1.4666666667e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 2:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.8931600000e+00 flow_2.4
+                      3.7524300000e+00 density_2.4
+                      2.5504000000e-01 speed_2.4
+                      5.0890600000e+00 flow_3.6
+                      3.2578600000e+00 density_3.6
+                      3.4446000000e-01 speed_3.6
+                      6.9738200000e+00 flow_5.0
+                      2.8566000000e+00 density_5.0
+                      4.4566000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    3
+---------------------
+Parameters for evaluation 3:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 3:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.9003500000e+00 flow_2.4
+                      3.8269700000e+00 density_2.4
+                      2.3099000000e-01 speed_2.4
+                      4.5948600000e+00 flow_3.6
+                      3.2211600000e+00 density_3.6
+                      3.6546000000e-01 speed_3.6
+                      6.2584100000e+00 flow_5.0
+                      2.9077900000e+00 density_5.0
+                      4.2645000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    4
+---------------------
+Parameters for evaluation 4:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 4:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    5
+---------------------
+Parameters for evaluation 5:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 5:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.6108600000e+00 flow_2.4
+                      1.4231500000e+00 density_2.4
+                      3.4574000000e-01 speed_2.4
+                      2.4456000000e+00 flow_3.6
+                      1.2581100000e+00 density_3.6
+                      4.9676000000e-01 speed_3.6
+                      3.3645800000e+00 flow_5.0
+                      1.1712600000e+00 density_5.0
+                      5.6328000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    6
+---------------------
+Parameters for evaluation 6:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 6:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.4052000000e+00 flow_2.4
+                      2.0447000000e+00 density_2.4
+                      1.8776000000e-01 speed_2.4
+                      1.7316000000e+00 flow_3.6
+                      1.2039700000e+00 density_3.6
+                      3.0658000000e-01 speed_3.6
+                      1.8533200000e+00 flow_5.0
+                      1.2958700000e+00 density_5.0
+                      2.0007000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    7
+---------------------
+Parameters for evaluation 7:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 7:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.5740000000e+00 flow_2.4
+                      2.7107600000e+00 density_2.4
+                      2.7014000000e-01 speed_2.4
+                      3.1789300000e+00 flow_3.6
+                      2.2108100000e+00 density_3.6
+                      3.6998000000e-01 speed_3.6
+                      3.3622600000e+00 flow_5.0
+                      1.9418400000e+00 density_5.0
+                      3.2761000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    8
+---------------------
+Parameters for evaluation 8:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 8:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.4029400000e+00 flow_2.4
+                      2.7146500000e+00 density_2.4
+                      2.6605000000e-01 speed_2.4
+                      3.1069700000e+00 flow_3.6
+                      2.2123600000e+00 density_3.6
+                      3.6102000000e-01 speed_3.6
+                      3.3767500000e+00 flow_5.0
+                      1.8257400000e+00 density_5.0
+                      3.5031000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation    9
+---------------------
+Parameters for evaluation 9:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 9:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      8.9571300000e+00 flow_2.4
+                      3.7092900000e+00 density_2.4
+                      6.7740000000e-01 speed_2.4
+                      1.3448610000e+01 flow_3.6
+                      3.3600200000e+00 density_3.6
+                      8.8919000000e-01 speed_3.6
+                      1.8320110000e+01 flow_5.0
+                      3.1514700000e+00 density_5.0
+                      9.9535000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   10
+---------------------
+Parameters for evaluation 10:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 10:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.5648100000e+00 flow_2.4
+                      1.1061800000e+00 density_2.4
+                      6.1038000000e-01 speed_2.4
+                      3.6328100000e+00 flow_3.6
+                      9.3816000000e-01 density_3.6
+                      9.1408000000e-01 speed_3.6
+                      5.0724600000e+00 flow_5.0
+                      9.0527000000e-01 density_5.0
+                      9.9804000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   11
+---------------------
+Parameters for evaluation 11:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 11:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.4849100000e+00 flow_2.4
+                      1.1004100000e+00 density_2.4
+                      6.0511000000e-01 speed_2.4
+                      3.6658800000e+00 flow_3.6
+                      9.5888000000e-01 density_3.6
+                      8.9160000000e-01 speed_3.6
+                      5.0669600000e+00 flow_5.0
+                      9.1048000000e-01 density_5.0
+                      1.0065300000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   12
+---------------------
+Parameters for evaluation 12:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 12:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.7379400000e+00 flow_2.4
+                      1.0876400000e+00 density_2.4
+                      9.2703000000e-01 speed_2.4
+                      5.5161500000e+00 flow_3.6
+                      9.4303000000e-01 density_3.6
+                      1.4026800000e+00 speed_3.6
+                      7.8381400000e+00 flow_5.0
+                      9.1707000000e-01 density_5.0
+                      1.5610100000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   13
+---------------------
+Parameters for evaluation 13:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 13:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   14
+---------------------
+Parameters for evaluation 14:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 14:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   15
+---------------------
+Parameters for evaluation 15:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 15:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.4458400000e+00 flow_2.4
+                      9.1372000000e-01 density_2.4
+                      8.8280000000e-01 speed_2.4
+                      3.7303500000e+00 flow_3.6
+                      8.9015000000e-01 density_3.6
+                      1.1171300000e+00 speed_3.6
+                      5.2761900000e+00 flow_5.0
+                      8.1519000000e-01 density_5.0
+                      1.3289600000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   16
+---------------------
+Parameters for evaluation 16:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 16:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.0010700000e+00 flow_2.4
+                      1.3506500000e+00 density_2.4
+                      6.8113000000e-01 speed_2.4
+                      4.7208100000e+00 flow_3.6
+                      1.2556100000e+00 density_3.6
+                      9.5928000000e-01 speed_3.6
+                      6.7928200000e+00 flow_5.0
+                      1.1698000000e+00 density_5.0
+                      1.2379500000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   17
+---------------------
+Parameters for evaluation 17:
+                      1.4666666667e+00 desired_speed
+                      1.6333333333e-01 radius
+                      4.6666666667e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 17:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.2840700000e+00 flow_2.4
+                      2.3824600000e+00 density_2.4
+                      4.2992000000e-01 speed_2.4
+                      3.6008200000e+00 flow_3.6
+                      1.0589000000e+00 density_3.6
+                      6.9445000000e-01 speed_3.6
+                      3.7243900000e+00 flow_5.0
+                      6.3340000000e-01 density_5.0
+                      1.5015000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   18
+---------------------
+Parameters for evaluation 18:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 18:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.4656600000e+00 flow_2.4
+                      1.1539600000e+00 density_2.4
+                      4.0618000000e-01 speed_2.4
+                      2.3275100000e+00 flow_3.6
+                      5.1453000000e-01 density_3.6
+                      8.8495000000e-01 speed_3.6
+                      2.8739200000e+00 flow_5.0
+                      4.8762000000e-01 density_5.0
+                      4.2309000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   19
+---------------------
+Parameters for evaluation 19:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 19:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      8.0341000000e-01 flow_2.4
+                      1.4453500000e+00 density_2.4
+                      1.6671000000e-01 speed_2.4
+                      1.5270500000e+00 flow_3.6
+                      5.3934000000e-01 density_3.6
+                      5.0737000000e-01 speed_3.6
+                      1.6311300000e+00 flow_5.0
+                      3.8528000000e-01 density_5.0
+                      2.9190000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   20
+---------------------
+Parameters for evaluation 20:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 20:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.8747000000e-01 flow_2.4
+                      1.5233700000e+00 density_2.4
+                      1.0800000000e-01 speed_2.4
+                      1.0440700000e+00 flow_3.6
+                      5.1866000000e-01 density_3.6
+                      4.0885000000e-01 speed_3.6
+                      1.3050000000e+00 flow_5.0
+                      4.4536000000e-01 density_5.0
+                      2.1709000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   21
+---------------------
+Parameters for evaluation 21:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 21:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      6.8262000000e-01 flow_2.4
+                      1.4139100000e+00 density_2.4
+                      1.1334000000e-01 speed_2.4
+                      9.2755000000e-01 flow_3.6
+                      4.4844000000e-01 density_3.6
+                      2.2430000000e-01 speed_3.6
+                      1.3507000000e+00 flow_5.0
+                      4.7722000000e-01 density_5.0
+                      1.6985000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   22
+---------------------
+Parameters for evaluation 22:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 22:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.3942800000e+00 flow_2.4
+                      2.0260500000e+00 density_2.4
+                      2.0317000000e-01 speed_2.4
+                      1.7087800000e+00 flow_3.6
+                      9.3090000000e-01 density_3.6
+                      3.6175000000e-01 speed_3.6
+                      1.7694100000e+00 flow_5.0
+                      1.1115700000e+00 density_5.0
+                      1.8302000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   23
+---------------------
+Parameters for evaluation 23:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 23:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.3673200000e+00 flow_2.4
+                      2.0199900000e+00 density_2.4
+                      2.0212000000e-01 speed_2.4
+                      1.6642900000e+00 flow_3.6
+                      9.8186000000e-01 density_3.6
+                      3.6029000000e-01 speed_3.6
+                      1.7156900000e+00 flow_5.0
+                      1.0886900000e+00 density_5.0
+                      2.0237000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   24
+---------------------
+Parameters for evaluation 24:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 24:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.5082700000e+00 flow_2.4
+                      1.3736200000e+00 density_2.4
+                      3.5990000000e-01 speed_2.4
+                      2.3440100000e+00 flow_3.6
+                      1.2731400000e+00 density_3.6
+                      4.8670000000e-01 speed_3.6
+                      3.2955400000e+00 flow_5.0
+                      1.1841100000e+00 density_5.0
+                      5.8344000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   25
+---------------------
+Parameters for evaluation 25:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 25:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   26
+---------------------
+Parameters for evaluation 26:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 26:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   27
+---------------------
+Parameters for evaluation 27:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 27:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   28
+---------------------
+Parameters for evaluation 28:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 28:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   29
+---------------------
+Parameters for evaluation 29:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 29:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   30
+---------------------
+Parameters for evaluation 30:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 30:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   31
+---------------------
+Parameters for evaluation 31:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 31:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   32
+---------------------
+Parameters for evaluation 32:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      8.3333333333e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 32:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.9449000000e+00 flow_2.4
+                      1.3665200000e+00 density_2.4
+                      6.7226000000e-01 speed_2.4
+                      4.8011000000e+00 flow_3.6
+                      1.2845000000e+00 density_3.6
+                      9.6701000000e-01 speed_3.6
+                      6.5299400000e+00 flow_5.0
+                      1.1904800000e+00 density_5.0
+                      1.1549200000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   33
+---------------------
+Parameters for evaluation 33:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 33:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.0667300000e+00 flow_2.4
+                      1.3934700000e+00 density_2.4
+                      4.3865000000e-01 speed_2.4
+                      3.0661400000e+00 flow_3.6
+                      1.1957100000e+00 density_3.6
+                      5.9205000000e-01 speed_3.6
+                      4.1261400000e+00 flow_5.0
+                      1.0630700000e+00 density_5.0
+                      7.0653000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   34
+---------------------
+Parameters for evaluation 34:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 34:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.1135300000e+00 flow_2.4
+                      1.6908100000e+00 density_2.4
+                      4.0555000000e-01 speed_2.4
+                      3.0722000000e+00 flow_3.6
+                      1.4765000000e+00 density_3.6
+                      5.4679000000e-01 speed_3.6
+                      4.0294600000e+00 flow_5.0
+                      1.3954900000e+00 density_5.0
+                      5.9863000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   35
+---------------------
+Parameters for evaluation 35:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 35:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.4619900000e+00 flow_2.4
+                      9.4554000000e-01 density_2.4
+                      3.2358000000e-01 speed_2.4
+                      1.5959900000e+00 flow_3.6
+                      3.8193000000e-01 density_3.6
+                      3.2393000000e-01 speed_3.6
+                      1.5586700000e+00 flow_5.0
+                      5.7030000000e-01 density_5.0
+                      1.7338000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   36
+---------------------
+Parameters for evaluation 36:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 36:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.1995400000e+00 flow_2.4
+                      1.0727400000e+00 density_2.4
+                      2.4661000000e-01 speed_2.4
+                      1.2923500000e+00 flow_3.6
+                      3.9531000000e-01 density_3.6
+                      2.3504000000e-01 speed_3.6
+                      1.2977400000e+00 flow_5.0
+                      5.5622000000e-01 density_5.0
+                      1.3812000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   37
+---------------------
+Parameters for evaluation 37:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 37:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.2045600000e+00 flow_2.4
+                      1.0145200000e+00 density_2.4
+                      2.7043000000e-01 speed_2.4
+                      1.3314300000e+00 flow_3.6
+                      3.9488000000e-01 density_3.6
+                      2.8743000000e-01 speed_3.6
+                      1.4782000000e+00 flow_5.0
+                      6.1821000000e-01 density_5.0
+                      1.9639000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   38
+---------------------
+Parameters for evaluation 38:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 38:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.5739200000e+00 flow_2.4
+                      1.9772300000e+00 density_2.4
+                      1.6180000000e-01 speed_2.4
+                      1.7497800000e+00 flow_3.6
+                      6.0010000000e-01 density_3.6
+                      1.4769000000e-01 speed_3.6
+                      1.6828900000e+00 flow_5.0
+                      7.1898000000e-01 density_5.0
+                      5.5890000000e-02 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   39
+---------------------
+Parameters for evaluation 39:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      4.6666666667e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 39:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.9592100000e+00 flow_2.4
+                      2.3489300000e+00 density_2.4
+                      2.7583000000e-01 speed_2.4
+                      3.2608700000e+00 flow_3.6
+                      9.5880000000e-01 density_3.6
+                      2.5340000000e-01 speed_3.6
+                      3.3964100000e+00 flow_5.0
+                      8.4597000000e-01 density_5.0
+                      1.0844000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   40
+---------------------
+Parameters for evaluation 40:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      4.6666666667e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 40:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.5963100000e+00 flow_2.4
+                      2.4204800000e+00 density_2.4
+                      3.3020000000e-01 speed_2.4
+                      2.9184900000e+00 flow_3.6
+                      1.2022300000e+00 density_3.6
+                      5.1852000000e-01 speed_3.6
+                      3.2359100000e+00 flow_5.0
+                      6.4872000000e-01 density_5.0
+                      1.3153000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   41
+---------------------
+Parameters for evaluation 41:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 41:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   42
+---------------------
+Parameters for evaluation 42:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 42:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   43
+---------------------
+Parameters for evaluation 43:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 43:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   44
+---------------------
+Parameters for evaluation 44:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 44:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   45
+---------------------
+Parameters for evaluation 45:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 45:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   46
+---------------------
+Parameters for evaluation 46:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 46:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.5342160000e+01 flow_2.4
+                      1.1015440000e+01 density_2.4
+                      4.1726000000e-01 speed_2.4
+                      2.4691360000e+01 flow_3.6
+                      6.7556400000e+00 density_3.6
+                      8.6453000000e-01 speed_3.6
+                      3.0794700000e+01 flow_5.0
+                      3.0169200000e+00 density_5.0
+                      1.2133300000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   47
+---------------------
+Parameters for evaluation 47:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 47:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.7449500000e+00 flow_2.4
+                      4.8106200000e+00 density_2.4
+                      3.7312000000e-01 speed_2.4
+                      1.0449440000e+01 flow_3.6
+                      4.3377600000e+00 density_3.6
+                      6.5402000000e-01 speed_3.6
+                      1.4583330000e+01 flow_5.0
+                      3.9207800000e+00 density_5.0
+                      7.6109000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   48
+---------------------
+Parameters for evaluation 48:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 48:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.5489700000e+00 flow_2.4
+                      4.6663100000e+00 density_2.4
+                      3.8553000000e-01 speed_2.4
+                      9.7833700000e+00 flow_3.6
+                      3.8310700000e+00 density_3.6
+                      7.1393000000e-01 speed_3.6
+                      1.1965810000e+01 flow_5.0
+                      2.9704100000e+00 density_5.0
+                      7.8331000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   49
+---------------------
+Parameters for evaluation 49:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 49:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.0833300000e+00 flow_2.4
+                      2.1172800000e+00 density_2.4
+                      2.8112000000e-01 speed_2.4
+                      2.8612300000e+00 flow_3.6
+                      1.7577000000e+00 density_3.6
+                      3.9906000000e-01 speed_3.6
+                      3.5334300000e+00 flow_5.0
+                      1.3672800000e+00 density_5.0
+                      4.9066000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   50
+---------------------
+Parameters for evaluation 50:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 50:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.9804100000e+00 flow_2.4
+                      1.4893100000e+00 density_2.4
+                      4.3780000000e-01 speed_2.4
+                      3.2246900000e+00 flow_3.6
+                      1.3137300000e+00 density_3.6
+                      6.4304000000e-01 speed_3.6
+                      4.2122900000e+00 flow_5.0
+                      1.2898800000e+00 density_5.0
+                      7.1875000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   51
+---------------------
+Parameters for evaluation 51:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 51:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.9934500000e+00 flow_2.4
+                      1.7058100000e+00 density_2.4
+                      3.7712000000e-01 speed_2.4
+                      3.1990000000e+00 flow_3.6
+                      1.3732300000e+00 density_3.6
+                      6.1558000000e-01 speed_3.6
+                      4.4433800000e+00 flow_5.0
+                      1.2592700000e+00 density_5.0
+                      7.1792000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   52
+---------------------
+Parameters for evaluation 52:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 52:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.6265800000e+00 flow_2.4
+                      1.6847300000e+00 density_2.4
+                      3.1951000000e-01 speed_2.4
+                      2.6850800000e+00 flow_3.6
+                      1.5821900000e+00 density_3.6
+                      4.6195000000e-01 speed_3.6
+                      3.6008200000e+00 flow_5.0
+                      1.3981400000e+00 density_5.0
+                      5.8892000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   53
+---------------------
+Parameters for evaluation 53:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 53:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.2368600000e+00 flow_2.4
+                      1.8209200000e+00 density_2.4
+                      2.4102000000e-01 speed_2.4
+                      2.3676600000e+00 flow_3.6
+                      1.6532300000e+00 density_3.6
+                      4.2922000000e-01 speed_3.6
+                      3.6008200000e+00 flow_5.0
+                      1.4309100000e+00 density_5.0
+                      5.8282000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   54
+---------------------
+Parameters for evaluation 54:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 54:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3882600000e+00 flow_2.4
+                      2.0060300000e+00 density_2.4
+                      4.1699000000e-01 speed_2.4
+                      4.0583500000e+00 flow_3.6
+                      2.0080400000e+00 density_3.6
+                      5.6907000000e-01 speed_3.6
+                      5.8552900000e+00 flow_5.0
+                      1.8349400000e+00 density_5.0
+                      7.0638000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   55
+---------------------
+Parameters for evaluation 55:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 55:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   56
+---------------------
+Parameters for evaluation 56:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 56:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   57
+---------------------
+Parameters for evaluation 57:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 57:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      6.6762000000e+00 flow_2.4
+                      4.7829100000e+00 density_2.4
+                      4.1418000000e-01 speed_2.4
+                      1.0496610000e+01 flow_3.6
+                      4.2503200000e+00 density_3.6
+                      6.2611000000e-01 speed_3.6
+                      1.3295350000e+01 flow_5.0
+                      3.7489900000e+00 density_5.0
+                      6.6660000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   58
+---------------------
+Parameters for evaluation 58:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 58:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.8372700000e+01 flow_2.4
+                      1.0537820000e+01 density_2.4
+                      4.8488000000e-01 speed_2.4
+                      2.5690610000e+01 flow_3.6
+                      6.0949800000e+00 density_3.6
+                      8.5411000000e-01 speed_3.6
+                      3.0303030000e+01 flow_5.0
+                      2.9688900000e+00 density_5.0
+                      9.7419000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   59
+---------------------
+Parameters for evaluation 59:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 59:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.1021020000e+01 flow_2.4
+                      9.5796000000e+00 density_2.4
+                      6.0424000000e-01 speed_2.4
+                      2.7387910000e+01 flow_3.6
+                      4.3023300000e+00 density_3.6
+                      1.1373800000e+00 speed_3.6
+                      3.3214290000e+01 flow_5.0
+                      1.9452900000e+00 density_5.0
+                      1.1203400000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   60
+---------------------
+Parameters for evaluation 60:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 60:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.2544800000e+01 flow_2.4
+                      1.1609540000e+01 density_2.4
+                      3.3583000000e-01 speed_2.4
+                      2.3134330000e+01 flow_3.6
+                      6.4701200000e+00 density_3.6
+                      8.8298000000e-01 speed_3.6
+                      2.9166670000e+01 flow_5.0
+                      2.6464100000e+00 density_5.0
+                      1.3038700000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   61
+---------------------
+Parameters for evaluation 61:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 61:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.1045130000e+01 flow_2.4
+                      5.6059600000e+00 density_2.4
+                      7.0842000000e-01 speed_2.4
+                      1.3789680000e+01 flow_3.6
+                      2.4687400000e+00 density_3.6
+                      1.1911000000e+00 speed_3.6
+                      1.5600450000e+01 flow_5.0
+                      9.2581000000e-01 density_5.0
+                      7.2440000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   62
+---------------------
+Parameters for evaluation 62:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 62:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.3035380000e+01 flow_2.4
+                      5.0442700000e+00 density_2.4
+                      7.4028000000e-01 speed_2.4
+                      1.4485980000e+01 flow_3.6
+                      2.1179000000e+00 density_3.6
+                      1.0361600000e+00 speed_3.6
+                      1.7350750000e+01 flow_5.0
+                      8.8821000000e-01 density_5.0
+                      3.9714000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   63
+---------------------
+Parameters for evaluation 63:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 63:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.9537820000e+01 flow_2.4
+                      4.9267800000e+00 density_2.4
+                      1.0152000000e+00 speed_2.4
+                      2.9807690000e+01 flow_3.6
+                      4.4938600000e+00 density_3.6
+                      1.4068400000e+00 speed_3.6
+                      4.0204680000e+01 flow_5.0
+                      4.1739100000e+00 density_5.0
+                      1.6086000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   64
+---------------------
+Parameters for evaluation 64:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 64:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      6.1023600000e+00 flow_2.4
+                      5.1774000000e+00 density_2.4
+                      3.4178000000e-01 speed_2.4
+                      8.9251400000e+00 flow_3.6
+                      4.4858400000e+00 density_3.6
+                      4.6538000000e-01 speed_3.6
+                      1.2140990000e+01 flow_5.0
+                      3.8146400000e+00 density_5.0
+                      5.5811000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   65
+---------------------
+Parameters for evaluation 65:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 65:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.6750400000e+00 flow_2.4
+                      1.0218400000e+00 density_2.4
+                      4.6471000000e-01 speed_2.4
+                      2.4626200000e+00 flow_3.6
+                      9.0011000000e-01 density_3.6
+                      6.5859000000e-01 speed_3.6
+                      3.4774000000e+00 flow_5.0
+                      8.7943000000e-01 density_5.0
+                      7.1572000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   66
+---------------------
+Parameters for evaluation 66:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 66:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.5835300000e+00 flow_2.4
+                      1.0379900000e+00 density_2.4
+                      4.3706000000e-01 speed_2.4
+                      2.3846000000e+00 flow_3.6
+                      9.2013000000e-01 density_3.6
+                      6.2473000000e-01 speed_3.6
+                      3.2455500000e+00 flow_5.0
+                      8.7629000000e-01 density_5.0
+                      6.7112000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   67
+---------------------
+Parameters for evaluation 67:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 67:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.2092100000e+00 flow_2.4
+                      9.2771000000e-01 density_2.4
+                      4.2389000000e-01 speed_2.4
+                      1.8052900000e+00 flow_3.6
+                      8.0606000000e-01 density_3.6
+                      6.2319000000e-01 speed_3.6
+                      2.5487000000e+00 flow_5.0
+                      7.7491000000e-01 density_5.0
+                      6.9843000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   68
+---------------------
+Parameters for evaluation 68:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 68:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   69
+---------------------
+Parameters for evaluation 69:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 69:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   70
+---------------------
+Parameters for evaluation 70:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 70:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   71
+---------------------
+Parameters for evaluation 71:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 71:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   72
+---------------------
+Parameters for evaluation 72:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 72:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   73
+---------------------
+Parameters for evaluation 73:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 73:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.1043700000e+00 flow_2.4
+                      5.4877000000e+00 density_2.4
+                      1.8589000000e-01 speed_2.4
+                      4.7185700000e+00 flow_3.6
+                      2.1710000000e+00 density_3.6
+                      3.1486000000e-01 speed_3.6
+                      5.6985300000e+00 flow_5.0
+                      1.0093500000e+00 density_5.0
+                      2.0896000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   74
+---------------------
+Parameters for evaluation 74:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 74:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3653200000e+01 flow_2.4
+                      8.7706400000e+00 density_2.4
+                      6.8978000000e-01 speed_2.4
+                      2.9914530000e+01 flow_3.6
+                      3.7727500000e+00 density_3.6
+                      1.2469000000e+00 speed_3.6
+                      3.4313730000e+01 flow_5.0
+                      1.9160600000e+00 density_5.0
+                      1.0742300000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   75
+---------------------
+Parameters for evaluation 75:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 75:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.3266280000e+01 flow_2.4
+                      3.9480100000e+00 density_2.4
+                      6.6978000000e-01 speed_2.4
+                      1.5570930000e+01 flow_3.6
+                      1.2198300000e+00 density_3.6
+                      9.2487000000e-01 speed_3.6
+                      2.0289860000e+01 flow_5.0
+                      9.5547000000e-01 density_5.0
+                      4.3544000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   76
+---------------------
+Parameters for evaluation 76:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 76:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.0467840000e+01 flow_2.4
+                      4.7434500000e+00 density_2.4
+                      1.0603700000e+00 speed_2.4
+                      3.1572770000e+01 flow_3.6
+                      4.4942600000e+00 density_3.6
+                      1.3930900000e+00 speed_3.6
+                      4.1369050000e+01 flow_5.0
+                      4.0344500000e+00 density_5.0
+                      1.6010000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   77
+---------------------
+Parameters for evaluation 77:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 77:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.0547950000e+01 flow_2.4
+                      5.0641200000e+00 density_2.4
+                      9.9671000000e-01 speed_2.4
+                      3.1351980000e+01 flow_3.6
+                      4.6118600000e+00 density_3.6
+                      1.3809000000e+00 speed_3.6
+                      4.0412980000e+01 flow_5.0
+                      4.1541400000e+00 density_5.0
+                      1.6286300000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   78
+---------------------
+Parameters for evaluation 78:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 78:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.9125680000e+01 flow_2.4
+                      4.9489800000e+00 density_2.4
+                      1.0325300000e+00 speed_2.4
+                      2.9617830000e+01 flow_3.6
+                      4.5219300000e+00 density_3.6
+                      1.4136300000e+00 speed_3.6
+                      4.0497080000e+01 flow_5.0
+                      4.2251600000e+00 density_5.0
+                      1.6314500000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   79
+---------------------
+Parameters for evaluation 79:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 79:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      9.0038300000e+00 flow_2.4
+                      3.3249100000e+00 density_2.4
+                      9.3504000000e-01 speed_2.4
+                      1.5600450000e+01 flow_3.6
+                      3.2730100000e+00 density_3.6
+                      1.3185300000e+00 speed_3.6
+                      2.3070610000e+01 flow_5.0
+                      3.1285000000e+00 density_5.0
+                      1.5633200000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   80
+---------------------
+Parameters for evaluation 80:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 80:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.9071700000e+00 flow_2.4
+                      3.5131800000e+00 density_2.4
+                      6.0043000000e-01 speed_2.4
+                      1.0852710000e+01 flow_3.6
+                      3.4608100000e+00 density_3.6
+                      8.7267000000e-01 speed_3.6
+                      1.6091950000e+01 flow_5.0
+                      3.2437400000e+00 density_5.0
+                      1.0104200000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   81
+---------------------
+Parameters for evaluation 81:
+                      1.4666666667e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 81:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.2328500000e+00 flow_2.4
+                      4.3420800000e+00 density_2.4
+                      1.5995000000e-01 speed_2.4
+                      3.6288200000e+00 flow_3.6
+                      3.8030000000e+00 density_3.6
+                      2.3826000000e-01 speed_3.6
+                      5.2025300000e+00 flow_5.0
+                      3.1413100000e+00 density_5.0
+                      3.2074000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   82
+---------------------
+Parameters for evaluation 82:
+                      1.4666666667e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 82:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3102300000e+00 flow_2.4
+                      2.9498300000e+00 density_2.4
+                      2.4878000000e-01 speed_2.4
+                      3.6102500000e+00 flow_3.6
+                      2.7492200000e+00 density_3.6
+                      3.2111000000e-01 speed_3.6
+                      5.0233200000e+00 flow_5.0
+                      2.5169000000e+00 density_5.0
+                      3.7030000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   83
+---------------------
+Parameters for evaluation 83:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 83:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.1212100000e+00 flow_2.4
+                      2.9592100000e+00 density_2.4
+                      2.3237000000e-01 speed_2.4
+                      3.5008800000e+00 flow_3.6
+                      2.7499200000e+00 density_3.6
+                      3.1796000000e-01 speed_3.6
+                      4.6917300000e+00 flow_5.0
+                      2.5567400000e+00 density_5.0
+                      3.6223000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   84
+---------------------
+Parameters for evaluation 84:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 84:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   85
+---------------------
+Parameters for evaluation 85:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 85:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   86
+---------------------
+Parameters for evaluation 86:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 86:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   87
+---------------------
+Parameters for evaluation 87:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 87:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   88
+---------------------
+Parameters for evaluation 88:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 88:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.4164900000e+00 flow_2.4
+                      8.3593000000e-01 density_2.4
+                      5.2595000000e-01 speed_2.4
+                      2.1242600000e+00 flow_3.6
+                      7.9028000000e-01 density_3.6
+                      6.5847000000e-01 speed_3.6
+                      2.9479900000e+00 flow_5.0
+                      7.8305000000e-01 density_5.0
+                      7.1715000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   89
+---------------------
+Parameters for evaluation 89:
+                      1.4666666667e+00 desired_speed
+                      1.2000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 89:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.7971000000e+00 flow_2.4
+                      4.4182000000e+00 density_2.4
+                      3.5651000000e-01 speed_2.4
+                      8.2889300000e+00 flow_3.6
+                      3.8788600000e+00 density_3.6
+                      4.6471000000e-01 speed_3.6
+                      1.0903430000e+01 flow_5.0
+                      3.4602900000e+00 density_5.0
+                      5.2585000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   90
+---------------------
+Parameters for evaluation 90:
+                      1.4666666667e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 90:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.3556850000e+01 flow_2.4
+                      4.2104400000e+00 density_2.4
+                      8.6937000000e-01 speed_2.4
+                      2.0057720000e+01 flow_3.6
+                      3.8115800000e+00 density_3.6
+                      1.1381800000e+00 speed_3.6
+                      2.7416170000e+01 flow_5.0
+                      3.5661800000e+00 density_5.0
+                      1.2653000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   91
+---------------------
+Parameters for evaluation 91:
+                      1.4666666667e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 91:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.2596150000e+01 flow_2.4
+                      8.8363000000e+00 density_2.4
+                      7.8573000000e-01 speed_2.4
+                      3.6718750000e+01 flow_3.6
+                      7.1027100000e+00 density_3.6
+                      1.2331400000e+00 speed_3.6
+                      4.9468090000e+01 flow_5.0
+                      5.7763200000e+00 density_5.0
+                      1.3421500000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   92
+---------------------
+Parameters for evaluation 92:
+                      1.4666666667e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 92:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.4006910000e+01 flow_2.4
+                      8.6257400000e+00 density_2.4
+                      8.4928000000e-01 speed_2.4
+                      3.8888890000e+01 flow_3.6
+                      7.1679500000e+00 density_3.6
+                      1.2035600000e+00 speed_3.6
+                      4.8611110000e+01 flow_5.0
+                      5.7437400000e+00 density_5.0
+                      1.3464300000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   93
+---------------------
+Parameters for evaluation 93:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 93:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.5112540000e+01 flow_2.4
+                      8.8953800000e+00 density_2.4
+                      5.1605000000e-01 speed_2.4
+                      2.3846150000e+01 flow_3.6
+                      7.3779200000e+00 density_3.6
+                      7.1768000000e-01 speed_3.6
+                      3.0592110000e+01 flow_5.0
+                      5.9944000000e+00 density_5.0
+                      7.6252000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   94
+---------------------
+Parameters for evaluation 94:
+                      8.0000000000e-01 desired_speed
+                      1.2000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 94:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      6.8627500000e+00 flow_2.4
+                      2.9830100000e+00 density_2.4
+                      4.9533000000e-01 speed_2.4
+                      9.5824800000e+00 flow_3.6
+                      2.7411400000e+00 density_3.6
+                      6.4408000000e-01 speed_3.6
+                      1.2301590000e+01 flow_5.0
+                      2.5786800000e+00 density_5.0
+                      7.3216000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   95
+---------------------
+Parameters for evaluation 95:
+                      8.0000000000e-01 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 95:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.7331200000e+00 flow_2.4
+                      2.5375600000e+00 density_2.4
+                      4.8597000000e-01 speed_2.4
+                      6.2278400000e+00 flow_3.6
+                      2.3503600000e+00 density_3.6
+                      6.7943000000e-01 speed_3.6
+                      9.1324200000e+00 flow_5.0
+                      2.2276100000e+00 density_5.0
+                      7.5870000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   96
+---------------------
+Parameters for evaluation 96:
+                      8.0000000000e-01 desired_speed
+                      2.0666666667e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 96:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.5596200000e+00 flow_2.4
+                      2.5480500000e+00 density_2.4
+                      4.6239000000e-01 speed_2.4
+                      6.4456700000e+00 flow_3.6
+                      2.3266000000e+00 density_3.6
+                      6.7660000000e-01 speed_3.6
+                      8.5485900000e+00 flow_5.0
+                      2.2273700000e+00 density_5.0
+                      7.2060000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   97
+---------------------
+Parameters for evaluation 97:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 97:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.2738400000e+00 flow_2.4
+                      1.2983500000e+00 density_2.4
+                      4.9114000000e-01 speed_2.4
+                      3.2908700000e+00 flow_3.6
+                      1.0998400000e+00 density_3.6
+                      6.8505000000e-01 speed_3.6
+                      4.5977000000e+00 flow_5.0
+                      9.8829000000e-01 density_5.0
+                      8.5348000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   98
+---------------------
+Parameters for evaluation 98:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 98:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation   99
+---------------------
+Parameters for evaluation 99:
+                      1.8000000000e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 99:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  100
+---------------------
+Parameters for evaluation 100:
+                      1.1333333333e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 100:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  101
+---------------------
+Parameters for evaluation 101:
+                      1.1333333333e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 101:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  102
+---------------------
+Parameters for evaluation 102:
+                      1.1333333333e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 102:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  103
+---------------------
+Parameters for evaluation 103:
+                      1.1333333333e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 103:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3450600000e+00 flow_2.4
+                      2.9915000000e+00 density_2.4
+                      2.4509000000e-01 speed_2.4
+                      3.7214200000e+00 flow_3.6
+                      2.7428900000e+00 density_3.6
+                      3.1531000000e-01 speed_3.6
+                      5.0946100000e+00 flow_5.0
+                      2.5155800000e+00 density_5.0
+                      3.7022000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  104
+---------------------
+Parameters for evaluation 104:
+                      1.1333333333e+00 desired_speed
+                      1.6333333333e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 104:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.9520800000e+00 flow_2.4
+                      2.9534600000e+00 density_2.4
+                      5.1781000000e-01 speed_2.4
+                      7.5609800000e+00 flow_3.6
+                      2.7611900000e+00 density_3.6
+                      7.0578000000e-01 speed_3.6
+                      1.0816010000e+01 flow_5.0
+                      2.5868200000e+00 density_5.0
+                      8.4061000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  105
+---------------------
+Parameters for evaluation 105:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 105:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      2.3484800000e+00 flow_3.6
+                      1.3607000000e+00 density_3.6
+                      4.3235000000e-01 speed_3.6
+                      1.3320000000e+00 flow_5.0
+                      3.3270000000e-01 density_5.0
+                      1.7483000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  106
+---------------------
+Parameters for evaluation 106:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 106:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.4468000000e+00 flow_2.4
+                      1.1365300000e+00 density_2.4
+                      2.8788000000e-01 speed_2.4
+                      1.6478300000e+00 flow_3.6
+                      4.4148000000e-01 density_3.6
+                      3.2524000000e-01 speed_3.6
+                      1.7650000000e+00 flow_5.0
+                      5.3929000000e-01 density_5.0
+                      1.9010000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  107
+---------------------
+Parameters for evaluation 107:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 107:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.6474100000e+00 flow_2.4
+                      1.9501500000e+00 density_2.4
+                      3.5716000000e-01 speed_2.4
+                      5.9405900000e+00 flow_3.6
+                      1.7787100000e+00 density_3.6
+                      6.6440000000e-01 speed_3.6
+                      6.6666700000e+00 flow_5.0
+                      1.9252800000e+00 density_5.0
+                      6.1904000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  108
+---------------------
+Parameters for evaluation 108:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 108:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.0469500000e+00 flow_2.4
+                      1.7844700000e+00 density_2.4
+                      7.3158000000e-01 speed_2.4
+                      4.7839500000e+00 flow_3.6
+                      1.3323300000e+00 density_3.6
+                      6.2745000000e-01 speed_3.6
+                      6.2898100000e+00 flow_5.0
+                      1.2184900000e+00 density_5.0
+                      5.4837000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  109
+---------------------
+Parameters for evaluation 109:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 109:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      6.2165800000e+00 flow_2.4
+                      3.2760300000e+00 density_2.4
+                      5.4703000000e-01 speed_2.4
+                      7.9759900000e+00 flow_3.6
+                      3.1350900000e+00 density_3.6
+                      6.3866000000e-01 speed_3.6
+                      1.0264900000e+01 flow_5.0
+                      2.8359000000e+00 density_5.0
+                      7.1086000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  110
+---------------------
+Parameters for evaluation 110:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 110:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      6.0606100000e+00 flow_2.4
+                      3.2874700000e+00 density_2.4
+                      5.3213000000e-01 speed_2.4
+                      8.0738200000e+00 flow_3.6
+                      3.0656300000e+00 density_3.6
+                      6.3785000000e-01 speed_3.6
+                      1.0356350000e+01 flow_5.0
+                      2.9254000000e+00 density_5.0
+                      6.8681000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  111
+---------------------
+Parameters for evaluation 111:
+                      1.4666666667e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 111:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.3071900000e+01 flow_2.4
+                      6.7902000000e+00 density_2.4
+                      5.2723000000e-01 speed_2.4
+                      1.8300650000e+01 flow_3.6
+                      5.0662700000e+00 density_3.6
+                      7.9018000000e-01 speed_3.6
+                      2.2824300000e+01 flow_5.0
+                      2.8413900000e+00 density_5.0
+                      9.9407000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  112
+---------------------
+Parameters for evaluation 112:
+                      1.4666666667e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 112:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      5.3394400000e+00 flow_2.4
+                      1.7957100000e+00 density_2.4
+                      8.4522000000e-01 speed_2.4
+                      7.9772100000e+00 flow_3.6
+                      1.6071400000e+00 density_3.6
+                      1.1905500000e+00 speed_3.6
+                      1.1071140000e+01 flow_5.0
+                      1.5665600000e+00 density_5.0
+                      1.2970300000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  113
+---------------------
+Parameters for evaluation 113:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 113:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.2004200000e+00 flow_2.4
+                      3.1895600000e+00 density_2.4
+                      3.9247000000e-01 speed_2.4
+                      6.4724900000e+00 flow_3.6
+                      2.8670400000e+00 density_3.6
+                      5.4397000000e-01 speed_3.6
+                      8.7554700000e+00 flow_5.0
+                      2.6357700000e+00 density_5.0
+                      6.0644000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  114
+---------------------
+Parameters for evaluation 114:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 114:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  115
+---------------------
+Parameters for evaluation 115:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 115:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  116
+---------------------
+Parameters for evaluation 116:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 116:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  117
+---------------------
+Parameters for evaluation 117:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 117:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  118
+---------------------
+Parameters for evaluation 118:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 118:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  119
+---------------------
+Parameters for evaluation 119:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 119:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3451800000e+00 flow_2.4
+                      2.6031400000e+00 density_2.4
+                      2.4375000000e-01 speed_2.4
+                      3.3333300000e+00 flow_3.6
+                      2.3354500000e+00 density_3.6
+                      3.1072000000e-01 speed_3.6
+                      4.3718400000e+00 flow_5.0
+                      2.0756200000e+00 density_5.0
+                      3.7258000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  120
+---------------------
+Parameters for evaluation 120:
+                      1.1333333333e+00 desired_speed
+                      2.0666666667e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 120:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.3532300000e+00 flow_2.4
+                      2.7085300000e+00 density_2.4
+                      4.5893000000e-01 speed_2.4
+                      6.7196500000e+00 flow_3.6
+                      2.4909800000e+00 density_3.6
+                      6.5676000000e-01 speed_3.6
+                      9.6074400000e+00 flow_5.0
+                      2.2006600000e+00 density_5.0
+                      8.6185000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  121
+---------------------
+Parameters for evaluation 121:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 121:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3380100000e+00 flow_2.4
+                      1.4490500000e+00 density_2.4
+                      5.2587000000e-01 speed_2.4
+                      3.5140600000e+00 flow_3.6
+                      1.4236000000e+00 density_3.6
+                      6.4906000000e-01 speed_3.6
+                      4.7866800000e+00 flow_5.0
+                      1.3905200000e+00 density_5.0
+                      6.9555000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  122
+---------------------
+Parameters for evaluation 122:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 122:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.5487000000e+00 flow_2.4
+                      1.4406600000e+00 density_2.4
+                      5.6886000000e-01 speed_2.4
+                      3.8064200000e+00 flow_3.6
+                      1.4172200000e+00 density_3.6
+                      6.9214000000e-01 speed_3.6
+                      5.2790300000e+00 flow_5.0
+                      1.3664200000e+00 density_5.0
+                      7.3292000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  123
+---------------------
+Parameters for evaluation 123:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 123:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      7.3260100000e+00 flow_2.4
+                      7.4269500000e+00 density_2.4
+                      2.9623000000e-01 speed_2.4
+                      1.2973220000e+01 flow_3.6
+                      6.6115800000e+00 density_3.6
+                      4.8340000000e-01 speed_3.6
+                      1.7543860000e+01 flow_5.0
+                      5.4561300000e+00 density_5.0
+                      5.8985000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  124
+---------------------
+Parameters for evaluation 124:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 124:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      9.9576300000e+00 flow_2.4
+                      7.2497000000e+00 density_2.4
+                      3.8055000000e-01 speed_2.4
+                      1.4951770000e+01 flow_3.6
+                      6.2276800000e+00 density_3.6
+                      5.3484000000e-01 speed_3.6
+                      1.9225450000e+01 flow_5.0
+                      5.1453700000e+00 density_5.0
+                      6.0869000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  125
+---------------------
+Parameters for evaluation 125:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 125:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.1666700000e+00 flow_2.4
+                      3.5098800000e+00 density_2.4
+                      3.5504000000e-01 speed_2.4
+                      6.8082000000e+00 flow_3.6
+                      3.2889500000e+00 density_3.6
+                      5.1190000000e-01 speed_3.6
+                      9.0968200000e+00 flow_5.0
+                      3.1284700000e+00 density_5.0
+                      5.6441000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  126
+---------------------
+Parameters for evaluation 126:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 126:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.8727500000e+00 flow_2.4
+                      3.4540100000e+00 density_2.4
+                      3.3368000000e-01 speed_2.4
+                      5.9523800000e+00 flow_3.6
+                      3.2315700000e+00 density_3.6
+                      4.5796000000e-01 speed_3.6
+                      7.4074100000e+00 flow_5.0
+                      3.0484500000e+00 density_5.0
+                      4.6537000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  127
+---------------------
+Parameters for evaluation 127:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 127:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.0160600000e+00 flow_2.4
+                      3.4516600000e+00 density_2.4
+                      3.4464000000e-01 speed_2.4
+                      5.9071700000e+00 flow_3.6
+                      3.2048000000e+00 density_3.6
+                      4.5907000000e-01 speed_3.6
+                      7.9378500000e+00 flow_5.0
+                      2.9943200000e+00 density_5.0
+                      4.9971000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  128
+---------------------
+Parameters for evaluation 128:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 128:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      6.2893100000e+00 flow_2.4
+                      3.1909700000e+00 density_2.4
+                      5.6994000000e-01 speed_2.4
+                      7.5512400000e+00 flow_3.6
+                      2.9731100000e+00 density_3.6
+                      6.3198000000e-01 speed_3.6
+                      9.1355600000e+00 flow_5.0
+                      2.7710100000e+00 density_5.0
+                      6.2346000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  129
+---------------------
+Parameters for evaluation 129:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 129:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.5882800000e+00 flow_2.4
+                      1.0822200000e+00 density_2.4
+                      6.6682000000e-01 speed_2.4
+                      3.5842300000e+00 flow_3.6
+                      9.7262000000e-01 density_3.6
+                      8.6378000000e-01 speed_3.6
+                      4.7938100000e+00 flow_5.0
+                      9.3847000000e-01 density_5.0
+                      9.4362000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  130
+---------------------
+Parameters for evaluation 130:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.2000000000e+00 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 130:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  131
+---------------------
+Parameters for evaluation 131:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 131:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.1418700000e+00 flow_2.4
+                      2.1981100000e+00 density_2.4
+                      3.1583000000e-01 speed_2.4
+                      3.6630000000e+00 flow_3.6
+                      2.0612000000e+00 density_3.6
+                      4.4457000000e-01 speed_3.6
+                      5.2119100000e+00 flow_5.0
+                      1.8255600000e+00 density_5.0
+                      5.4159000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  132
+---------------------
+Parameters for evaluation 132:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 132:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.5751600000e+00 flow_2.4
+                      3.1856000000e+00 density_2.4
+                      4.0437000000e-01 speed_2.4
+                      6.7243000000e+00 flow_3.6
+                      2.8409600000e+00 density_3.6
+                      5.4595000000e-01 speed_3.6
+                      8.9399700000e+00 flow_5.0
+                      2.5997000000e+00 density_5.0
+                      6.0877000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  133
+---------------------
+Parameters for evaluation 133:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 133:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.1445400000e+00 flow_2.4
+                      3.2101800000e+00 density_2.4
+                      3.7938000000e-01 speed_2.4
+                      6.2555900000e+00 flow_3.6
+                      2.8822400000e+00 density_3.6
+                      5.2583000000e-01 speed_3.6
+                      8.2742300000e+00 flow_5.0
+                      2.6220000000e+00 density_5.0
+                      5.6853000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  134
+---------------------
+Parameters for evaluation 134:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 134:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.5659500000e+00 flow_2.4
+                      8.2147000000e+00 density_2.4
+                      1.2726000000e-01 speed_2.4
+                      5.2840900000e+00 flow_3.6
+                      6.5110700000e+00 density_3.6
+                      1.9858000000e-01 speed_3.6
+                      7.1905500000e+00 flow_5.0
+                      5.2560400000e+00 density_5.0
+                      2.5944000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  135
+---------------------
+Parameters for evaluation 135:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 135:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.6866200000e+00 flow_2.4
+                      8.4997100000e+00 density_2.4
+                      1.0207000000e-01 speed_2.4
+                      4.7043000000e+00 flow_3.6
+                      6.9373100000e+00 density_3.6
+                      1.8304000000e-01 speed_3.6
+                      7.0992400000e+00 flow_5.0
+                      4.8685200000e+00 density_5.0
+                      2.8972000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  136
+---------------------
+Parameters for evaluation 136:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 136:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      7.2884000000e+00 flow_2.4
+                      8.4015200000e+00 density_2.4
+                      2.7363000000e-01 speed_2.4
+                      1.2269130000e+01 flow_3.6
+                      6.8576100000e+00 density_3.6
+                      4.8427000000e-01 speed_3.6
+                      1.7475120000e+01 flow_5.0
+                      5.5954600000e+00 density_5.0
+                      5.9557000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  137
+---------------------
+Parameters for evaluation 137:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 137:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.9573600000e+00 flow_2.4
+                      3.2998600000e+00 density_2.4
+                      4.6036000000e-01 speed_2.4
+                      6.9547900000e+00 flow_3.6
+                      3.0816900000e+00 density_3.6
+                      6.0204000000e-01 speed_3.6
+                      8.5164800000e+00 flow_5.0
+                      2.6984900000e+00 density_5.0
+                      6.5520000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  138
+---------------------
+Parameters for evaluation 138:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 138:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      4.2004200000e+00 flow_2.4
+                      3.2386900000e+00 density_2.4
+                      4.1730000000e-01 speed_2.4
+                      7.4074100000e+00 flow_3.6
+                      2.9663800000e+00 density_3.6
+                      6.9349000000e-01 speed_3.6
+                      8.2889300000e+00 flow_5.0
+                      2.7064300000e+00 density_5.0
+                      6.6176000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  139
+---------------------
+Parameters for evaluation 139:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 139:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.8749700000e+00 flow_2.4
+                      3.4593600000e+00 density_2.4
+                      2.7368000000e-01 speed_2.4
+                      5.1967300000e+00 flow_3.6
+                      3.2397100000e+00 density_3.6
+                      4.5054000000e-01 speed_3.6
+                      6.8931600000e+00 flow_5.0
+                      3.1149900000e+00 density_5.0
+                      4.7875000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  140
+---------------------
+Parameters for evaluation 140:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 140:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.2725600000e+00 flow_2.4
+                      3.5148700000e+00 density_2.4
+                      2.9281000000e-01 speed_2.4
+                      5.8406300000e+00 flow_3.6
+                      3.3482100000e+00 density_3.6
+                      4.6236000000e-01 speed_3.6
+                      8.7106900000e+00 flow_5.0
+                      3.1688900000e+00 density_5.0
+                      5.7378000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  141
+---------------------
+Parameters for evaluation 141:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 141:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.9259900000e+00 flow_2.4
+                      1.1039200000e+00 density_2.4
+                      5.9611000000e-01 speed_2.4
+                      2.9933700000e+00 flow_3.6
+                      1.1456000000e+00 density_3.6
+                      7.0429000000e-01 speed_3.6
+                      4.1116000000e+00 flow_5.0
+                      1.1121400000e+00 density_5.0
+                      7.6104000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  142
+---------------------
+Parameters for evaluation 142:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 142:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.8329400000e+00 flow_2.4
+                      1.2172600000e+00 density_2.4
+                      5.0490000000e-01 speed_2.4
+                      2.8265700000e+00 flow_3.6
+                      1.1149900000e+00 density_3.6
+                      6.9338000000e-01 speed_3.6
+                      3.9381200000e+00 flow_5.0
+                      1.0697700000e+00 density_5.0
+                      7.4933000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  143
+---------------------
+Parameters for evaluation 143:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 143:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.5130100000e+00 flow_2.4
+                      1.5530300000e+00 density_2.4
+                      4.8831000000e-01 speed_2.4
+                      3.8002200000e+00 flow_3.6
+                      1.4008200000e+00 density_3.6
+                      6.6261000000e-01 speed_3.6
+                      5.1508500000e+00 flow_5.0
+                      1.3285600000e+00 density_5.0
+                      7.3674000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  144
+---------------------
+Parameters for evaluation 144:
+                      8.0000000000e-01 desired_speed
+                      1.6333333333e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 144:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.3194200000e+00 flow_2.4
+                      1.5433600000e+00 density_2.4
+                      4.6136000000e-01 speed_2.4
+                      3.5220100000e+00 flow_3.6
+                      1.4103900000e+00 density_3.6
+                      6.3729000000e-01 speed_3.6
+                      4.8661800000e+00 flow_5.0
+                      1.3275700000e+00 density_5.0
+                      6.9973000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  145
+---------------------
+Parameters for evaluation 145:
+                      1.8000000000e+00 desired_speed
+                      2.0666666667e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 145:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      9.2297500000e+00 flow_5.0
+                      1.3799300000e+00 density_5.0
+                      1.4249500000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  146
+---------------------
+Parameters for evaluation 146:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      1.0666666667e+01 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 146:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  147
+---------------------
+Parameters for evaluation 147:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      4.6666666667e-01 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 147:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      9.0558800000e+00 flow_2.4
+                      5.1432000000e+00 density_2.4
+                      5.3306000000e-01 speed_2.4
+                      1.4862000000e+01 flow_3.6
+                      4.6955800000e+00 density_3.6
+                      8.0237000000e-01 speed_3.6
+                      2.0163690000e+01 flow_5.0
+                      4.1206300000e+00 density_5.0
+                      8.9503000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  148
+---------------------
+Parameters for evaluation 148:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      7.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 148:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.8188800000e+00 flow_2.4
+                      5.1473300000e+00 density_2.4
+                      2.2156000000e-01 speed_2.4
+                      5.9372300000e+00 flow_3.6
+                      4.4470400000e+00 density_3.6
+                      3.2605000000e-01 speed_3.6
+                      8.6249200000e+00 flow_5.0
+                      3.8107300000e+00 density_5.0
+                      4.1349000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  149
+---------------------
+Parameters for evaluation 149:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      2.0000000000e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 149:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  150
+---------------------
+Parameters for evaluation 150:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      3.4000000000e-01 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 150:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      0.0000000000e+00 flow_2.4
+                      0.0000000000e+00 density_2.4
+                      0.0000000000e+00 speed_2.4
+                      0.0000000000e+00 flow_3.6
+                      0.0000000000e+00 density_3.6
+                      0.0000000000e+00 speed_3.6
+                      0.0000000000e+00 flow_5.0
+                      0.0000000000e+00 density_5.0
+                      0.0000000000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  151
+---------------------
+Parameters for evaluation 151:
+                      1.8000000000e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 151:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.9530200000e+00 flow_2.4
+                      3.2229900000e+00 density_2.4
+                      1.2868000000e-01 speed_2.4
+                      2.0503800000e+00 flow_3.6
+                      6.5076000000e-01 density_3.6
+                      1.3314000000e-01 speed_3.6
+                      2.6727800000e+00 flow_5.0
+                      5.2232000000e-01 density_5.0
+                      8.8910000000e-02 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  152
+---------------------
+Parameters for evaluation 152:
+                      1.1333333333e+00 desired_speed
+                      1.2000000000e-01 radius
+                      1.2000000000e+00 time_gap
+                      2.0000000000e+00 strength_neighbor
+                      2.0000000000e-02 range_neighbor
+                      1.0000000000e+00 strength_geometry
+                      7.3333333333e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 152:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.9115600000e+00 flow_2.4
+                      3.2263100000e+00 density_2.4
+                      1.1884000000e-01 speed_2.4
+                      1.9757300000e+00 flow_3.6
+                      7.4126000000e-01 density_3.6
+                      1.0369000000e-01 speed_3.6
+                      2.3310000000e+00 flow_5.0
+                      5.6986000000e-01 density_5.0
+                      6.1770000000e-02 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  153
+---------------------
+Parameters for evaluation 153:
+                      1.4666666667e+00 desired_speed
+                      1.6333333333e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 153:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.2477230000e+01 flow_2.4
+                      4.3869200000e+00 density_2.4
+                      8.1484000000e-01 speed_2.4
+                      1.9352620000e+01 flow_3.6
+                      4.0307200000e+00 density_3.6
+                      1.1034300000e+00 speed_3.6
+                      2.6515150000e+01 flow_5.0
+                      3.7641200000e+00 density_5.0
+                      1.2654600000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  154
+---------------------
+Parameters for evaluation 154:
+                      1.4666666667e+00 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 154:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      6.3296900000e+00 flow_2.4
+                      2.7377700000e+00 density_2.4
+                      7.3099000000e-01 speed_2.4
+                      1.0250740000e+01 flow_3.6
+                      2.6048600000e+00 density_3.6
+                      1.0293200000e+00 speed_3.6
+                      1.4767930000e+01 flow_5.0
+                      2.4431100000e+00 density_5.0
+                      1.2267300000e+00 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  155
+---------------------
+Parameters for evaluation 155:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      1.8000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 155:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      3.7909600000e+00 flow_2.4
+                      2.8200400000e+00 density_2.4
+                      4.4598000000e-01 speed_2.4
+                      6.4226500000e+00 flow_3.6
+                      2.7039400000e+00 density_3.6
+                      6.2802000000e-01 speed_3.6
+                      9.1207300000e+00 flow_5.0
+                      2.5813900000e+00 density_5.0
+                      7.0379000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  156
+---------------------
+Parameters for evaluation 156:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.3666666667e-01 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 156:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.1899000000e+00 flow_2.4
+                      1.1956400000e+00 density_2.4
+                      5.7620000000e-01 speed_2.4
+                      3.2455500000e+00 flow_3.6
+                      1.1848300000e+00 density_3.6
+                      6.9540000000e-01 speed_3.6
+                      4.3532300000e+00 flow_5.0
+                      1.1501500000e+00 density_5.0
+                      7.4042000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  157
+---------------------
+Parameters for evaluation 157:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      6.3333333333e+00 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 157:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      2.1087500000e+00 flow_2.4
+                      1.2771800000e+00 density_2.4
+                      5.0515000000e-01 speed_2.4
+                      3.1811000000e+00 flow_3.6
+                      1.1382100000e+00 density_3.6
+                      6.9787000000e-01 speed_3.6
+                      4.3249900000e+00 flow_5.0
+                      1.0983800000e+00 density_5.0
+                      7.4817000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  158
+---------------------
+Parameters for evaluation 158:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      1.0000000000e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 158:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.2838100000e+00 flow_2.4
+                      8.7920000000e-01 density_2.4
+                      4.7384000000e-01 speed_2.4
+                      2.0028600000e+00 flow_3.6
+                      7.7948000000e-01 density_3.6
+                      6.9226000000e-01 speed_3.6
+                      2.8044900000e+00 flow_5.0
+                      7.5290000000e-01 density_5.0
+                      7.4392000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  159
+---------------------
+Parameters for evaluation 159:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      1.0000000000e+01 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 159:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.2660500000e+00 flow_2.4
+                      8.9712000000e-01 density_2.4
+                      4.6573000000e-01 speed_2.4
+                      1.8962500000e+00 flow_3.6
+                      7.8406000000e-01 density_3.6
+                      6.6195000000e-01 speed_3.6
+                      2.6636200000e+00 flow_5.0
+                      7.7316000000e-01 density_5.0
+                      7.2881000000e-01 speed_5.0
+
+
+
+---------------------
+Begin Evaluation  160
+---------------------
+Parameters for evaluation 160:
+                      8.0000000000e-01 desired_speed
+                      2.5000000000e-01 radius
+                      8.3333333333e-01 time_gap
+                      1.5000000000e+01 strength_neighbor
+                      5.0000000000e-01 range_neighbor
+                      4.0000000000e+00 strength_geometry
+                      1.0000000000e-02 range_geometry
+
+blocking fork: python3 driver.py params.in results.out
+
+Active response data for evaluation 160:
+Active set vector = { 1 1 1 1 1 1 1 1 1 }
+                      1.2760900000e+00 flow_2.4
+                      8.9447000000e-01 density_2.4
+                      4.6563000000e-01 speed_2.4
+                      1.9307700000e+00 flow_3.6
+                      7.8917000000e-01 density_3.6
+                      6.7640000000e-01 speed_3.6
+                      2.7068800000e+00 flow_5.0
+                      7.6511000000e-01 density_5.0
+                      7.1652000000e-01 speed_5.0
+
+
+
+>>>>>> PSUADE MOAT output for function 0:
+
+>>>>>> PSUADE MOAT output for function 1:
+
+>>>>>> PSUADE MOAT output for function 2:
+
+>>>>>> PSUADE MOAT output for function 3:
+
+>>>>>> PSUADE MOAT output for function 4:
+
+>>>>>> PSUADE MOAT output for function 5:
+
+>>>>>> PSUADE MOAT output for function 6:
+
+>>>>>> PSUADE MOAT output for function 7:
+
+>>>>>> PSUADE MOAT output for function 8:
+<<<<< Function evaluation summary: 160 total (160 new, 0 duplicate)
+
+<<<<< Iterator psuade_moat completed.
+<<<<< Environment execution completed.
+DAKOTA execution time in seconds:
+  Total CPU        =   0.325239 [parent =   0.325241, child =     -2e-06]
+  Total wall clock =    1430.29

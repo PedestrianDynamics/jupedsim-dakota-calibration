@@ -6,7 +6,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 HERE = pathlib.Path(__file__).parent
-txt = (HERE / "sobol/dakota.out").read_text()
+import sys
+SRC = sys.argv[1] if len(sys.argv) > 1 else "sobol"
+txt = (HERE / SRC / "dakota.out").read_text()
 resp, params, main, total = [], [], [], []
 for line in txt.splitlines():
     m = re.match(r"\s*(\S+) Sobol' indices:", line)

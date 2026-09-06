@@ -101,3 +101,10 @@ The joint set overshoots the Hermes flow by 15–25 % at four widths, clogs in
 four CrowdQueue runs and is bimodal at the semicircle entrance (flow 0.87 ± 0.65
 /s vs 0.57 measured). Hermes parameters at the semicircle: 1.33 /s, too fast and
 too sparse; CrowdQueue parameters: agents pushed through the wall in every seed.
+
+## Sensitivity convergence (`sobol_N*`, `morris_r20`)
+
+Sobol replicates at 40 base samples (seeds 3, 11, 17) and runs at 80 and 160
+base samples (`plot_sobol_convergence.py`); Morris with twenty trajectories.
+At N = 40 replicate totals differ by up to 0.25 and 20 of 45 first-order indices
+exceed their totals; at N = 160 none do. The ranking is stable across all runs.

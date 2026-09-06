@@ -1,0 +1,35 @@
+# Sobol convergence study: 40 base samples, seed 17.
+# Wall repulsion fixed at defaults (strength 5, range 0.02). Cost 40*(5+2)=280 evals.
+# Run:  HERMES_WIDTHS=2.4,3.6,5.0 dakota -i dakota.in -o dakota.out
+
+environment
+  tabular_data
+    tabular_data_file = 'sobol_samples.dat'
+
+method
+  sampling
+    sample_type lhs
+    samples = 40
+    seed = 17
+    variance_based_decomp
+
+variables
+  uniform_uncertain = 5
+    descriptors  'desired_speed' 'radius' 'time_gap' 'strength_neighbor' 'range_neighbor'
+    lower_bounds  0.8   0.12  0.10   2.0   0.02
+    upper_bounds  1.6   0.25  1.00  10.0   0.30
+
+interface
+  fork
+    analysis_drivers = 'python3 driver.py'
+    parameters_file  = 'params.in'
+    results_file     = 'results.out'
+    work_directory named 'runs/run' directory_tag
+    link_files = '../driver.py' '../observables.py' '../scenario.py' '../exp_observables.json'
+  asynchronous evaluation_concurrency = 2
+
+responses
+  response_functions = 9
+    descriptors 'flow_2.4' 'density_2.4' 'speed_2.4' 'flow_3.6' 'density_3.6' 'speed_3.6' 'flow_5.0' 'density_5.0' 'speed_5.0'
+  no_gradients
+  no_hessians

@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 HERE = pathlib.Path(__file__).parent
-d = np.loadtxt(HERE / "morris/morris_samples.dat", skiprows=1, usecols=range(2, 18))
+import sys
+SRC = sys.argv[1] if len(sys.argv) > 1 else "morris"
+d = np.loadtxt(HERE / SRC / "morris_samples.dat", skiprows=1, usecols=range(2, 18))
 names = ["desired_speed", "radius", "time_gap", "strength_neighbor", "range_neighbor", "strength_geometry", "range_geometry"]
 resp = ["flow_2.4", "density_2.4", "speed_2.4", "flow_3.6", "density_3.6", "speed_3.6", "flow_5.0", "density_5.0", "speed_5.0"]
 X, Y = d[:, :7], d[:, 7:]
