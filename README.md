@@ -84,8 +84,9 @@ C/D are two optimizer starts on the same data.
   h−→h0 9.8, compared with own-condition norms 14.1 and 15.3. A fixed-static
   7×7 v0/T profile (set C) gives confirmed minima (1.30, 0.83) for h0 and
   (1.47, 1.20) for h−, with norms 7.2 and 12.2; the latter is at the T upper
-  bound. The h+ condition has only one usable run and is not calibrated
-  separately.
+  bound. Two-parameter Dakota runs select (1.246, 0.788) and (1.485, 1.200),
+  with three-seed norms 7.4 and 11.9. The h+ condition has only one usable run
+  and is not calibrated separately.
 - Joint: Hermes norm 7.9 vs 2.4–2.7 for the specialists, CrowdQueue norm 12.0 vs
   9.7, 61 of 63 seeds emptied. No set found meets the tolerances in both.
 - Semicircle: Hermes A and the joint set drain the crowd at 1.3 and 1.7 /s where
