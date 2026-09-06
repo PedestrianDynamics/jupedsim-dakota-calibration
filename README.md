@@ -59,12 +59,14 @@ C/D are two optimizer starts on the same data.
   speed. At 5.0 m set A keeps density and underpredicts speed, set B the reverse.
 - Sobol: the group of influential parameters is stable across 40/80/160 base
   samples and three replicate seeds; magnitudes and within-group order are not.
-- CrowdQueue: Hermes set A stalls in 46 of 63 seeds, set B empties 62 but is
-  20–40 % too fast. Set C (best of two starts) empties all 63 seeds with baseline
-  flows +12 % on average (−19 % to +36 %). The model does not reproduce the
-  difference between motivation conditions in either direction.
+- CrowdQueue: Hermes set A stalls in 46 of 63 seeds, set B empties 59 but is
+  20–40 % too fast. Set C (best of two starts) empties 58 of 63 seeds (the other
+  five had 1–4 late entrants that could not be placed) with baseline flows +10 %
+  on average (−1 % to +37 %). The model does not reproduce the difference between
+  motivation conditions in either direction. Identical seeds reproduce identical
+  simulations.
 - Joint: Hermes norm 7.9 vs 2.4–2.7 for the specialists, CrowdQueue norm 12.0 vs
-  10.9, 60 of 63 seeds emptied. No set found meets the tolerances in both.
+  9.7, 61 of 63 seeds emptied. No set found meets the tolerances in both.
 - Semicircle: Hermes A and the joint set drain the crowd at 1.3 and 1.7 /s where
   the experiment gave 0.6 /s, with a regular, too-shallow density profile.
 
