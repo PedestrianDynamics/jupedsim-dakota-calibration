@@ -74,19 +74,18 @@ C/D are two optimizer starts on the same data.
   on average (−1 % to +37 %). The model does not reproduce the difference between
   motivation conditions in either direction. Identical seeds reproduce identical
   simulations.
-- Motivation diagnostic: the seven-parameter exploratory fits are a negative
-  control, not evidence for a motivation mechanism. The h0 run converged in 38
-  evaluations; h− reached the 96-evaluation limit with stopping unmet, and its
-  desired speed (0.819 m/s) is near the 0.80 lower bound. The points move v0
-  from 1.23 to 0.82 m/s and T from 0.70 to 0.78 s, but also move neighbor and
-  wall parameters substantially, so the result cannot distinguish compensation
-  from non-identifiability. The three-seed swap norms are h0→h− 18.8 and
-  h−→h0 9.8, compared with own-condition norms 14.1 and 15.3. A fixed-static
-  7×7 v0/T profile (set C) gives confirmed minima (1.30, 0.83) for h0 and
-  (1.47, 1.20) for h−, with norms 7.2 and 12.2; the latter is at the T upper
-  bound. Two-parameter Dakota runs select (1.246, 0.788) and (1.485, 1.200),
-  with three-seed norms 7.4 and 11.9. The h+ condition has only one usable run
-  and is not calibrated separately.
+- Motivation diagnostic: the seven-parameter fits are a negative control. The
+  h− point scores 9.8 on h0, better than the h0 search's own 14.1, so the latter
+  was not an optimum despite meeting Dakota's stopping test. With the five
+  interaction parameters fixed at set C, the v0/T profile fits h0 as a shallow
+  valley (three-seed norm 7.4, 1.29 sigma per residual) but has no interior h−
+  minimum. It runs to T = 1.2 s and is flat in v0 there (one-seed norm 11.8;
+  three-seed norm 11.9); allowing T to reach 1.9 s previously gave 11.7, so
+  widening the bound buys nothing. A radius/neighbor-range profile at the h0
+  valley also fails: its one-seed minimum
+  is 14.6 and its three-seed check is 17.6 with two stalls. Motivation is not a
+  speed knob, and this test does not support a static spacing pair either. The
+  h+ condition has only one usable run and is not calibrated separately.
 - Joint: Hermes norm 7.9 vs 2.4–2.7 for the specialists, CrowdQueue norm 12.0 vs
   9.7, 61 of 63 seeds emptied. No set found meets the tolerances in both.
 - Semicircle: Hermes A and the joint set drain the crowd at 1.3 and 1.7 /s where
@@ -109,9 +108,11 @@ region; that region is not a measured physical boundary. Hermes and CrowdQueue
 screening use fixed simulation seeds, while seed variability is assessed by
 separate replicate runs.
 
-The motivation diagnostic also includes `profile_motivation.py`, which keeps the
-five static set-C parameters fixed and profiles only desired speed and time gap,
-and `plot_motivation_profile.py` for the two-panel surface. The profile avoids
+The motivation diagnostic includes `profile_motivation.py`, which keeps the five
+static set-C parameters fixed and profiles desired speed and time gap,
+`profile_spacing.py`, which fixes the h0 valley and profiles radius and neighbor
+range on h−, and `plot_motivation_profile.py` for the three-panel surface. The
+profiles avoid
 interpreting a Gaussian-process surrogate across the clipped residuals produced
 by the historical zero-observable failure fallback. For a production Dakota
 calibration, capture failures separately and use a declared recovery value or a
