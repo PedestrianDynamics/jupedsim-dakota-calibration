@@ -7,6 +7,7 @@ Env:    HERMES_WIDTHS   comma list of gap widths [m]      (default 2.4,3.6,5.0)
         HERMES_RESIDUALS=1  write sim - experiment instead of raw values
         HERMES_NORMALIZE=1  divide residuals by sigma = 6 % / 10 % / 10 % of the experiment value
         JPS_WORKERS     parallel simulations inside one evaluation (default 9)
+        HERMES_STATUS_FILE  JSON audit file name (default evaluation_status.json)
 Responses per width, in order: flow [1/s], density [1/m2], speed [m/s].
 """
 import json
@@ -37,15 +38,21 @@ def read_params(path):
 
 
 def one(width, seed, out_file, kwargs):
+    audit = dict(width=float(width), seed=int(seed), status="failed", n_crossed=0,
+                 elapsed_time=None, error_type=None, error=None)
     try:
-        scenario.run(width, seed, out_file, **kwargs)
+        elapsed = scenario.run(width, seed, out_file, **kwargs)
         r = obs.compute(obs.load_simulation(out_file), width)
+        audit.update(status="completed" if r["n_total"] >= scenario.N_AGENTS else "incomplete",
+                     n_crossed=int(r["n_total"]), elapsed_time=float(elapsed))
+        values = {k: float(r[k]) for k in OBS}
         if r["n_total"] < 20:
-            return dict(flow=0.0, density=0.0, speed=0.0)
-        return {k: float(r[k]) for k in OBS}
-    except Exception as e:  # unphysical parameter combination: report as zero flow
+            values = dict.fromkeys(OBS, 0.0)
+        return {**values, "_audit": audit}
+    except Exception as e:  # preserve Dakota's finite fallback and audit the failure
+        audit.update(error_type=type(e).__name__, error=str(e)[:200])
         print(f"run failed (b={width}, seed={seed}): {e}", file=sys.stderr)
-        return dict(flow=0.0, density=0.0, speed=0.0)
+        return {**dict.fromkeys(OBS, 0.0), "_audit": audit}
 
 
 def main():
@@ -58,6 +65,11 @@ def main():
     jobs = [(w, s, str(out_dir / f"b{w}_s{s}.sqlite"), kwargs) for w in widths for s in range(1, n_seeds + 1)]
     with ProcessPoolExecutor(int(os.environ.get("JPS_WORKERS", "9"))) as ex:
         results = list(ex.map(one, *zip(*jobs)))
+    status_file = out_dir / os.environ.get("HERMES_STATUS_FILE", "evaluation_status.json")
+    with open(status_file, "w") as fh:
+        json.dump({"parameters": kwargs, "widths": widths,
+                   "simulation_seeds": [s for _, s, _, _ in jobs],
+                   "records": [r["_audit"] for r in results]}, fh, indent=1)
     for _, _, f, _ in jobs:
         pathlib.Path(f).unlink(missing_ok=True)
 

@@ -70,7 +70,9 @@ def run(gap_width, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
         sim.add_agent(jps.CollisionFreeSpeedModelAgentParameters(
             journey_id=journey_id, stage_id=exit_id, position=pos,
             desired_speed=desired_speed, radius=radius, time_gap=time_gap))
-    while sim.agent_count() > 0 and sim.iteration_count() < MAX_ITER:
-        sim.iterate()
-    writer.close()
+    try:
+        while sim.agent_count() > 0 and sim.iteration_count() < MAX_ITER:
+            sim.iterate()
+    finally:
+        writer.close()
     return sim.elapsed_time()

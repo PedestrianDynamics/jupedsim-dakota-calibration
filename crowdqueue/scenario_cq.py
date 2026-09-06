@@ -76,24 +76,26 @@ def run(run_name, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
     for x, y in pts:
         add(x, y)
     n_dropped = 0
-    while (sim.agent_count() > 0 or pending) and sim.iteration_count() < MAX_ITER:
-        if pending and pending[0][0] <= sim.elapsed_time():
-            live = [tuple(a.position) for a in sim.agents()]
-            still = []
-            for t0, x, y in pending:
-                if t0 > sim.elapsed_time():
-                    still.append((t0, x, y)); continue
-                placed = False
-                for _ in range(20):  # nudge until the spot is free of walls and agents
-                    if region.contains(shapely.Point(x, y)) and all(np.hypot(x - px, y - py) > 2 * radius + 0.02 for px, py in live):
-                        add(x, y); live.append((x, y)); placed = True; break
-                    x, y = x + rng.normal(0, 0.1), y + rng.normal(0, 0.1)
-                if not placed:
-                    if sim.elapsed_time() - t0 > 10.0:  # give up after 10 s of trying
-                        n_dropped += 1
-                    else:
-                        still.append((t0, x, y))
-            pending = still
-        sim.iterate(10)
-    writer.close()
+    try:
+        while (sim.agent_count() > 0 or pending) and sim.iteration_count() < MAX_ITER:
+            if pending and pending[0][0] <= sim.elapsed_time():
+                live = [tuple(a.position) for a in sim.agents()]
+                still = []
+                for t0, x, y in pending:
+                    if t0 > sim.elapsed_time():
+                        still.append((t0, x, y)); continue
+                    placed = False
+                    for _ in range(20):  # nudge until the spot is free of walls and agents
+                        if region.contains(shapely.Point(x, y)) and all(np.hypot(x - px, y - py) > 2 * radius + 0.02 for px, py in live):
+                            add(x, y); live.append((x, y)); placed = True; break
+                        x, y = x + rng.normal(0, 0.1), y + rng.normal(0, 0.1)
+                    if not placed:
+                        if sim.elapsed_time() - t0 > 10.0:  # give up after 10 s of trying
+                            n_dropped += 1
+                        else:
+                            still.append((t0, x, y))
+                pending = still
+            sim.iterate(10)
+    finally:
+        writer.close()
     return n_dropped

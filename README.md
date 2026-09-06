@@ -30,6 +30,15 @@ status (`emptied` / `not emptied` / `stalled` / `failed` with the exception
 type), the measurement window, active-passage and throughput flow, density,
 speed, and a subsampled N(t) curve.
 
+Each Dakota driver also writes an `evaluation_status.json` sidecar in its
+evaluation directory. It records the parameters, seeds and per-run completion
+status, crossed population and exception category. In the joint driver the
+sidecars are named `hermes_evaluation_status.json` and
+`crowdqueue_evaluation_status.json`. Dakota still receives finite numeric
+responses: failed or too-short runs use a zero fallback, while incomplete runs
+retain whatever finite partial observables were computed. Neither case should
+be interpreted as a physical zero flow without checking the sidecar.
+
 ## Running
 
     cd hermes && python3 compare_baseline.py            # baseline and exp_observables.json
@@ -70,7 +79,7 @@ C/D are two optimizer starts on the same data.
 - Semicircle: Hermes A and the joint set drain the crowd at 1.3 and 1.7 /s where
   the experiment gave 0.6 /s, with a regular, too-shallow density profile.
 
-## Pipeline corrections (2026-09-06)
+## Pipeline corrections and safeguards (2026-09-06)
 
 Three errors were found by review and fixed; everything downstream was
 recomputed: (1) participants entering the tracked corridor after the first frame
@@ -79,4 +88,10 @@ are injected at their first observation (`crowdqueue/observables_cq.arrivals`);
 (`writer.close()`); (3) the CrowdQueue walkable area is clipped to the corridor
 and the exit placed at the gate outlet. `hermes/truncation_check.py` shows the
 retained Hermes analyses are insensitive to (2): at most two crossings and 0.4 %
-in any observable.
+in any observable. The drivers now retain explicit audit records for failed and
+incomplete evaluations, and the Hermes launcher resolves its repository root
+instead of relying on an undefined shell variable. The Hermes initial
+population is a synthetic jittered lattice in a semicircular initialization
+region; that region is not a measured physical boundary. Hermes and CrowdQueue
+screening use fixed simulation seeds, while seed variability is assessed by
+separate replicate runs.

@@ -4,6 +4,7 @@
 Usage:  python3 driver_cq.py params.in results.out
 Env:    CQ_RUNS      comma list of run names (e.g. 090_c_12_h0,270_c_34_h0)
         JPS_N_SEEDS  replicates averaged per run (default 1)
+        CQ_STATUS_FILE  JSON audit file name (default evaluation_status.json)
         CQ_RESIDUALS=1  write (sim - exp) / sigma per observable, sigma = 6 % flow,
                         10 % density, 10 % speed of the experiment value
 Responses per run, in order: flow, density, speed.
@@ -75,6 +76,11 @@ def main():
     jobs = [(rn, s, str(out_dir / f"{rn}_s{s}.sqlite"), kwargs) for rn in run_names for s in range(1, n_seeds + 1)]
     with ProcessPoolExecutor(int(os.environ.get("JPS_WORKERS", "10"))) as ex:
         results = list(ex.map(one, *zip(*jobs)))
+    status_file = out_dir / os.environ.get("CQ_STATUS_FILE", "evaluation_status.json")
+    with open(status_file, "w") as fh:
+        json.dump({"parameters": kwargs, "runs": run_names,
+                   "simulation_seeds": [s for _, s, _, _ in jobs],
+                   "records": results}, fh, indent=1)
     for _, _, f, _ in jobs:
         pathlib.Path(f).unlink(missing_ok=True)
     exp = json.load(open(HERE / "exp_observables_cq.json")) if os.environ.get("CQ_RESIDUALS") else None

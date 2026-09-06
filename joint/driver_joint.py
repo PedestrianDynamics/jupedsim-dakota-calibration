@@ -5,7 +5,9 @@ import os, pathlib, subprocess, sys
 HERE = pathlib.Path.cwd()  # Dakota work directory, where all drivers are linked
 params, results = sys.argv[1], sys.argv[2]
 env = dict(os.environ, HERMES_RESIDUALS="1", HERMES_NORMALIZE="1", HERMES_WIDTHS="2.4,3.6,5.0",
+           HERMES_STATUS_FILE="hermes_evaluation_status.json",
            CQ_RESIDUALS="1", CQ_RUNS="090_c_12_h0,110_c_12_h0,170_q_12_h0,190_q_34_h0,270_c_34_h0,030_c_56_h0,150_q_56_h0",
+           CQ_STATUS_FILE="crowdqueue_evaluation_status.json",
            JPS_N_SEEDS=os.environ.get("JPS_N_SEEDS", "2"))
 subprocess.run([sys.executable, str(HERE / "driver.py"), params, "res_hermes.out"], check=True, env=env)
 subprocess.run([sys.executable, str(HERE / "driver_cq.py"), params, "res_cq.out"], check=True, env=env)
