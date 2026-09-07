@@ -37,7 +37,7 @@ if not data:
 params = ["desired_speed", "radius", "time_gap", "strength_neighbor", "range_neighbor"]
 resp = ["flow_2.4", "density_2.4", "speed_2.4", "flow_3.6", "density_3.6", "speed_3.6", "flow_5.0", "density_5.0", "speed_5.0"]
 Ns = sorted({N for N, _ in data})
-fig, axes = plt.subplots(3, 3, figsize=(13, 9), sharex=True)
+fig, axes = plt.subplots(3, 3, figsize=(13, 9))
 for ax, r in zip(axes.ravel(), resp):
     for j, p in enumerate(params):
         xs, ys, lo, hi = [], [], [], []
