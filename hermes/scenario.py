@@ -7,10 +7,14 @@ semicircular holding area of radius 8.618 m directly in front of the
 bottleneck holding 350 participants at 3 persons per square metre.
 """
 import pathlib
+import sys
 
 import jupedsim as jps
 import numpy as np
 import shapely
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+import space_state  # noqa: E402
 
 GAP_CENTER = 0.9
 N_AGENTS = 350
@@ -50,16 +54,14 @@ def waiting_positions(seed, radius):
 
 
 def run(gap_width, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
-        strength_neighbor=8.0, range_neighbor=0.1, strength_geometry=5.0, range_geometry=0.02):
+        strength_neighbor=8.0, range_neighbor=0.1, strength_geometry=5.0, range_geometry=0.02,
+        state_rule=None):
+    # distance-based blend of per-agent parameters towards the gap line (space_state.py)
+    on_step = space_state.make(state_rule, (GAP_CENTER - gap_width / 2, GAP_CENTER + gap_width / 2, 0.0), locals())
     # the writer buffers 100 frames and only writes them on close()
     writer = jps.SqliteTrajectoryWriter(output_file=pathlib.Path(out_file), every_nth_frame=6)
     sim = jps.Simulation(
-        model=jps.CollisionFreeSpeedModel(
-            strength_neighbor_repulsion=strength_neighbor,
-            range_neighbor_repulsion=range_neighbor,
-            strength_geometry_repulsion=strength_geometry,
-            range_geometry_repulsion=range_geometry,
-        ),
+        model=jps.CollisionFreeSpeedModelV2(),  # per-agent parameters; identical to V1 when they are uniform
         geometry=geometry(gap_width),
         dt=DT,
         trajectory_writer=writer,
@@ -67,11 +69,15 @@ def run(gap_width, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
     exit_id = sim.add_exit_stage(shapely.box(-6, -8, 6, -7))
     journey_id = sim.add_journey(jps.JourneyDescription([exit_id]))
     for pos in waiting_positions(seed, radius):
-        sim.add_agent(jps.CollisionFreeSpeedModelAgentParameters(
+        sim.add_agent(jps.CollisionFreeSpeedModelV2AgentParameters(
             journey_id=journey_id, stage_id=exit_id, position=pos,
-            desired_speed=desired_speed, radius=radius, time_gap=time_gap))
+            desired_speed=desired_speed, radius=radius, time_gap=time_gap,
+            strength_neighbor_repulsion=strength_neighbor, range_neighbor_repulsion=range_neighbor,
+            strength_geometry_repulsion=strength_geometry, range_geometry_repulsion=range_geometry))
     try:
         while sim.agent_count() > 0 and sim.iteration_count() < MAX_ITER:
+            if on_step:
+                on_step(sim)
             sim.iterate()
     finally:
         writer.close()

@@ -2,6 +2,7 @@
 agents start at the measured first-frame positions (pushed apart where the
 tracking put two people closer than two radii)."""
 import pathlib
+import sys
 
 import jupedsim as jps
 import numpy as np
@@ -9,6 +10,9 @@ import shapely
 import shapely.ops
 
 import observables_cq as obs
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+import space_state  # noqa: E402
 
 DT = 0.01
 MAX_ITER = 12_000  # 120 s: the longest experiment run is 67 s; a run that has not emptied by then is deadlocked
@@ -38,8 +42,11 @@ def repair_positions(pts, min_dist, region, rng, iters=2000):
 
 
 def run(run_name, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
-        strength_neighbor=8.0, range_neighbor=0.1, strength_geometry=5.0, range_geometry=0.02):
+        strength_neighbor=8.0, range_neighbor=0.1, strength_geometry=5.0, range_geometry=0.02,
+        state_rule=None):
     r = obs.runs()[run_name]
+    # distance-based blend of per-agent parameters towards the gate entry line (space_state.py)
+    on_step = space_state.make(state_rule, (-0.25, 0.25, -0.15), locals())
     geo = shapely.from_wkt(obs.geometry_wkt(r["file"]))
     # keep only the corridor and the area behind the gate: the archive polygon is a
     # 16 x 16 m box in which the space beside and above the barriers is walkable, and
@@ -52,9 +59,7 @@ def run(run_name, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
     # close the last seconds of every run are lost
     writer = jps.SqliteTrajectoryWriter(output_file=pathlib.Path(out_file), every_nth_frame=4)
     sim = jps.Simulation(
-        model=jps.CollisionFreeSpeedModel(
-            strength_neighbor_repulsion=strength_neighbor, range_neighbor_repulsion=range_neighbor,
-            strength_geometry_repulsion=strength_geometry, range_geometry_repulsion=range_geometry),
+        model=jps.CollisionFreeSpeedModelV2(),  # per-agent parameters; identical to V1 when they are uniform
         geometry=geo, dt=DT, trajectory_writer=writer,
     )
     # exit only at the outlet of the gate passage, so every agent must pass the gate;
@@ -69,9 +74,11 @@ def run(run_name, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
     pts = repair_positions(first, 2 * radius + 0.02, region, rng)
 
     def add(x, y):
-        sim.add_agent(jps.CollisionFreeSpeedModelAgentParameters(
+        sim.add_agent(jps.CollisionFreeSpeedModelV2AgentParameters(
             journey_id=journey_id, stage_id=exit_id, position=(x, y),
-            desired_speed=desired_speed, radius=radius, time_gap=time_gap))
+            desired_speed=desired_speed, radius=radius, time_gap=time_gap,
+            strength_neighbor_repulsion=strength_neighbor, range_neighbor_repulsion=range_neighbor,
+            strength_geometry_repulsion=strength_geometry, range_geometry_repulsion=range_geometry))
 
     for x, y in pts:
         add(x, y)
@@ -95,6 +102,8 @@ def run(run_name, seed, out_file, desired_speed=1.2, radius=0.2, time_gap=1.0,
                         else:
                             still.append((t0, x, y))
                 pending = still
+            if on_step:
+                on_step(sim)
             sim.iterate(10)
     finally:
         writer.close()

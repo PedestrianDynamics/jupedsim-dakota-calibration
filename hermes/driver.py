@@ -21,6 +21,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import observables as obs  # noqa: E402
 import scenario  # noqa: E402
+import space_state  # noqa: E402  (found through scenario's path insert)
 
 PARAMS = ["desired_speed", "radius", "time_gap", "strength_neighbor",
           "range_neighbor", "strength_geometry", "range_geometry"]
@@ -59,6 +60,8 @@ def main():
     params_file, results_file = sys.argv[1], sys.argv[2]
     p = read_params(params_file)
     kwargs = {k: float(p[k]) for k in PARAMS if k in p}
+    if space_state.from_params(p):  # space-awareness rule, only when all four parameters are present
+        kwargs["state_rule"] = space_state.from_params(p)
     widths = [float(w) for w in os.environ.get("HERMES_WIDTHS", "2.4,3.6,5.0").split(",")]
     n_seeds = int(os.environ.get("JPS_N_SEEDS", "1"))
     out_dir = pathlib.Path(params_file).resolve().parent

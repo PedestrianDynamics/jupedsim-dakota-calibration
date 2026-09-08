@@ -20,6 +20,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import observables_cq as obs  # noqa: E402
 import scenario_cq  # noqa: E402
+import space_state  # noqa: E402  (found through scenario_cq's path insert)
 
 PARAMS = ["desired_speed", "radius", "time_gap", "strength_neighbor",
           "range_neighbor", "strength_geometry", "range_geometry"]
@@ -71,6 +72,8 @@ def main():
     p = read_params(params_file)
     kwargs = json.loads(os.environ.get("CQ_FIXED_PARAMS", "{}"))
     kwargs.update({k: float(p[k]) for k in PARAMS if k in p})
+    if space_state.from_params(p):  # space-awareness rule, only when all four parameters are present
+        kwargs["state_rule"] = space_state.from_params(p)
     run_names = os.environ["CQ_RUNS"].split(",")
     n_seeds = int(os.environ.get("JPS_N_SEEDS", "1"))
     out_dir = pathlib.Path(params_file).resolve().parent
