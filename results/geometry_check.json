@@ -1,0 +1,142 @@
+[
+ {
+  "run": "ao-240-400",
+  "b_exit": 2.4,
+  "archive_left": -0.3,
+  "archive_right": 2.1,
+  "archive_width": 2.4,
+  "archive_center": 0.9,
+  "nominal_left": -0.29999999999999993,
+  "nominal_right": 2.1,
+  "boards_extent": [
+   -3.05,
+   4.45
+  ],
+  "traj_xmin": -0.22,
+  "traj_xmax": 2.035,
+  "traj_p05": -0.173,
+  "traj_p995": 1.964,
+  "traj_envelope_width": 2.255,
+  "traj_envelope_center": 0.907,
+  "clearance_archive": [
+   0.08,
+   0.065
+  ],
+  "clearance_nominal": [
+   0.08,
+   0.065
+  ]
+ },
+ {
+  "run": "ao-300-400",
+  "b_exit": 3.0,
+  "archive_left": -0.6,
+  "archive_right": 2.4,
+  "archive_width": 3.0,
+  "archive_center": 0.9,
+  "nominal_left": -0.6,
+  "nominal_right": 2.4,
+  "boards_extent": [
+   -3.05,
+   4.45
+  ],
+  "traj_xmin": -0.51,
+  "traj_xmax": 2.301,
+  "traj_p05": -0.453,
+  "traj_p995": 2.25,
+  "traj_envelope_width": 2.811,
+  "traj_envelope_center": 0.895,
+  "clearance_archive": [
+   0.09,
+   0.099
+  ],
+  "clearance_nominal": [
+   0.09,
+   0.099
+  ]
+ },
+ {
+  "run": "ao-360-400",
+  "b_exit": 3.6,
+  "archive_left": -0.9,
+  "archive_right": 2.7,
+  "archive_width": 3.6,
+  "archive_center": 0.9,
+  "nominal_left": -0.9,
+  "nominal_right": 2.7,
+  "boards_extent": [
+   -3.0,
+   4.5
+  ],
+  "traj_xmin": -0.828,
+  "traj_xmax": 2.59,
+  "traj_p05": -0.779,
+  "traj_p995": 2.545,
+  "traj_envelope_width": 3.418,
+  "traj_envelope_center": 0.881,
+  "clearance_archive": [
+   0.072,
+   0.11
+  ],
+  "clearance_nominal": [
+   0.072,
+   0.11
+  ]
+ },
+ {
+  "run": "ao-440-400",
+  "b_exit": 4.4,
+  "archive_left": -1.3,
+  "archive_right": 3.1,
+  "archive_width": 4.4,
+  "archive_center": 0.9,
+  "nominal_left": -1.3000000000000003,
+  "nominal_right": 3.1,
+  "boards_extent": [
+   -3.0,
+   4.5
+  ],
+  "traj_xmin": -1.162,
+  "traj_xmax": 2.968,
+  "traj_p05": -1.12,
+  "traj_p995": 2.917,
+  "traj_envelope_width": 4.13,
+  "traj_envelope_center": 0.903,
+  "clearance_archive": [
+   0.138,
+   0.132
+  ],
+  "clearance_nominal": [
+   0.138,
+   0.132
+  ]
+ },
+ {
+  "run": "ao-500-400",
+  "b_exit": 5.0,
+  "archive_left": -1.6,
+  "archive_right": 3.4,
+  "archive_width": 5.0,
+  "archive_center": 0.9,
+  "nominal_left": -1.6,
+  "nominal_right": 3.4,
+  "boards_extent": [
+   -3.0,
+   4.5
+  ],
+  "traj_xmin": -1.47,
+  "traj_xmax": 3.305,
+  "traj_p05": -1.398,
+  "traj_p995": 3.25,
+  "traj_envelope_width": 4.775,
+  "traj_envelope_center": 0.917,
+  "clearance_archive": [
+   0.13,
+   0.095
+  ],
+  "clearance_nominal": [
+   0.13,
+   0.095
+  ]
+ }
+]
